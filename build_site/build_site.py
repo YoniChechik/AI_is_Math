@@ -51,10 +51,10 @@ for subdir in subdirs:
 
 		# ===== build main
 		if subdir == "p_00_python_pycharm_installation":
-			url_content = "\\computer_vision_course\\pages\\p_00_python_pycharm_installation\\python_pycharm_installation\\"
+			url_content = "\\pages\\p_00_python_pycharm_installation\\python_pycharm_installation\\"
 		else:
-			url_content = "\\computer_vision_course\\"+"\\".join(content_path.split("\\")[2:])[:-3]+"\\"
-		url_image = "/computer_vision_course"+[line for line in lines_arr if line.startswith("bigimg:")][0].split("bigimg:")[-1].split()[-1]
+			url_content = "\\"+"\\".join(content_path.split("\\")[2:])[:-3]+"\\"
+		url_image = [line for line in lines_arr if line.startswith("bigimg:")][0].split("bigimg:")[-1].split()[-1]
 		title = " ".join([line for line in lines_arr if line.startswith("title:")][0].split("title:")[-1].split())
 
 		main+=html_float_bar(url_content,url_image,title)

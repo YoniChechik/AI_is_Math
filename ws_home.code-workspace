@@ -1,0 +1,58 @@
+{
+	"folders": [
+		{
+			"path": "." // ws path
+		}
+	],
+	"settings": 
+	{
+		"python.pythonPath": "C:\\Users\\chech\\AppData\\Local\\Programs\\Python\\cv_course_venv\\Scripts\\python.exe",
+		"python.venvPath": "C:\\Users\\chech\\AppData\\Local\\Programs\\Python",
+		"python.dataScience.autoPreviewNotebooksInInteractivePane": true,
+		// "python.dataScience.stopOnFirstLineWhileDebugging": false,
+		"python.linting.pylintArgs": ["--generate-members"],  //for recognizing cv imports
+		
+		"editor.autoClosingBrackets": "never",
+		"editor.autoClosingQuotes": "never",
+		"editor.mouseWheelZoom": true,
+		"editor.acceptSuggestionOnEnter": "smart",
+
+		"workbench.tree.indent": 30,
+		"workbench.tree.renderIndentGuides": "always",
+		"workbench.list.openMode": "doubleClick",
+
+		"explorer.confirmDelete": false,
+
+		"pasteImage.path": "${currentFileDir}/images",
+		
+		"cSpell.allowCompoundWords": true,
+		"cSpell.diagnosticLevel": "Hint",
+
+		"markdown.extension.toc.levels": "2..6",
+		"markdown.extension.toc.githubCompatibility": true,
+		"python.dataScience.notebookFileRoot": "${currentFileDir}",
+		
+		"terminal.integrated.env.windows": {
+			"PYTHONPATH":"${env:PYTHONPATH};${workspaceFolder}"
+		},
+
+		//"python.terminal.executeInFileDir": true,
+		//"python.dataScience.exportWithOutputEnabled": true,
+		//"python.dataScience.notebookFileRoot": "${cwd}"
+		//"python.dataScience.changeDirOnImportExport": false,
+
+	},
+	"launch": { //default when F5
+		"configurations": [
+			{
+				"name": "Python: Current File (Integrated Terminal)",
+				"type": "python",
+				"request": "launch",
+				"program": "${file}",
+				"cwd": "${fileDirname}",
+				"console": "integratedTerminal",
+			}
+		],
+		"compounds": []
+	}
+}

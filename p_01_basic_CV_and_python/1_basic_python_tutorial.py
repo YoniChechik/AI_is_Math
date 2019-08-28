@@ -29,7 +29,7 @@
 #
 # Pycharm is currently (2019) the most commonly used IDE (Integrated development environment) for programing in python.
 #
-# for complete tutorial on **installation** of Python + Pycharm + additional packages please refer to [this](https://github.com/YoniChechik/computer_vision_course/blob/master/python_pycharm_installation/python_pycharm_installation.md) page.
+# for complete tutorial on **installation** of Python + Pycharm + additional packages please refer to [this](https://github.com/YoniChechik/AI_is_Math/blob/master/python_pycharm_installation/python_pycharm_installation.md) page.
 #
 # <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/PyCharm_Logo.svg" alt="pycharm logo" width="300"/>
 # ### Jupyter notebook

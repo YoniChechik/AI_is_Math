@@ -2,7 +2,7 @@
 This is the git repo of my CV course site. **Check it out** at:
 [https://yonichechik.github.io/Computer-Vision-Course-Site/](https://yonichechik.github.io/Computer-Vision-Course-Site/)
 
-You can see raw source code and .ppt at [my other repo](https://github.com/YoniChechik/computer_vision_course#readme).
+You can see raw source code and .ppt at [my other repo](https://github.com/YoniChechik/AI_is_Math#readme).
 
 This site's tamplate is based on the beautiful tamplate of [Beautiful Jekyll](https://github.com/daattali/beautiful-jekyll#readme).
 

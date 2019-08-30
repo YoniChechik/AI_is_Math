@@ -6,10 +6,8 @@
 	],
 	"settings": 
 	{
-		//"python.pythonPath": "C:\\Users\\chech\\AppData\\Local\\Programs\\Python\\cv_course_venv\\Scripts\\python.exe",
-		// "python.venvPath": "C:\\Users\\chech\\AppData\\Local\\Programs\\Python\\cv_course_venv",
 		"python.pythonPath": "C:\\Users\\jonathanch\\Documents\\vscode_py\\env\\Scripts\\python.exe",
-		"python.venvPath": "C:\\Users\\jonathanch\\Documents\\vscode_py\\env",
+		"python.venvPath": "C:\\Users\\jonathanch\\Documents\\vscode_py",
 		"python.dataScience.autoPreviewNotebooksInInteractivePane": true,
 		// "python.dataScience.stopOnFirstLineWhileDebugging": false,
 		"python.linting.pylintArgs": ["--generate-members"],  //for recognizing cv imports
@@ -34,14 +32,12 @@
 		"markdown.extension.toc.githubCompatibility": true,
 
 		"remote.SSH.configFile": "C:\\Users\\jonathanch\\.ssh\\config",
+		"python.dataScience.notebookFileRoot": "${currentFileDir}",
 
-		"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
 		"terminal.integrated.env.windows": {
-			"PYTHONPATH":"${env:PYTHONPATH};${workspaceFolder}/cv_course_raw_git"
+			"PYTHONPATH":"${env:PYTHONPATH};${workspaceFolder}"
 		},
-		"terminal.integrated.env.linux": {
-			"PYTHONPATH":"${env:PYTHONPATH}:${workspaceFolder}/cv_course_raw_git"
-		},
+
 
 		//"python.terminal.executeInFileDir": true,
 		//"python.dataScience.exportWithOutputEnabled": true,

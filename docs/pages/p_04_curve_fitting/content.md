@@ -1,6 +1,6 @@
 ---
 title: Curve fitting
-bigimg: /img/path.jpg
+bigimg: /pages/p_04_curve_fitting/hough_example.jpg
 ---
 
 ## **Curve fitting** 

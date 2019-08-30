@@ -1,6 +1,6 @@
 ---
 title: Course syllabus
-bigimg: /img/path.jpg
+bigimg: /img/FedTech-ComputerVision.jpg
 ---
 
 ## **Python, Pycharm & packages installation** 

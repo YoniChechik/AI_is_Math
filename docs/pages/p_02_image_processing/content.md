@@ -1,6 +1,6 @@
 ---
 title: Image processing
-bigimg: /img/path.jpg
+bigimg: /pages/p_02_image_processing/blur.jpg
 ---
 
 ## **Image processing** 

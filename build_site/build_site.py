@@ -2,7 +2,7 @@ import os
 
 toc = """---
 title: Course syllabus
-bigimg: /img/path.jpg
+bigimg: /img/FedTech-ComputerVision.jpg
 ---\n
 """
 
@@ -12,8 +12,8 @@ hover_main_css = "".join(lines_arr)
 
 main = """---
 title: AI is Math
-subtitle: "This is my computer vision course site.\\n Why? Because it's awesome"
-bigimg: /img/path.jpg
+subtitle: "This is my computer vision course site. Why? Because it's awesome"
+bigimg: /img/FedTech-ComputerVision.jpg
 ---
 <style>
 {}

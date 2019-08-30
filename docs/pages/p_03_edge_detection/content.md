@@ -1,6 +1,6 @@
 ---
 title: Edge detection
-bigimg: /img/path.jpg
+bigimg: /pages/p_03_edge_detection/prewitt_grayscale.jpg
 ---
 
 ## **Edge Detection** 

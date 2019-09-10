@@ -3,8 +3,6 @@ title: Course syllabus
 bigimg: /img/FedTech-ComputerVision.jpg
 ---
 
-## **Python, Pycharm & packages installation** 
-[(installation guide)](/pages/p_00_python_pycharm_installation/python_pycharm_installation/)
 
 ## **CV & Python basics** 
 [(slides)](/pages/p_01_basic_CV_and_python/slides/)
@@ -41,3 +39,11 @@ bigimg: /img/FedTech-ComputerVision.jpg
 ## **Curve fitting** 
 [(slides)](/pages/p_04_curve_fitting/slides/), [(least squares notebook)](/pages/p_04_curve_fitting/least_squares_nb/)<br/>
    work in progress...
+## **Image formation** 
+[(slides)](/pages/p_05_image_formation/slides/)<br/>
+
+- BRDF
+- Pinhole camera
+- Digital camera
+- The human eye
+- Image transformations [(notebook)](/pages/p_05_image_formation/image_tansformation_nb/)

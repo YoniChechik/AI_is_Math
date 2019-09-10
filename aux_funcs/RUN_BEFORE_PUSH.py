@@ -2,33 +2,30 @@ from py2ipynb import py2ipynb
 from ppt2pdf import PPTtoPDF
 import os
 
-cwd = os.getcwd()
-raw_git_dir = os.path.join(cwd,"..","cv_course_raw_git")
+DO_PPT = 1
+DO_PY = 0
 
-# run on all "raw" subdirs in git dir
-git_raw_subdirs = [x for x in os.listdir(raw_git_dir) if os.path.isdir(os.path.join(raw_git_dir,x))]
-for dir_name in git_raw_subdirs:
-    fp = os.path.join(raw_git_dir,dir_name)
+
+cwd = os.getcwd()
+git_dirs = os.path.join(cwd,"..")
+
+git_class_subdirs = [x for x in os.listdir(git_dirs) if ( os.path.isdir(os.path.join(git_dirs,x)) and x.startswith("p_") ) ]
+for dir_name in git_class_subdirs:
+    fp = os.path.join(git_dirs,dir_name)
 
     # if os.path.isdir(fp): #if dir 'raw' exists
     print("===== IN DIR: " + fp + " =====")
     for fn in os.listdir(fp):
-        # ffp = os.path.join(fp,fn)
-
-        # if fn != "edge_detection.py":
-        #     continue
 
         fn_no_ext = fn.split(".")[0]
-        if fn.endswith(".pptx"):
+        if fn.endswith(".pptx") and DO_PPT:
             print("converting pptx: "+ fn)
-            # PPTtoPDF(os.path.join(fp,fn),os.path.join(fp,"..",fn_no_ext+".pdf"))
-        elif fn.endswith(".py"):
+            PPTtoPDF(os.path.join(fp,fn),os.path.join(fp,fn_no_ext+".pdf"))
+        elif fn.endswith(".py") and DO_PY:
             out_ipynb = os.path.join(fp,fn_no_ext+".ipynb")
 
             print("converting .py 2 .ipynb: "+ fn)
             py2ipynb(os.path.join(fp,fn), out_ipynb)
             
             print("executing .ipynb : "+ fn)
-            # print("jupyter nbconvert --to notebook --execute \""+out_file+"\"")
-            # os.system("jupyter nbconvert --ExecutePreprocessor.timeout=60 --to notebook --execute --inplace \""+out_file+"\"")
             os.system("jupyter nbconvert --ExecutePreprocessor.timeout=60 --to notebook --execute --inplace \""+out_ipynb+"\"")

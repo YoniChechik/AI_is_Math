@@ -1,7 +1,7 @@
 ---
 title: Installation guide
 subtitle: Learn how to Downloads the essentials for working with Python from your own computer
-bigimg: /img/path.jpg
+bigimg: /img/FedTech-ComputerVision.jpg
 ---
  
 - [Install python 3.6.8 interpreter](#install-python-368-interpreter)

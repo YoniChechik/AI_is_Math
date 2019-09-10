@@ -21,7 +21,7 @@ description: My computer vision course notes & interactive Jupyter notebooks!
 # List of links in the navigation bar
 navbar-links:
   How to start?: "/pages/how2start/how2start/"
-  Table of content: "/pages/toc/"
+  Table of contents: "/pages/toc/"
   # Resources:
   #   - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
   #   - Learn markdown: "http://www.markdowntutorial.com/"

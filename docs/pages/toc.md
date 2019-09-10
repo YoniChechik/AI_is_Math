@@ -50,4 +50,4 @@ bigimg: /img/FedTech-ComputerVision.jpg
 - Pinhole camera
 - Digital camera
 - The human eye
-- Image transformations [(notebook)](/pages/p_05_image_formation/image_tansformation_nb/)
+- Image transformations [(notebook)](/pages/p_05_image_formation/image_trasformation_nb/)

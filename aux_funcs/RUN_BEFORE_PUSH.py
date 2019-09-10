@@ -13,7 +13,6 @@ git_class_subdirs = [x for x in os.listdir(git_dirs) if ( os.path.isdir(os.path.
 for dir_name in git_class_subdirs:
     fp = os.path.join(git_dirs,dir_name)
 
-    # if os.path.isdir(fp): #if dir 'raw' exists
     print("===== IN DIR: " + fp + " =====")
     for fn in os.listdir(fp):
 

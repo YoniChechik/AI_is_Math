@@ -47,7 +47,7 @@ for subdir in subdirs:
 		lines = "".join(lines_arr)
 
 		# ==== build toc
-		toc += lines.split("---\n")[-1]
+		toc += lines.split("---\n")[-1]+"\n"
 
 		# ===== build main
 		if subdir == "p_00_python_pycharm_installation":

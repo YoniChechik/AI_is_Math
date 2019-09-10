@@ -16,6 +16,7 @@ bigimg: /img/FedTech-ComputerVision.jpg
      - [Matplotlib tutorial notebook](/pages/p_01_basic_CV_and_python/4_Matplotlib_tutorial_nb/)
      - [OpenCV tutorial notebook](/pages/p_01_basic_CV_and_python/5_OpenCV_tutorial_nb/)
 
+
 ## **Image processing** 
 [(slides)](/pages/p_02_image_processing/slides/)
    - Image representation
@@ -24,6 +25,7 @@ bigimg: /img/FedTech-ComputerVision.jpg
    - Frequency representation 
    - Morphology operators
    - Connected components
+
 ## **Edge Detection** 
 [(slides)](/pages/p_03_edge_detection/slides/), [(edge detection notebook)](/pages/p_03_edge_detection/edge_detection_nb/)
    - Intro to edges
@@ -36,9 +38,11 @@ bigimg: /img/FedTech-ComputerVision.jpg
    - Other edge related topics
      - Frequency representation
      - Unsharp filter
+
 ## **Curve fitting** 
 [(slides)](/pages/p_04_curve_fitting/slides/), [(least squares notebook)](/pages/p_04_curve_fitting/least_squares_nb/)<br/>
    work in progress...
+
 ## **Image formation** 
 [(slides)](/pages/p_05_image_formation/slides/)<br/>
 

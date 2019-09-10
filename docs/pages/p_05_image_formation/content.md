@@ -10,4 +10,4 @@ bigimg: /pages/p_05_image_formation/prism.jpg
 - Pinhole camera
 - Digital camera
 - The human eye
-- Image transformations [(notebook)](/pages/p_05_image_formation/image_trasformation_nb/)
+- Image transformations [(notebook)](/pages/p_05_image_formation/image_transformation_nb/)

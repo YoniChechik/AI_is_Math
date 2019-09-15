@@ -1,6 +1,7 @@
 # %% [markdown]
 # # Edge detection
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/p_03_edge_detection/edge_detection.ipynb)
+# # <a href="https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/p_03_edge_detection/edge_detection.ipynb" target="_blank" rel="noopener noreferrer"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"></a>
+
 # ## Prep 
 
 #%%

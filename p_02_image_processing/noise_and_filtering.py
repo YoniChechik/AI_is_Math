@@ -1,16 +1,30 @@
 # %% [markdown]
 # # Noise and filtering
-# ## prep
+# ## Prep
 
-# %%
+#%%
+# to run in google colab
+import sys
+if 'google.colab' in sys.modules:
+    ! apt-get install subversion
+    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/p_02_image_processing/Tour_Eiffel.jpg
+    ! pip install --upgrade bokeh
+
+# %% 
 import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
-fig_size = (10, 10)
+fig_size = (10,10)
+#%%
+# to run interactively with vscode
+import os
+if os.getcwd().endswith("AI_is_Math"):
+    os.chdir("p_02_image_processing")
+
 
 # %% [markdown]
-# our basic image:
+# Get basic image:
 
 # %%
 
@@ -21,7 +35,7 @@ def plot_im(img, title):
     plt.xticks([])
     plt.yticks([])
 
-img = cv2.imread("Tour_Eiffel")
+img = cv2.imread("Tour_Eiffel.jpg")
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 plot_im(img, "orig")
 

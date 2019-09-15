@@ -26,6 +26,8 @@ def bokeh_imshow(img_orig, scale=1, colorbar=False, show=True, **figure_kwargs):
     # check img type
     if (img.ndim == 2) and (img.dtype == np.uint8):  # grayscale image
         img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGBA)
+    if (img.ndim == 2) and (img.dtype == np.bool):  # mask image
+        img = img.astype(float)
     elif img.ndim == 3:  # rgb input
         img = cv2.cvtColor(img, cv2.COLOR_RGB2RGBA)
     else:  # regular 2D array

@@ -1,6 +1,16 @@
 # %% [markdown]
 # # Edge detection
-# ## prep 
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/p_03_edge_detection/edge_detection.ipynb)
+# ## Prep 
+
+#%%
+# to run in google colab
+import sys
+if 'google.colab' in sys.modules:
+    ! apt-get install subversion
+    ! svn checkout https://github.com/YoniChechik/AI_is_Math/trunk/aux_funcs/
+    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/p_03_edge_detection/Bikesgray.jpg
+    ! pip install --upgrade bokeh
 
 # %% 
 import numpy as np
@@ -9,31 +19,30 @@ from matplotlib import pyplot as plt
 from aux_funcs import *
 
 fig_size = (10,10)
-
+#%%
+# to run interactively with vscode
 import os
-if not os.getcwd().endswith("p_03_edge_detection"):
+if os.getcwd().endswith("AI_is_Math"):
     os.chdir("p_03_edge_detection")
 
 # %% [markdown]
-# ## original image
+# ## Original image
 # %%
-# bikes_url = "https://upload.wikimedia.org/wikipedia/commons/3/3f/Bikesgray.jpg"
-# img = get_image_from_url(bikes_url)
 img = cv2.imread("Bikesgray.jpg")
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 plt.figure(figsize=fig_size)
 plt.imshow(img, cmap='gray', vmin=0, vmax=255)
-plt.title('original image')
+plt.title('Original image')
 
 # %% [markdown]
-# ## filtering common errors
+# ## Filtering common errors
 # ### kernel errors
-# %% kernel errors
+# %%
 img = img.astype(float)  # 'uint8' doesn't work with minus sign - for filtering
 
 # 1. cv2.filter2D is working with corelation rether than convolution
 #    no need to flip the kernel
-# 2. notice that kernel is 2D array - if 1d then column vector
+# 2. Notice that kernel is 2D array - if 1d then column vector
 kernel = np.array([[-1, 0, +1]])
 dst = cv2.filter2D(img, -1, kernel)
 
@@ -44,7 +53,9 @@ plt.title('$f\'_x$: image filtered with '+str(kernel))
 
 # %% [markdown]
 # ### uint8 errors
-# %% wrong filtering when keeping uint8 nstead of float
+# Wrong filtering when keeping uint8 instead of float, because uint8 
+# doesn't have negative numbers...
+# %%
 uint8_img = np.zeros((500, 500), dtype=np.uint8)
 uint8_img[200:300, 200:300] = 1
 
@@ -69,8 +80,8 @@ plt.colorbar()
 plt.title('$f\'_y$: image filtered with\n '+str(kernel))
 
 # %% [markdown]
-# ## comparison of x gradient filters
-# %% comparison x gradient
+# ## Comparison of x gradient filters
+# %%
 plt.rcParams['figure.figsize'] = [20, 20]
 
 plt.subplot(4, 2, 1)
@@ -122,11 +133,11 @@ plt.title('|sobel-prewitt|')
 
 #######################################
 plt.subplot(4, 2, 7)
-plt.imshow(np.abs(dst_sym-dst_prewitt))
+plt.imshow(np.abs(dst_sym-dst_prewitt)) 
 plt.colorbar()
 plt.title('|symmetric-prewitt|')
 # %% [markdown]
-# ## magnitude and phase images
+# ## Magnitude and phase images
 
 # %%
 kernel = 1/8*np.array([
@@ -149,15 +160,15 @@ phase_img_masked = phase_img_masked*(mag_img <= th) + phase_img*(mag_img > th)
 
 
 bokeh_imshow(mag_img, scale=1, colorbar=True,
-             show=True, title='gradient magnitude')
+             show=True, title='Gradient magnitude')
 
 bokeh_imshow(phase_img_masked, scale=1, colorbar=True,
-             show=True, title='gradient phase thresholeded')
+             show=True, title='Gradient phase thresholeded')
 
 # %% [markdown]
 # ## Edge thinning 
-# <div id="foo"></div>
 # ### LoG filter
+# First we will see why edge thinning with second derivative like LoG is bad
 
 # %%
 blur = cv2.blur(img, (1, 1))
@@ -170,8 +181,7 @@ dst_sobel = cv2.filter2D(blur, -1, kernel)
 plt.figure(figsize=fig_size)
 plt.imshow(dst_sobel)
 # %% [markdown]
-# ### naive way for zero crossings
-
+# ### Naive way for zero crossings
 # %%
 sign_im = dst_sobel > 0
 sign_im_left = sign_im[:, :-1]
@@ -184,11 +194,13 @@ res = np.logical_and(sign_im_left, sign_im_right)
 
 plt.figure(figsize=fig_size)
 plt.imshow(res)
-plt.title('naive way for zero crossings')
+plt.title('Naive way for zero crossings')
 
 
 # %% [markdown]
-# ## quantizing the phase image
+# It's hard to find zero crossing in an image!! this is why LoG is not in use for edge thinning.
+#
+# ## NMS preliminary step: Quantizing the phase image
 
 # %%
 phase_img_q = phase_img.copy()
@@ -204,7 +216,7 @@ phase_img_q_masked = phase_img_q_masked * \
     (mag_img <= th) + phase_img_q*(mag_img > th)
 
 bokeh_imshow(phase_img_q_masked, scale=1, colorbar=True, show=True,
-             title='gradient phase- quantized and thresholded')
+             title='Gradient phase- quantized and thresholded')
 
 
 # %% [markdown]
@@ -239,59 +251,38 @@ nms_th[np.bitwise_and(TH_l <= nms, nms < TH_h)] = 1
 bokeh_imshow(nms_th, scale=1, colorbar=True, title='double TH')
 
 # %% [markdown]
-# ## iterative hysteresis
+# ## Iterative hysteresis
+# We will do the iterative process with connected components (CC):
+# 1. Take a mask of combined weak and strong edges and run CC algorithm on it.
+# 2. For each such CC group- test if there is intersection with ONLY strong edges mask.
+# 3. If intersection exist, then weak edges in CC group is actually strong edges, so unite the masks.
 
-# %%
-canny_res = nms_th.copy()
-
-canny_progress = []
-is_weak_to_strong = True
-while is_weak_to_strong:
-    is_weak_to_strong = False
-    for i in range(1, nms.shape[0]-1):
-        for j in range(1, nms.shape[1]-1):
-            if canny_res[i, j] == 2:
-                weak_edges_mask = canny_res[i-1:i+2, j-1:j+2] == 1
-                if np.any(weak_edges_mask):
-                    is_weak_to_strong = True
-                    canny_res[i-1:i+2, j-1:j+2][weak_edges_mask] = 2
-    # for later
-    canny_progress.append(canny_res.copy())
-
-#all other weak edges are not edges...
-canny_res[canny_res == 1] = 0
-
-bokeh_imshow(canny_res, scale=1, title='Canny final result')
-
-# %% [markdown]
-# ### let's see the iterative process in depth
-# **Note:** this process can also be done with connected components!
 #%%
-import ipywidgets as widgets
 
-slider_out = widgets.IntSlider(
-    description='frame num',
-    value=0, # initial running value
-    min=0,
-    max=len(canny_progress)-1,
-    step=10,
-    continuous_update=False # False -> update only after user finished sliding
-    ) 
+nms_weak_and_strong = np.zeros(nms_th.shape,dtype=np.bool)
+nms_strong = np.zeros(nms_th.shape,dtype=np.bool)
 
-def fig_update_func(frame_num):
-    plt.figure(figsize=fig_size) # figure MUST be defined inside update func
-    plt.imshow((canny_progress[frame_num]*255/2).astype(np.uint8))
-    plt.title("frame num "+str(frame_num))
-    plt.show()
-    
-out = widgets.interactive_output(fig_update_func, {'frame_num': slider_out})
+nms_weak_and_strong[nms_th>0]=1
+nms_strong[nms_th==2]=1
 
-widgets.HBox([slider_out, out])
+num_w_s_CCs, w_s_CC_mask = cv2.connectedComponents(nms_weak_and_strong.astype(np.uint8))
+
+# for each CC group of weak and strong edge mask
+for w_s_CC_i in range(1,num_w_s_CCs):
+
+    # get MASK of weak_and_strong edge from index w_s_CC_i
+    w_s_CC_mask_i = np.zeros(nms_th.shape,dtype=np.bool)
+    w_s_CC_mask_i[w_s_CC_mask==w_s_CC_i]=1
+
+    # if w_s_CC_mask_i has intersection with strong edges mask, add to strong edge mask
+    if np.any(np.bitwise_and(w_s_CC_mask_i, nms_strong)):
+        nms_strong = np.bitwise_or(w_s_CC_mask_i, nms_strong)
+
+bokeh_imshow(nms_strong, scale=1, colorbar=True, title='Canny final result')
+
 # %% [markdown]
 # ## cv2 Canny
-
+# let's see the results from the default canny of cv2
 # %%
 res = cv2.Canny(img.astype(np.uint8),105,120)
 bokeh_imshow(res, scale=1, title='cv2.Canny final result')
-
-# %%

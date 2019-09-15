@@ -2,8 +2,8 @@ from py2ipynb import py2ipynb
 from ppt2pdf import PPTtoPDF
 import os
 
-DO_PPT = 1
-DO_PY = 0
+DO_PPT = 0
+DO_PY = 1
 
 #get all git cass dirs - starting with "p_"
 cwd = os.getcwd()

@@ -1,5 +1,7 @@
 #%% [markdown]
 # #Python Workshop: Basics II
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/p_01_basic_CV_and_python/2_basic_python_tutorial_cont.ipynb)
+
 # <hr>
 # 
 # Based on:

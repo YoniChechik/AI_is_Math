@@ -1,5 +1,6 @@
 #%% [markdown]
 # # Python Workshop: OpenCV
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/p_01_basic_CV_and_python/5_OpenCV_tutorial.ipynb)
 # <hr>
 # 
 # Based on:
@@ -16,9 +17,22 @@
 # ## Basic usage
 #%%
 import matplotlib.pyplot as plt
-import cv2 #opencv for python package
+import cv2 # opencv for python package
 
 fig_size = (10, 10)
+#%%
+# to run in google colab
+import sys
+if 'google.colab' in sys.modules:
+    ! apt-get install subversion
+    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/p_01_basic_CV_and_python/Lenna.png
+    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/p_01_basic_CV_and_python/opencv_logo.png
+
+# to run interactively with vscode
+import os
+if os.getcwd().endswith("AI_is_Math"):
+    os.chdir("p_01_basic_CV_and_python")
+
 
 #%% [markdown]
 # This is how to read and plot an image with opencv

@@ -1,5 +1,6 @@
 # %% [markdown]
 # # Noise and filtering
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/p_02_image_processing/noise_and_filtering.ipynb)
 # ## Prep
 
 #%%
@@ -8,7 +9,6 @@ import sys
 if 'google.colab' in sys.modules:
     ! apt-get install subversion
     ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/p_02_image_processing/Tour_Eiffel.jpg
-    ! pip install --upgrade bokeh
 
 # %% 
 import numpy as np

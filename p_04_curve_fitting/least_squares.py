@@ -1,3 +1,7 @@
+# %% [markdown]
+# # Least squares
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/p_04_curve_fitting/least_squares.ipynb)
+
 # %%
 import numpy as np
 import matplotlib.pyplot as plt
@@ -169,8 +173,9 @@ std = 1
 y = y+np.random.normal(scale=std, size=x.shape)
 
 # add random noise unrelated to noisy line
-x_noise = np.random.uniform(x.min(), x.max(), size=70)
-y_noise = np.random.uniform(y.min(), y.max(), size=70)
+noise_sz = int(x.shape[0]*5)
+x_noise = np.random.uniform(x.min(), x.max(), size=noise_sz)
+y_noise = np.random.uniform(y.min(), y.max(), size=noise_sz)
 
 plt.figure(figsize=fig_size)
 plt.plot(x, y, '*')
@@ -183,19 +188,8 @@ y = np.concatenate((y, y_noise))
 #%% [markdown]
 # ### run naive RANSAC
 #%%
-# from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-# from matplotlib.figure import Figure
 
-# fig = Figure(dpi=500)
-# canvas = FigureCanvas(fig)
-
-TH = 1
-best_inliers = np.array([])
-best_b = None
-
-inliers_inds_list = []
-for i in range(10):
-
+def basic_ransac(x,TH):
     #====== choose 2 random inds
     rand_indices = np.random.choice(x.shape[0], size=2)
 
@@ -215,33 +209,29 @@ for i in range(10):
     for j in range(x.shape[0]):
         p_j = np.array([x[j], y[j]])
 
+        # https://en.wikipedia.org/wiki/Cross_product#Geometric_meaning
+        # |a X b| = |a||b|sin(t) -> |a X b|/|b| = |a|sin(t)
         d_j = np.linalg.norm(np.cross(line_p2-line_p1, line_p1-p_j))/np.linalg.norm(line_p2-line_p1)
         if d_j <= TH:
             inlier_ind.append(j)
 
     inlier_ind = np.array(inlier_ind)
+    return b, inlier_ind
+
+#%%
+TH = 1
+best_inliers = np.array([])
+best_b = None
+
+inliers_inds_list = []
+for i in range(10):
+    b, inlier_ind = basic_ransac(x,TH)
     inliers_inds_list.append(inlier_ind)
 
     #====== save best model
     if best_inliers.shape[0] < inlier_ind.shape[0]:
         best_inliers = inlier_ind
         best_b = b
-    
-    #====== plotting
-    # ax = fig.gca()
-    # ax.clear()
-    # x_axis = np.arange(11)
-    # ax.plot(x_axis, b[0]*x_axis+b[1], 'r')
-    # ax.plot(x, y, '*')
-    # ax.plot(x[inlier_ind], y[inlier_ind], '*k')
-    # ax.set_xlim([0, 10])
-    # ax.set_ylim([0, 25])
-    # # save data for later 
-    # canvas.draw()       # draw the canvas, cache the renderer
-    # s, (width, height) = canvas.print_to_buffer()
-    # X = np.frombuffer(s, np.uint8).reshape((height, width, 4))
-    # ransac_process.append(X)
-
 
 
 # plot best fit
@@ -255,26 +245,6 @@ ax.set_xlim([0, 10])
 ax.set_ylim([0, 25])
 plt.title("best fit")
 plt.show()
-# %% [markdown]
-# ### let's see the process in depth
+
+
 #%%
-# import ipywidgets as widgets
-
-# slider_out = widgets.IntSlider(
-#     description='frame num',
-#     value=0, # initial running value
-#     min=0,
-#     max=len(ransac_process)-1,
-#     step=1,
-#     continuous_update=False # False -> update only after user finished sliding
-#     ) 
-
-# def fig_update_func(frame_num):
-#     plt.figure(figsize=fig_size) # figure MUST be defined inside update func
-#     plt.imshow(ransac_process[frame_num])
-#     plt.title("frame num "+str(frame_num))
-#     plt.show()
-    
-# out = widgets.interactive_output(fig_update_func, {'frame_num': slider_out})
-
-# widgets.HBox([slider_out, out])

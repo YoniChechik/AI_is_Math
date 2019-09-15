@@ -4,8 +4,7 @@ bigimg: /img/FedTech-ComputerVision.jpg
 ---
 
 
-## **CV & Python basics** 
-[(slides)](/pages/p_01_basic_CV_and_python/slides/)
+## **CV & Python basics** [(slides)](/pages/p_01_basic_CV_and_python/slides/)
    - Course details
    - What is computer vision (CV)?
    - Course outline
@@ -17,8 +16,7 @@ bigimg: /img/FedTech-ComputerVision.jpg
      - [OpenCV tutorial notebook](/pages/p_01_basic_CV_and_python/5_OpenCV_tutorial_nb/)
 
 
-## **Image processing** 
-[(slides)](/pages/p_02_image_processing/slides/)
+## **Image processing** [(slides)](/pages/p_02_image_processing/slides/)
    - Image representation
    - Pixel-wise operations
    - Noise and filtering [(notebook)](/pages/p_02_image_processing/noise_and_filtering_nb/)
@@ -26,8 +24,7 @@ bigimg: /img/FedTech-ComputerVision.jpg
    - Morphology operators
    - Connected components
 
-## **Edge Detection** 
-[(slides)](/pages/p_03_edge_detection/slides/), [(edge detection notebook)](/pages/p_03_edge_detection/edge_detection_nb/)
+## **Edge Detection** [(slides)](/pages/p_03_edge_detection/slides/), [(edge detection notebook)](/pages/p_03_edge_detection/edge_detection_nb/)
    - Intro to edges
    - Basic edge image
    - Edge thinning
@@ -43,8 +40,7 @@ bigimg: /img/FedTech-ComputerVision.jpg
 [(slides)](/pages/p_04_curve_fitting/slides/), [(least squares notebook)](/pages/p_04_curve_fitting/least_squares_nb/)<br/>
    work in progress...
 
-## **Image formation** 
-[(slides)](/pages/p_05_image_formation/slides/)<br/>
+## **Image formation** [(slides)](/pages/p_05_image_formation/slides/)
 
 - BRDF
 - Pinhole camera

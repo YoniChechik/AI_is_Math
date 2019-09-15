@@ -3,8 +3,7 @@ title: Image formation
 bigimg: /pages/p_05_image_formation/prism.jpg
 ---
 
-## **Image formation** 
-[(slides)](/pages/p_05_image_formation/slides/)<br/>
+## **Image formation** [(slides)](/pages/p_05_image_formation/slides/)
 
 - BRDF
 - Pinhole camera

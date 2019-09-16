@@ -6,6 +6,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 fig_size = (10,10)
+
+np.random.seed(123)
+
 # %%
 x_max = 10
 x_step = 0.01
@@ -173,7 +176,7 @@ std = 1
 y = y+np.random.normal(scale=std, size=x.shape)
 
 # add random noise unrelated to noisy line
-noise_sz = int(x.shape[0]*5)
+noise_sz = int(x.shape[0]*1)
 x_noise = np.random.uniform(x.min(), x.max(), size=noise_sz)
 y_noise = np.random.uniform(y.min(), y.max(), size=noise_sz)
 
@@ -203,7 +206,7 @@ def basic_ransac(x,TH):
     #====== build fitted line
     line_p1 = np.array([x.min(), b[0]*x.min()+b[1]])
     line_p2 = np.array([x.max(), b[0]*x.max()+b[1]])
-    inlier_ind = []
+    inliers_ind = []
     
     #====== distance of fit line from each sample to determine inliers
     for j in range(x.shape[0]):
@@ -213,38 +216,47 @@ def basic_ransac(x,TH):
         # |a X b| = |a||b|sin(t) -> |a X b|/|b| = |a|sin(t)
         d_j = np.linalg.norm(np.cross(line_p2-line_p1, line_p1-p_j))/np.linalg.norm(line_p2-line_p1)
         if d_j <= TH:
-            inlier_ind.append(j)
+            inliers_ind.append(j)
 
-    inlier_ind = np.array(inlier_ind)
-    return b, inlier_ind
+    inliers_ind = np.array(inliers_ind)
+    return b, inliers_ind
 
 #%%
 TH = 1
-best_inliers = np.array([])
-best_b = None
+num_cycles = 10
 
-inliers_inds_list = []
-for i in range(10):
-    b, inlier_ind = basic_ransac(x,TH)
-    inliers_inds_list.append(inlier_ind)
+num_best_inliers = 0
+best_cycle_ind = -1
+inliers_ind_list = []
+b_list = []
+
+for i in range(num_cycles):
+    b, inliers_ind = basic_ransac(x,TH)
+    inliers_ind_list.append(inliers_ind)
+    b_list.append(b)
 
     #====== save best model
-    if best_inliers.shape[0] < inlier_ind.shape[0]:
-        best_inliers = inlier_ind
-        best_b = b
-
-
+    if num_best_inliers < inliers_ind.shape[0]:
+        num_best_inliers = inliers_ind.shape[0]
+        best_cycle_ind = i
+#%%
 # plot best fit
-plt.figure(figsize=fig_size)
-ax = plt.gca()
-x_axis = np.arange(11)
-ax.plot(x_axis, best_b[0]*x_axis+best_b[1], 'r')
-ax.plot(x, y, '*')
-ax.plot(x[best_inliers], y[best_inliers], '*k')
-ax.set_xlim([0, 10])
-ax.set_ylim([0, 25])
-plt.title("best fit")
-plt.show()
+plt.rcParams['figure.figsize'] = [20, 20]
+
+for i in range(num_cycles):
+    plt.subplot(int(num_cycles/2), 2, i+1) 
+    ax = plt.gca()
+    x_axis = np.arange(11)
+    ax.plot(x_axis, b_list[i][0]*x_axis+ b_list[i][1], 'r')
+    ax.plot(x, y, '*')
+    ax.plot(x[inliers_ind_list[i]], y[inliers_ind_list[i]], '*k')
+    ax.set_xlim([0, 10])
+    ax.set_ylim([0, 25])
+    if i== best_cycle_ind:
+        plt.title("!!! BEST FIT !!! num inliers: "+ str(inliers_ind_list[i].shape[0]))
+    else:
+        plt.title("num inliers: "+ str(inliers_ind_list[i].shape[0]))
+
 
 
 #%%

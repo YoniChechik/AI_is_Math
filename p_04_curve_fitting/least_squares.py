@@ -1,7 +1,8 @@
 # %% [markdown]
 # # Least squares
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/p_04_curve_fitting/least_squares.ipynb)
-
+# ## Linear LS
+# Let's generate some noisy data
 # %%
 import numpy as np
 import matplotlib.pyplot as plt
@@ -23,8 +24,10 @@ plt.figure(figsize=fig_size)
 plt.plot(x, y, '*')
 plt.title("noisy data")
 
-# %%
-# calc LS matrices
+# %% [markdown]
+# ### calc LS matrices and result:
+# $$ Xb = y $$
+#%% 
 x_vec = x.reshape(-1, 1)
 X = np.concatenate((x_vec, np.ones(x_vec.shape)), axis=1)
 print(X.shape)
@@ -37,14 +40,19 @@ print(b)
 # plot fit results
 plt.figure(figsize=fig_size)
 plt.plot(x, y, '*')
-# x_axis = np.arange(x_max+x_step)
 plt.plot(x, b[0]*x+b[1], 'r')
 plt.title("noisy data + best LS fit. $b^T$="+str(b.T))
-# %%comparison to np.linalg.lstsq
+# %% [markdown]
+# ## Comparison to np.linalg.lstsq
+#%%
 b_np = np.linalg.lstsq(X, y_vec, rcond=None)[0]
 mse = np.mean((b-b_np)**2)
 print(mse)
-# %% vertical dataset
+# %% [markdown]
+# ## vertical dataset
+# As mentioned in the lecture, LS is not goog at fitting vertical dataset.
+# Let's generate data:
+#%%
 data_sz = 100
 x = np.ones(data_sz)
 y = np.arange(data_sz)
@@ -59,8 +67,9 @@ axes = plt.gca()
 axes.set_xlim([-3, 3])
 plt.title("noisy vertical data")
 
-# %%
-# calc LS matrices
+# %% [markdown]
+# Calc LS matrices and result
+#%%
 x_vec = x.reshape(-1, 1)
 X = np.concatenate((x_vec, np.ones(x_vec.shape)), axis=1)
 y_vec = y.reshape(-1, 1)
@@ -77,8 +86,10 @@ plt.plot(x_axis, b[0]*x_axis+b[1], 'r')
 plt.title("vertical data + best LS fit. $b^T$="+str(b.T))
 
 
-# %% TLS
-
+# %% [markdown]
+# ## TLS
+# Same vertical data, now with total least squares
+#%%
 X = np.concatenate((x.reshape(-1, 1)-np.mean(x),
                     y.reshape(-1, 1)-np.mean(y)), axis=1)
 
@@ -105,7 +116,9 @@ axes.set_xlim([-3, 3])
 axes.set_ylim([0, 100])
 plt.title("noisy vertical data + linear TLS fit")
 
-# %% non linear LS
+# %% [markdown]
+# ## Example for non linear LS
+#%%
 x_step = 0.01
 x = np.arange(-10, 10+x_step, x_step)
 
@@ -132,7 +145,10 @@ plt.plot(x, y, '*')
 plt.plot(x, b[0]*x**2+b[1]*x+b[2], 'r')
 plt.title("data + best LS fit. $b^T$="+str(b.T))
 
-# %% outliers
+# %% [markdown]
+# ## Outliers
+# As mentioned, LS has a problem with outliers:
+#%%
 x_max = 10
 
 x = np.arange(10)
@@ -189,7 +205,7 @@ x = np.concatenate((x, x_noise))
 y = np.concatenate((y, y_noise))
 
 #%% [markdown]
-# ### run naive RANSAC
+# ### Run RANSAC
 #%%
 
 def basic_ransac(x,TH):
@@ -256,7 +272,3 @@ for i in range(num_cycles):
         plt.title("!!! BEST FIT !!! num inliers: "+ str(inliers_ind_list[i].shape[0]))
     else:
         plt.title("num inliers: "+ str(inliers_ind_list[i].shape[0]))
-
-
-
-#%%

@@ -8,8 +8,8 @@
 import sys
 if 'google.colab' in sys.modules:
     ! apt-get install subversion
-    ! svn export https: // github.com/YoniChechik/AI_is_Math/trunk/p_04_curve_fitting/edge_bold.bmp
-    ! svn export https: // github.com/YoniChechik/AI_is_Math/trunk/p_04_curve_fitting/building.jpg
+    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/p_04_curve_fitting/edge_bold.bmp
+    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/p_04_curve_fitting/building.jpg
 
 # %%
 from matplotlib import pyplot as plt

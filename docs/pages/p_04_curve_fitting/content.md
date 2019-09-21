@@ -3,7 +3,7 @@ title: Curve fitting
 bigimg: /pages/p_04_curve_fitting/hough_example.jpg
 ---
 
-## **Curve fitting** [(slides)](/pages/p_04_curve_fitting/slides/)
+## **Curve fitting** [(slides)](/pages/p_04_curve_fitting/slides/), [(ex4)](/pages/p_04_curve_fitting/ex4/)
 - Linear least squares
 - Total least squares
 - Least squares [(Least squares & RANSAC notebook)](/pages/p_04_curve_fitting/least_squares_nb/)

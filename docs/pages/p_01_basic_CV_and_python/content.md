@@ -14,5 +14,3 @@ bigimg: /pages/p_01_basic_CV_and_python/intro.jpg
      - [NumPy tutorial notebook](/pages/p_01_basic_CV_and_python/3_NumPy_tutorial_nb/)
      - [Matplotlib tutorial notebook](/pages/p_01_basic_CV_and_python/4_Matplotlib_tutorial_nb/)
      - [OpenCV tutorial notebook](/pages/p_01_basic_CV_and_python/5_OpenCV_tutorial_nb/)
-
-[test iframe](/pages/p_01_basic_CV_and_python/test/)

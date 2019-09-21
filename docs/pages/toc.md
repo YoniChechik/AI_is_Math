@@ -4,7 +4,7 @@ bigimg: /img/FedTech-ComputerVision.jpg
 ---
 
 
-## **CV & Python basics** [(slides)](/pages/p_01_basic_CV_and_python/slides/)
+## **CV & Python basics** [(slides)](/pages/p_01_basic_CV_and_python/slides/), [(ex1)](/pages/p_01_basic_CV_and_python/ex1/)
    - Course details
    - What is computer vision (CV)?
    - Course outline
@@ -14,6 +14,8 @@ bigimg: /img/FedTech-ComputerVision.jpg
      - [NumPy tutorial notebook](/pages/p_01_basic_CV_and_python/3_NumPy_tutorial_nb/)
      - [Matplotlib tutorial notebook](/pages/p_01_basic_CV_and_python/4_Matplotlib_tutorial_nb/)
      - [OpenCV tutorial notebook](/pages/p_01_basic_CV_and_python/5_OpenCV_tutorial_nb/)
+
+[test iframe](/pages/p_01_basic_CV_and_python/test/)
 
 
 ## **Image processing** [(slides)](/pages/p_02_image_processing/slides/)
@@ -36,9 +38,16 @@ bigimg: /img/FedTech-ComputerVision.jpg
      - Frequency representation
      - Unsharp filter
 
-## **Curve fitting** 
-[(slides)](/pages/p_04_curve_fitting/slides/), [(least squares notebook)](/pages/p_04_curve_fitting/least_squares_nb/)<br/>
-   work in progress...
+## **Curve fitting** [(slides)](/pages/p_04_curve_fitting/slides/)
+- Linear least squares
+- Total least squares
+- Least squares [(Least squares & RANSAC notebook)](/pages/p_04_curve_fitting/least_squares_nb/)
+- RANSAC [(Least squares & RANSAC notebook)](/pages/p_04_curve_fitting/least_squares_nb/)
+- Hough transform [(Hough transform notebook)](/pages/p_04_curve_fitting/hough_transform_nb/)
+  - $(m,b)$ parameter space
+  - $(\rho,\theta)$ parameter space
+
+
 
 ## **Image formation** [(slides)](/pages/p_05_image_formation/slides/)
 

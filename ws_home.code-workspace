@@ -1,7 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "." // ws path
+			"path": "."
+		},
+		{
+			"path": "C:\\Users\\chech\\Google Drive\\cv_course\\ex_res"
 		}
 	],
 	"settings": 

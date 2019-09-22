@@ -1,6 +1,7 @@
 ---
 title: Edge detection
-bigimg: /pages/c_03_edge_detection/prewitt_grayscale.jpg
+subtitle: Table of contents
+bigimg: \pages\c_03_edge_detection\c_03_bigimg.jpg
 ---
 
 ## **Edge Detection** [(slides)](/pages/c_03_edge_detection/slides/), [(edge detection notebook)](/pages/c_03_edge_detection/edge_detection_nb/)

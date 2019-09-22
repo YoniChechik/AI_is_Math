@@ -1,8 +1,3 @@
----
-title: Image formation
-bigimg: /pages/c_05_image_formation/prism.jpg
----
-
 ## **Image formation** [(slides)](/pages/c_05_image_formation/slides/)
 
 - BRDF

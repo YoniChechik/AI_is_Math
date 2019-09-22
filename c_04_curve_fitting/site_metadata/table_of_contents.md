@@ -1,8 +1,3 @@
----
-title: Curve fitting
-bigimg: /pages/c_04_curve_fitting/hough_example.jpg
----
-
 ## **Curve fitting** [(slides)](/pages/c_04_curve_fitting/slides/), [(ex4)](/pages/c_04_curve_fitting/ex4/)
 - Linear least squares
 - Total least squares

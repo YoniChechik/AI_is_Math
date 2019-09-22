@@ -1,9 +1,3 @@
----
-title: CV & Python basics
-subtitle: Table of content
-bigimg: /pages/c_01_basic_CV_and_python/intro.jpg
----
-
 ## **CV & Python basics** [(slides)](/pages/c_01_basic_CV_and_python/slides/), [(ex1)](/pages/c_01_basic_CV_and_python/ex1/)
    - Course details
    - What is computer vision (CV)?

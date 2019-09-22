@@ -37,11 +37,11 @@ pages_path = os.path.join("..", "docs", "pages")
 subdirs = os.listdir(pages_path)
 subdirs.sort()
 for subdir in subdirs:
-	if not subdir.startswith("p_"):
+	if not subdir.startswith("c_"):
 		continue
 	fp = os.path.join(pages_path, subdir)
 
-	content_path = os.path.join(fp, "content.md")
+	content_path = os.path.join(fp, "table_of_contents.md")
 	with open(content_path) as f:
 		lines_arr = f.readlines()
 	lines = "".join(lines_arr)

@@ -1,9 +1,3 @@
----
-title: Basic CV and python
-subtitle: Ex1
-bigimg: \pages\c_01_basic_CV_and_python\c_01_bigimg.jpg
----
-
 # EX1
 Ex1 raw .py files are available for download in a .zip file [(direct download)](https://github.com/YoniChechik/AI_is_Math/raw/master/c_01_basic_CV_and_python/ex1/ex1.zip). Instructions are inside each .py file separately.
 

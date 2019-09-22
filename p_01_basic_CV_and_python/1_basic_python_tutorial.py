@@ -12,10 +12,10 @@
 # tutorials from [tutorialspoint](https://www.tutorialspoint.com/python)
 #
 # <hr>
+#
 # ## Introduction
 #
 # Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects. [Wikipedia]
-#
 #
 # - Python is Interpreted - Python is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP.
 #
@@ -26,7 +26,8 @@
 # - Popular Language for Data Analysis - Most of the time, you will need external packages to assist data analyses.
 #
 #  ![Python Packages](http://i.imgur.com/Q8trGd1.png)
-# ###PyCharm
+#
+# ### PyCharm
 #
 # Pycharm is currently (2019) the most commonly used IDE (Integrated development environment) for programing in python.
 #
@@ -38,8 +39,6 @@
 # Jupyter is an easy way to merge code and explanations in a beautiful way.
 #
 # The easiest way to interact with such notebook (.ipynb) is with [google colab](https://colab.research.google.com).
-#
-# If you are seeing this page in a  github, just enter in google colab to File-> 'github' label -> copy github path to see all available notebooks.
 #
 # Now you can run each cell independently or all cells combined through 'Runtime' section or the play button.
 #

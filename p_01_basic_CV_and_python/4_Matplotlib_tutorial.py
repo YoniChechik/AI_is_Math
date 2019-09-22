@@ -24,7 +24,6 @@ fig_size = (10, 10)
 # 
 # <img width=700 src="https://matplotlib.org/_images/anatomy1.png">
 #
-# As you can see, we have done things for many of the elements. There's no need to memorize them, though. We can always Google and find information on specific parts that we want to update.
 # ## Line plot
 # First we generate sample data
 

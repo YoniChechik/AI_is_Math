@@ -155,12 +155,12 @@ for letter in store_name:
 # ###One input one output
 
 #%%
-def F(n): # bonus- what this function does? 
-    if n<=0: 
+def F(n): # bonus- what does this function do? 
+    if n<0: 
         print("Incorrect input") 
+    elif n==0: 
+        return 0
     elif n==1: 
-        return 1
-    elif n==2: 
         return 1
     else: 
         return F(n-1)+F(n-2) 

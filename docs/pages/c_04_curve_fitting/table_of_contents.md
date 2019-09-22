@@ -1,7 +1,7 @@
 ---
 title: Curve fitting
 subtitle: Table of contents
-bigimg: \pages\c_04_curve_fitting\c_04_bigimg.jpg
+bigimg: /pages/c_04_curve_fitting/c_04_bigimg.jpg
 ---
 
 ## **Curve fitting** [(slides)](/pages/c_04_curve_fitting/slides/), [(ex4)](/pages/c_04_curve_fitting/ex4/)

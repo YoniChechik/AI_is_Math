@@ -120,7 +120,7 @@ def header_builder(title,subtitle,bigimg_path):
     header = "---\n"
     header += "title: "+ title+"\n"
     header += "subtitle: "+ subtitle+"\n"
-    header += "bigimg: "+ bigimg_path+"\n"
+    header += "bigimg: "+ bigimg_path.replace("\\","/")+"\n" #some kind of weird bug...
     header += "---\n\n"
     return header
 

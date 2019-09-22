@@ -6,7 +6,7 @@ bigimg: /img/FedTech-ComputerVision.jpg
 
 Hi! 
 
-[test html nb](/pages/python_pycharm_installation/edge_detection/)
+[test html nb](/pages/edge_detection/)
 
 If you are in this page it means that you want to start learning computer vision!
 

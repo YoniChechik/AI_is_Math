@@ -22,9 +22,7 @@ Starting here is **easy**.
 Each chapter of the course has it own slides, accompanied with .ipynb (known as ipython notebooks or jupyter notebooks).
 Jupyter notebook is an open-source web application that allows you to view and run python files (and others) that contain live code, equations, visualizations and more- **no need to install anything!**
 
-If you also want to run the selected notebook- simply click on the 3 circles logo in the Jupyter notebook navigation bar.
-
-![](images/2019-09-10-22-18-21.png)
+If you also want to run the selected notebook- simply search for this botton (![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)) at the top of every notebook.
 
 ### Download Python
 If you want to investigate further or debug your code, here is how to install [Python, Pycharm & packages.](/pages/python_pycharm_installation/python_pycharm_installation/)

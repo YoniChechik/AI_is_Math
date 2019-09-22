@@ -60,15 +60,15 @@ def run_on_one_class_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
 
 
 def run_on_one_dir(fp, site_docs_dir, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
-    # # ==== copy all relevant data to site_docs_dir
-    # for fn in os.listdir(fp):
-    #     file_fp = os.path.join(fp, fn)
-    #     if not (file_fp.endswith(".py") or
-    #             file_fp.endswith(".ipynb") or
-    #             file_fp.endswith(".pdf") or
-    #             file_fp.endswith(".pptx") or
-    #             os.path.isdir(file_fp)):
-    #         shutil.copyfile(file_fp,os.path.join(site_docs_dir, fn))
+    # ==== copy all relevant data to site_docs_dir
+    for fn in os.listdir(fp):
+        file_fp = os.path.join(fp, fn)
+        if not (file_fp.endswith(".py") or
+                file_fp.endswith(".ipynb") or
+                file_fp.endswith(".pdf") or
+                file_fp.endswith(".pptx") or
+                os.path.isdir(file_fp)):
+            shutil.copyfile(file_fp,os.path.join(site_docs_dir, fn))
 
     # ==== run on all files
     for fn in os.listdir(fp):
@@ -96,4 +96,4 @@ def run_on_one_dir(fp, site_docs_dir, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
 if __name__ == "__main__":
     # dir_list = [r'C:\Users\chech\Desktop\AI_is_Math\c_01_basic_CV_and_python']
     # run_on_class_dir_list(dir_list, do_py2ipynb=1, do_ppt=1)
-    run_on_all_classes(do_py2ipynb=1, do_ppt=1)
+    run_on_all_classes(do_py2ipynb=0, do_ppt=0)

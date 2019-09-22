@@ -1,6 +1,6 @@
 # %% [markdown]
 # # Hough transform
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_04_curve_fitting/hough_transform.ipynb)
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_04_curve_fitting/site_data/hough_transform.ipynb)
 # ## Prep
 
 # %%

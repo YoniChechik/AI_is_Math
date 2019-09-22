@@ -9,6 +9,7 @@ import sys
 if 'google.colab' in sys.modules:
     ! apt-get install subversion
     ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_04_curve_fitting/ex4/circles.bmp
+    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_04_curve_fitting/ex4/coins.png
 
 # %%
 from matplotlib import pyplot as plt

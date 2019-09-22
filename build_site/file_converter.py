@@ -33,7 +33,7 @@ def run_on_one_class_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
     if not os.path.exists(site_docs_dir):
         os.mkdir(site_docs_dir)
 
-    # === run on  class dir data
+    # === run on class dir data
     run_on_one_dir(fp, site_docs_dir, do_py2ipynb=do_py2ipynb, do_py_exec=do_py_exec, do_ppt=do_ppt)
 
     # ==== run on "ex#" dir
@@ -49,7 +49,7 @@ def run_on_one_class_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
             fp_ex = os.path.join(fp, ex_subdir)
 
             # ==== only convert py2ipynb, no need to execute the nb
-            run_on_one_dir(fp, site_docs_ex_dir_path, do_py2ipynb=1, do_py_exec=0, do_ppt=0)
+            run_on_one_dir(fp_ex, site_docs_ex_dir_path, do_py2ipynb=1, do_py_exec=0, do_ppt=0)
 
             # ==== zip ex files
             print("\n===== zipping ex =====\n")
@@ -60,15 +60,15 @@ def run_on_one_class_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
 
 
 def run_on_one_dir(fp, site_docs_dir, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
-    # ==== copy all relevant data to site_docs_dir
-    for fn in os.listdir(fp):
-        file_fp = os.path.join(fp, fn)
-        if not (file_fp.endswith(".py") or
-                file_fp.endswith(".ipynb") or
-                file_fp.endswith(".pdf") or
-                file_fp.endswith(".pptx") or
-                os.path.isdir(file_fp)):
-            shutil.copyfile(file_fp,os.path.join(site_docs_dir, fn))
+    # # ==== copy all relevant data to site_docs_dir
+    # for fn in os.listdir(fp):
+    #     file_fp = os.path.join(fp, fn)
+    #     if not (file_fp.endswith(".py") or
+    #             file_fp.endswith(".ipynb") or
+    #             file_fp.endswith(".pdf") or
+    #             file_fp.endswith(".pptx") or
+    #             os.path.isdir(file_fp)):
+    #         shutil.copyfile(file_fp,os.path.join(site_docs_dir, fn))
 
     # ==== run on all files
     for fn in os.listdir(fp):

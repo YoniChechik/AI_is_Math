@@ -1,6 +1,6 @@
 #%% [markdown]
 # #Python Workshop: NumPy
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_01_basic_CV_and_python/site_data/site_data3_NumPy_tutorial.ipynb)
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_01_basic_CV_and_python/site_docs/3_NumPy_tutorial.ipynb)
 # 
 # <hr>
 # 

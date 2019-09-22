@@ -1,6 +1,6 @@
 # %% [markdown]
 # # Noise and filtering
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_02_image_processing/site_data/noise_and_filtering.ipynb)
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_02_image_processing/site_docs/noise_and_filtering.ipynb)
 # ## Prep
 
 #%%

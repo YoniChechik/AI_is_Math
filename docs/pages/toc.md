@@ -15,8 +15,6 @@ bigimg: /img/FedTech-ComputerVision.jpg
      - [Matplotlib tutorial notebook](/pages/p_01_basic_CV_and_python/4_Matplotlib_tutorial_nb/)
      - [OpenCV tutorial notebook](/pages/p_01_basic_CV_and_python/5_OpenCV_tutorial_nb/)
 
-[test iframe](/pages/p_01_basic_CV_and_python/test/)
-
 
 ## **Image processing** [(slides)](/pages/p_02_image_processing/slides/)
    - Image representation
@@ -38,7 +36,7 @@ bigimg: /img/FedTech-ComputerVision.jpg
      - Frequency representation
      - Unsharp filter
 
-## **Curve fitting** [(slides)](/pages/p_04_curve_fitting/slides/)
+## **Curve fitting** [(slides)](/pages/p_04_curve_fitting/slides/), [(ex4)](/pages/p_04_curve_fitting/ex4/)
 - Linear least squares
 - Total least squares
 - Least squares [(Least squares & RANSAC notebook)](/pages/p_04_curve_fitting/least_squares_nb/)

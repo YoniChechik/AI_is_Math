@@ -56,5 +56,6 @@ def run_on_one_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
 
 
 if __name__ == "__main__":
-    # run_on_dir_list(dir_list, do_py2ipynb=1, do_py_exec=1, do_ppt=1)
-    run_on_all(do_py2ipynb=1, do_py_exec=1, do_ppt=0)
+    dir_list = [r'C:\Users\jonathanch\Desktop\AI_is_Math\p_01_basic_CV_and_python']
+    run_on_dir_list(dir_list, do_py2ipynb=1, do_py_exec=1, do_ppt=0)
+    # run_on_all(do_py2ipynb=1, do_py_exec=0, do_ppt=0)

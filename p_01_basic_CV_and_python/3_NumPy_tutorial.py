@@ -1,6 +1,7 @@
 #%% [markdown]
 # #Python Workshop: NumPy
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/p_01_basic_CV_and_python/3_NumPy_tutorial.ipynb)
+# 
 # <hr>
 # 
 # Based on:
@@ -8,30 +9,22 @@
 # This [git](https://github.com/zhiyzuo/python-tutorial) of Zhiya Zuo
 # 
 # <hr>
+# 
 # NumPy is the fundamental package for scientific computing with Python. It contains among other things:
 # 
-# - a powerful N-dimensional array object.
+# - Powerful N-dimensional array object.
+# - Useful linear algebra, Fourier transform, and random number capabilities.
+# - And much more
 # 
-# - sophisticated (broadcasting) functions.
+# <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/NumPy_logo.svg" alt="numpy logo" width="200"/>
 # 
-# - tools for integrating C/C++ and Fortran code.
-# 
-# - useful linear algebra, Fourier transform, and random number capabilities.
-# 
-# [https://www.numpy.org/]
-# 
-# <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/NumPy_logo.svg" alt="numpy logo" width="300"/>
-# 
-# 
-# ##NumPy installation
+# ## NumPy installation
 # 
 # in the cmd run:
 # 
 # ```bash
 # pip install numpy
 # ```
-# 
-# 
 # ## Arrays
 
 #%%
@@ -57,21 +50,18 @@ y = np.array([1, 'yes']) #automatic type conversion from int to str
 y
 
 #%% [markdown]
-# ###Multidimensional arrays
+# ### Multidimensional arrays
 
 #%%
 arr = np.array([[1,2,3,8]])
 arr.shape
 
-
 #%%
 arr
-
 
 #%%
 arr = np.array([[1,2,3,8], [3,2,3,2], [4,5,0,8]])
 arr.shape
-
 
 #%%
 arr
@@ -98,18 +88,14 @@ np.eye(3)
 #%%
 arr
 
-
 #%%
 arr - 5
-
 
 #%%
 arr * 6 # element-vise multiplication
 
-
 #%%
 arr * arr #element-vise multiplication of two matrices
-
 
 #%%
 np.exp(arr)
@@ -121,7 +107,6 @@ np.exp(arr)
 arr_2 = np.array([[1], [3], [2], [0]])
 arr_2
 
-
 #%%
 arr_2_T = arr_2.T # transpose
 arr_2_T
@@ -130,14 +115,11 @@ arr_2_T
 #%%
 arr @ arr_2 # matrix multiplication
 
-
 #%%
 arr
 
-
 #%%
 arr.max()
-
 
 #%%
 arr.cumsum()
@@ -152,28 +134,24 @@ arr.cumsum()
 arr.cumsum(axis=1)
 
 #%% [markdown]
-# ###Note about 1d arrays
+# ### Note about 1d arrays
 # 1d array is **not a column vector** & **not entirely a row vector** and hence should be treated carefully when used with vector/matrix manipulation
 
 #%%
 a = np.array([1,2,3])
 a, a.shape
 
-
 #%%
 c = np.array([[1,2,3]])
 c, c.shape # notice the shape diff
-
 
 #%%
 # can be multiply like a row vector
 b=np.array([[1,2],[3,4],[5,6]])
 b
 
-
 #%%
 a @ b
-
 
 #%%
 # can't be transformed!
@@ -196,18 +174,14 @@ print(a_2d.T)
 a1 = np.array([1,2,8,100])
 a1
 
-
 #%%
 a1[0]
-
 
 #%%
 a1[-2]
 
-
 #%%
 a1[[0,1,3]]
-
 
 #%%
 a1[1:4]
@@ -281,12 +255,8 @@ arr_3
 #%%
 arr_3[0]
 
-
 #%%
 arr_3[:, 3, 1]
 
-
 #%%
 arr_3[2, 3, 1]
-
-

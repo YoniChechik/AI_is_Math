@@ -1,7 +1,9 @@
 # %% [markdown]
 # # Python Workshop: Basics I
+#
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/p_01_basic_CV_and_python/1_basic_python_tutorial.ipynb)
-# <hr>
+#
+#  <hr>
 #
 # Based on:
 #
@@ -15,13 +17,13 @@
 #
 # ## Introduction
 #
-# Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects. [Wikipedia]
+# Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability. The language construction and object-oriented approach aims to help programmers write clear, logical code for small and large-scale projects. [Wikipedia]
 #
-# - Python is Interpreted - Python is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL and PHP.
+# - Python is Interpreted - Python is processed at runtime by the interpreter. You do not need to compile your program before executing it. This is similar to PERL, PHP and MATLAB.
 #
 # - Python is Interactive - You can actually sit at a Python prompt and interact with the interpreter directly to write your programs.
 #
-# - Python is Object-Oriented - Python supports Object-Oriented style or technique of programming that encapsulates code within objects
+# - Python is Object-Oriented - Python supports Object-Oriented style or technique of programming that encapsulates code within objects.
 #
 # - Popular Language for Data Analysis - Most of the time, you will need external packages to assist data analyses.
 #
@@ -33,23 +35,24 @@
 #
 # for complete tutorial on **installation** of Python + Pycharm + additional packages please refer to [this](https://github.com/YoniChechik/AI_is_Math/blob/master/python_pycharm_installation/python_pycharm_installation.md) page.
 #
-# <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/PyCharm_Logo.svg" alt="pycharm logo" width="300"/>
+# <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/PyCharm_Logo.svg" alt="pycharm logo" width="200"/>
+#
 # ### Jupyter notebook
 #
 # Jupyter is an easy way to merge code and explanations in a beautiful way.
 #
-# The easiest way to interact with such notebook (.ipynb) is with [google colab](https://colab.research.google.com).
+# The easiest way to interact with such notebook (.ipynb) is with [google colab](https://colab.research.google.com). There you can run each cell independently or all cells combined through 'Runtime' section or the play button.
 #
-# Now you can run each cell independently or all cells combined through 'Runtime' section or the play button.
+# the main disadvantage of google colab is that debugging there is problematic.
 #
-# <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" alt="jupyter logo" width="300"/>
+# <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" alt="jupyter logo" width="200"/>
 #
 # ### Naming convention
+# 
 # There are two commonly used style in programming:
 #
 # 1. __camelCase__
 # 2. __snake_case__ or __lower_case_with_underscore__
-#
 #
 # Always make sure you use one convention consistently across one project.
 #
@@ -62,10 +65,9 @@ x_3 = "xyz"  # valid
 # 3_x = "456" # invalid. Numbers cannot be in the first position.
 
 # %% [markdown]
-# ###Lines and indentation
-# Python provides no braces to indicate blocks of code for class and function definitions or flow control. Blocks of code are denoted by line indentation, which is rigidly enforced.
-#
-# The number of spaces in the indentation is variable, but all statements within the block must be indented the same amount.
+# ### Lines and indentation
+# Python doesn't need braces to indicate blocks of code for class and function definitions or flow control. 
+# Blocks of code are denoted by line indentation (Tabs), which is rigidly enforced.
 
 # %%
 if True:
@@ -74,16 +76,21 @@ else:
     print("False")
 
 # %% [markdown]
-# ###Indexing
+# ### Indexing
 #
-# Indexing in python start from 0 (like c, unlike Matlab).
-#
-#
+# Indexing in python start from 0 (like c, unlike Matlab). Accessing a range of list/array is, by convetion, `some_list[start_ind:end_ind_minus_one]`
 #
 
 # %%
 x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-y = x[0:2]
+
+y = x[0] #get element 0 
+print("y = " + str(y))
+
+y = x[2] #get element 2 
+print("y = " + str(y))
+
+y = x[0:2] #get elements 0,1
 print("y = " + str(y))
 
 y = x[:2]  # same as [0:2]
@@ -97,8 +104,6 @@ print("y = " + str(y))
 
 # %% [markdown]
 # You can also go to last element easily:
-#
-#
 
 # %%
 y = x[-1]  # last element
@@ -128,21 +133,17 @@ print("y = " + str(y))
 
 # %% [markdown]
 # ## Primitives
-# %% [markdown]
-# In this section, we go over some common [primitive](https://www.datacamp.com/community/tutorials/data-structures-python#adt) data types in Python. While the word _primitive_ looks obscure, we can think of it as the most basic data type that cannot be further decomposed into simpler ones.
-#
-# I categorize them into several subsections based on the values they represent.
-# %% [markdown]
+# In this section, we go over some common primitive data types in Python.
+# While the word _primitive_ looks obscure, we can think of it as the most basic data type that cannot be further decomposed into simpler ones.
 # ### Numbers
-# %% [markdown]
-# For numbers w/o fractional parts, we say they are ___integer___. In Python, they are called `int`
+# numbers without fractional partsare called ___integer___. In Python, they are abbreviated as `int`
 
 # %%
 x = 3
 type(x)
 
 # %% [markdown]
-# For numbers w/ fractional parts, they are floating point numbers. They are named `float` in Python.
+# numbers with fractional part are floating point numbers. They are named `float` in Python.
 
 # %%
 y = 3.0
@@ -168,7 +169,6 @@ z
 
 # %% [markdown]
 # ### Boolean
-# %% [markdown]
 # Boolean type comes in handy when we need to check conditions. For example:
 
 # %%
@@ -178,7 +178,7 @@ print(compare_result)
 print(type(compare_result))
 
 # %% [markdown]
-# There are two and only two valid Boolean values: `True` and `False`. We can also think of them as `1` and `0`, respectively.
+# There are two valid Boolean values: `True` and `False`. We can also think of them as `1` and `0`, respectively.
 
 # %%
 my_error > 0
@@ -191,7 +191,6 @@ my_error > 0
 
 # %% [markdown]
 # ### Strings
-# %% [markdown]
 # In Python, we use `str` type for storing letters, words, and any other characters.
 #
 # To initialize a string variable, you can use either double or single quotes.
@@ -233,11 +232,8 @@ print(my_str1[2:6])
 
 # %% [markdown]
 # ## Data Structures
-# %% [markdown]
 # In this section, we discuss some ___nonprimitive___ data structures in Python.
-# %% [markdown]
 # ### List
-# %% [markdown]
 # Initialize a list with brackets. You can store anything in a list, even if they are different types
 #
 
@@ -290,7 +286,6 @@ a_list + b_list
 
 # %% [markdown]
 # ### Tuple
-# %% [markdown]
 # Tuple is a special case of list whose elements cannot be changed (immutable).
 #
 # Initialize a tuple with parenthesis:
@@ -317,7 +312,6 @@ print(type(b_tuple))
 
 # %% [markdown]
 # ### Dictionary
-# %% [markdown]
 #  Dictionary: key-value pairs
 #
 # Initialize a dict by curly brackets `{}`

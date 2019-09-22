@@ -1,7 +1,7 @@
 #%% [markdown]
-# #Python Workshop: Basics II
+# # Python Workshop: Basics II
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/p_01_basic_CV_and_python/2_basic_python_tutorial_cont.ipynb)
-
+#
 # <hr>
 # 
 # Based on:
@@ -13,6 +13,7 @@
 # tutorials from [tutorialspoint](https://www.tutorialspoint.com/python)
 # 
 # <hr>
+#
 # ## Control Logics
 # 
 # In the following examples, we show examples of comparison, `if-else` loop, `for` loop, and `while` loop.
@@ -27,10 +28,8 @@
 #%%
 3 == 5 
 
-
 #%%
 72 >= 2
-
 
 #%%
 test_str = "test"
@@ -57,7 +56,6 @@ else:
 #%%
 store_name = 'Walmart'
 
-
 #%%
 if 'Wal' in store_name:
     print("The store is not Walmart. It's " + store_name + ".")
@@ -75,6 +73,8 @@ for letter in store_name:
 # `range()` is a function to create integer sequences:
 
 #%%
+a_range = range(5)
+print(a_range)
 print("range(5) gives" + str(list(range(5)))) # By default starts from 0
 print("range(1,9) gives: " + str(list(range(1, 9)))) # From 1 to 8 (Again the end index is exclusive.)
 
@@ -85,8 +85,7 @@ for index in range(len(store_name)): # length of a sequence
 
 #%% [markdown]
 # #### List comprehensions 
-#%% [markdown]
-# List comprehensions provide a concise way to create lists:
+# List comprehensions provides an easy way to create lists:
 
 #%%
 x = [i for i in range(10)]
@@ -116,12 +115,10 @@ while x < 10:
 
 #%% [markdown]
 # #### Notes on `break` and `continue`
-#%% [markdown]
 # `break` means get out of the loop immediately. Any code after the `break` will NOT be executed.
 
 #%%
 store_name = 'Walmart'
-
 
 #%%
 index = 0
@@ -145,7 +142,6 @@ for letter in store_name:
 
 #%% [markdown]
 # ## Functions
-#%% [markdown]
 # Structure of a function
 # ```python
 # def func_name(arg1, arg2, arg3, ...):
@@ -155,8 +151,7 @@ for letter in store_name:
 #     return output
 # ```
 # 
-# \* *`return output` is NOT required*
-#%% [markdown]
+# return output` is **NOT** required
 # ###One input one output
 
 #%%
@@ -182,7 +177,6 @@ print(F(7))
 
 #%% [markdown]
 # ###Multiple outputs
-#%% [markdown]
 # reference- geometric sequence equations:
 # 
 # $a_n = a_1 \cdot q^{n-1}$
@@ -222,7 +216,6 @@ print(geo_seq_optional_args(2, n=2))
 
 #%% [markdown]
 # ##Classes
-#%% [markdown]
 # As been said before- Python is object oriented programing (OOP) language, so every variable is actually an instance of some class.
 # 
 # Here are some class basics:
@@ -259,9 +252,7 @@ emp2.display_employee()
 
 #%% [markdown]
 # ## FIle I/O
-#%% [markdown]
 # This section is about some basics on reading and writing data, in Python native style
-#%% [markdown]
 # ### Write data to a file
 
 #%%
@@ -272,7 +263,6 @@ f.close() # close the filer handler for security reasons.
 
 #%% [markdown]
 # *Note that without the typecasting from `int` to `str`, an error will be raised.*
-#%% [markdown]
 # A more commonly used way:
 
 #%%
@@ -293,7 +283,6 @@ with open("tmp2.csv", "a") as f: # 'a' == append to end of file
 
 #%% [markdown]
 # ### Read data to a file
-#%% [markdown]
 # To read a text file into Python, we use `r` mode (for _read_)
 
 #%%
@@ -316,11 +305,8 @@ os.remove("tmp1.csv")
 os.remove("tmp2.csv")
 #%% [markdown]
 # ## Packages
-#%% [markdown]
 # Often times, we need either internal or external help for complicated computation tasks. In these occasions, we need to _import packages_. 
-#%% [markdown]
 # ### Built-in packages
-#%% [markdown]
 # Python provides many built-in packages to prevent extra work on some common and useful functions
 # 
 # We will use __math__ as an example.
@@ -349,7 +335,6 @@ print(exp(x)) # This way, you don't need to use math.exp but just exp
 #%%
 from math import * # Import all functions - not recommended do to overriding of functions
 
-
 #%%
 print(exp(x))
 print(log(x)) # Before importing math, calling `exp` or `log` will raise errors
@@ -363,18 +348,15 @@ m.exp(3)
 
 #%% [markdown]
 # Depending on what you want to achieve, you may want to choose between importing a few or all (by `*`) functions within a package.
-#%% [markdown]
 # ### External Packages
-#%% [markdown]
 # There are times you'll want some advanced utility functions not provided by Python. There are many useful packages by developers.
 # 
 # We'll use __numpy__ as an example. (__numpy__, __scipy__, __matplotlib__,and probably __pandas__ will be of the most importance to you for data analyses.
 # 
 # Installation of packages for Python is the easiest using <a href="https://packaging.python.org/installing/" target="_blank">pip</a>:
-#%% [markdown]
 # ```bash
 # ~$ pip install numpy
 # ```
-#%% [markdown]
 # We'll see use for external packages later on.
 
+#%%

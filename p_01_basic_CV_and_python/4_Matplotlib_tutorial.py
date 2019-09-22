@@ -1,7 +1,8 @@
 #%% [markdown]
 # #Python Workshop: Matplotlib
+#
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/p_01_basic_CV_and_python/4_Matplotlib_tutorial.ipynb)
-
+#
 # <hr>
 # 
 # Based on:
@@ -105,7 +106,6 @@ mu, sigma = 15, 1
 gaussian_arr = np.random.normal(mu, sigma, size=10000)
 np.mean(gaussian_arr), np.std(gaussian_arr, ddof=1)
 
-
 #%%
 fig, ax = plt.subplots(figsize=fig_size)
 # `hist()` will return something but we usually do not need.
@@ -122,7 +122,7 @@ freq_arr, bin_arr, _ = ax.hist(gaussian_arr, facecolor='g', alpha=0.3)
 ax.grid()
 
 #%% [markdown]
-# ##3D plots
+# ## 3D plots
 
 #%%
 from mpl_toolkits.mplot3d import Axes3D
@@ -139,9 +139,8 @@ ax.plot(x, y, z, label='parametric curve')
 ax.legend()
 
 #%% [markdown]
-# ##Note on IDE plotting
+# ## Note on IDE plotting
 # In regular IDE plotting, after each plot one should put
-# 
 # 
 # ```
 # plt.show()
@@ -150,7 +149,6 @@ ax.legend()
 # 
 # A way to overcome this is running:
 # 
-# 
 # ```
 # plt.show(block=False)
 # ```
@@ -158,6 +156,3 @@ ax.legend()
 # 
 # My preferred solution is running with `block=False` to all figures except the last one.
 # 
-# 
-# 
-

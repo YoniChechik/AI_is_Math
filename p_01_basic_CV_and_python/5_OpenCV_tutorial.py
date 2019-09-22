@@ -1,6 +1,7 @@
 #%% [markdown]
 # # Python Workshop: OpenCV
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/p_01_basic_CV_and_python/5_OpenCV_tutorial.ipynb)
+# 
 # <hr>
 # 
 # Based on:
@@ -8,6 +9,7 @@
 # http://www.dmi.unict.it/~furnari/teaching/CV1617/lab0/
 # 
 # <hr>
+# 
 # ## Introduction
 # OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products.
 # [https://opencv.org/about/]

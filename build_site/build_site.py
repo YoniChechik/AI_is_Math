@@ -22,45 +22,42 @@ bigimg: /img/FedTech-ComputerVision.jpg
 
 
 def html_float_bar(url_content,url_image,title):
-		html_str = """\n
+	html_str = """\n
 <div class="mycont">
 		<a href="{}"><img class="hoverImages" src="{}">
 		<div class="bottom-left"> 
 				<h1>{}</h1>
 		</div>
 </div>
-		""".format(url_content,url_image,title)
-		return html_str
+	""".format(url_content,url_image,title)
+	return html_str
 
 
 pages_path = os.path.join("..", "docs", "pages")
 subdirs = os.listdir(pages_path)
 subdirs.sort()
 for subdir in subdirs:
-		if not subdir.startswith("p_"):
-				continue
-		fp = os.path.join(pages_path, subdir)
+	if not subdir.startswith("p_"):
+		continue
+	fp = os.path.join(pages_path, subdir)
 
-		content_path = os.path.join(fp, "content.md")
-		with open(content_path) as f:
-				lines_arr = f.readlines()
-		lines = "".join(lines_arr)
+	content_path = os.path.join(fp, "content.md")
+	with open(content_path) as f:
+		lines_arr = f.readlines()
+	lines = "".join(lines_arr)
 
-		# ==== build toc
-		toc += lines.split("---\n")[-1]+"\n"
+	# ==== build toc
+	toc += lines.split("---\n")[-1]+"\n"
 
-		# ===== build main
-		if subdir == "p_00_python_pycharm_installation":
-			url_content = "\\pages\\p_00_python_pycharm_installation\\python_pycharm_installation\\"
-		else:
-			url_content = "\\"+"\\".join(content_path.split("\\")[2:])[:-3]+"\\"
-		url_image = [line for line in lines_arr if line.startswith("bigimg:")][0].split("bigimg:")[-1].split()[-1]
-		title = " ".join([line for line in lines_arr if line.startswith("title:")][0].split("title:")[-1].split())
+	# ===== build main
+	url_content = "\\"+"\\".join(content_path.split("\\")[2:])[:-3]+"\\"
+	url_image = [line for line in lines_arr if line.startswith("bigimg:")][0].split("bigimg:")[-1].split()[-1]
+	title = " ".join([line for line in lines_arr if line.startswith("title:")][0].split("title:")[-1].split())
 
-		main+=html_float_bar(url_content,url_image,title)
+	main+=html_float_bar(url_content,url_image,title)
 
 
 with open(os.path.join(pages_path, "toc.md"), "w+") as f:
-		f.write(toc)
+	f.write(toc)
 with open(os.path.join(pages_path,"..", "index.html"), "w+") as f:
-		f.write(main)
+	f.write(main)

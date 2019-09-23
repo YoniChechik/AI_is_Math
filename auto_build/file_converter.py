@@ -60,15 +60,20 @@ def run_on_one_class_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
 
 
 def run_on_one_dir(fp, site_docs_dir, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
-    # ==== copy all relevant data to site_docs_dir
-    for fn in os.listdir(fp):
-        file_fp = os.path.join(fp, fn)
-        if not (file_fp.endswith(".py") or
-                file_fp.endswith(".ipynb") or
-                file_fp.endswith(".pdf") or
-                file_fp.endswith(".pptx") or
-                os.path.isdir(file_fp)):
-            shutil.copyfile(file_fp,os.path.join(site_docs_dir, fn))
+    
+    # ==== tmp copy all relevant data to site_docs_dir for executing
+    if do_py_exec:
+        copied_fp_list = []
+        for fn in os.listdir(fp):
+            file_fp = os.path.join(fp, fn)
+            if not (file_fp.endswith(".py") or
+                    file_fp.endswith(".ipynb") or
+                    file_fp.endswith(".pdf") or
+                    file_fp.endswith(".pptx") or
+                    os.path.isdir(file_fp)):
+                copied_fp = os.path.join(site_docs_dir, fn)
+                shutil.copyfile(file_fp,copied_fp)
+                copied_fp_list.append(copied_fp)
 
     # ==== run on all files
     for fn in os.listdir(fp):
@@ -91,7 +96,11 @@ def run_on_one_dir(fp, site_docs_dir, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
                 print("executing .ipynb: \n" + fn)
                 os.system(
                     "jupyter nbconvert --ExecutePreprocessor.timeout=60 --to notebook --execute --inplace \""+out_ipynb+"\"")
-
+    
+    # ==== remove all tmp copied files
+    if do_py_exec:
+        for copied_fp in copied_fp_list:
+            os.remove(copied_fp)
 
 if __name__ == "__main__":
     # dir_list = [r'C:\Users\chech\Desktop\AI_is_Math\c_01_basic_CV_and_python']

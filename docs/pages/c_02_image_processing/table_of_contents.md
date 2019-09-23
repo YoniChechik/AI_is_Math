@@ -2,6 +2,7 @@
 title: Image processing
 subtitle: Table of contents
 bigimg: /pages/c_02_image_processing/c_02_bigimg.jpg
+layout: page
 ---
 
 ## **Image processing** [(slides)](/pages/c_02_image_processing/slides/)

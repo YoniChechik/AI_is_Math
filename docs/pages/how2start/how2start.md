@@ -6,8 +6,6 @@ bigimg: /img/FedTech-ComputerVision.jpg
 
 Hi! 
 
-[test html nb](/pages/edge_detection/)
-
 If you are in this page it means that you want to start learning computer vision!
 
 The goal of this site is that you will be able to learn how to implement computer vision algorithms, and also learn the math behind it, because after all- **AI is Math**.

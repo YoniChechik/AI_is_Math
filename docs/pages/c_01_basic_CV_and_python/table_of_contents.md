@@ -2,6 +2,7 @@
 title: Basic CV and python
 subtitle: Table of contents
 bigimg: /pages/c_01_basic_CV_and_python/c_01_bigimg.jpg
+layout: page
 ---
 
 ## **CV & Python basics** [(slides)](/pages/c_01_basic_CV_and_python/slides/), [(ex1)](/pages/c_01_basic_CV_and_python/ex1/)

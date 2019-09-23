@@ -8,11 +8,11 @@ bigimg: /img/FedTech-ComputerVision.jpg
    - What is computer vision (CV)?
    - Course outline
    - Intro to Python
-     - [Basic python tutorial notebook- part 1](/pages/c_01_basic_CV_and_python/1_basic_python_tutorial_nb/)
-     - [Basic python tutorial notebook- part 2](/pages/c_01_basic_CV_and_python/2_basic_python_tutorial_cont_nb/)
-     - [NumPy tutorial notebook](/pages/c_01_basic_CV_and_python/3_NumPy_tutorial_nb/)
-     - [Matplotlib tutorial notebook](/pages/c_01_basic_CV_and_python/4_Matplotlib_tutorial_nb/)
-     - [OpenCV tutorial notebook](/pages/c_01_basic_CV_and_python/5_OpenCV_tutorial_nb/)
+     - [Basic python tutorial notebook- part 1](/pages/c_01_basic_CV_and_python/basic_python_tutorial_nb/)
+     - [Basic python tutorial notebook- part 2](/pages/c_01_basic_CV_and_python/basic_python_tutorial_part_2_nb/)
+     - [NumPy tutorial notebook](/pages/c_01_basic_CV_and_python/NumPy_tutorial_nb/)
+     - [Matplotlib tutorial notebook](/pages/c_01_basic_CV_and_python/Matplotlib_tutorial_nb/)
+     - [OpenCV tutorial notebook](/pages/c_01_basic_CV_and_python/OpenCV_tutorial_nb/)
 
 
 ## **Image processing** [(slides)](/pages/c_02_image_processing/slides/)
@@ -41,8 +41,8 @@ bigimg: /img/FedTech-ComputerVision.jpg
 - Least squares [(Least squares & RANSAC notebook)](/pages/c_04_curve_fitting/least_squares_nb/)
 - RANSAC [(Least squares & RANSAC notebook)](/pages/c_04_curve_fitting/least_squares_nb/)
 - Hough transform [(Hough transform notebook)](/pages/c_04_curve_fitting/hough_transform_nb/)
-  - $(m,b)$ parameter space
-  - $(\rho,\theta)$ parameter space
+  - (m,b) parameter space
+  - (r,theta) parameter space
 
 
 

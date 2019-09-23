@@ -11,6 +11,6 @@ layout: page
 - Least squares [(Least squares & RANSAC notebook)](/pages/c_04_curve_fitting/least_squares_nb/)
 - RANSAC [(Least squares & RANSAC notebook)](/pages/c_04_curve_fitting/least_squares_nb/)
 - Hough transform [(Hough transform notebook)](/pages/c_04_curve_fitting/hough_transform_nb/)
-  - $(m,b)$ parameter space
-  - $(\rho,\theta)$ parameter space
+  - (m,b) parameter space
+  - (r,theta) parameter space
 

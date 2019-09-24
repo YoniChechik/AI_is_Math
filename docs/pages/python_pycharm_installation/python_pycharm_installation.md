@@ -4,13 +4,13 @@ subtitle: Learn how to Downloads the essentials for working with Python from you
 bigimg: /img/FedTech-ComputerVision.jpg
 ---
  
-- [Install python 3.6.8 interpreter](#install-python-368-interpreter)
+- [Install Python interpreter](#install-python-interpreter)
 - [Install PyCharm community IDE](#install-pycharm-community-ide)
   - [First test script](#first-test-script)
 - [Install python packages](#install-python-packages)
   - [Test package installation](#test-package-installation)
-
-## Install python 3.6.8 interpreter
+ 
+## Install Python interpreter
 
 Python interpreter is the program that will run our actual Python code. The default downloaded interpreter is also called “base interpreter”, and for each project it’s recommended to open a new virtual environment (“venv”) with its own “project interpreter”.
 
@@ -22,7 +22,7 @@ Python interpreter is the program that will run our actual Python code. The defa
    
     (it is preferable to download the python base interpreter to the installer’s suggested place if you don’t have default admin privileges on the computer [i.e.: C:\Users\chech\AppData\Local\Programs\Python])
 
-    ![image](images/python_installer_1.png)
+    ![image](images/pythonsetup.jpg)
 
 ## Install PyCharm community IDE
 

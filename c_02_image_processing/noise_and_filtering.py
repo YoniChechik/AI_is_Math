@@ -105,7 +105,7 @@ def noisy(noise_typ, image, gauss_var=1000, s_p_ratio=0.04):
         gauss = np.random.normal(mean, sigma, image.shape)
 
         res = image + gauss
-        noisy = np.uint8(res)
+        noisy = np.clip(res,0,255).astype(np.uint8)
         return noisy
     elif noise_typ == "s&p":
         # this implementation is not entirely correct because it assumes that
@@ -113,11 +113,11 @@ def noisy(noise_typ, image, gauss_var=1000, s_p_ratio=0.04):
         out = np.copy(image)
 
         # Salt mode
-        mask = np.random.randint(101, size=image.shape) <= s_p_ratio*100/2
+        mask = np.random.rand(image.shape[0],im.shape[1]) <= s_p_ratio/2
         out[mask] = 255
 
         # Pepper mode
-        mask = np.random.randint(101, size=image.shape) <= s_p_ratio*100/2
+        mask = np.random.rand(image.shape[0],im.shape[1]) <= s_p_ratio/2
         out[mask] = 0
         return out
 

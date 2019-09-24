@@ -39,8 +39,8 @@ def bokeh_imshow(img_orig, scale=1, colorbar=False, show=True, **figure_kwargs):
     p = bokeh.plotting.figure(
         x_range=(0, img.shape[1]),
         y_range=(img.shape[0], 0),
-        frame_width=img.shape[1]*scale,
-        frame_height=img.shape[0]*scale,
+        frame_width=int(img.shape[1]*scale),
+        frame_height=int(img.shape[0]*scale),
         **figure_kwargs)
 
     if img.ndim == 2:

@@ -1,10 +1,3 @@
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
-<script type="text/javascript" async
-  src="https://example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-
 ## **Curve fitting** [(slides)](/pages/c_04_curve_fitting/slides/)
 - Linear least squares
 - Total least squares

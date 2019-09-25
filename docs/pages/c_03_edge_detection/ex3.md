@@ -10,7 +10,7 @@ layout: page
 Ex2 raw .py files are available for download in a .zip file [(direct download)](https://github.com/YoniChechik/AI_is_Math/raw/master/c_03_edge_detection/site_docs/ex3/ex3.zip). Instructions are inside .py file.
 
 Colab links are also available for online solving:
-- ex1.1 - basic python [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/masterc_03_edge_detection/site_docs/ex3/ex3.ipynb)
+- ex3 - bilateral filter [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_03_edge_detection/site_docs/ex3/ex3.ipynb)
 
 ## Background
 

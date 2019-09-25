@@ -14,7 +14,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-fig_size = (10, 10)
+figsize = (10, 10)
 
 #%% [markdown]
 # ## Introduction
@@ -28,6 +28,8 @@ fig_size = (10, 10)
 # First we generate sample data
 
 #%%
+np.random.seed(1234)
+
 X_arr = np.arange(10)
 Y_arr = 3*X_arr + 2 + np.random.random(size=X_arr.size) # linear with some noise
 print(X_arr)
@@ -37,14 +39,14 @@ print(Y_arr)
 # To plot a simple scatter plot, we can use `plt.scatter()` function
 
 #%%
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.plot(X_arr, Y_arr)
 
 #%% [markdown]
 # ## Scatter plot
 
 #%%
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 # Use `+` as marker; color set as `g` (green); size proportion to Y values
 plt.scatter(X_arr, Y_arr, marker='+', c='g') 
 # How about adding a line to it? Let's use `plt.plot()`
@@ -67,7 +69,7 @@ plt.legend(['line','datapoints'])
 # `plt.subplots()` returns a figure object (which is the whole thing as shown above)
 # and `axes` that control specific plots in the figure.
 # Here our "subplots" layout is by default 1 row and 1 col and therefore 1 plot
-fig, ax = plt.subplots(figsize=fig_size)
+fig, ax = plt.subplots(figsize=figsize)
 
 
 # plot should be done on the `axis`: ax
@@ -77,7 +79,7 @@ ax.plot(X_arr, Y_arr)
 # Applying what we did earlier:
 
 #%%
-fig, ax = plt.subplots(figsize=fig_size)
+fig, ax = plt.subplots(figsize=figsize)
 # What we just did, applying to `ax`
 ax.scatter(X_arr, Y_arr, marker='+', c='g', s=Y_arr*10) 
 ax.plot(X_arr, Y_arr, linestyle='dashed', color='k')
@@ -91,7 +93,7 @@ ax.set_title('My First Plot')
 
 #%%
 # Now the returned `ax_arr` would be np array with a shape a 2x3
-fig, ax_arr = plt.subplots(2,3,figsize=fig_size)
+fig, ax_arr = plt.subplots(2,3,figsize=figsize)
 ax_arr[0,0].plot(X_arr, Y_arr)
 ax_arr[0,1].scatter(X_arr, Y_arr)
 fig.suptitle("my subplots")
@@ -106,7 +108,7 @@ gaussian_arr = np.random.normal(mu, sigma, size=10000)
 np.mean(gaussian_arr), np.std(gaussian_arr, ddof=1)
 
 #%%
-fig, ax = plt.subplots(figsize=fig_size)
+fig, ax = plt.subplots(figsize=figsize)
 # `hist()` will return something but we usually do not need.
 freq_arr, bin_arr, _ = ax.hist(gaussian_arr)
 
@@ -114,7 +116,7 @@ freq_arr, bin_arr, _ = ax.hist(gaussian_arr)
 # We can actually customize and make it prettier
 
 #%%
-fig, ax = plt.subplots(figsize=fig_size)
+fig, ax = plt.subplots(figsize=figsize)
 # Facecolor set to green; transparency (`alpha`) level: 30%
 freq_arr, bin_arr, _ = ax.hist(gaussian_arr, facecolor='g', alpha=0.3)
 # Add grid
@@ -127,7 +129,7 @@ ax.grid()
 from mpl_toolkits.mplot3d import Axes3D
 
 
-fig = plt.figure(figsize=fig_size)
+fig = plt.figure(figsize=figsize)
 ax = fig.gca(projection='3d') # get current axis
 theta = np.linspace(-4 * np.pi, 4 * np.pi, 100)
 z = np.linspace(-2, 2, 100)

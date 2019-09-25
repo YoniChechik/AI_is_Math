@@ -4,7 +4,11 @@ subtitle: What this site is about, and how do you start learning?
 bigimg: /img/FedTech-ComputerVision.jpg
 ---
 
-Hi! 
+# How to start?
+
+[If you are looking for the **Python, Pycharm & packages installation guide**, [it's here.](/pages/python_pycharm_installation/python_pycharm_installation/)]
+
+**Hi!** 
 
 If you are in this page it means that you want to start learning computer vision!
 

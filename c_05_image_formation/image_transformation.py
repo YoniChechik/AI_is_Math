@@ -6,7 +6,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-fig_size = (10,10)
+figsize = (10,10)
 
 # %% [markdown]
 # ## Start by building our basic default points to test on
@@ -21,7 +21,7 @@ xy = np.concatenate((x_arr, y_arr), axis=0)
 print(xy.shape)
 xy
 # %%
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.scatter(xy[0, :], xy[1, :])
 plt.title("Original points")
 # %% [markdown]
@@ -35,7 +35,7 @@ M_scale
 # %%
 xy_scaled = M_scale@xy
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.scatter(xy[0, :], xy[1, :])
 plt.scatter(xy_scaled[0, :], xy_scaled[1, :], marker='*')
 plt.title("Scaled points")
@@ -59,7 +59,7 @@ rot_mat(np.pi)
 theta = np.pi/2
 xy_rotate = rot_mat(theta) @xy
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.scatter(xy[0, :], xy[1, :])
 plt.scatter(xy_rotate[0, :], xy_rotate[1, :], marker='*')
 plt.title("Rotated points 90 degrees")
@@ -68,7 +68,7 @@ plt.title("Rotated points 90 degrees")
 theta = np.pi/4
 xy_rotate = rot_mat(theta) @xy
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.scatter(xy[0, :], xy[1, :])
 plt.scatter(xy_rotate[0, :], xy_rotate[1, :], marker='*')
 plt.title("Scaled points 45 degrees")
@@ -86,7 +86,7 @@ M_shear
 # %%
 xy_sheared = M_shear@xy
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.scatter(xy[0, :], xy[1, :])
 plt.scatter(xy_sheared[0, :], xy_sheared[1, :], marker='*')
 plt.title("Sheared points")
@@ -110,7 +110,7 @@ M_t
 # %%
 xy1_translated = M_t@xy1
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.scatter(xy1[0, :], xy1[1, :])
 # no need to do hear homogenous normalization...
 plt.scatter(xy1_translated[0, :], xy1_translated[1, :], marker='*')
@@ -128,7 +128,7 @@ M_scale = np.array([[s_x, 0, 0],
 
 xy1_s_then_t = M_t@M_scale@xy1
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.scatter(xy1[0, :], xy1[1, :])
 # no need to do hear homogenous normalization...
 plt.scatter(xy1_s_then_t[0, :], xy1_s_then_t[1, :], marker='*')
@@ -138,7 +138,7 @@ plt.title("Scaled and then translated points")
 # %%
 xy1_t_then_s = M_scale@M_t@xy1
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.scatter(xy1[0, :], xy1[1, :])
 # no need to do hear homogenous normalization...
 plt.scatter(xy1_t_then_s[0, :], xy1_t_then_s[1, :], marker='*')
@@ -157,7 +157,7 @@ M_p
 # %%
 xy1_p = M_p@xy1
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.scatter(xy1[0, :], xy1[1, :])
 #here we MUST do homogenous normalization!!!
 plt.scatter(xy1_p[0, :]/xy1_p[2, :],

@@ -6,7 +6,7 @@
 # %%
 import numpy as np
 import matplotlib.pyplot as plt
-fig_size = (10,10)
+figsize = (10,10)
 
 np.random.seed(123)
 
@@ -20,7 +20,7 @@ y = 3*x-3
 std = 1
 y = y+np.random.normal(scale=std, size=x.shape)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.plot(x, y, '*')
 plt.title("noisy data")
 
@@ -38,7 +38,7 @@ b = np.linalg.inv(X.T@X)@X.T@y_vec
 print(b)
 
 # plot fit results
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.plot(x, y, '*')
 plt.plot(x, b[0]*x+b[1], 'r')
 plt.title("noisy data + best LS fit. $b^T$="+str(b.T))
@@ -61,7 +61,7 @@ y = np.arange(data_sz)
 std = 0.1
 x = x+np.random.normal(scale=std, size=x.shape)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.plot(x, y, '*')
 axes = plt.gca()
 axes.set_xlim([-3, 3])
@@ -79,7 +79,7 @@ b = np.linalg.inv(X.T@X)@X.T@y_vec
 print(b)
 
 # plot fit results
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.plot(x, y, '*')
 x_axis = np.arange(3)
 plt.plot(x_axis, b[0]*x_axis+b[1], 'r')
@@ -108,7 +108,7 @@ c = -a*np.mean(x)-b*np.mean(y)
 x_fit = np.array([x.min(), x.max()])
 y_fit = -a/b*x_fit-c/b
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.plot(x, y, '*')
 plt.plot(x_fit, y_fit)
 axes = plt.gca()
@@ -128,7 +128,7 @@ y = 0.5*x**2+2*x+5
 std = 5
 y = y+np.random.normal(scale=std, size=y.shape)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.plot(x, y, '*')
 plt.title("noisy parabola data")
 # %%
@@ -140,7 +140,7 @@ y_vec = y.reshape(-1, 1)
 b = np.linalg.lstsq(X, y_vec, rcond=None)[0]
 print(b)
 # %%
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.plot(x, y, '*')
 plt.plot(x, b[0]*x**2+b[1]*x+b[2], 'r')
 plt.title("data + best LS fit. $b^T$="+str(b.T))
@@ -157,7 +157,7 @@ y = 4*x+2
 # let's change the last data point
 y[-1] -= 20
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.plot(x, y, '*')
 plt.title("data with outlier")
 
@@ -173,7 +173,7 @@ b = np.linalg.inv(X.T@X)@X.T@y_vec
 print(b)
 
 # plot fit results
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.plot(x, y, '*')
 x_axis = np.arange(x_max)
 plt.plot(x_axis, b[0]*x_axis+b[1], 'r')
@@ -196,7 +196,7 @@ noise_sz = int(x.shape[0]*1)
 x_noise = np.random.uniform(x.min(), x.max(), size=noise_sz)
 y_noise = np.random.uniform(y.min(), y.max(), size=noise_sz)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.plot(x, y, '*')
 plt.plot(x_noise, y_noise, '*')
 

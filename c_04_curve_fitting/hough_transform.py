@@ -16,7 +16,7 @@ from matplotlib import pyplot as plt
 import cv2
 import numpy as np
 
-fig_size = (10, 10)
+figsize = (10, 10)
 # %%
 # to run interactively with vscode
 import os
@@ -29,7 +29,7 @@ if os.getcwd().endswith("AI_is_Math"):
 im3 = cv2.imread("edge_bold.bmp")
 im = cv2.cvtColor(im3, cv2.COLOR_BGR2GRAY)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(im, cmap='gray', vmin=0, vmax=255)
 plt.show()
 
@@ -39,7 +39,7 @@ plt.show()
 # %%
 mag_im = cv2.Canny(im, 50, 400)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(mag_im)
 plt.show()
 
@@ -77,7 +77,7 @@ for t_ind, t0 in enumerate(t):
         acc_mat[r_ind, t_ind] += 1
 
 #%%
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(acc_mat, extent=[0, 180, rmax, -rmax],aspect='auto')
 plt.xlabel('theta')
 plt.ylabel('r')
@@ -90,7 +90,7 @@ plt.show()
 TH = 110
 acc_mat_th = acc_mat > TH
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(acc_mat_th, extent=[0, 180, rmax, -rmax],aspect='auto')
 plt.xlabel('theta')
 plt.ylabel('r')
@@ -121,7 +121,7 @@ for r_ind, t_ind in edge_inds:
 
     res = cv2.line(res, (x1, y1), (x2, y2), (0, 0, 255), thickness=1)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(res)
 plt.show()
 
@@ -149,7 +149,7 @@ for r_t in lines:
 
     res = cv2.line(res, (x1, y1), (x2, y2), (0, 0, 255), thickness=1)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(res)
 plt.show()
 
@@ -161,13 +161,13 @@ im3 = cv2.imread("building.jpg")
 im3 = cv2.cvtColor(im3, cv2.COLOR_BGR2RGB)
 im = cv2.cvtColor(im3, cv2.COLOR_BGR2GRAY)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(im, cmap='gray', vmin=0, vmax=255)
 plt.show()
 
 mag_im = cv2.Canny(im, 50, 400)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(mag_im)
 plt.show()
 

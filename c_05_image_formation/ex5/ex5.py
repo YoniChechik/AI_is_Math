@@ -1,24 +1,49 @@
 #%% [markdown]
-# # EX4: Circle Hough transform
-# In the ex. we will implement step by step circle hough transform.
-# Follow the code and fill in the missing parts
+# # EX5: Vignetting 
+# In photography and optics, vignetting is a reduction of an 
+# image's brightness or saturation toward the periphery compared 
+# to the image center.
+#
+# Mechanical vignetting (for example) occurs when light beams emanating from 
+# object points located off-axis are partially blocked by 
+# external objects such as thick or stacked filters, secondary 
+# lenses, and improper lens hoods. [Wikipedia]
+# 
+# Read more about it here:
+# https://en.wikipedia.org/wiki/Vignetting
+# https://photographylife.com/what-is-vignetting
+#
+# You are an algorithm engineer in a new cutting-edge camera 
+# startup with a new problem of automatically correct vignetting problems.
+# The team wants to correct the vignetting problem no metter what other lenses
+# or lens hoods the user is putting on the camera.
+# 
+# Each time the user switches to a new setup, he needs to calibrate the camera
+# by shooting a white wall (calib_im*.jpg).
+# The method you came up with is using least-squares to correct the image
+# from the given calibration map, by taking the beta params (least squares params)
+# and applying it back to each shot image later.
+#
 # ## Prep
 # %%
 # to run in google colab
 import sys
 if 'google.colab' in sys.modules:
     ! apt-get install subversion
-    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_04_curve_fitting/ex4/circles.bmp
-    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_04_curve_fitting/ex4/coins.png
+    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/calib_im1.jpg
+    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/calib_im2.jpg
+    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/calib_im3.jpg
+    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/vignette_im1.jpg
+    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/vignette_im2.jpg
+    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/vignette_im3.jpg
+
 
 # %%
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2
-from aux_funcs import *
 
-
-fig_size = (10, 10)
+figsize = (10, 10)
 # %%
 # to run interactively with vscode
 import os
@@ -26,46 +51,116 @@ if os.getcwd().endswith("AI_is_Math"):
     os.chdir("c_05_image_formation/ex5")
 
 #%%
-calib_im = cv2.imread("calib_im.jpg")
-calib_im = cv2.cvtColor(calib_im,cv2.COLOR_BGR2GRAY)
-im_norm = calib_im.astype(float) - 255/2
+def build_A(im_shape):
+    # building A from the indices of the image shape.
+    # This is hard-coded block of code in the camera
+    # that once out of the factory can't be changed.
 
-X = np.arange(0, im_norm.shape[1])
-Y = np.arange(0, im_norm.shape[0])
-X, Y = np.meshgrid(X, Y)
+    # TODO: get X,Y index for each pixel in a matrix:
+    # use np.meshgrid()
+    # ~ one line
+    X, Y = None, None
 
-x = X.reshape(-1,1)
-y = Y.reshape(-1,1)
-z = im_norm.reshape(-1,1)
-#%%
-rand_inds = np.random.choice(np.arange(x.shape[0]),10000)
-xi = x[rand_inds,0].reshape(-1,1)
-yi = y[rand_inds,0].reshape(-1,1)
-zi = z[rand_inds,0].reshape(-1,1)
-#%%
-A = np.concatenate((xi,yi,xi*yi,xi**2,yi**2,yi**2*xi**4,yi**4*xi**2,xi**4*yi**4,yi**6,xi**6,np.ones(xi.shape)),axis=1)
-b = np.linalg.lstsq(A, zi, rcond=None)[0]
-#%%
-
-
-A_full = np.concatenate((x,y,x*y,x**2,y**2,y**2*x**4,y**4*x**2,x**4*y**4,y**6,x**6,np.ones(x.shape)),axis=1)
-
-rec = A_full@b
-rec_im = rec.reshape(im_norm.shape)
-plt.figure()
-plt.imshow(rec_im)
-plt.colorbar()
-plt.show()
+    # TODO: transform to x,y column vectors
+    x = None
+    y = None
+    
+    # A is the raw dataset from which we will reconstruct the calib map
+    # A@b = calib_map
+    # TODO: build A using x,y and function of them
+    # hint: use np.concatenate()
+    # this is only one line, but a hard one
+    A = None
+    return A
 
 #%%
-np.sqrt(np.mean((rec_im-im_norm)**2))
+def get_calib_coeffs(calib_map):
+    # This is the calibration function when he user switches lenses.
+    # Since it's memory consuming to save the intire calib map,
+    # we will save only a parametric representation of it using A,b
 
+    # TODO: transform calib_map to column veot for least-squares
+    # one line
+    z = None
 
+    # build A
+    A = build_A(calib_map.shape)
 
-bokeh_imshow(np.abs(rec_im-im_norm), scale=0.5, colorbar=True, show=True,
-             title='Gradient phase- quantized and thresholded')
+    # TODO: use least-squares to find the beta params for later use.
+    # one line
+    b = None
+
+    return b
 
 #%%
-b
+
+def fix_raw_im(b,vig_im):
+    # Each image taken is passed through this block to correct for vignetting
+
+    # build data matrix A
+    im_shape_yx = (vig_im.shape[0],vig_im.shape[1])
+    A = build_A(im_shape_yx)
+
+    # TODO: build reconstructed calib map using b params from calibration step
+    # use A,b (this is the LS part!!!)
+    # one line
+    rec1d = None
+
+    # transform into 2d image
+    rec_calib_map = rec1d.reshape(im_shape_yx)
+    rec_calib_map_3d = np.transpose(np.tile(rec_calib_map,(3,1,1)),(1,2,0))
+
+    # TODO: apply calib_map to image to get fixed result
+    # one line
+    res = None
+
+    return res, rec_calib_map
+
+
+#%% 
+def calib_testing(calib_map,rec_calib_map):
+    # test your calib map reconstruction relative to the original 
+    # calib map
+    # this is just for testing in the lab, not for the end user...
+
+    # TODO:what is the RMSE of the reconstruction?
+    # one line
+    rmse = None
+
+    # TODO: print L1 map of reconstruction
+    # one line
+    abs_error_map = None
+
+    plt.figure(figsize=figsize)
+    plt.imshow(abs_error_map)
+    plt.colorbar()
+    plt.title("rmse error is "+str(rmse)+". L1 map:") 
+    plt.show()
+
+
+#%%
+if __name__ is "__main__":
+    for i in range(3):
+        calib_im = cv2.imread("calib_im"+str(i+1)+".jpg")
+        calib_im = cv2.cvtColor(calib_im,cv2.COLOR_BGR2GRAY)
+        calib_map = calib_im.astype(float)/255
+
+        vig_im = cv2.imread("vignette_im"+str(i+1)+".jpg")
+        vig_im = cv2.cvtColor(vig_im,cv2.COLOR_BGR2RGB)
+
+        b = get_calib_coeffs(calib_map)
+        res, rec_calib_map = fix_raw_im(b,vig_im)
+
+        plt.figure(figsize=figsize)
+        plt.imshow(vig_im)
+        plt.title("original image")
+        plt.show()
+
+        plt.figure(figsize=figsize)
+        plt.imshow(res)
+        plt.title("fixed image")
+        plt.show()
+
+        calib_testing(calib_map,rec_calib_map)
 
 #%%

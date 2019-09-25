@@ -15,7 +15,7 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
-fig_size = (10,10)
+figsize = (10,10)
 #%%
 # to run interactively with vscode
 import os
@@ -29,7 +29,7 @@ if os.getcwd().endswith("AI_is_Math"):
 # %%
 
 def plot_im(img, title):
-    plt.figure(figsize=fig_size)
+    plt.figure(figsize=figsize)
     plt.imshow(img)
     plt.title(title)
     plt.xticks([])
@@ -68,7 +68,7 @@ def gauss_blur(img, k_sz, sigma=-1, is_plot_kernel=False):
             + str(k_sz)+r", $\sigma$=" + str(sigma))
     if is_plot_kernel:
         gauss_ker = cv2.getGaussianKernel(k_sz, sigma)
-        plt.figure(figsize=(fig_size[0]/2, fig_size[1]/2))
+        plt.figure(figsize=(figsize[0]/2, figsize[1]/2))
         plt.plot(gauss_ker)
         plt.title("corresponding gaussian kernel")
 
@@ -85,7 +85,7 @@ gauss_blur(img, 21, 1, is_plot_kernel=True)
 
 def median_blur(img, k_sz):
     res = cv2.medianBlur(img, k_sz)
-    plt.figure(figsize=fig_size)
+    plt.figure(figsize=figsize)
     plot_im(res, "median filter with kernel_size="+str(k_sz))
 
 
@@ -113,11 +113,11 @@ def noisy(noise_typ, image, gauss_var=1000, s_p_ratio=0.04):
         out = np.copy(image)
 
         # Salt mode
-        mask = np.random.rand(image.shape[0],im.shape[1]) <= s_p_ratio/2
+        mask = np.random.rand(image.shape[0],image.shape[1]) <= s_p_ratio/2
         out[mask] = 255
 
         # Pepper mode
-        mask = np.random.rand(image.shape[0],im.shape[1]) <= s_p_ratio/2
+        mask = np.random.rand(image.shape[0],image.shape[1]) <= s_p_ratio/2
         out[mask] = 0
         return out
 
@@ -125,8 +125,10 @@ def noisy(noise_typ, image, gauss_var=1000, s_p_ratio=0.04):
 # %% [markdown]
 # ## gaussian noise tests
 # %%
+np.random.seed(1234)
+
 gauss_noise_im = noisy("gauss", img, gauss_var=70)
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(gauss_noise_im)
 plt.title('original image + gaussian noise')
 
@@ -141,7 +143,7 @@ median_blur(gauss_noise_im, 5)
 
 # %%
 s_p_noise_im = noisy("s&p", img, s_p_ratio=0.04)
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(s_p_noise_im)
 plt.title('original image + s&p noise')
 

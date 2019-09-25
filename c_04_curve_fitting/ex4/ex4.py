@@ -16,7 +16,7 @@ from matplotlib import pyplot as plt
 import cv2
 import numpy as np
 
-fig_size = (10, 10)
+figsize = (10, 10)
 # %%
 # to run interactively with vscode
 import os
@@ -31,7 +31,7 @@ im3 = cv2.cvtColor(im3, cv2.COLOR_BGR2RGB)
 
 im = cv2.cvtColor(im3, cv2.COLOR_BGR2GRAY)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(im3, cmap='gray', vmin=0, vmax=255)
 plt.title("original image")
 plt.show()
@@ -43,7 +43,7 @@ plt.show()
 # TODO: Canny edge detection of image 
 mag_im = []
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(mag_im)
 plt.title("edge image")
 plt.show()
@@ -84,7 +84,7 @@ for yx in edge_inds:
             # TODO: update accumulation matrix (one line)
 
 #%%
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(np.sum(acc_mat, axis=2), extent=[b.min(), b.max(), a.max(), a.min()],aspect='auto')
 plt.xlabel('a')
 plt.ylabel('b')
@@ -98,7 +98,7 @@ plt.show()
 TH = 25
 acc_mat_th = acc_mat > TH
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(np.sum(acc_mat_th, axis=2), extent=[b.min(), b.max(), a.max(), a.min()],aspect='auto')
 plt.xlabel('a')
 plt.ylabel('b')
@@ -133,7 +133,7 @@ for i in range(edge_inds.shape[0]):
                 #TODO: one line fill here
                 pass
 #%%
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(np.sum(acc_mat_th_dist, axis=2), extent=[b.min(), b.max(), a.max(), a.min()],aspect='auto')
 plt.xlabel('a')
 plt.ylabel('b')
@@ -156,7 +156,7 @@ for b_ind, a_ind, r_ind in edge_inds:
     # draw the outer circle
     res = cv2.circle(res, (a0, b0), r0, (0, 255, 0), 1)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(res)
 plt.title("final result")
 plt.show()
@@ -174,7 +174,7 @@ for xyr in circles[0, :]:
     # draw the outer circle
     res = cv2.circle(res, (xyr[0], xyr[1]), xyr[2], (0, 255, 0), 1)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(res)
 plt.title("final result- cv2.HoughCircles")
 plt.show()
@@ -220,7 +220,7 @@ for xyr in circles[0, :]:
     pass
 
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(res)
 plt.title("final result- coins detection")
 plt.show()

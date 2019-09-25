@@ -238,6 +238,7 @@ arr[:, 1] # watch out! we've got a 1d array again instead of column vector as ma
 # As a final example, we look at a 3d array:
 
 #%%
+np.random.seed(1234)
 arr_3 = np.random.randint(low=0, high=100, size=24)
 arr_3
 

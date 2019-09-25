@@ -19,7 +19,7 @@ import cv2
 from matplotlib import pyplot as plt
 from aux_funcs import *
 
-fig_size = (10,10)
+figsize = (10,10)
 #%%
 # to run interactively with vscode
 import os
@@ -31,7 +31,7 @@ if os.getcwd().endswith("AI_is_Math"):
 # %%
 img = cv2.imread("Bikesgray.jpg")
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(img, cmap='gray', vmin=0, vmax=255)
 plt.title('Original image')
 
@@ -47,7 +47,7 @@ img = img.astype(float)  # 'uint8' doesn't work with minus sign - for filtering
 kernel = np.array([[-1, 0, +1]])
 dst = cv2.filter2D(img, -1, kernel)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(np.abs(dst), cmap='gray')
 plt.colorbar()
 plt.title('$f\'_x$: image filtered with '+str(kernel))
@@ -75,7 +75,7 @@ axs[1].title.set_text('uint8 WRONG filtering')
 kernel = np.array([[-1, 0, +1]]).T
 dst = cv2.filter2D(img, -1, kernel)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(dst, cmap='gray')
 plt.colorbar()
 plt.title('$f\'_y$: image filtered with\n '+str(kernel))
@@ -179,7 +179,7 @@ kernel = np.array([
     [-1, -1, -1]])
 dst_sobel = cv2.filter2D(blur, -1, kernel)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(dst_sobel)
 # %% [markdown]
 # ### Naive way for zero crossings
@@ -193,7 +193,7 @@ sign_im_left = res[:, 1:]
 sign_im_right = res[:, :-1]
 res = np.logical_and(sign_im_left, sign_im_right)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(res)
 plt.title('Naive way for zero crossings')
 

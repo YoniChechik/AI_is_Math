@@ -21,7 +21,7 @@
 import matplotlib.pyplot as plt
 import cv2 # opencv for python package
 
-fig_size = (10, 10)
+figsize = (10, 10)
 #%%
 # to run in google colab
 import sys
@@ -43,7 +43,7 @@ if os.getcwd().endswith("AI_is_Math"):
 img = cv2.imread("Lenna.png")
 
 #%%
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(img)
 
 #%% [markdown]
@@ -54,7 +54,7 @@ plt.imshow(img)
 
 #%%
 img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(img)
 
 
@@ -67,13 +67,13 @@ img
 
 #%%
 # show only red channel
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(img[:,:,0]) 
 
 
 #%%
 # gray color-mapping
-fig, ax_arr = plt.subplots(1,2,figsize=fig_size)
+fig, ax_arr = plt.subplots(1,2,figsize=figsize)
 
 ax_arr[0].imshow(img[:,:,0], cmap='gray')
 ax_arr[0].set_title('Auto-adjusted pixel\n scale intensity')
@@ -87,14 +87,14 @@ ax_arr[1].set_title('Absolute pixel\n scale intensity')
 #%%
 # image blurring
 img_blurred=cv2.GaussianBlur(img,(15,15),7) #use a 15x15 Gaussian kernel with standard deviation 7
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(img_blurred)
 
 
 #%%
 # edge detection
 img_canny = cv2.Canny(img,180,200) # end args are the lower & upper TH of hysteresis
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(img_canny,cmap='gray')
 
 
@@ -116,7 +116,7 @@ for x,y,r in circles[0,:]:
     # draw the center of the circle
     cv2.circle(img,(x,y),2,(0,0,255),3)
 
-plt.figure(figsize=fig_size)
+plt.figure(figsize=figsize)
 plt.imshow(img)
 
 

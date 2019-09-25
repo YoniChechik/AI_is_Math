@@ -1,7 +1,7 @@
 # %% [markdown]
 # # Python Workshop: Basics I
 #
-# [If you are looking for the **Python, Pycharm & packages installation guide**, [it's here.](/pages/python_pycharm_installation/python_pycharm_installation/)]
+# [If you are looking for the **Python, Pycharm & packages installation guide**, [it's here.](https://www.aiismath.com/pages/python_pycharm_installation/python_pycharm_installation/)]
 #
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_01_basic_CV_and_python/site_docs/1_basic_python_tutorial.ipynb)
 #
@@ -35,7 +35,7 @@
 #
 # Pycharm is currently (2019) the most commonly used IDE (Integrated development environment) for programing in python.
 #
-# for complete tutorial on **installation** of Python + Pycharm + additional packages please refer to [this](/pages/python_pycharm_installation/python_pycharm_installation/) page.
+# for complete tutorial on **installation** of Python + Pycharm + additional packages please refer to [this page](https://www.aiismath.com/pages/python_pycharm_installation/python_pycharm_installation/).
 #
 # <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/PyCharm_Logo.svg" alt="pycharm logo" width="200"/>
 #

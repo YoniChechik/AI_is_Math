@@ -4,16 +4,16 @@ bigimg: /img/FedTech-ComputerVision.jpg
 ---
 
 ## **CV & Python basics** [(slides)](/pages/c_01_basic_CV_and_python/slides/)
-   - Course details
-   - What is computer vision (CV)?
-   - Course outline
-   - Intro to Python
-     - [Basic python tutorial notebook- part 1](/pages/c_01_basic_CV_and_python/basic_python_tutorial_nb/)
-     - [Basic python tutorial notebook- part 2](/pages/c_01_basic_CV_and_python/basic_python_tutorial_part_2_nb/)
-     - [NumPy tutorial notebook](/pages/c_01_basic_CV_and_python/NumPy_tutorial_nb/)
-     - [Matplotlib tutorial notebook](/pages/c_01_basic_CV_and_python/Matplotlib_tutorial_nb/)
-     - [OpenCV tutorial notebook](/pages/c_01_basic_CV_and_python/OpenCV_tutorial_nb/)
-     - [Ex1: basic python, numpy & matplotlib, opencv](/pages/c_01_basic_CV_and_python/ex1/)
+- Course details
+- What is computer vision (CV)?
+- Course outline
+- Intro to Python
+  - [Basic python tutorial notebook- part 1](/pages/c_01_basic_CV_and_python/basic_python_tutorial_nb/)
+  - [Basic python tutorial notebook- part 2](/pages/c_01_basic_CV_and_python/basic_python_tutorial_part_2_nb/)
+  - [NumPy tutorial notebook](/pages/c_01_basic_CV_and_python/NumPy_tutorial_nb/)
+  - [Matplotlib tutorial notebook](/pages/c_01_basic_CV_and_python/Matplotlib_tutorial_nb/)
+  - [OpenCV tutorial notebook](/pages/c_01_basic_CV_and_python/OpenCV_tutorial_nb/)
+- [Ex1: basic python, numpy & matplotlib, opencv](/pages/c_01_basic_CV_and_python/ex1/)
 
 
 ## **Image processing** [(slides)](/pages/c_02_image_processing/slides/)
@@ -36,14 +36,21 @@ bigimg: /img/FedTech-ComputerVision.jpg
      - Frequency representation
      - Unsharp filter
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
 ## **Curve fitting** [(slides)](/pages/c_04_curve_fitting/slides/)
 - Linear least squares
 - Total least squares
 - Least squares [(Least squares & RANSAC notebook)](/pages/c_04_curve_fitting/least_squares_nb/)
 - RANSAC [(Least squares & RANSAC notebook)](/pages/c_04_curve_fitting/least_squares_nb/)
 - Hough transform [(Hough transform notebook)](/pages/c_04_curve_fitting/hough_transform_nb/)
-  - (m,b) parameter space
-  - (r,theta) parameter space
+  - $(m,b)$ parameter space
+  - $(\rho,\theta)$ parameter space
 - [Ex4- Hough circles](/pages/c_04_curve_fitting/ex4/)
 
 

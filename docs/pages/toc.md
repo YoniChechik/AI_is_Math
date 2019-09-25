@@ -3,7 +3,7 @@ title: Course syllabus
 bigimg: /img/FedTech-ComputerVision.jpg
 ---
 
-## **CV & Python basics** [(slides)](/pages/c_01_basic_CV_and_python/slides/), [(ex1)](/pages/c_01_basic_CV_and_python/ex1/)
+## **CV & Python basics** [(slides)](/pages/c_01_basic_CV_and_python/slides/)
    - Course details
    - What is computer vision (CV)?
    - Course outline
@@ -13,6 +13,7 @@ bigimg: /img/FedTech-ComputerVision.jpg
      - [NumPy tutorial notebook](/pages/c_01_basic_CV_and_python/NumPy_tutorial_nb/)
      - [Matplotlib tutorial notebook](/pages/c_01_basic_CV_and_python/Matplotlib_tutorial_nb/)
      - [OpenCV tutorial notebook](/pages/c_01_basic_CV_and_python/OpenCV_tutorial_nb/)
+     - [Ex1: basic python, numpy & matplotlib, opencv](/pages/c_01_basic_CV_and_python/ex1/)
 
 
 ## **Image processing** [(slides)](/pages/c_02_image_processing/slides/)
@@ -35,7 +36,7 @@ bigimg: /img/FedTech-ComputerVision.jpg
      - Frequency representation
      - Unsharp filter
 
-## **Curve fitting** [(slides)](/pages/c_04_curve_fitting/slides/), [(ex4)](/pages/c_04_curve_fitting/ex4/)
+## **Curve fitting** [(slides)](/pages/c_04_curve_fitting/slides/)
 - Linear least squares
 - Total least squares
 - Least squares [(Least squares & RANSAC notebook)](/pages/c_04_curve_fitting/least_squares_nb/)
@@ -43,6 +44,7 @@ bigimg: /img/FedTech-ComputerVision.jpg
 - Hough transform [(Hough transform notebook)](/pages/c_04_curve_fitting/hough_transform_nb/)
   - (m,b) parameter space
   - (r,theta) parameter space
+- [Ex4- Hough circles](/pages/c_04_curve_fitting/ex4/)
 
 
 
@@ -53,6 +55,7 @@ bigimg: /img/FedTech-ComputerVision.jpg
 - Digital camera
 - The human eye
 - Image transformations [(notebook)](/pages/c_05_image_formation/image_transformation_nb/)
+- [Ex5: vignetting](/pages/c_05_image_formation/ex5/)
 
 ## **Camera calibration** 
 

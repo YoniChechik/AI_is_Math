@@ -167,8 +167,6 @@ def main_index_header():
 			"subtitle: This is my computer vision course site. Why? Because it's awesome\n"
 			"bigimg: /img/FedTech-ComputerVision.jpg\n"
 			"share-img: /img/FedTech-ComputerVision.jpg\n"
-			"sitemap:\n"
-			"	priority: 1.0\n"
 			"---\n"
 			"<style>\n"
 			"{}\n"

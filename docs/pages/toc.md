@@ -1,6 +1,7 @@
 ---
 title: Course syllabus
 bigimg: /img/FedTech-ComputerVision.jpg
+share-img: /img/FedTech-ComputerVision.jpg
 ---
 
 ## **CV & Python basics** [(slides)](/pages/c_01_basic_CV_and_python/slides/)

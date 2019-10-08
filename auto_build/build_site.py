@@ -132,8 +132,9 @@ def header_builder(title,subtitle,bigimg_path,layout="page"):
            "title: {}\n"
            "subtitle: {}\n"
            "bigimg: {}\n"
+		   "share-img: {}\n"
            "layout: {}\n"
-           "---\n\n").format(title, subtitle, bigimg_path, layout)
+           "---\n\n").format(title, subtitle, bigimg_path,bigimg_path, layout)
 	return header
 
 def html_float_bar(url_content,url_image,title):
@@ -151,6 +152,7 @@ def main_toc_header():
 	main_toc = ("---\n"
 				"title: Course syllabus\n"
 				"bigimg: /img/FedTech-ComputerVision.jpg\n"
+				"share-img: /img/FedTech-ComputerVision.jpg\n"
 				"---\n\n")
 	return main_toc
 
@@ -164,6 +166,7 @@ def main_index_header():
 			"title: AI is Math\n"
 			"subtitle: This is my computer vision course site. Why? Because it's awesome\n"
 			"bigimg: /img/FedTech-ComputerVision.jpg\n"
+			"share-img: /img/FedTech-ComputerVision.jpg\n"
 			"---\n"
 			"<style>\n"
 			"{}\n"

@@ -2,6 +2,7 @@
 title: Edge detection
 subtitle: Ex3
 bigimg: /pages/c_03_edge_detection/c_03_bigimg.jpg
+share-img: /pages/c_03_edge_detection/c_03_bigimg.jpg
 layout: page
 ---
 
@@ -31,9 +32,9 @@ $$w_p(x,x_i) = g_s(\|x_i - x\|)f_r(\|I(x_i) - I(x)\|)$$
 
 where:
 
-- $I^\text{filtered}$ is the filtered image;
-- $I$ is the original input image to be filtered;
-- $x$ are the coordinates of the current pixel to be filtered;
+- $I^\text{filtered}$ is the filtered image.
+- $I$ is the original input image to be filtered.
+- $x$ are the coordinates of the current pixel to be filtered.
 - $\Omega_x$ is the neighboorhood of $x$.
 - $f_r$ is the range kernel for smoothing differences in intensities.
 - $g_s$ is the spatial (or domain) kernel for smoothing differences in coordinates.

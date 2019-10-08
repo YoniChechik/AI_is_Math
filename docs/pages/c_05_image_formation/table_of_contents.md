@@ -2,6 +2,7 @@
 title: Image formation
 subtitle: Table of contents
 bigimg: /pages/c_05_image_formation/c_05_bigimg.jpg
+share-img: /pages/c_05_image_formation/c_05_bigimg.jpg
 layout: page
 ---
 

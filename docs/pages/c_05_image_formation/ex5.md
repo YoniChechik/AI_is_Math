@@ -2,6 +2,7 @@
 title: Image formation
 subtitle: Ex5
 bigimg: /pages/c_05_image_formation/c_05_bigimg.jpg
+share-img: /pages/c_05_image_formation/c_05_bigimg.jpg
 layout: page
 ---
 

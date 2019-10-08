@@ -70,7 +70,7 @@ social-network-links:
 # rss: true
   email: "chechik.yoni@gmail.com"
 # facebook: deanattali
-  github: YoniChechik #https://github.com/YoniChechik
+  github: YoniChechik/AI_is_Math #https://github.com/YoniChechik
 #  twitter: daattali
 #  reddit: yourname
   linkedin: yoni-chechik-9b3173123 #https://www.linkedin.com/in/yoni-chechik-9b3173123/
@@ -93,7 +93,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-# url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "AIisMath;.com"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 

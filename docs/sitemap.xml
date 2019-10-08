@@ -52,6 +52,7 @@ sitemap:
       {% else %}
         <priority>0.64</priority>
       {% endif %}
+      <page_url>{{ page.url }}<page_url>
     </url>
     {% endunless %}
   {% endfor %}

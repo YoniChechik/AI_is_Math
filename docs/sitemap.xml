@@ -47,8 +47,6 @@ sitemap:
       {% endif %}
       {% if page.sitemap.priority %}
         <priority>{{ page.sitemap.priority }}</priority>
-      {% elsif site.url ==  "https://www.aiismath.com/" %}
-        <priority>1.0</priority>
       {% else %}
         <priority>0.64</priority>
       {% endif %}

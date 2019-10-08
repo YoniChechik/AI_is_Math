@@ -47,8 +47,10 @@ sitemap:
       {% endif %}
       {% if page.sitemap.priority %}
         <priority>{{ page.sitemap.priority }}</priority>
+      {% elsif page.url ==  "index.html" %}
+        <priority>1.0</priority>
       {% else %}
-        <priority>0.3</priority>
+        <priority>0.64</priority>
       {% endif %}
     </url>
     {% endunless %}

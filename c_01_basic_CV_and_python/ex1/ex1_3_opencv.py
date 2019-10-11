@@ -6,9 +6,10 @@
 # to run in google colab
 import sys
 if 'google.colab' in sys.modules:
-    ! apt-get install subversion
-    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_basic_CV_and_python/ex1/forest.jpg
-    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_basic_CV_and_python/ex1/pyramids.png
+    import subprocess
+    subprocess.call('apt-get install subversion'.split())
+    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_basic_CV_and_python/ex1/forest.jpg'.split())
+    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_basic_CV_and_python/ex1/pyramids.png'.split())
 
 # to run interactively with vscode
 import os

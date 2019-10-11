@@ -8,10 +8,11 @@
 # to run in google colab
 import sys
 if 'google.colab' in sys.modules:
-    ! apt-get install subversion
-    ! svn checkout https://github.com/YoniChechik/AI_is_Math/trunk/aux_funcs/
-    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_03_edge_detection/Bikesgray.jpg
-    ! pip install --upgrade bokeh
+    import subprocess
+    subprocess.call('apt-get install subversion'.split())
+    subprocess.call('svn checkout https://github.com/YoniChechik/AI_is_Math/trunk/aux_funcs/'.split())
+    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_03_edge_detection/Bikesgray.jpg'.split())
+    subprocess.call('pip install --upgrade bokeh'.split())
 
 # %% 
 import numpy as np

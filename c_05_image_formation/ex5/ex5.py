@@ -29,13 +29,14 @@
 # to run in google colab
 import sys
 if 'google.colab' in sys.modules:
-    ! apt-get install subversion
-    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/calib_im1.jpg
-    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/calib_im2.jpg
-    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/calib_im3.jpg
-    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/vignette_im1.jpg
-    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/vignette_im2.jpg
-    ! svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/vignette_im3.jpg
+    import subprocess 
+    subprocess.call('apt-get install subversion'.split())
+    subprocess.call('export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/calib_im1.jpg'.split())
+    subprocess.call('export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/calib_im2.jpg'.split())
+    subprocess.call('export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/calib_im3.jpg'.split())
+    subprocess.call('export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/vignette_im1.jpg'.split())
+    subprocess.call('export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/vignette_im2.jpg'.split())
+    subprocess.call('export https://github.com/YoniChechik/AI_is_Math/trunk/c_05_image_formation/ex5/vignette_im3.jpg'.split())
 
 
 # %%

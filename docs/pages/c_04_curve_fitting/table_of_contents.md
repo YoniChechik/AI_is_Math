@@ -14,5 +14,5 @@ layout: page
 - Hough transform [(Hough transform notebook)](/pages/c_04_curve_fitting/hough_transform_nb/)
   - $(m,b)$ parameter space
   - $(\rho,\theta)$ parameter space
-- [Ex4- Hough circles](/pages/c_04_curve_fitting/ex4/)
+- [Ex4: Hough circles](/pages/c_04_curve_fitting/ex4/)
 

@@ -132,7 +132,7 @@ def header_builder(title,subtitle,bigimg_path,layout="page"):
            "title: {}\n"
            "subtitle: {}\n"
            "bigimg: {}\n"
-		   "share-img: {}\n"
+		   "share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs{}\n"
            "layout: {}\n"
            "---\n\n").format(title, subtitle, bigimg_path,bigimg_path, layout)
 	return header

@@ -2,7 +2,7 @@
 title: Basic CV and python
 subtitle: Table of contents
 bigimg: /pages/c_01_basic_CV_and_python/c_01_bigimg.jpg
-share-img: /pages/c_01_basic_CV_and_python/c_01_bigimg.jpg
+share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/pages/c_01_basic_CV_and_python/c_01_bigimg.jpg
 layout: page
 ---
 

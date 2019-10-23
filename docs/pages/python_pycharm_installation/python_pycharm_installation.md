@@ -14,15 +14,15 @@ bigimg: /img/FedTech-ComputerVision.jpg
 
 Python interpreter is the program that will run our actual Python code. The default downloaded interpreter is also called “base interpreter”, and for each project it’s recommended to open a new virtual environment (“venv”) with its own “project interpreter”.
 
-1. Download the latest (currently python 3.7.X) installation .exe from: <https://www.python.org/downloads/> 
-   
-    ![](images/2019-09-22-12-51-50.png)
+1. Download **Python3.6.8 64bit** installer .exe from: <https://www.python.org/downloads/release/python-368/> (bottom of page)
+    ![](images/2019-10-23-12-10-10.png)
 
+    
 2. Open installer -> **check the “add Python 3.X to Path”** -> click “Install Now” -> press “next” if needed until finish.
    
     (it is preferable to download the python base interpreter to the installer’s suggested place if you don’t have default admin privileges on the computer [i.e.: C:\Users\chech\AppData\Local\Programs\Python])
 
-    ![image](images/pythonsetup.jpg)
+    ![](images/2019-10-23-12-14-16.png)
 
 ## Install PyCharm community IDE
 

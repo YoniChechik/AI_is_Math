@@ -7,8 +7,9 @@
 	"settings": 
 	{
 		// "python.pythonPath": "C:\\Users\\jonathanch\\Documents\\vscode_py\\env\\Scripts\\python.exe",
-		"python.pythonPath": "C:\\Users\\jonathanch\\Documents\\vscode_py\\venv3.8\\Scripts\\python.exe",
-		"python.venvPath": "C:\\Users\\jonathanch\\Documents\\vscode_py",
+		"python.pythonPath": "C:\\Users\\jonathanch\\Documents\\vscode_py\\venv3.6\\Scripts\\python.exe",
+		// C:\Users\jonathanch\Documents\vscode_py\venv3.6\Scripts\Activate.ps1
+		"python.venvPath": "C:\\Users\\jonathanch\\Documents\\vscode_py",// \\venv3.6\\Scripts",
 		// "python.dataScience.autoPreviewNotebooksInInteractivePane": true,
 		// "python.dataScience.stopOnFirstLineWhileDebugging": false,
 		"python.linting.pylintArgs": ["--generate-members"],  //for recognizing cv imports

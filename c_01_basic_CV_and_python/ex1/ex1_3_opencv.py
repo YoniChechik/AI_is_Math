@@ -10,12 +10,7 @@ if 'google.colab' in sys.modules:
     subprocess.call('apt-get install subversion'.split())
     subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_basic_CV_and_python/ex1/forest.jpg'.split())
     subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_basic_CV_and_python/ex1/pyramids.png'.split())
-
-# to run interactively with vscode
-import os
-if os.getcwd().endswith("AI_is_Math"):
-    os.chdir("c_01_basic_CV_and_python/ex1")
-
+    
 #%%
 import numpy as np
 import matplotlib.pyplot as plt

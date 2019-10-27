@@ -5,3 +5,4 @@
    - Frequency representation 
    - Morphology operators
    - Connected components
+   - [Ex2: morphological operators and friends](/pages/c_02_image_processing/ex2/)

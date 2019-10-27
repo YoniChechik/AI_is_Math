@@ -13,11 +13,6 @@ import matplotlib.pyplot as plt
 import cv2
 
 figsize = (10, 10)
-# %%
-# to run interactively with vscode
-import os
-if os.getcwd().endswith("AI_is_Math"):
-    os.chdir("c_03_edge_detection/ex3")
 
 #%%
 def gaussian(x, sigma,mu=0):

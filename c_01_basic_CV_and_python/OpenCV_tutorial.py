@@ -31,12 +31,6 @@ if 'google.colab' in sys.modules:
     subprocess.call('export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_basic_CV_and_python/Lenna.png'.split())
     subprocess.call('export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_basic_CV_and_python/opencv_logo.png'.split())
 
-# to run interactively with vscode
-import os
-if os.getcwd().endswith("AI_is_Math"):
-    os.chdir("c_01_basic_CV_and_python")
-
-
 #%% [markdown]
 # This is how to read and plot an image with opencv
 

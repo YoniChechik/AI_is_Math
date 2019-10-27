@@ -17,13 +17,6 @@ import cv2
 from matplotlib import pyplot as plt
 
 figsize = (10,10)
-#%%
-# to run interactively with vscode
-import os
-if os.getcwd().endswith("AI_is_Math"):
-    os.chdir("c_02_image_processing")
-
-
 # %% [markdown]
 # Get basic image:
 
@@ -35,6 +28,7 @@ def plot_im(img, title):
     plt.title(title)
     plt.xticks([])
     plt.yticks([])
+    plt.show()
 
 img = cv2.imread("Tour_Eiffel.jpg")
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -72,7 +66,7 @@ def gauss_blur(img, k_sz, sigma=-1, is_plot_kernel=False):
         plt.figure(figsize=(figsize[0]/2, figsize[1]/2))
         plt.plot(gauss_ker)
         plt.title("corresponding gaussian kernel")
-
+        plt.show()
 
 gauss_blur(img, 5, is_plot_kernel=True)
 gauss_blur(img, 21, is_plot_kernel=True)
@@ -86,7 +80,6 @@ gauss_blur(img, 21, 1, is_plot_kernel=True)
 
 def median_blur(img, k_sz):
     res = cv2.medianBlur(img, k_sz)
-    plt.figure(figsize=figsize)
     plot_im(res, "median filter with kernel_size="+str(k_sz))
 
 
@@ -132,6 +125,7 @@ gauss_noise_im = noisy("gauss", img, gauss_var=70)
 plt.figure(figsize=figsize)
 plt.imshow(gauss_noise_im)
 plt.title('original image + gaussian noise')
+plt.show()
 
 # %%
 gauss_blur(gauss_noise_im, 3)
@@ -147,6 +141,7 @@ s_p_noise_im = noisy("s&p", img, s_p_ratio=0.04)
 plt.figure(figsize=figsize)
 plt.imshow(s_p_noise_im)
 plt.title('original image + s&p noise')
+plt.show()
 
 # %%
 gauss_blur(s_p_noise_im, 5)

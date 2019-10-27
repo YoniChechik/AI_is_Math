@@ -18,11 +18,6 @@ import cv2
 import numpy as np
 
 figsize = (10, 10)
-# %%
-# to run interactively with vscode
-import os
-if os.getcwd().endswith("AI_is_Math"):
-    os.chdir("c_04_curve_fitting/ex4")
 
 # %% [markdown]
 # ## Import an image

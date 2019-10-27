@@ -2,7 +2,7 @@
 # # EX4: Circle Hough transform
 # In the ex. we will implement step by step circle hough transform.
 # Follow the code and fill in the missing parts
-# ## Prep
+
 # %%
 # to run in google colab
 import sys

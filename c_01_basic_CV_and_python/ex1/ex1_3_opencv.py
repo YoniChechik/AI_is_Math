@@ -1,7 +1,5 @@
 # %% [markdown]
 # # EX 1.3- Opencv: forest pyramid
-# ## Prep
-# This code is just to load everything... no need to read it
 #%%
 # to run in google colab
 import sys

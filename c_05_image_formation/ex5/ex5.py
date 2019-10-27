@@ -10,7 +10,9 @@
 # lenses, and improper lens hoods. [Wikipedia]
 # 
 # Read more about it here:
+
 # https://en.wikipedia.org/wiki/Vignetting
+
 # https://photographylife.com/what-is-vignetting
 #
 # You are an algorithm engineer in a new cutting-edge camera 
@@ -24,7 +26,6 @@
 # from the given calibration map, by taking the beta params (least squares params)
 # and applying it back to each shot image later.
 #
-# ## Prep
 # %%
 # to run in google colab
 import sys

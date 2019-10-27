@@ -2,8 +2,6 @@
 # # Edge detection
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_03_edge_detection/site_docs/edge_detection.ipynb)
 
-# ## Prep 
-
 #%%
 # to run in google colab
 import sys

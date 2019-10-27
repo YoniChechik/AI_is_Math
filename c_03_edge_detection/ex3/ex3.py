@@ -1,4 +1,3 @@
-# ## Prep
 # %%
 # to run in google colab
 import sys

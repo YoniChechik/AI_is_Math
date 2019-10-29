@@ -44,7 +44,7 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 - Linear least squares
 - Total least squares
 - Least squares [(Least squares & RANSAC notebook)](/pages/c_04_curve_fitting/least_squares_nb/)
-- RANSAC [(Least squares & RANSAC notebook)](/pages/c_04_curve_fitting/least_squares_nb/)
+- RANSAC
 - Hough transform [(Hough transform notebook)](/pages/c_04_curve_fitting/hough_transform_nb/)
   - $(m,b)$ parameter space
   - $(\rho,\theta)$ parameter space

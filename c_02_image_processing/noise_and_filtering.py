@@ -8,7 +8,7 @@ import sys
 if 'google.colab' in sys.modules:
     import subprocess
     subprocess.call('apt-get install subversion'.split())
-    subprocess.call('export https://github.com/YoniChechik/AI_is_Math/trunk/c_02_image_processing/Tour_Eiffel.jpg'.split())
+    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_02_image_processing/Tour_Eiffel.jpg'.split())
 
 # %% 
 import numpy as np

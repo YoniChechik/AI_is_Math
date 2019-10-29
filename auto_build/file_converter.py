@@ -105,4 +105,4 @@ def run_on_one_dir(fp, site_docs_dir, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
 if __name__ == "__main__":
     # dir_list = [r'C:\Users\chech\Desktop\AI_is_Math\c_03_edge_detection']
     # run_on_class_dir_list(dir_list, do_py2ipynb=1, do_ppt=0)
-    run_on_all_classes(do_py2ipynb=1, do_ppt=1)
+    run_on_all_classes(do_py2ipynb=1, do_ppt=0)

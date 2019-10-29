@@ -28,8 +28,8 @@ import sys
 if 'google.colab' in sys.modules:
     import subprocess
     subprocess.call('apt-get install subversion'.split())
-    subprocess.call('export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_basic_CV_and_python/Lenna.png'.split())
-    subprocess.call('export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_basic_CV_and_python/opencv_logo.png'.split())
+    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_basic_CV_and_python/Lenna.png'.split())
+    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_basic_CV_and_python/opencv_logo.png'.split())
 
 #%% [markdown]
 # This is how to read and plot an image with opencv

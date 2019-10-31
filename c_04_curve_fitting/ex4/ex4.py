@@ -9,8 +9,8 @@ import sys
 if 'google.colab' in sys.modules:
     import subprocess 
     subprocess.call('apt-get install subversion'.split())
-    subprocess.call('export https://github.com/YoniChechik/AI_is_Math/trunk/c_04_curve_fitting/ex4/circles.bmp'.split())
-    subprocess.call('export https://github.com/YoniChechik/AI_is_Math/trunk/c_04_curve_fitting/ex4/coins.png'.split())
+    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_04_curve_fitting/ex4/circles.bmp'.split())
+    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_04_curve_fitting/ex4/coins.png'.split())
 
 # %%
 from matplotlib import pyplot as plt

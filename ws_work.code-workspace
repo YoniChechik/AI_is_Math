@@ -1,19 +1,21 @@
 {
 	"folders": [
 		{
-			"path": "." // ws path
-		}
+			"path": "."
+		},
 	],
 	"settings": 
 	{
-		// "python.pythonPath": "C:\\Users\\jonathanch\\Documents\\vscode_py\\env\\Scripts\\python.exe",
 		"python.pythonPath": "C:\\Users\\jonathanch\\Documents\\vscode_py\\venv3.6\\Scripts\\python.exe",
-		// C:\Users\jonathanch\Documents\vscode_py\venv3.6\Scripts\Activate.ps1
-		"python.venvPath": "C:\\Users\\jonathanch\\Documents\\vscode_py",// \\venv3.6\\Scripts",
-		// "python.dataScience.autoPreviewNotebooksInInteractivePane": true,
-		// "python.dataScience.stopOnFirstLineWhileDebugging": false,
+		"python.dataScience.stopOnFirstLineWhileDebugging": false,
 		"python.linting.pylintArgs": ["--generate-members"],  //for recognizing cv imports
-		
+		"python.dataScience.notebookFileRoot": "${fileDirname}", 
+		"python.autoComplete.addBrackets": true,
+		"python.venvFolders": [
+			"C:\\Users\\jonathanch\\Documents\\vscode_py\\venv3.6"
+		],
+		"python.envFile": "${workspaceFolder}/ws_work.env",
+
 		"editor.autoClosingBrackets": "never",
 		"editor.autoClosingQuotes": "never",
 		"editor.mouseWheelZoom": true,
@@ -29,22 +31,24 @@
 		
 		"cSpell.allowCompoundWords": true,
 		"cSpell.diagnosticLevel": "Hint",
+		"cSpell.showStatus": false,
 
 		"markdown.extension.toc.levels": "2..6",
 		"markdown.extension.toc.githubCompatibility": true,
 
-		"remote.SSH.configFile": "C:\\Users\\jonathanch\\.ssh\\config",
-		"python.dataScience.notebookFileRoot": "${currentFileDir}",
-
-		"terminal.integrated.env.windows": {
-			"PYTHONPATH":"${env:PYTHONPATH};${workspaceFolder}"
+		"gitlens.currentLine.enabled": false,
+		"gitlens.codeLens.enabled": false,
+		"gitlens.statusBar.enabled": false,
+		"gitlens.codeLens.recentChange.enabled": false,
+		"gitlens.codeLens.scopes": [
+			"containers"
+		],
+		"gitlens.hovers.enabled": false,
+		"gitlens.menus": {
+			"editorGroup": false,
 		},
 
-
-		//"python.terminal.executeInFileDir": true,
-		//"python.dataScience.exportWithOutputEnabled": true,
-		//"python.dataScience.notebookFileRoot": "${cwd}"
-		//"python.dataScience.changeDirOnImportExport": false,
+				
 
 	},
 	"launch": { //default when F5
@@ -55,7 +59,7 @@
 				"request": "launch",
 				"program": "${file}",
 				"cwd": "${fileDirname}",
-				"console": "integratedTerminal",				
+				"console": "integratedTerminal",
 			}
 		],
 		"compounds": []

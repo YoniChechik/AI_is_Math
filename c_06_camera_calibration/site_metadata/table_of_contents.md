@@ -1,3 +1,0 @@
-## **Camera calibration** 
-
-WIP...

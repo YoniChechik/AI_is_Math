@@ -17,7 +17,7 @@
 		"python.venvFolders": [
 			"C:\\Users\\chech\\AppData\\Local\\Programs\\Python\\cv_course_venv"
 		],
-		"python.envFile": "${workspaceFolder}/.env",
+		"python.envFile": "${workspaceFolder}/ws_home.env",
 
 		"editor.autoClosingBrackets": "never",
 		"editor.autoClosingQuotes": "never",

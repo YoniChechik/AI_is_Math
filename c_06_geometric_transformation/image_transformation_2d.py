@@ -1,6 +1,6 @@
 # %% [markdown]
 # # Image transformation
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_05_image_formation/site_docs/image_transformation.ipynb)
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_06_geometric_transformation/site_docs/image_transformation.ipynb)
 
 # %%
 import numpy as np

@@ -58,8 +58,16 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 - Pinhole camera
 - Digital camera
 - The human eye
-- Image transformations [(notebook)](/pages/c_05_image_formation/image_transformation_nb/)
 - [Ex5: vignetting](/pages/c_05_image_formation/ex5/)
+
+## **Geometric transformation** [(slides)](/pages/c_06_geometric_transformation/slides/)
+
+- 2D->2D transformations [(notebook)](/pages/c_06_geometric_transformation/image_transformation_2d_nb/)
+- 3D->3D transformations
+- 3D->2D transformations (3D projections)
+  - Perspective projection
+  - Orthographic projection
+
 
 ## **Camera calibration** 
 

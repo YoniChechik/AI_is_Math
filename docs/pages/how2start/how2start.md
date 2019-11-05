@@ -33,7 +33,7 @@ If you want to investigate further or debug your code, here is how to install [P
 This is especially recommended if you want to try the exercises, since you'll probably want to debug them without heavy use of print statements.  
 
 ## FAQs
-> What this course is about?
+> What is this course about?
 
 The full table of contents of the course can be found [here.](/pages/toc/)
 
@@ -41,7 +41,7 @@ The full table of contents of the course can be found [here.](/pages/toc/)
 
 **Established math proficiency.** 
 - This course **doesn't** assume any knowledge in image/signal processing- basic undergrad algabra course is sufficient. 
-- It **does** assumes that the reader knows his way around seemingly hard math (never be afraid of math).
+- It **does** assume that the reader knows his way around seemingly hard math (never be afraid of math).
 - **Python** knowledge is an advantage, but if you can deal with the math you can deal with the code. **Matlab is deprecated...** If you are reading this, this course is a great time to switch to Python.
 
 > Just give me the code. I don't need to know the math...

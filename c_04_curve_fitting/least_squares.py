@@ -272,3 +272,39 @@ for i in range(num_cycles):
         plt.title("!!! BEST FIT !!! num inliers: "+ str(inliers_ind_list[i].shape[0]))
     else:
         plt.title("num inliers: "+ str(inliers_ind_list[i].shape[0]))
+
+#%% [markdown]
+# ### Test RANSAC with sklearn package (a known machine learning package in python)
+# Code taken from: https://scikit-learn.org/stable/auto_examples/linear_model/plot_ransac.html
+#%%
+from sklearn import linear_model
+
+X = x.reshape(-1, 1)
+
+
+lr = linear_model.LinearRegression()
+lr.fit(X, y)
+
+# Robustly fit linear model with RANSAC algorithm
+ransac = linear_model.RANSACRegressor()
+ransac.fit(X, y)
+inlier_mask = ransac.inlier_mask_
+outlier_mask = np.logical_not(inlier_mask)
+
+# Predict data of estimated models
+line_X = np.arange(X.min(), X.max())[:, np.newaxis]
+line_y = lr.predict(line_X)
+line_y_ransac = ransac.predict(line_X)
+
+plt.figure()
+plt.scatter(X[inlier_mask], y[inlier_mask], color='yellowgreen', marker='.',
+            label='Inliers')
+plt.scatter(X[outlier_mask], y[outlier_mask], color='red', marker='.',
+            label='Outliers')
+plt.plot(line_X, line_y, color='navy', linewidth=2, label='Linear regressor')
+plt.plot(line_X, line_y_ransac, color='cornflowerblue', linewidth=2,
+         label='RANSAC regressor')
+plt.legend(loc='lower right')
+plt.title("RANSAC using sklearn package")
+plt.show()
+# %%

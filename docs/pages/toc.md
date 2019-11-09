@@ -69,8 +69,13 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
   - Orthographic projection
 
 
-## **Camera calibration** 
+## **Camera calibration** [(slides)](/pages/c_07_camera_calibration/slides/)
 
-WIP...
+- What is camera calibration?
+- Camera intrinsics
+- Camera extrinsics
+- Full camera matrix
+- Calibration methods and distortions [(notebook)](/pages/c_07_camera_calibration/multi_plane_calib_nb/)
+
 
 

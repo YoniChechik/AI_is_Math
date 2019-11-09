@@ -28,13 +28,13 @@ def run_on_one_class_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
 
     print("\n===== IN DIR: " + fp + " =====\n")
 
-    # ==== mkdir site_docs
-    site_docs_dir = os.path.join(fp, "site_docs")
-    if not os.path.exists(site_docs_dir):
-        os.mkdir(site_docs_dir)
+    # # ==== mkdir site_docs
+    # site_docs_dir = os.path.join(fp, "site_docs")
+    # if not os.path.exists(site_docs_dir):
+    #     os.mkdir(site_docs_dir)
 
     # === run on class dir data
-    run_on_one_dir(fp, site_docs_dir, do_py2ipynb=do_py2ipynb, do_py_exec=do_py_exec, do_ppt=do_ppt)
+    run_on_one_dir(fp, do_py2ipynb=do_py2ipynb, do_py_exec=do_py_exec, do_ppt=do_ppt)
 
     # ==== run on "ex#" dir
     if do_py2ipynb:
@@ -42,38 +42,38 @@ def run_on_one_class_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
         for ex_subdir in ex_subdirs:
             
             # ==== mkdir site_docs/ex
-            site_docs_ex_dir_path = os.path.join(fp, "site_docs",ex_subdir)
-            if not os.path.exists(site_docs_ex_dir_path):
-                os.mkdir(site_docs_ex_dir_path)
+            # site_docs_ex_dir_path = os.path.join(fp, "site_docs",ex_subdir)
+            # if not os.path.exists(site_docs_ex_dir_path):
+            #     os.mkdir(site_docs_ex_dir_path)
 
             fp_ex = os.path.join(fp, ex_subdir)
 
             # ==== only convert py2ipynb, no need to execute the nb
-            run_on_one_dir(fp_ex, site_docs_ex_dir_path, do_py2ipynb=1, do_py_exec=0, do_ppt=0)
+            run_on_one_dir(fp_ex, do_py2ipynb=1, do_py_exec=0, do_ppt=0)
 
             # ==== zip ex files
             print("\n===== zipping ex =====\n")
-            with zipfile.ZipFile(os.path.join(site_docs_ex_dir_path,ex_subdir + '.zip'), 'w') as myzip:
+            with zipfile.ZipFile(os.path.join(fp_ex,ex_subdir + '.zip'), 'w') as myzip:
                 for f in os.listdir(fp_ex):
                     if not f.endswith(".zip") and not os.path.isdir(os.path.join(fp_ex,f)):   
                         myzip.write(os.path.join(fp_ex,f),f)
 
 
-def run_on_one_dir(fp, site_docs_dir, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
+def run_on_one_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
     
-    # ==== tmp copy all relevant data to site_docs_dir for executing
-    if do_py_exec:
-        copied_fp_list = []
-        for fn in os.listdir(fp):
-            file_fp = os.path.join(fp, fn)
-            if not (file_fp.endswith(".py") or
-                    file_fp.endswith(".ipynb") or
-                    file_fp.endswith(".pdf") or
-                    file_fp.endswith(".pptx") or
-                    os.path.isdir(file_fp)):
-                copied_fp = os.path.join(site_docs_dir, fn)
-                shutil.copyfile(file_fp,copied_fp)
-                copied_fp_list.append(copied_fp)
+    # # ==== tmp copy all relevant data to site_docs_dir for executing
+    # if do_py_exec:
+    #     copied_fp_list = []
+    #     for fn in os.listdir(fp):
+    #         file_fp = os.path.join(fp, fn)
+    #         if not (file_fp.endswith(".py") or
+    #                 file_fp.endswith(".ipynb") or
+    #                 file_fp.endswith(".pdf") or
+    #                 file_fp.endswith(".pptx") or
+    #                 os.path.isdir(file_fp)):
+    #             copied_fp = os.path.join(site_docs_dir, fn)
+    #             shutil.copyfile(file_fp,copied_fp)
+    #             copied_fp_list.append(copied_fp)
 
     # ==== run on all files
     for fn in os.listdir(fp):
@@ -83,11 +83,11 @@ def run_on_one_dir(fp, site_docs_dir, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
         # ==== make .pptx -> .pdf
         if fn.endswith(".pptx") and do_ppt:
             print("converting pptx: \n" + fn)
-            PPTtoPDF(os.path.join(fp, fn), os.path.join(site_docs_dir, fn_no_ext+".pdf"))
+            PPTtoPDF(os.path.join(fp, fn), os.path.join(fp, fn_no_ext+".pdf"))
 
         # ==== make .py -> .ipynb and compile ipynb
         elif fn.endswith(".py") and do_py2ipynb:
-            out_ipynb = os.path.join(site_docs_dir, fn_no_ext+".ipynb")
+            out_ipynb = os.path.join(fp, fn_no_ext+".ipynb")
 
             print("converting .py 2 .ipynb: \n" + fn)
             py2ipynb(os.path.join(fp, fn), out_ipynb)
@@ -97,10 +97,10 @@ def run_on_one_dir(fp, site_docs_dir, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
                 os.system(
                     "jupyter nbconvert --ExecutePreprocessor.timeout=60 --to notebook --execute --inplace \""+out_ipynb+"\"")
     
-    # ==== remove all tmp copied files
-    if do_py_exec:
-        for copied_fp in copied_fp_list:
-            os.remove(copied_fp)
+    # # ==== remove all tmp copied files
+    # if do_py_exec:
+    #     for copied_fp in copied_fp_list:
+    #         os.remove(copied_fp)
 
 if __name__ == "__main__":
     dir_list = [r'C:\Users\jonathanch\Desktop\AI_is_Math\c_03_edge_detection']

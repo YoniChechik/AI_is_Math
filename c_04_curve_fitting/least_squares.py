@@ -1,6 +1,6 @@
 # %% [markdown]
 # # Least squares
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_04_curve_fitting/site_docs/least_squares.ipynb)
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_04_curve_fitting/least_squares.ipynb)
 # ## Linear LS
 # Let's generate some noisy data
 # %%

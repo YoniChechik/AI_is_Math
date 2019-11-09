@@ -76,11 +76,12 @@ def build_site():
 			f.write(html_float_bar(url_toc,bigimg_path_pages,title))
 
 		# ==== build notebooks html
-		site_docs_path = os.path.join(git_main_dirs_cwd, dir_name,"site_docs")
-		for ipynb_file in os.listdir(site_docs_path):
+		class_dir = os.path.join(git_main_dirs_cwd, dir_name)
+		
+		for ipynb_file in os.listdir(class_dir):
 			if ipynb_file.endswith(".ipynb"):
 				ipynb_file_no_ext = ipynb_file.split(".")[0]
-				ipynb_fp = os.path.join(site_docs_path,ipynb_file)
+				ipynb_fp = os.path.join(class_dir,ipynb_file)
 				notebook_html_path = os.path.join(pages_class_dir_path,ipynb_file_no_ext+"_nb.html")
 
 				# ==== convert ipynb to html
@@ -97,14 +98,14 @@ def build_site():
 					f.write(nb_data)
 		
 		# ==== build slides html
-		for pdf_file in os.listdir(site_docs_path):
+		for pdf_file in os.listdir(class_dir):
 			if pdf_file.endswith(".pdf"):
 				pdf_file_no_ext = pdf_file.split(".")[0]
 				slides_html_path = os.path.join(pages_class_dir_path,"slides.html")
 				with open(slides_html_path, "w+") as f:
 					subtitle = "Slides"
 					f.write(header_builder(title,subtitle,bigimg_path_pages))
-					slides_src = "https://nbviewer.jupyter.org/github/YoniChechik/AI_is_Math/blob/master/{}/site_docs/{}".format(dir_name,pdf_file.replace(" ","%20"))
+					slides_src = "https://nbviewer.jupyter.org/github/YoniChechik/AI_is_Math/blob/master/{}/{}".format(dir_name,pdf_file.replace(" ","%20"))
 					f.write(add_iframe(slides_src))
 
 

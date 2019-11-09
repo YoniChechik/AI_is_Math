@@ -1,6 +1,6 @@
 # %% [markdown]
 # # Hough transform
-# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_07_camera_calibration/site_docs/multi_plane_calib.ipynb)
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_07_camera_calibration/multi_plane_calib.ipynb)
 
 #%% [markdown]
 # camera calibration for distorted images with chess board samples

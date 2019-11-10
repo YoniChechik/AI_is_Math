@@ -7,13 +7,17 @@
 # reads distorted images, calculates the calibration and write undistorted images
 #
 # original code is from opencv tutorials:
+#
 # https://github.com/opencv/opencv/blob/master/samples/python/calibrate.py
+#
 # https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_calib3d/py_pose/py_pose.html
 #
 # read more about the functions here:
+#
 # https://docs.opencv2.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html
 # 
 # a reference calibration plane for printing can be copied from here:
+#
 # https://stackoverflow.com/questions/25233198/opencv-2-4-9-for-python-cannot-find-chessboard-camera-calibration-tutorial 
 
 # %%
@@ -35,7 +39,7 @@ square_size=2.88
 img_mask='./images/*.jpeg'
 pattern_size = (9, 6)
 
-figsize = (10,10)
+figsize = (20,20)
 #%%
 
 img_names = glob(img_mask)

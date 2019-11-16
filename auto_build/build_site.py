@@ -165,7 +165,7 @@ def main_index_header():
 
 	main_index = ("---\n"
 			"title: AI is Math\n"
-			"subtitle: This is my computer vision course site. Why? Because it's awesome\n"
+			"subtitle: AI is Math is my (Yoni Chechik) computer vision course site- including class notes and ipython notebooks, and yes- we also have neural networks\n"
 			"bigimg: /img/FedTech-ComputerVision.jpg\n"
 			"share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/img/FedTech-ComputerVision.jpg\n"
 			"---\n"

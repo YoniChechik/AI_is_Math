@@ -193,10 +193,17 @@ a1[1:4]
 #%%
 a1 > 3
 
-
+#%% [markdown]
+# ### Masking
+# replacing values of array with another values according to a boolean mask
 #%%
+#this is the mask
 a1[a1 > 3]
 
+#%%
+#this is a use of the above mask
+a1[a1>3] = 100
+a1
 #%% [markdown]
 # ### 2 dimensional case
 
@@ -232,6 +239,10 @@ arr[1, :]
 
 #%%
 arr[:, 1] # watch out! we've got a 1d array again instead of column vector as maybe expected
+
+#%%
+# 2D masking
+arr[arr>3] = 55
 
 #%% [markdown]
 # ### 3 dimensional case

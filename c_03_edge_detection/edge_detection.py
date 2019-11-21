@@ -29,15 +29,13 @@ plt.figure(figsize=figsize)
 plt.imshow(img, cmap='gray', vmin=0, vmax=255)
 plt.title('Original image')
 
-# %% [markdown]
-# ## Filtering common errors
-# ### kernel errors
+
 # %%
 img = img.astype(float)  # 'uint8' doesn't work with minus sign - for filtering
 
 # 1. cv2.filter2D is working with corelation rether than convolution
 #    no need to flip the kernel
-# 2. Notice that kernel is 2D array - if 1d then column vector
+# 2. Notice that kernel is 2D array - if 1d than we will get a column vector convolution
 kernel = np.array([[-1, 0, +1]])
 dst = cv2.filter2D(img, -1, kernel)
 
@@ -46,6 +44,18 @@ plt.imshow(np.abs(dst), cmap='gray')
 plt.colorbar()
 plt.title('$f\'_x$: image filtered with '+str(kernel))
 
+# %% [markdown]
+# ## Filtering common errors
+# ### kernel dimension error
+#%%
+
+kernel = np.array([-1, 0, +1])
+dst = cv2.filter2D(img, -1, kernel)
+
+plt.figure(figsize=figsize)
+plt.imshow(np.abs(dst), cmap='gray')
+plt.colorbar()
+plt.title('wrong kernel dim: '+str(kernel))
 # %% [markdown]
 # ### uint8 errors
 # Wrong filtering when keeping uint8 instead of float, because uint8 

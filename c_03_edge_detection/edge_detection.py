@@ -44,6 +44,7 @@ plt.imshow(np.abs(dst), cmap='gray')
 plt.colorbar()
 plt.title('$f\'_x$: image filtered with '+str(kernel))
 
+print("kernel shape is "+str(kernel.shape))
 # %% [markdown]
 # ## Filtering common errors
 # ### kernel dimension error
@@ -56,6 +57,9 @@ plt.figure(figsize=figsize)
 plt.imshow(np.abs(dst), cmap='gray')
 plt.colorbar()
 plt.title('wrong kernel dim: '+str(kernel))
+
+print("kernel shape is "+str(kernel.shape))
+
 # %% [markdown]
 # ### uint8 errors
 # Wrong filtering when keeping uint8 instead of float, because uint8 
@@ -125,19 +129,27 @@ plt.imshow(dst_sobel, cmap='gray')
 plt.title('$f\'_x$: image filtered with Sobel')
 
 #######################################
+dst_cv2_sobel = cv2.Sobel(img, -1, 1, 0)  #cv2.Sobel(img,ddepth,x_size,y_size)
+
 plt.subplot(4, 2, 5)
+plt.imshow(dst_cv2_sobel, cmap='gray')
+plt.colorbar()
+plt.title('cv2.Sobel X')
+
+#######################################
+plt.subplot(4, 2, 6)
 plt.imshow(np.abs(dst_sobel-dst_sym))
 plt.colorbar()
 plt.title('|sobel-symmetric|')
 
 #######################################
-plt.subplot(4, 2, 6)
+plt.subplot(4, 2, 7)
 plt.imshow(np.abs(dst_sobel-dst_prewitt))
 plt.colorbar()
 plt.title('|sobel-prewitt|')
 
 #######################################
-plt.subplot(4, 2, 7)
+plt.subplot(4, 2, 8)
 plt.imshow(np.abs(dst_sym-dst_prewitt)) 
 plt.colorbar()
 plt.title('|symmetric-prewitt|')
@@ -173,38 +185,24 @@ bokeh_imshow(phase_img_masked, scale=1, colorbar=True,
 # %% [markdown]
 # ## Edge thinning 
 # ### LoG filter
-# First we will see why edge thinning with second derivative like LoG is bad
 
 # %%
-blur = cv2.blur(img, (1, 1))
 kernel = np.array([
     [-1, -1, -1],
     [-1, 8, -1],
     [-1, -1, -1]])
-dst_sobel = cv2.filter2D(blur, -1, kernel)
+dst_LoG = cv2.filter2D(img, -1, kernel)
 
 plt.figure(figsize=figsize)
-plt.imshow(dst_sobel)
-# %% [markdown]
-# ### Naive way for zero crossings
-# %%
-sign_im = dst_sobel > 0
-sign_im_left = sign_im[:, :-1]
-sign_im_right = sign_im[:, 1:]
-res = np.logical_xor(sign_im_left, sign_im_right)
+plt.imshow(dst_LoG)
+plt.title("LoG")
+plt.show()
 
-sign_im_left = res[:, 1:]
-sign_im_right = res[:, :-1]
-res = np.logical_and(sign_im_left, sign_im_right)
-
-plt.figure(figsize=figsize)
-plt.imshow(res)
-plt.title('Naive way for zero crossings')
-
-
-# %% [markdown]
-# It's hard to find zero crossing in an image!! this is why LoG is not in use for edge thinning.
-#
+plt.figure(figsize=(20,20))
+plt.imshow(np.abs(dst_LoG))
+plt.title("abs LoG")
+plt.show()
+#%% [markdown]
 # ## NMS preliminary step: Quantizing the phase image
 
 # %%

@@ -1,10 +1,32 @@
-#%%
+# %% [markdown]
+# # Harris corner detector
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_08_features/sift.ipynb)
+
+# %% [markdown]
+# ## cv2 sift function
+# We need a special variant of cv2 to run sift- because it's protected by copyrights (free for research purposes...)
+# ```
 # pip uninstall opencv-python
 # pip install -U opencv-contrib-python==3.4.0.12
+# ```
+# in this notebook the fix is done automatically in the next cell
+# %%
+# to run in google colab
+import sys
+if 'google.colab' in sys.modules:
+    import subprocess 
+    subprocess.call('apt-get install subversion'.split())
+    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_08_features/left.jpg'.split())
+    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_08_features/right.jpg'.split())
+    subprocess.call('pip uninstall opencv-python'.split())
+    subprocess.call('pip install -U opencv-contrib-python==3.4.0.12'.split())
 
 
-#https://towardsdatascience.com/image-stitching-using-opencv-817779c86a83
 
+# %% [markdown]
+# SIFT code is adapted from:
+# https://towardsdatascience.com/image-stitching-using-opencv-817779c86a83
+#%%
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -16,7 +38,10 @@ gray_l = cv2.cvtColor(rgb_l,cv2.COLOR_RGB2GRAY)
 rgb_r = cv2.cvtColor(cv2.imread("right.jpg"),cv2.COLOR_BGR2RGB)
 gray_r = cv2.cvtColor(rgb_r,cv2.COLOR_RGB2GRAY)
 
+# %% [markdown]
+# ## SIFT feature detection and description
 #%%
+# use orb if sift is not installed
 try:
     feature_extractor = cv2.xfeatures2d.SIFT_create()
 except:
@@ -33,8 +58,10 @@ plt.figure(figsize=figsize)
 plt.imshow(test)
 plt.title("keypoints")
 plt.show()
-#%%
 
+# %% [markdown]
+# ## take only unique features 
+#%%
 bf = cv2.BFMatcher()
 matches = bf.knnMatch(desc_l,desc_r, k=2)
 
@@ -53,13 +80,16 @@ plt.imshow(im_matches)
 plt.title("keypoints matches")
 plt.show()
 
-
+# %% [markdown]
+# ## find homography between images  
 #%%
-good_kp_l = np.float32([ kp_l[m.queryIdx].pt for m in good_match_arr[:,0] ]).reshape(-1,1,2)
-good_kp_r = np.float32([ kp_r[m.trainIdx].pt for m in good_match_arr[:,0] ]).reshape(-1,1,2)
+good_kp_l = np.array([ kp_l[m.queryIdx].pt for m in good_match_arr[:,0] ]).reshape(-1,1,2)
+good_kp_r = np.array([ kp_r[m.trainIdx].pt for m in good_match_arr[:,0] ]).reshape(-1,1,2)
 H, masked = cv2.findHomography(good_kp_r, good_kp_l, cv2.RANSAC, 5.0)
 
 print(H)
+# %% [markdown]
+# ## overlay images
 #%%
 rgb_r_warped = cv2.warpPerspective(rgb_r,H,(rgb_l.shape[1] + rgb_r.shape[1], rgb_l.shape[0]))
 rgb_r_warped[0:rgb_l.shape[0], 0:rgb_l.shape[1]] = rgb_l

@@ -1,3 +1,16 @@
+# %% [markdown]
+# # Harris corner detector
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_08_features/harris.ipynb)
+
+# %%
+# to run in google colab
+import sys
+if 'google.colab' in sys.modules:
+    import subprocess 
+    subprocess.call('apt-get install subversion'.split())
+    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_08_features/chess.jpg'.split())
+
+
 #%%
 import cv2
 import numpy as np
@@ -11,7 +24,10 @@ img = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2GRAY).astype(float)/255
 plt.figure(figsize=(10, 10))
 plt.imshow(imgRGB)
 plt.show()
+# %% [markdown]
+# ## harris- step by step
 #%%
+#derivatives in x and y dirs
 kernel_x = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]])
 Ix = cv2.filter2D(img, -1, kernel_x)
 
@@ -26,19 +42,24 @@ l_min = np.zeros(img.shape)
 det = np.zeros(img.shape)
 trace = np.zeros(img.shape)
 
+# for each window in image
 for y in range(offset, img.shape[0]-offset):
     for x in range(offset, img.shape[1]-offset):
-
+        
+        # build window of intersting data 
         windowIx = Ix[y-offset:y+offset+1, x-offset:x+offset+1]
         windowIy = Iy[y-offset:y+offset+1, x-offset:x+offset+1]
 
-        windowIx = windowIx-np.mean(windowIx)
-        windowIy = windowIy-np.mean(windowIy)
+        # this is added to be consistent with PCA
+        # windowIx = windowIx-np.mean(windowIx)
+        # windowIy = windowIy-np.mean(windowIy)
 
+        # build second moments matrix
         Sxx = np.sum(windowIx*windowIx)
         Syy = np.sum(windowIy*windowIy)
         Sxy = np.sum(windowIx*windowIy)
 
+        # eigendecomposition data
         H = np.array([[Sxx, Sxy],
                 [Sxy, Syy]])
         L, V = np.linalg.eig(H)
@@ -87,6 +108,8 @@ plt.figure(figsize=(10, 10))
 plt.imshow(harris > harris.max()/10)
 plt.show()
 
+# %% [markdown]
+# ## harris- cv2 implementation
 #%%
 
 gray = np.float32(img)

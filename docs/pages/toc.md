@@ -86,13 +86,19 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 - What and why we need features detection?
 - Feature detection
   - Blob detection
-  - Harris corner detection
-  - SIFT detector
+  - Harris corner detection [(Harris notebook)](/pages/c_08_features/harris_nb/)
+  - SIFT detector 
 - Feature description
   - HOG
   - SIFT descriptor
-- SIFT feature matching
+- SIFT feature matching [(SIFT notebook)](/pages/c_08_features/sift_nb/)
 - Panoramas
+
+
+
+## **Stereo** [(slides)](/pages/c_09_stereo/slides/)
+
+WIP
 
 
 

@@ -11,7 +11,7 @@ def build_site():
 
 	pages_path = os.path.join(git_main_dirs_cwd,"docs","pages")
 
-	# === build main headers
+	# === build index.html + toc headers + README
 	main_toc_fp = os.path.join(pages_path, "toc.md")
 	with open(main_toc_fp, "w+") as f:
 		f.write(main_toc_header())
@@ -19,7 +19,11 @@ def build_site():
 	main_index_fp = os.path.abspath(os.path.join(pages_path,"..", "index.html"))
 	with open(main_index_fp, "w+") as f:
 		f.write(main_index_header())
-
+	
+	readme_fp = os.path.join(git_main_dirs_cwd,"README.md")
+	with open(readme_fp, "w+") as f:
+		f.write(build_readme())
+	
 	# ==== run on all class dirs
 	for dir_name in git_class_subdirs:
 		fp = os.path.join(git_main_dirs_cwd, dir_name,"site_metadata")
@@ -70,6 +74,12 @@ def build_site():
 					with open(main_toc_fp, "a+") as f:
 						f.write(meta_file_data+"\n\n")
 					url_toc = os.sep +"pages" + meta_file_pages_path.split("pages")[1][:-3] + os.sep
+					
+					# ==== update readme
+					readme_class_text = meta_file_data.replace("##","###").replace("/pages/","www.aiismath.com/pages/")
+
+					with open(readme_fp, "a+") as f:
+						f.write(readme_class_text+"\n\n")
 
 		# ==== build hover of index.html
 		with open(main_index_fp, "a+") as f:
@@ -138,14 +148,24 @@ def header_builder(title,subtitle,bigimg_path,layout="page"):
            "---\n\n").format(title, subtitle, bigimg_path,bigimg_path, layout)
 	return header
 
+def build_readme():
+	readme_text_start = (
+	"# AI is Math\n"	
+	"**Check out my course site**: [AIisMath.com](https://AIisMath.com)\n"
+	"\n"
+	"This is my CV course raw data git repo - you can see the raw .py/ .ppt files here.\n"
+	"\n"
+	"## Course TOC\n")
+	return readme_text_start
+
 def html_float_bar(url_content,url_image,title):
 	html_str = ("\n"
 				"<div class=\"mycont\">\n"
-				"   <a href=\"{}\"><img class=\"hoverImages\" src=\"{}\">\n"
+				"   <a href=\"{}\"><img class=\"hoverImages\" src=\"{}\" alt>=\"{}\"\n"
 				"	<div class=\"bottom-left\"> \n"
 				"		<h1>{}</h1>\n"
 				"	</div>\n"
-				"</div>\n").format(url_content, url_image, title)
+				"</div>\n").format(url_content, url_image,title, title)
 	return html_str
 
 def main_toc_header():

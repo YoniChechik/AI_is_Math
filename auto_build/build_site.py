@@ -194,6 +194,9 @@ def main_index_header():
 			"</style>\n\n").format(hover_main_css)
 	return main_index
 
+# def support_md_math(text_with_math):
+	# <img src="https://latex.codecogs.com/gif.latex?\alpha+\frac{1}{33}" />
+	
 if __name__ == "__main__":
 	build_site()
 

@@ -161,7 +161,7 @@ def build_readme():
 def html_float_bar(url_content,url_image,title):
 	html_str = ("\n"
 				"<div class=\"mycont\">\n"
-				"   <a href=\"{}\"><img class=\"hoverImages\" src=\"{}\" alt>=\"{}\"\n"
+				"   <a href=\"{}\"><img class=\"hoverImages\" src=\"{}\" alt=\"{}\">\n"
 				"	<div class=\"bottom-left\"> \n"
 				"		<h1>{}</h1>\n"
 				"	</div>\n"

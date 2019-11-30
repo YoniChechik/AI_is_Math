@@ -76,7 +76,7 @@ def build_site():
 					url_toc = os.sep +"pages" + meta_file_pages_path.split("pages")[1][:-3] + os.sep
 					
 					# ==== update readme
-					readme_class_text = meta_file_data.replace("##","###").replace("/pages/","www.aiismath.com/pages/")
+					readme_class_text = meta_file_data.replace("##","###").replace("/pages/","https://www.aiismath.com/pages/")
 
 					with open(readme_fp, "a+") as f:
 						f.write(readme_class_text+"\n\n")

@@ -1,5 +1,5 @@
 # %% [markdown]
-# # Harris corner detector
+# # SIFT
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_08_features/sift.ipynb)
 
 # %% [markdown]

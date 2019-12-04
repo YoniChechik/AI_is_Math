@@ -106,28 +106,6 @@ def build_site():
 				with open(notebook_html_path, "w+") as f:
 					f.write(header_builder(title,subtitle,bigimg_path_pages,layout="notebook"))
 					f.write(nb_data)
-		
-		# # ==== build slides html
-		# for pdf_file in os.listdir(class_dir):
-		# 	if pdf_file.endswith(".pdf"):
-		# 		pdf_file_no_ext = pdf_file.split(".")[0]
-		# 		slides_html_path = os.path.join(pages_class_dir_path,"slides.html")
-		# 		with open(slides_html_path, "w+") as f:
-		# 			subtitle = "Slides"
-		# 			f.write(header_builder(title,subtitle,bigimg_path_pages))
-		# 			slides_src = "https://nbviewer.jupyter.org/github/YoniChechik/AI_is_Math/blob/master/{}/{}".format(dir_name,pdf_file))#.replace(" ","%20"))
-		# 			f.write(add_iframe(slides_src))
-
-
-def add_iframe(src):
-	iframe = ("<!-- to be able to open links in new tabs auto in iframe -->\n"
-			   "<base target=\"_parent\">\n"
-			   "\n"
-			   "<iframe src=\"{}\"\n"
-			   "    width=\"100%\"\n"
-			   "    height=\"1000\">\n"
-			   "</iframe>\n").format(src)
-	return iframe
 
 def header_builder(title,subtitle,bigimg_path,layout="page"):
 	# tamplate:

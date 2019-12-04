@@ -1,4 +1,4 @@
-## **Stereo** [(slides)](/pages/c_09_stereo/slides/)
+## **Stereo** [(slides)](/pages/c_09_stereo/stereo.pdf)
 
 WIP
 

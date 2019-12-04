@@ -6,7 +6,7 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 layout: page
 ---
 
-## **Stereo** [(slides)](/pages/c_09_stereo/slides/)
+## **Stereo** [(slides)](/pages/c_09_stereo/stereo.pdf)
 
 WIP
 

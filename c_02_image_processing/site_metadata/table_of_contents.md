@@ -1,4 +1,4 @@
-## **Image processing** [(slides)](/pages/c_02_image_processing/slides/)
+## **Image processing** [(slides)](/pages/c_02_image_processing/Image_processing.pdf)
 - Image representation
 - Pixel-wise operations
 - Noise and filtering [(notebook)](/pages/c_02_image_processing/noise_and_filtering_nb/)

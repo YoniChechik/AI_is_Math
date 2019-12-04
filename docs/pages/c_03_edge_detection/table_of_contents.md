@@ -6,7 +6,7 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 layout: page
 ---
 
-## **Edge Detection** [(slides)](/pages/c_03_edge_detection/slides/), [(edge detection notebook)](/pages/c_03_edge_detection/edge_detection_nb/)
+## **Edge Detection** [(slides)](/pages/c_03_edge_detection/edge_detection.pdf), [(edge detection notebook)](/pages/c_03_edge_detection/edge_detection_nb/)
 - Intro to edges
 - Basic edge image
 - Edge thinning

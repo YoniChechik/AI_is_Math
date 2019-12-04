@@ -1,4 +1,4 @@
-## **Camera calibration** [(slides)](/pages/c_07_camera_calibration/slides/)
+## **Camera calibration** [(slides)](/pages/c_07_camera_calibration/camera_calibration.pdf)
 
 - What is camera calibration?
 - Camera intrinsics

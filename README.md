@@ -17,7 +17,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 - [Ex1: basic python, numpy & matplotlib, opencv](https://www.aiismath.com/pages/c_01_basic_CV_and_python/ex1/)
 
 
-### **Image processing** [(slides)](https://www.aiismath.com/pages/c_02_image_processing/slides/)
+### **Image processing** [(slides)](https://www.aiismath.com/pages/c_02_image_processing/Image_processing.pdf)
 - Image representation
 - Pixel-wise operations
 - Noise and filtering [(notebook)](https://www.aiismath.com/pages/c_02_image_processing/noise_and_filtering_nb/)
@@ -29,7 +29,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 - [Ex2: morphological operators and friends](https://www.aiismath.com/pages/c_02_image_processing/ex2/)
 
 
-### **Edge Detection** [(slides)](https://www.aiismath.com/pages/c_03_edge_detection/slides/), [(edge detection notebook)](https://www.aiismath.com/pages/c_03_edge_detection/edge_detection_nb/)
+### **Edge Detection** [(slides)](https://www.aiismath.com/pages/c_03_edge_detection/edge_detection.pdf), [(edge detection notebook)](https://www.aiismath.com/pages/c_03_edge_detection/edge_detection_nb/)
 - Intro to edges
 - Basic edge image
 - Edge thinning
@@ -42,7 +42,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
   - Unsharp filter
 - [Ex3: Bilateral filter](https://www.aiismath.com/pages/c_03_edge_detection/ex3/)
 
-### **Curve fitting** [(slides)](https://www.aiismath.com/pages/c_04_curve_fitting/slides/)
+### **Curve fitting** [(slides)](https://www.aiismath.com/pages/c_04_curve_fitting/Curve_fitting.pdf)
 - Linear least squares
 - Total least squares
 - Least squares [(Least squares & RANSAC notebook)](https://www.aiismath.com/pages/c_04_curve_fitting/least_squares_nb/)
@@ -54,7 +54,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 
 
-### **Image formation** [(slides)](https://www.aiismath.com/pages/c_05_image_formation/slides/)
+### **Image formation** [(slides)](https://www.aiismath.com/pages/c_05_image_formation/Image_formation.pdf)
 
 - BRDF
 - Pinhole camera
@@ -62,7 +62,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 - The human eye
 - [Ex5: vignetting](https://www.aiismath.com/pages/c_05_image_formation/ex5/)
 
-### **Geometric transformation** [(slides)](https://www.aiismath.com/pages/c_06_geometric_transformation/slides/)
+### **Geometric transformation** [(slides)](https://www.aiismath.com/pages/c_06_geometric_transformation/geometric_transformation.pdf)
 
 - 2D->2D transformations [(notebook)](https://www.aiismath.com/pages/c_06_geometric_transformation/image_transformation_2d_nb/)
 - 3D->3D transformations
@@ -71,7 +71,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
   - Orthographic projection
 
 
-### **Camera calibration** [(slides)](https://www.aiismath.com/pages/c_07_camera_calibration/slides/)
+### **Camera calibration** [(slides)](https://www.aiismath.com/pages/c_07_camera_calibration/camera_calibration.pdf)
 
 - What is camera calibration?
 - Camera intrinsics
@@ -81,7 +81,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 
 
-### **Features** [(slides)](https://www.aiismath.com/pages/c_08_features/slides/)
+### **Features** [(slides)](https://www.aiismath.com/pages/c_08_features/features.pdf)
 
 - What and why we need features detection?
 - Feature detection
@@ -96,7 +96,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 
 
-### **Stereo** [(slides)](https://www.aiismath.com/pages/c_09_stereo/slides/)
+### **Stereo** [(slides)](https://www.aiismath.com/pages/c_09_stereo/stereo.pdf)
 
 WIP
 

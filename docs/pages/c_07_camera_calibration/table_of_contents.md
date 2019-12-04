@@ -6,7 +6,7 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 layout: page
 ---
 
-## **Camera calibration** [(slides)](/pages/c_07_camera_calibration/slides/)
+## **Camera calibration** [(slides)](/pages/c_07_camera_calibration/camera_calibration.pdf)
 
 - What is camera calibration?
 - Camera intrinsics

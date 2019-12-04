@@ -4,7 +4,7 @@
 This is my CV course raw data git repo - you can see the raw .py/ .ppt files here.
 
 ## Course TOC
-### **CV & Python basics** [(slides)](https://www.aiismath.com/pages/c_01_basic_CV_and_python/slides/)
+### **CV & Python basics** [(slides)](https://www.aiismath.com/pages/c_01_basic_CV_and_python/intro_to_Computer_Vision.pdf)
 - Course details
 - What is computer vision (CV)?
 - Course outline

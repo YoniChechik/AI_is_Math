@@ -58,7 +58,8 @@ def run_on_one_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
         # ==== make .pptx -> .pdf
         if fn.endswith(".pptx") and do_ppt:
             print("converting pptx: \n" + fn)
-            PPTtoPDF(os.path.join(fp, fn), os.path.join(fp, fn_no_ext+".pdf"))
+            docs_fp = fp.replace("AI_is_Math",os.path.join("AI_is_Math","docs","pages"))
+            PPTtoPDF(os.path.join(fp, fn), os.path.join(docs_fp, fn_no_ext+".pdf"))
 
         # ==== make .py -> .ipynb and compile ipynb
         elif fn.endswith(".py") and do_py2ipynb:
@@ -73,6 +74,6 @@ def run_on_one_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
                     "jupyter nbconvert --ExecutePreprocessor.timeout=60 --to notebook --execute --inplace \""+out_ipynb+"\"")
     
 if __name__ == "__main__":
-    dir_list = [r'C:\Users\jonathanch\Desktop\AI_is_Math\c_03_edge_detection']
-    run_on_class_dir_list(dir_list, do_py2ipynb=1, do_ppt=0)
+    dir_list = [r'C:\Users\chech\Desktop\AI_is_Math\c_03_edge_detection']
+    run_on_class_dir_list(dir_list, do_py2ipynb=0, do_ppt=1)
     # run_on_all_classes(do_py2ipynb=1, do_ppt=1)

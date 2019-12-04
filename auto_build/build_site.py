@@ -107,16 +107,16 @@ def build_site():
 					f.write(header_builder(title,subtitle,bigimg_path_pages,layout="notebook"))
 					f.write(nb_data)
 		
-		# ==== build slides html
-		for pdf_file in os.listdir(class_dir):
-			if pdf_file.endswith(".pdf"):
-				pdf_file_no_ext = pdf_file.split(".")[0]
-				slides_html_path = os.path.join(pages_class_dir_path,"slides.html")
-				with open(slides_html_path, "w+") as f:
-					subtitle = "Slides"
-					f.write(header_builder(title,subtitle,bigimg_path_pages))
-					slides_src = "https://nbviewer.jupyter.org/github/YoniChechik/AI_is_Math/blob/master/{}/{}".format(dir_name,pdf_file.replace(" ","%20"))
-					f.write(add_iframe(slides_src))
+		# # ==== build slides html
+		# for pdf_file in os.listdir(class_dir):
+		# 	if pdf_file.endswith(".pdf"):
+		# 		pdf_file_no_ext = pdf_file.split(".")[0]
+		# 		slides_html_path = os.path.join(pages_class_dir_path,"slides.html")
+		# 		with open(slides_html_path, "w+") as f:
+		# 			subtitle = "Slides"
+		# 			f.write(header_builder(title,subtitle,bigimg_path_pages))
+		# 			slides_src = "https://nbviewer.jupyter.org/github/YoniChechik/AI_is_Math/blob/master/{}/{}".format(dir_name,pdf_file))#.replace(" ","%20"))
+		# 			f.write(add_iframe(slides_src))
 
 
 def add_iframe(src):

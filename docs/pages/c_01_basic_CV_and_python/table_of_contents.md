@@ -6,7 +6,7 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 layout: page
 ---
 
-## **CV & Python basics** [(slides)](/pages/c_01_basic_CV_and_python/slides/)
+## **CV & Python basics** [(slides)](/pages/c_01_basic_CV_and_python/intro_to_Computer_Vision.pdf)
 - Course details
 - What is computer vision (CV)?
 - Course outline

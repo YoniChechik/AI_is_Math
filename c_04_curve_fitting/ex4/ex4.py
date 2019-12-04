@@ -49,8 +49,8 @@ plt.show()
 # %%
 # TODO: state parameters for accumulation matrix
 # What parameters a circle accumulation matrix needs?
-# Hint: very similar to what we did in line Hough transform
-# If you need more clues, try assuming you already finished this part and continue with the ex.
+# Hint: very similar to what we did in line Hough transform...
+# If you need more clues, read the rest of the code.
 # (6-8 lines- but all are similar to each other)
 some_params_here = None
 
@@ -71,10 +71,9 @@ for yx in edge_inds:
     for a_ind, a0 in enumerate(a):
         for b_ind, b0 in enumerate(b):
 
-            # TODO: find best corresponding R (~3 lines)
-            # Hint: this can be done faster if you add TH to max_r
+            # TODO: find best corresponding r0 (1 line)
+            # Hint: this 3 for loops can be done faster if you add TH to r0 using max_r (+2 lines)
 
-            r0 = np.round(r0/r_step)*r_step
             r_ind = np.argmin(np.abs(r0-r))
 
             # TODO: update accumulation matrix (one line)

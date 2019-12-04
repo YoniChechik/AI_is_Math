@@ -44,14 +44,14 @@ plt.show()
 # choose R size
 r_step = 1
 rmax = np.sqrt(im.shape[0]**2+im.shape[1]**2)
-r = np.arange(-rmax, rmax, r_step)
+r_vec = np.arange(-rmax, rmax, r_step)
 
 # choose theta size
 t_step = np.pi/180
-t = np.arange(0, np.pi, t_step)
+t_vec = np.arange(0, np.pi, t_step)
 
 # accumulation matrix
-acc_mat = np.zeros((r.shape[0], t.shape[0]))
+acc_mat = np.zeros((r_vec.shape[0], t_vec.shape[0]))
 
 # %% [markdown]
 # ## Fill accumulation matrix
@@ -60,14 +60,13 @@ acc_mat = np.zeros((r.shape[0], t.shape[0]))
 edge_inds = np.argwhere(mag_im > 0)
 
 # run on all theta and edge indices and find corresponding R
-for t_ind, t0 in enumerate(t):
+for t_ind, t0 in enumerate(t_vec):
     for yx in edge_inds:
         x = yx[1]
         y = yx[0]
 
         r0 = x*np.cos(t0)+y*np.sin(t0)
-        r0 = np.round(r0/r_step)*r_step
-        r_ind = np.argmin(np.abs(r0-r))
+        r_ind = np.argmin(np.abs(r0-r_vec))
 
         acc_mat[r_ind, t_ind] += 1
 
@@ -82,7 +81,7 @@ plt.show()
 # %% [markdown]
 # ## Threshold accumulation matrix
 # %%
-TH = 110
+TH = 100
 acc_mat_th = acc_mat > TH
 
 plt.figure(figsize=figsize)
@@ -100,8 +99,8 @@ edge_inds = np.argwhere(acc_mat_th > 0)
 
 res = im3.copy()
 for r_ind, t_ind in edge_inds:
-    rho = r[r_ind]
-    theta = t[t_ind]
+    rho = r_vec[r_ind]
+    theta = t_vec[t_ind]
 
     print("(rho,theta): " + str((rho, theta/np.pi*180)))
 

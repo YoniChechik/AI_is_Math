@@ -24,7 +24,7 @@ kernel[:,2] = 1
 
 
 plt.figure(figsize=figsize)
-plt.imshow(dst,cmap="gray")
+plt.imshow(kernel,cmap="gray")
 plt.show()
 
 # %%

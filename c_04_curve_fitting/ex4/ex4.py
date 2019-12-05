@@ -61,6 +61,9 @@ acc_mat = []
 # ## Fill accumulation matrix
 # %%
 # get indices of edges
+# HINT: you can debug faster if you'll use only a small part of the image. remember to comment it back later
+# mag_im = mag_im[0:20,0:20]
+
 edge_inds = np.argwhere(mag_im > 0)
 
 # run on all a,b and edge indices and find corresponding R
@@ -72,18 +75,18 @@ for yx in edge_inds:
         for b_ind, b0 in enumerate(b):
 
             # TODO: find best corresponding r0 (1 line)
-            # Hint: this 3 for loops can be done faster if you add TH to r0 using max_r (+2 lines)
 
+            #find best index in r dimension:
             r_ind = np.argmin(np.abs(r0-r))
 
             # TODO: update accumulation matrix (one line)
 
 #%%
 plt.figure(figsize=figsize)
-plt.imshow(np.sum(acc_mat, axis=2), extent=[b.min(), b.max(), a.max(), a.min()],aspect='auto')
+plt.imshow(np.max(acc_mat, axis=2), extent=[b.min(), b.max(), a.max(), a.min()],aspect='auto')
 plt.xlabel('a')
 plt.ylabel('b')
-plt.title('accumulation matrix summed over r axis')
+plt.title('accumulation matrix maxed over r axis')
 plt.colorbar()
 plt.show()
 

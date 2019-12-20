@@ -6,6 +6,7 @@
   - Harris corner detection [(Harris notebook)](/pages/c_08_features/harris_nb/)
   - SIFT detector 
 - Feature description
+  - Template matching
   - HOG
   - SIFT descriptor
 - SIFT feature matching [(SIFT notebook)](/pages/c_08_features/sift_nb/)

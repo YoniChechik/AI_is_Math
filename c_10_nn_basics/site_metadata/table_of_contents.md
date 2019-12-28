@@ -1,4 +1,4 @@
-## **Stereo** [(slides)](/pages/c_09_stereo/stereo.pdf)
+## **Neural networks basics** [(slides)](/pages/c_10_nn_basics/nn_basics.pdf)
 
 WIP
 

@@ -74,8 +74,8 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 ## **Camera calibration** [(slides)](/pages/c_07_camera_calibration/camera_calibration.pdf)
 
 - What is camera calibration?
-- Camera intrinsics
 - Camera extrinsics
+- Camera intrinsics
 - Full camera matrix
 - Calibration methods and distortions [(notebook)](/pages/c_07_camera_calibration/multi_plane_calib_nb/)
 
@@ -89,6 +89,7 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
   - Harris corner detection [(Harris notebook)](/pages/c_08_features/harris_nb/)
   - SIFT detector 
 - Feature description
+  - Template matching
   - HOG
   - SIFT descriptor
 - SIFT feature matching [(SIFT notebook)](/pages/c_08_features/sift_nb/)
@@ -97,6 +98,22 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 
 
 ## **Stereo** [(slides)](/pages/c_09_stereo/stereo.pdf)
+
+- Structure from motion
+- Epipolar geometry
+     - Essential matrix
+     - Fundamental matrix
+     - Estimating the fundamental matrix
+- Camera rectification
+- Triangulation
+- Stereo matching
+- Other 3D sensors
+
+
+
+
+
+## **Neural networks basics** [(slides)](/pages/c_10_nn_basics/nn_basics.pdf)
 
 WIP
 

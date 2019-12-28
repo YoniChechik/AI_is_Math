@@ -74,8 +74,8 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 ### **Camera calibration** [(slides)](https://www.aiismath.com/pages/c_07_camera_calibration/camera_calibration.pdf)
 
 - What is camera calibration?
-- Camera intrinsics
 - Camera extrinsics
+- Camera intrinsics
 - Full camera matrix
 - Calibration methods and distortions [(notebook)](https://www.aiismath.com/pages/c_07_camera_calibration/multi_plane_calib_nb/)
 
@@ -89,6 +89,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
   - Harris corner detection [(Harris notebook)](https://www.aiismath.com/pages/c_08_features/harris_nb/)
   - SIFT detector 
 - Feature description
+  - Template matching
   - HOG
   - SIFT descriptor
 - SIFT feature matching [(SIFT notebook)](https://www.aiismath.com/pages/c_08_features/sift_nb/)
@@ -97,6 +98,22 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 
 ### **Stereo** [(slides)](https://www.aiismath.com/pages/c_09_stereo/stereo.pdf)
+
+- Structure from motion
+- Epipolar geometry
+     - Essential matrix
+     - Fundamental matrix
+     - Estimating the fundamental matrix
+- Camera rectification
+- Triangulation
+- Stereo matching
+- Other 3D sensors
+
+
+
+
+
+### **Neural networks basics** [(slides)](https://www.aiismath.com/pages/c_10_nn_basics/nn_basics.pdf)
 
 WIP
 

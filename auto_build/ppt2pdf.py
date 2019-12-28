@@ -1,15 +1,15 @@
-import comtypes.client
+import win32com.client
 
 def PPTtoPDF(inputFileName, outputFileName, formatType = 32):
-    powerpoint = comtypes.client.CreateObject("Powerpoint.Application")
-    powerpoint.Visible = 1
+    app = win32com.client.Dispatch("PowerPoint.Application")
+    ppt = app.Presentations.Open(inputFileName, ReadOnly= False)
+    ppt.SaveAs(outputFileName, 32) # formatType = 32 for ppt to pdf
+    app.Quit()
+    ppt =  None
+    app = None
 
-    if outputFileName[-3:] != 'pdf':
-        outputFileName = outputFileName + ".pdf"
-    deck = powerpoint.Presentations.Open(inputFileName)
-    deck.SaveAs(outputFileName, formatType) # formatType = 32 for ppt to pdf
-    deck.Close()
-    powerpoint.Quit()
 
 if __name__ == '__main__':
     PPTtoPDF(r"C:\Users\jonathanch\Google Drive\cv course\slides\Edges.pptx", r"C:\Users\jonathanch\Google Drive\cv course\slides\test.pdf")
+
+

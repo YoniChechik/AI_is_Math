@@ -1,8 +1,8 @@
 ---
 title: Nn basics
 subtitle: Table of contents
-bigimg: /pages/c_10_nn_basics/bigimg.jpg
-share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/pages/c_10_nn_basics/bigimg.jpg
+bigimg: /pages/c_10_nn_basics/bigimg.png
+share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/pages/c_10_nn_basics/bigimg.png
 layout: page
 ---
 

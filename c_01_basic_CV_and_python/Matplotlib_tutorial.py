@@ -138,6 +138,7 @@ x = r * np.sin(theta)
 y = r * np.cos(theta)
 ax.plot(x, y, z, label='parametric curve')
 ax.legend()
+ax.title("3d plot")
 
 #%% [markdown]
 # ## Note on IDE plotting

@@ -17,7 +17,8 @@
 		"python.venvFolders": [
 			"C:\\Users\\chech\\AppData\\Local\\Programs\\Python\\cv_course_venv"
 		],
-
+		"python.terminal.activateEnvInCurrentTerminal": true,
+		
 		"editor.autoClosingBrackets": "never",
 		"editor.autoClosingQuotes": "never",
 		"editor.mouseWheelZoom": true,

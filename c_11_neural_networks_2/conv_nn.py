@@ -1,3 +1,8 @@
+# %% [markdown]
+# # Conv Net
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_11_neural_networks_2/conv_nn.ipynb)
+
+
 #%%
 import tensorflow as tf
 

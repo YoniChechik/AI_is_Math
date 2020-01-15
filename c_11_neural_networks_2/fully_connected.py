@@ -1,3 +1,7 @@
+# %% [markdown]
+# # Fully connected NN
+# [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_11_neural_networks_2/fully_connected.ipynb)
+
 #%%
 import tensorflow as tf
 from tensorflow import keras

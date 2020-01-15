@@ -113,7 +113,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 
 
-### **Neural networks basics** [(slides)](https://www.aiismath.com/pages/c_10_neural_networks_basics/nn_neural_networks_basics.pdf)
+### **Neural networks basics** [(slides)](https://www.aiismath.com/pages/c_10_neural_networks_basics/neural_networks_basics.pdf)
 
 WIP
 
@@ -121,8 +121,8 @@ WIP
 
 ### **Neural networks 2** [(slides)](https://www.aiismath.com/pages/c_11_neural_networks_2/neural_networks_2.pdf)
 
-- [Fully connected net]((https://www.aiismath.com/pages/c_08_features/fully_connected_nb/))
-- [Conv net]((https://www.aiismath.com/pages/c_08_features/conv_nn_nb/))
+- [Fully connected net](https://www.aiismath.com/pages/c_11_neural_networks_2/fully_connected_nb/)
+- [Conv net](https://www.aiismath.com/pages/c_11_neural_networks_2/conv_nn_nb/))
 
 
 

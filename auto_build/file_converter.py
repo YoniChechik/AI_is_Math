@@ -71,7 +71,7 @@ def run_on_one_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
             if do_py_exec:
                 print("executing .ipynb: \n" + fn)
                 os.system(
-                    "jupyter nbconvert --ExecutePreprocessor.timeout=60 --to notebook --execute --inplace \""+out_ipynb+"\"")
+                    "jupyter nbconvert --ExecutePreprocessor.timeout=120 --to notebook --execute --inplace \""+out_ipynb+"\"")
     
 if __name__ == "__main__":
     dir_list = [r'C:\Users\chech\Desktop\AI_is_Math\c_03_edge_detection']

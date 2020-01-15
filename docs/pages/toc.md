@@ -113,9 +113,16 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 
 
 
-## **Neural networks basics** [(slides)](/pages/c_10_nn_basics/nn_basics.pdf)
+## **Neural networks basics** [(slides)](/pages/c_10_neural_networks_basics/neural_networks_basics.pdf)
 
 WIP
+
+
+
+## **Neural networks 2** [(slides)](/pages/c_11_neural_networks_2/neural_networks_2.pdf)
+
+- [Fully connected net]((/pages/c_11_neural_networks_2/fully_connected_nb/))
+- [Conv net]((/pages/c_11_neural_networks_2/conv_nn_nb/))
 
 
 

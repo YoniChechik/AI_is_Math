@@ -6,7 +6,7 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 layout: page
 ---
 
-## **Neural networks basics** [(slides)](/pages/c_10_nn_basics/nn_basics.pdf)
+## **Neural networks basics** [(slides)](/pages/c_10_neural_networks_basics/neural_networks_basics.pdf)
 
 WIP
 

@@ -22,6 +22,7 @@ description: AI is Math is my (Yoni Chechik) computer vision course site- includ
 navbar-links:
   How to start?: "/pages/how2start/how2start/"
   Table of contents: "/pages/toc/"
+  Course meetup: "/pages/meetup/"
   # Resources:
   #   - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
   #   - Learn markdown: "http://www.markdowntutorial.com/"

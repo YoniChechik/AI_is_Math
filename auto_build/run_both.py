@@ -1,11 +1,29 @@
 from build_site import build_site
 from file_converter import run_on_all_classes,run_on_class_dir_list
+import os
+
 
 do_py2ipynb = 1
-do_ppt=0
+do_ppt=1
 
-dir_list = [r'C:\Users\chech\Desktop\AI_is_Math\c_11_neural_networks_2']
+main_path = r"C:\Users\chech\Desktop\AI_is_Math"
+dir_list = [
+    # 'c_01_basic_CV_and_python',
+    # 'c_02_image_processing',
+    # 'c_03_edge_detection',
+    # 'c_04_curve_fitting',
+    # 'c_05_image_formation',
+    # 'c_06_geometric_transformation',
+    # 'c_07_camera_calibration',
+    # 'c_08_features',
+    # 'c_09_stereo',
+    'c_10_neural_networks_basics',
+    'c_11_neural_networks_2']
+
+
+dir_list = [os.path.join(main_path,dir_i) for dir_i in dir_list]
+
 run_on_class_dir_list(dir_list, do_py2ipynb=do_py2ipynb, do_ppt=do_ppt)
 # run_on_all_classes(do_py2ipynb=do_py2ipynb, do_ppt=do_ppt)
 
-build_site()
+build_site(dir_list)

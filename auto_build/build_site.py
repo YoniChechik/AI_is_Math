@@ -1,7 +1,7 @@
 import os
 import shutil
 
-def build_site():
+def build_site(dirs):
 
 	#=== get all git class dirs - starting with "c_"
 	cwd = os.getcwd()
@@ -86,26 +86,27 @@ def build_site():
 			f.write(html_float_bar(url_toc,bigimg_path_pages,title))
 
 		# ==== build notebooks html
-		class_dir = os.path.join(git_main_dirs_cwd, dir_name)
 		
-		for ipynb_file in os.listdir(class_dir):
-			if ipynb_file.endswith(".ipynb"):
-				ipynb_file_no_ext = ipynb_file.split(".")[0]
-				ipynb_fp = os.path.join(class_dir,ipynb_file)
-				notebook_html_path = os.path.join(pages_class_dir_path,ipynb_file_no_ext+"_nb.html")
+		class_dir = os.path.join(git_main_dirs_cwd, dir_name)
+		if class_dir in dirs:
+			for ipynb_file in os.listdir(class_dir):
+				if ipynb_file.endswith(".ipynb"):
+					ipynb_file_no_ext = ipynb_file.split(".")[0]
+					ipynb_fp = os.path.join(class_dir,ipynb_file)
+					notebook_html_path = os.path.join(pages_class_dir_path,ipynb_file_no_ext+"_nb.html")
 
-				# ==== convert ipynb to html
-				os.system("jupyter nbconvert --ExecutePreprocessor.timeout=60 --to html  "+ipynb_fp+" --output "+notebook_html_path)
-				with open(notebook_html_path, "r+") as f:
-					lines_arr = f.readlines()
-				nb_data = "".join(lines_arr)
+					# ==== convert ipynb to html
+					os.system("jupyter nbconvert --ExecutePreprocessor.timeout=60 --to html  "+ipynb_fp+" --output "+notebook_html_path)
+					with open(notebook_html_path, "r+") as f:
+						lines_arr = f.readlines()
+					nb_data = "".join(lines_arr)
 
-				# ==== write header + data 
-				subtitle = " ".join(ipynb_file_no_ext.split("_"))
-				subtitle = subtitle[0].upper() + subtitle[1:] + " notebook"	
-				with open(notebook_html_path, "w+") as f:
-					f.write(header_builder(title,subtitle,bigimg_path_pages,layout="notebook"))
-					f.write(nb_data)
+					# ==== write header + data 
+					subtitle = " ".join(ipynb_file_no_ext.split("_"))
+					subtitle = subtitle[0].upper() + subtitle[1:] + " notebook"	
+					with open(notebook_html_path, "w+") as f:
+						f.write(header_builder(title,subtitle,bigimg_path_pages,layout="notebook"))
+						f.write(nb_data)
 
 def header_builder(title,subtitle,bigimg_path,layout="page"):
 	# tamplate:

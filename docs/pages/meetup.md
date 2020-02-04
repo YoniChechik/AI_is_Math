@@ -6,7 +6,9 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 
 # Course meetup 
 
-This course is currently given weekly at google campus (small class), Ha-Umanim St 12, Tel Aviv-Yafo, **each sunday at 18:30-20:30**.
+This course is currently given weekly at Google for startups campus (small class- fifth floor), Ha-Umanim St 12, Tel Aviv-Yafo, **each sunday at 18:30-20:30**. 
+- 3 mins. walk from Hashlom train-station.
+- Bikes and scooters can only be parked outside of the building.
 
 If you want to participate, please fill the form corresponding to the wanted classes you will join:
 

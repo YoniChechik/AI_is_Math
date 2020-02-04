@@ -12,6 +12,6 @@ This course is currently given weekly at Google for startups campus (small class
 
 If you want to participate, please fill the form corresponding to the wanted classes you will join:
 
-- class 1 - 16.2.20 - [intro to computer vision](https://docs.google.com/forms/d/e/1FAIpQLScHZb6wruJ0JyzqhcnSpJFdGm4lUG7kSwaSlhI8nrT1YZaBYg/viewform?usp=sf_link)
-- class 2 - 23.2.20 - [image processing](https://docs.google.com/forms/d/e/1FAIpQLSelC0dCz2ijEXGhNiu3nyfi0wE09_3OYt9HX5efdhDRwABa0w/viewform?usp=sf_link)
-- class 3 - 1.3.20 - [edge detection](https://docs.google.com/forms/d/e/1FAIpQLSdAmdmUI9JutDStlr03QHKuZwgGD06mCxXIK8qOLduojbDxJQ/viewform?usp=sf_link)
+- class 1 - 16.2.20 - [Intro to computer vision- registration form](https://docs.google.com/forms/d/e/1FAIpQLScHZb6wruJ0JyzqhcnSpJFdGm4lUG7kSwaSlhI8nrT1YZaBYg/viewform?usp=sf_link)
+- class 2 - 23.2.20 - [Image processing- registration form](https://docs.google.com/forms/d/e/1FAIpQLSelC0dCz2ijEXGhNiu3nyfi0wE09_3OYt9HX5efdhDRwABa0w/viewform?usp=sf_link)
+- class 3 - 1.3.20 - [Edge detection- registration form](https://docs.google.com/forms/d/e/1FAIpQLSdAmdmUI9JutDStlr03QHKuZwgGD06mCxXIK8qOLduojbDxJQ/viewform?usp=sf_link)

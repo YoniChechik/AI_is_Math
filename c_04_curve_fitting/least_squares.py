@@ -230,7 +230,7 @@ def basic_ransac(x,TH):
 
         # https://en.wikipedia.org/wiki/Cross_product#Geometric_meaning
         # |a X b| = |a||b|sin(t) -> |a X b|/|b| = |a|sin(t)
-        d_j = np.linalg.norm(np.cross(line_p2-line_p1, line_p1-p_j))/np.linalg.norm(line_p2-line_p1)
+        d_j = np.linalg.norm(np.cross(line_p1-p_j, line_p2-line_p1))/np.linalg.norm(line_p2-line_p1)
         if d_j <= TH:
             inliers_ind.append(j)
 

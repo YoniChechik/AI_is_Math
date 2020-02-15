@@ -9,7 +9,7 @@ do_ppt=1
 main_path = r"C:\Users\chech\Desktop\AI_is_Math"
 dir_list = [
     # 'c_01_basic_CV_and_python',
-    # 'c_02_image_processing',
+    'c_02_image_processing',
     # 'c_03_edge_detection',
     # 'c_04_curve_fitting',
     # 'c_05_image_formation',
@@ -17,8 +17,9 @@ dir_list = [
     # 'c_07_camera_calibration',
     # 'c_08_features',
     # 'c_09_stereo',
-    'c_10_neural_networks_basics',
-    'c_11_neural_networks_2']
+    # 'c_10_neural_networks_basics',
+    # 'c_11_neural_networks_2'
+    ]
 
 
 dir_list = [os.path.join(main_path,dir_i) for dir_i in dir_list]

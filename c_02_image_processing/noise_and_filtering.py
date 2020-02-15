@@ -31,14 +31,12 @@ def plot_im(img, title):
 
 img = cv2.imread("Tour_Eiffel.jpg")
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-plot_im(img, "orig")
+plot_im(img, "original image")
 
 # %% [markdown]
-# ## mean filter
+# ## Mean filter
 
 # %%
-
-
 def mean_kernel_smoothing(img, sz):
     kernel = np.ones((sz, sz))/(sz**2)
     dst = cv2.filter2D(img, -1, kernel)
@@ -51,16 +49,15 @@ mean_kernel_smoothing(img, 10)
 mean_kernel_smoothing(img, 20)
 
 # %% [markdown]
-# ## gaussian filter
+# ## Gaussian filter
 
 # %%
-
-
 def gauss_blur(img, k_sz, sigma=-1, is_plot_kernel=False):
     blur = cv2.GaussianBlur(img, (k_sz, k_sz), sigma)
     plot_im(blur, "gaussian kernel with kernel_size="
             + str(k_sz)+r", $\sigma$=" + str(sigma))
     if is_plot_kernel:
+        # sigma=-1 will set the sigma size automatically 
         gauss_ker = cv2.getGaussianKernel(k_sz, sigma)
         plt.figure(figsize=(figsize[0]/2, figsize[1]/2))
         plt.plot(gauss_ker)
@@ -72,55 +69,54 @@ gauss_blur(img, 21, is_plot_kernel=True)
 gauss_blur(img, 21, 1, is_plot_kernel=True)
 
 # %% [markdown]
-# ## madian filter
+# ## Median filter
 
 # %%
 
 
-def median_blur(img, k_sz):
+def median_filter(img, k_sz):
     res = cv2.medianBlur(img, k_sz)
     plot_im(res, "median filter with kernel_size="+str(k_sz))
 
 
-median_blur(img, 5)
+median_filter(img, 5)
 
 # %% [markdown]
-# ## noise addition func
+# ## Noise addition func
 
 # %%
 
 
-def noisy(noise_typ, image, gauss_var=1000, s_p_ratio=0.04):
-    # modified from: https://stackoverflow.com/questions/22937589/how-to-add-noise-gaussian-salt-and-pepper-etc-to-image-in-python-with-opencv
-    if noise_typ == "gauss":
-        mean = 0
-        sigma = gauss_var**0.5
-        gauss = np.random.normal(mean, sigma, image.shape)
+def gauss_noise(image, gauss_var=1000):
+    mean = 0
+    sigma = gauss_var**0.5
+    gauss = np.random.normal(mean, sigma, image.shape)
 
-        res = image + gauss
-        noisy = np.clip(res,0,255).astype(np.uint8)
-        return noisy
-    elif noise_typ == "s&p":
-        # this implementation is not entirely correct because it assumes that
-        # only 0 OR 255 values are S&P noise.
-        out = np.copy(image)
+    res = image + gauss
+    noisy = np.clip(res,0,255).astype(np.uint8)
+    return noisy
 
-        # Salt mode
-        mask = np.random.rand(image.shape[0],image.shape[1]) <= s_p_ratio/2
-        out[mask] = 255
+def s_and_p_noise(image, s_p_ratio=0.04):
+    # this implementation is not entirely correct because it assumes that
+    # only 0 OR 255 values are S&P noise.
+    out = np.copy(image)
 
-        # Pepper mode
-        mask = np.random.rand(image.shape[0],image.shape[1]) <= s_p_ratio/2
-        out[mask] = 0
-        return out
+    # Salt mode
+    mask = np.random.rand(image.shape[0],image.shape[1]) <= s_p_ratio/2
+    out[mask] = 255
+
+    # Pepper mode
+    mask = np.random.rand(image.shape[0],image.shape[1]) <= s_p_ratio/2
+    out[mask] = 0
+    return out
 
 
 # %% [markdown]
-# ## gaussian noise tests
+# ## Gaussian noise tests
 # %%
 np.random.seed(1234)
 
-gauss_noise_im = noisy("gauss", img, gauss_var=70)
+gauss_noise_im = gauss_noise(img, gauss_var=70)
 plt.figure(figsize=figsize)
 plt.imshow(gauss_noise_im)
 plt.title('original image + gaussian noise')
@@ -130,13 +126,13 @@ plt.show()
 gauss_blur(gauss_noise_im, 3)
 gauss_blur(gauss_noise_im, 5)
 gauss_blur(gauss_noise_im, 11)
-median_blur(gauss_noise_im, 5)
+median_filter(gauss_noise_im, 5)
 
 # %% [markdown]
-# ## salt and pepper noise test
+# ## Salt and pepper noise test
 
 # %%
-s_p_noise_im = noisy("s&p", img, s_p_ratio=0.04)
+s_p_noise_im = s_and_p_noise(img, s_p_ratio=0.04)
 plt.figure(figsize=figsize)
 plt.imshow(s_p_noise_im)
 plt.title('original image + s&p noise')
@@ -144,7 +140,7 @@ plt.show()
 
 # %%
 gauss_blur(s_p_noise_im, 5)
-median_blur(s_p_noise_im, 3)
-median_blur(s_p_noise_im, 5)
+median_filter(s_p_noise_im, 3)
+median_filter(s_p_noise_im, 5)
 
 # %%

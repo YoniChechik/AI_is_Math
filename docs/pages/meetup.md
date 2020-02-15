@@ -4,9 +4,9 @@ bigimg: /img/FedTech-ComputerVision.jpg
 share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/img/FedTech-ComputerVision.jpg
 ---
 
-# Course meetup 
+# Computer vision course meetup 
 
-This course is will be given weekly at Google for startups campus (small class- fifth floor), Ha-Umanim St 12, Tel Aviv-Yafo, **each sunday at 18:30-20:30**, starting 16.2.20. 
+This course is will be given weekly for 10 weeks at Google for startups campus (small class- fifth floor), Ha-Umanim St 12, Tel Aviv-Yafo, **each sunday at 18:30-20:30**, starting 16.2.20. Full course syllabus and material can be seen [here](https://www.aiismath.com).
 - 3 mins. walk from Hashlom train-station.
 - Bikes and scooters can only be parked outside of the building.
 

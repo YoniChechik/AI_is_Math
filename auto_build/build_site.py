@@ -86,7 +86,6 @@ def build_site(dirs):
 			f.write(html_float_bar(url_toc,bigimg_path_pages,title))
 
 		# ==== build notebooks html
-		
 		class_dir = os.path.join(git_main_dirs_cwd, dir_name)
 		if class_dir in dirs:
 			for ipynb_file in os.listdir(class_dir):
@@ -142,7 +141,7 @@ def html_float_bar(url_content,url_image,title):
 				"<div class=\"mycont\">\n"
 				"   <a href=\"{}\"><img class=\"hoverImages\" src=\"{}\" alt=\"{}\">\n"
 				"	<div class=\"bottom-left\"> \n"
-				"		<h1>{}</h1>\n"
+				"		<h2>{}</h2>\n"
 				"	</div>\n"
 				"</div>\n").format(url_content, url_image,title, title)
 	return html_str

@@ -4,29 +4,38 @@ bigimg: /img/FedTech-ComputerVision.jpg
 share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/img/FedTech-ComputerVision.jpg
 ---
 
-## **CV & Python basics** [(slides)](/pages/c_01_basic_CV_and_python/intro_to_Computer_Vision.pdf)
+## **Intro to CV and Python** [(slides)](/pages/c_01_intro_to_CV_and_Python/intro_to_Computer_Vision.pdf)
 - Course details
 - What is computer vision (CV)?
 - Course outline
 - Intro to Python
-  - [Basic python tutorial notebook- part 1](/pages/c_01_basic_CV_and_python/basic_python_tutorial_nb/)
-  - [Basic python tutorial notebook- part 2](/pages/c_01_basic_CV_and_python/basic_python_tutorial_part_2_nb/)
-  - [NumPy tutorial notebook](/pages/c_01_basic_CV_and_python/NumPy_tutorial_nb/)
-  - [Matplotlib tutorial notebook](/pages/c_01_basic_CV_and_python/Matplotlib_tutorial_nb/)
-  - [OpenCV tutorial notebook](/pages/c_01_basic_CV_and_python/OpenCV_tutorial_nb/)
-- [Ex1: basic python, numpy & matplotlib, opencv](/pages/c_01_basic_CV_and_python/ex1/)
+  - [Basic python tutorial notebook- part 1](/pages/c_01_intro_to_CV_and_Python/basic_python_tutorial_nb/)
+  - [Basic python tutorial notebook- part 2](/pages/c_01_intro_to_CV_and_Python/basic_python_tutorial_part_2_nb/)
+  - [NumPy tutorial notebook](/pages/c_01_intro_to_CV_and_Python/NumPy_tutorial_nb/)
+  - [Matplotlib tutorial notebook](/pages/c_01_intro_to_CV_and_Python/Matplotlib_tutorial_nb/)
+  - [OpenCV tutorial notebook](/pages/c_01_intro_to_CV_and_Python/OpenCV_tutorial_nb/)
+- [Ex1: basic python, numpy & matplotlib, opencv](/pages/c_01_intro_to_CV_and_Python/ex1/)
 
 
-## **Image processing** [(slides)](/pages/c_02_image_processing/Image_processing.pdf)
+## **Basic image processing** [(slides)](/pages/c_02a_basic_image_processing/Basic_image_processing.pdf)
+
 - Image representation
 - Pixel-wise operations
-- Noise and filtering [(notebook)](/pages/c_02_image_processing/noise_and_filtering_nb/)
+- Histogram equalization [(notebook)](/pages/c_02a_basic_image_processing/histogram_equalization_nb/)
+- Template matching
+- Morphology operators
+- Connected components
+- Color space [(notebook)](/pages/c_02a_basic_image_processing/hsv_nb/)
+- [Ex2: morphological operators and friends](/pages/c_02a_basic_image_processing/ex2/)
+
+
+## **Filtering and resampling** [(slides)](/pages/c_02b_filtering_and_resampling/Filtering_and_resampling.pdf)
+
+- Noise and filtering [(notebook)](/pages/c_02b_filtering_and_resampling/noise_and_filtering_nb/)
 - Frequency representation
 - Decimation
 - Interpolation 
-- Morphology operators
-- Connected components
-- [Ex2: morphological operators and friends](/pages/c_02_image_processing/ex2/)
+
 
 
 ## **Edge Detection** [(slides)](/pages/c_03_edge_detection/edge_detection.pdf), [(edge detection notebook)](/pages/c_03_edge_detection/edge_detection_nb/)

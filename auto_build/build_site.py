@@ -112,7 +112,7 @@ def header_builder(title,subtitle,bigimg_path,layout="page"):
 	# ---
 	# title: CV & Python basics
 	# subtitle: Table of contents
-	# bigimg: /pages/c_01_basic_CV_and_python/intro.jpg
+	# bigimg: /pages/c_01_intro_to_CV_and_Python/intro.jpg
 	# ---
 
 	bigimg_path = bigimg_path.replace("\\","/") #some kind of weird bug...

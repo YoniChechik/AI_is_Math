@@ -59,6 +59,10 @@ def run_on_one_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
         if fn.endswith(".pptx") and do_ppt:
             print("converting pptx: \n" + fn)
             docs_fp = fp.replace("AI_is_Math",os.path.join("AI_is_Math","docs","pages"))
+
+            if not os.path.exists(docs_fp):
+                os.mkdir(docs_fp)
+                
             PPTtoPDF(os.path.join(fp, fn), os.path.join(docs_fp, fn_no_ext+".pdf"))
 
         # ==== make .py -> .ipynb and compile ipynb

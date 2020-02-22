@@ -1,6 +1,6 @@
 ---
 title: Installation guide
-subtitle: Learn how to Downloads the essentials for working with Python from your own computer
+subtitle: Learn how to install the essentials for working with Python from your own computer
 bigimg: /img/FedTech-ComputerVision.jpg
 ---
  

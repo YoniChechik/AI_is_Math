@@ -41,6 +41,7 @@ print(Y_arr)
 #%%
 plt.figure(figsize=figsize)
 plt.plot(X_arr, Y_arr)
+plt.title('My First Plot')
 
 #%% [markdown]
 # ## Scatter plot
@@ -58,7 +59,7 @@ plt.axis([0, 10, 0, 35])
 plt.xlabel('My X Axis')
 plt.ylabel('My Y Axis')
 # set title
-plt.title('My First Plot')
+plt.title('My Second Plot')
 plt.legend(['line','datapoints'])
 
 #%% [markdown]
@@ -74,6 +75,7 @@ fig, ax = plt.subplots(figsize=figsize)
 
 # plot should be done on the `axis`: ax
 ax.plot(X_arr, Y_arr)
+ax.set_title('plotting with plt.subplots() is pretty much the same')
 
 #%% [markdown]
 # Applying what we did earlier:
@@ -111,6 +113,7 @@ np.mean(gaussian_arr), np.std(gaussian_arr, ddof=1)
 fig, ax = plt.subplots(figsize=figsize)
 # `hist()` will return something but we usually do not need.
 freq_arr, bin_arr, _ = ax.hist(gaussian_arr)
+ax.set_title('Histogram')
 
 #%% [markdown]
 # We can actually customize and make it prettier
@@ -121,6 +124,7 @@ fig, ax = plt.subplots(figsize=figsize)
 freq_arr, bin_arr, _ = ax.hist(gaussian_arr, facecolor='g', alpha=0.3)
 # Add grid
 ax.grid()
+ax.set_title('Histogram- some more features')
 
 #%% [markdown]
 # ## 3D plots

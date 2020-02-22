@@ -40,7 +40,7 @@ img = cv2.imread("Lenna.png")
 #%%
 plt.figure(figsize=figsize)
 plt.imshow(img)
-
+plt.title("Lenna orig")
 #%% [markdown]
 # We got a weird image colors... This is because OpenCV uses image reading convention of BGR and matplotlib uses RGB. 
 # 
@@ -51,6 +51,7 @@ plt.imshow(img)
 img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
 plt.figure(figsize=figsize)
 plt.imshow(img)
+plt.title("Lenna RGB")
 
 
 #%%
@@ -64,6 +65,7 @@ img
 # show only red channel
 plt.figure(figsize=figsize)
 plt.imshow(img[:,:,0]) 
+plt.title("Lenna red channel")
 
 
 #%%
@@ -84,6 +86,7 @@ ax_arr[1].set_title('Absolute pixel\n scale intensity')
 img_blurred=cv2.GaussianBlur(img,(15,15),7) #use a 15x15 Gaussian kernel with standard deviation 7
 plt.figure(figsize=figsize)
 plt.imshow(img_blurred)
+plt.title("Lenna blurred")
 
 
 #%%
@@ -91,6 +94,7 @@ plt.imshow(img_blurred)
 img_canny = cv2.Canny(img,180,200) # end args are the lower & upper TH of hysteresis
 plt.figure(figsize=figsize)
 plt.imshow(img_canny,cmap='gray')
+plt.title("Lenna edges")
 
 
 #%%
@@ -113,5 +117,6 @@ for x,y,r in circles[0,:]:
 
 plt.figure(figsize=figsize)
 plt.imshow(img)
+plt.title("finding circles")
 
 

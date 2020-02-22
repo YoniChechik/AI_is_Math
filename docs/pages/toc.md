@@ -5,6 +5,8 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 ---
 
 ## **Intro to CV and Python** [(slides)](/pages/c_01_intro_to_CV_and_Python/intro_to_Computer_Vision.pdf)
+
+- [Python, Pycharm & packages installation guide](/pages/python_pycharm_installation/python_pycharm_installation/)]
 - Course details
 - What is computer vision (CV)?
 - Course outline

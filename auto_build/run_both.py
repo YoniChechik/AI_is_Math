@@ -9,8 +9,8 @@ do_ppt=0
 main_path = r"C:\Users\chech\Desktop\AI_is_Math"
 dir_list = [
     'c_01_intro_to_CV_and_Python',
-    # 'c_02a_basic_image_processing',
-    # 'c_02b_filtering_and_resampling',
+    'c_02a_basic_image_processing',
+    'c_02b_filtering_and_resampling',
     # 'c_03_edge_detection',
     # 'c_04_curve_fitting',
     # 'c_05_image_formation',

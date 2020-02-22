@@ -59,8 +59,8 @@ plt.axis([0, 10, 0, 35])
 plt.xlabel('My X Axis')
 plt.ylabel('My Y Axis')
 # set title
-plt.title('My Second Plot')
 plt.legend(['line','datapoints'])
+plt.title('My Second Plot')
 
 #%% [markdown]
 # ## Coding style

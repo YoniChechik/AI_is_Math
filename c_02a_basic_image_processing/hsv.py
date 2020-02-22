@@ -20,12 +20,14 @@ import matplotlib.pyplot as plt
 figsize = (10,10)
 
 # %% [markdown]
-# Import basic image:
+# Read basic image:
 
 #%%
 im = cv2.imread("grass.jpg")
+
 plt.figure(figsize=figsize)
 plt.imshow(cv2.cvtColor(im,cv2.COLOR_BGR2RGB))
+plt.title("original image")
 # %% [markdown]
 # We want to separate the grass from the sky. we'll do this by masking all pixels in the image that are not green.
 # 

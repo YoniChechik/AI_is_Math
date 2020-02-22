@@ -6,7 +6,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 ## Course TOC
 ### **Intro to CV and Python** [(slides)](https://www.aiismath.com/pages/c_01_intro_to_CV_and_Python/intro_to_Computer_Vision.pdf)
 
-- [Python, Pycharm & packages installation guide](https://www.aiismath.com/pages/python_pycharm_installation/python_pycharm_installation/)]
+- [Python, Pycharm & packages installation guide](https://www.aiismath.com/pages/python_pycharm_installation/python_pycharm_installation/)
 - Course details
 - What is computer vision (CV)?
 - Course outline

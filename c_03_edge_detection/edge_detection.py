@@ -16,6 +16,11 @@ if 'google.colab' in sys.modules:
 import numpy as np
 import cv2
 from matplotlib import pyplot as plt
+# from plotly.offline import init_notebook_mode
+# init_notebook_mode(connected=False)
+import plotly.io as pio
+pio.renderers.default = "iframe_connected"
+
 import plotly.express as px
 # from aux_funcs import *
 

@@ -4,7 +4,7 @@ import os
 
 
 do_py2ipynb = 1
-do_ppt=1
+do_ppt=0
 
 main_path = r"C:\Users\chech\Desktop\AI_is_Math"
 dir_list = [

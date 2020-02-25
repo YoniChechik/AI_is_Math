@@ -12,17 +12,15 @@ if 'google.colab' in sys.modules:
     subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_03_edge_detection/Bikesgray.jpg'.split())
     # subprocess.call('pip install --upgrade bokeh'.split())
 
+# save plotly as html frames
+import plotly.io as pio
+if (pio.renderers.default != 'vscode') & (pio.renderers.default != 'colab'):
+    pio.renderers.default = "iframe_connected"
 # %% 
 import numpy as np
 import cv2
 from matplotlib import pyplot as plt
-# from plotly.offline import init_notebook_mode
-# init_notebook_mode(connected=False)
-import plotly.io as pio
-pio.renderers.default = "iframe_connected"
-
 import plotly.express as px
-# from aux_funcs import *
 
 figsize = (10,10)
 

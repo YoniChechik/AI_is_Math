@@ -99,7 +99,19 @@ def build_site(dirs):
 					with open(notebook_html_path, "r+") as f:
 						lines_arr = f.readlines()
 					nb_data = "".join(lines_arr)
-
+					
+					# ==== for plotly: handle `iframe_figures` dir
+					iframe_figures_path = os.path.join(class_dir,'iframe_figures')
+					if os.path.exists(iframe_figures_path):
+						# delete old dir 
+						old_iframe_dir_path = os.path.join(pages_class_dir_path,'iframe_figures')
+						if os.path.exists(old_iframe_dir_path):
+							shutil.rmtree(os.path.join(pages_class_dir_path,'iframe_figures'))
+						# change path in nb_data
+						nb_data = nb_data.replace('iframe_figures','/pages/'+dir_name+'/iframe_figures')
+						# move new dir to place
+						shutil.move(iframe_figures_path, pages_class_dir_path) 
+					
 					# ==== write header + data 
 					subtitle = " ".join(ipynb_file_no_ext.split("_"))
 					subtitle = subtitle[0].upper() + subtitle[1:] + " notebook"	

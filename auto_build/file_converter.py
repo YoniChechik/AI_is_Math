@@ -41,7 +41,7 @@ def run_on_one_class_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
             run_on_one_dir(fp_ex, do_py2ipynb=1, do_py_exec=0, do_ppt=0)
 
             # ==== zip ex files
-            print("\n===== zipping ex =====\n")
+            print("- zipping ex \n")
             with zipfile.ZipFile(os.path.join(fp_ex,ex_subdir + '.zip'), 'w') as myzip:
                 for f in os.listdir(fp_ex):
                     if not f.endswith(".zip") and f!="." and f!="..":   
@@ -57,7 +57,7 @@ def run_on_one_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
 
         # ==== make .pptx -> .pdf
         if fn.endswith(".pptx") and do_ppt:
-            print("converting pptx: \n" + fn)
+            print("- converting pptx: \n" + fn)
             docs_fp = fp.replace("AI_is_Math",os.path.join("AI_is_Math","docs","pages"))
 
             if not os.path.exists(docs_fp):
@@ -69,11 +69,11 @@ def run_on_one_dir(fp, do_py2ipynb=1, do_py_exec=1, do_ppt=1):
         elif fn.endswith(".py") and do_py2ipynb:
             out_ipynb = os.path.join(fp, fn_no_ext+".ipynb")
 
-            print("converting .py 2 .ipynb: \n" + fn)
+            print("- converting .py 2 .ipynb:  " + fn+"\n")
             py2ipynb(os.path.join(fp, fn), out_ipynb)
 
             if do_py_exec:
-                print("executing .ipynb: \n" + fn)
+                print("- executing .ipynb: " + fn+"\n")
                 os.system(
                     "jupyter nbconvert --ExecutePreprocessor.timeout=120 --to notebook --execute --inplace \""+out_ipynb+"\"")
     

@@ -8,15 +8,16 @@ import sys
 if 'google.colab' in sys.modules:
     import subprocess
     subprocess.call('apt-get install subversion'.split())
-    subprocess.call('svn checkout https://github.com/YoniChechik/AI_is_Math/trunk/aux_funcs/'.split())
+    # subprocess.call('svn checkout https://github.com/YoniChechik/AI_is_Math/trunk/aux_funcs/'.split())
     subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_03_edge_detection/Bikesgray.jpg'.split())
-    subprocess.call('pip install --upgrade bokeh'.split())
+    # subprocess.call('pip install --upgrade bokeh'.split())
 
 # %% 
 import numpy as np
 import cv2
 from matplotlib import pyplot as plt
-from aux_funcs import *
+import plotly.express as px
+# from aux_funcs import *
 
 figsize = (10,10)
 
@@ -176,11 +177,9 @@ th = mag_img.max()*TH_PRC
 phase_img_masked = phase_img_masked*(mag_img <= th) + phase_img*(mag_img > th)
 
 
-bokeh_imshow(mag_img, scale=1, colorbar=True,
-             show=True, title='Gradient magnitude')
+px.imshow(mag_img,title='Gradient magnitude')
 
-bokeh_imshow(phase_img_masked, scale=1, colorbar=True,
-             show=True, title='Gradient phase thresholeded')
+px.imshow(phase_img_masked,title='Gradient phase thresholeded')
 
 # %% [markdown]
 # ## Edge thinning 
@@ -218,8 +217,7 @@ th = mag_img.max()*TH_PRC
 phase_img_q_masked = phase_img_q_masked * \
     (mag_img <= th) + phase_img_q*(mag_img > th)
 
-bokeh_imshow(phase_img_q_masked, scale=1, colorbar=True, show=True,
-             title='Gradient phase- quantized and thresholded')
+px.imshow(phase_img_q_masked, title='Gradient phase- quantized and thresholded')
 
 
 # %% [markdown]
@@ -239,7 +237,7 @@ for i in range(1, mag_img.shape[0]-1):
         if phase_img_q[i, j] == 3 and (mag_img[i-1, j-1] > mag_img[i, j] or mag_img[i+1, j+1] > mag_img[i, j]):
             nms[i, j] = -50
 
-bokeh_imshow(nms, scale=1, colorbar=True, show=True, title='NMS')
+px.imshow(nms, title='NMS')
 
 # %% [markdown]
 # ## double TH
@@ -251,7 +249,7 @@ TH_h = 13
 nms_th[nms >= TH_h] = 2
 nms_th[np.bitwise_and(TH_l <= nms, nms < TH_h)] = 1
 
-bokeh_imshow(nms_th, scale=1, colorbar=True, title='double TH')
+px.imshow(nms_th, title='double TH')
 
 # %% [markdown]
 # ## Iterative hysteresis
@@ -281,11 +279,11 @@ for w_s_CC_i in range(1,num_w_s_CCs):
     if np.any(np.bitwise_and(w_s_CC_mask_i, nms_strong)):
         nms_strong = np.bitwise_or(w_s_CC_mask_i, nms_strong)
 
-bokeh_imshow(nms_strong, scale=1, colorbar=True, title='Canny final result')
+px.imshow(nms_strong, title='Canny final result')
 
 # %% [markdown]
 # ## cv2 Canny
 # let's see the results from the default canny of cv2
 # %%
 res = cv2.Canny(img.astype(np.uint8),105,120)
-bokeh_imshow(res, scale=1, title='cv2.Canny final result')
+px.imshow(res,title='cv2.Canny final result')

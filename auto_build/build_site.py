@@ -139,11 +139,11 @@ def build_readme():
 def html_float_bar(url_content,url_image,title):
 	html_str = ("\n"
 				"<div class=\"mycont\">\n"
-				"   <a href=\"{}\"><img class=\"hoverImages\" src=\"{}\" alt=\"{}\">\n"
+				"   <a href=\"{0}\" aria-label=\"{2}\" ><img class=\"hoverImages\" src=\"{1}\" alt=\"{2}\">\n"
 				"	<div class=\"bottom-left\"> \n"
-				"		<h2>{}</h2>\n"
+				"		<h2>{2}</h2>\n"
 				"	</div>\n"
-				"</div>\n").format(url_content, url_image,title, title)
+				"</div>\n").format(url_content, url_image,title)
 	return html_str
 
 def main_toc_header():

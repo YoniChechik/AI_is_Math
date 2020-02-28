@@ -95,7 +95,7 @@ def build_site(dirs):
 					notebook_html_path = os.path.join(pages_class_dir_path,ipynb_file_no_ext+"_nb.html")
 
 					# ==== convert ipynb to html
-					os.system("jupyter nbconvert --ExecutePreprocessor.timeout=60 --to html  "+ipynb_fp+" --output "+notebook_html_path)
+					os.system("jupyter nbconvert --ExecutePreprocessor.timeout=60 --template full --to html  "+ipynb_fp+" --output "+notebook_html_path)
 					with open(notebook_html_path, "r+") as f:
 						lines_arr = f.readlines()
 					nb_data = "".join(lines_arr)

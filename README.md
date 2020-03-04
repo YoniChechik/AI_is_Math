@@ -40,14 +40,14 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 
 
-### **Edge Detection** [(slides)](https://www.aiismath.com/pages/c_03_edge_detection/edge_detection.pdf), [(edge detection notebook)](https://www.aiismath.com/pages/c_03_edge_detection/edge_detection_nb/)
+### **Edge Detection** [(slides)](https://www.aiismath.com/pages/c_03_edge_detection/edge_detection.pdf)
 - Intro to edges
-- Basic edge image
+- Basic edge image [(gradient filters notebook)](https://www.aiismath.com/pages/c_03_edge_detection/gradient_filters_nb/)
 - Edge thinning
   - LoG
   - NMS
 - Edge mask
-- Canny edge detector
+- Canny edge detector [(edge detection notebook)](https://www.aiismath.com/pages/c_03_edge_detection/edge_detection_nb/)
 - Other edge related topics
   - Frequency representation
   - Unsharp filter

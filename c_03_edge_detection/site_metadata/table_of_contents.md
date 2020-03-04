@@ -1,11 +1,11 @@
-## **Edge Detection** [(slides)](/pages/c_03_edge_detection/edge_detection.pdf), [(edge detection notebook)](/pages/c_03_edge_detection/edge_detection_nb/)
+## **Edge Detection** [(slides)](/pages/c_03_edge_detection/edge_detection.pdf)
 - Intro to edges
-- Basic edge image
+- Basic edge image [(gradient filters notebook)](/pages/c_03_edge_detection/gradient_filters_nb/)
 - Edge thinning
   - LoG
   - NMS
 - Edge mask
-- Canny edge detector
+- Canny edge detector [(edge detection notebook)](/pages/c_03_edge_detection/edge_detection_nb/)
 - Other edge related topics
   - Frequency representation
   - Unsharp filter

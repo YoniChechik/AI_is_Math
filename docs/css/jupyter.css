@@ -1,0 +1,7 @@
+header + .container > div.row > div {
+    margin: 0 auto !important;
+  }
+  #notebook-container {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }

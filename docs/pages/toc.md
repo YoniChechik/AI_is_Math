@@ -53,15 +53,17 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
   - Unsharp filter
 - [Ex3: Bilateral filter](/pages/c_03_edge_detection/ex3/)
 
-## **Curve fitting** [(slides)](/pages/c_04_curve_fitting/Curve_fitting.pdf)
-- Linear least squares
+## **Curve fitting** [(slides)](/pages/c_04a_curve_fitting/Curve_fitting.pdf)
+- Least squares
 - Total least squares
-- Least squares [(Least squares & RANSAC notebook)](/pages/c_04_curve_fitting/least_squares_nb/)
-- RANSAC
-- Hough transform [(Hough transform notebook)](/pages/c_04_curve_fitting/hough_transform_nb/)
+- RANSAC [(LS, TLS & RANSAC notebook)](/pages/c_04a_curve_fitting/least_squares_nb/)
+
+
+## **Hough transform** [(slides)](/pages/c_04b_hough_transform/Hough_transform.pdf)
+- Hough transform [(Hough transform notebook)](/pages/c_04b_hough_transform/hough_transform_nb/)
   - $(m,b)$ parameter space
   - $(\rho,\theta)$ parameter space
-- [Ex4: Hough circles](/pages/c_04_curve_fitting/ex4/)
+- [Ex4: Hough circles](/pages/c_04b_hough_transform/ex4/)
 
 
 

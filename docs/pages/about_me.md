@@ -8,9 +8,9 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 
 Hi!
 
-My name is Yoni Chechik and I'm an Algorithm engineer specializing in all stuff **computer vision** related, currently living in Tel Aviv, Israel and working as a lecturer, consultant & as an algorithm researcher at [Trigo](https://www.trigo.tech/).
+My name is Yoni Chechik and I'm an Algorithm engineer specializing in all stuff **computer vision** related, currently living in Tel Aviv, Israel and working as a lecturer, consultant and as an algorithm researcher at [Trigo](https://www.trigo.tech/).
 
-At the past I've completed a **B.Sc.** (94 - summa cum laude) & a **M.Sc.** (97 - summa cum laude) at the **Technion as an electrical engineer**, and worked as an algo engineer/researcher at places like [Intel](https://www.intel.com/content/www/us/en/homepage.html), [Microsoft R&D](https://www.microsoftrnd.co.il/) and [VisionMap](http://www.visionmap.com/).
+At the past I've completed a **B.Sc.** (94 - summa cum laude) & a **M.Sc.** (97 - summa cum laude) at the **Technion - electrical engineering faculty**, and worked as an algo engineer/researcher at places like [Intel](https://www.intel.com/content/www/us/en/homepage.html), [Microsoft R&D](https://www.microsoftrnd.co.il/) and [VisionMap](http://www.visionmap.com/).
 
 ## Contact me
 

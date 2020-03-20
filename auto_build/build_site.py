@@ -178,7 +178,7 @@ def main_index_header():
 			"subtitle: AI is Math is my computer vision course site, and yes- we also have neural networks\n"
 			"bigimg: /img/FedTech-ComputerVision.jpg\n"
 			"share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/img/FedTech-ComputerVision.jpg\n"
-			"css: /css/hover_main.css/\n"
+			"css: \"/css/hover_main.css\"\n"
 			"---\n")
 			# "<style>\n"
 			# "{}\n"

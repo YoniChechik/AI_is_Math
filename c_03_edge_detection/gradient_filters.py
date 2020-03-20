@@ -1,5 +1,5 @@
 # %% [markdown]
-# # Gradien filters
+# # Gradient filters
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_03_edge_detection/gradient_filters.ipynb)
 
 #%%

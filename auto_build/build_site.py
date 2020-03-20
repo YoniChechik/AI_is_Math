@@ -95,11 +95,26 @@ def build_site(dirs):
 					notebook_html_path = os.path.join(pages_class_dir_path,ipynb_file_no_ext+"_nb.html")
 
 					# ==== convert ipynb to html
-					os.system("jupyter nbconvert --ExecutePreprocessor.timeout=60 --template full --to html  "+ipynb_fp+" --output "+notebook_html_path)
+					os.system("jupyter nbconvert --ExecutePreprocessor.timeout=60 --template basic --to html  "+ipynb_fp+" --output "+notebook_html_path)
 					with open(notebook_html_path, "r+") as f:
 						lines_arr = f.readlines()
-					nb_data = "".join(lines_arr)
+					# ===== deal with html
+					for i, line in enumerate(lines_arr):
+						if "class=\"anchor-link\"" in line:
+							# remove anchor symbol
+							line = line.replace("&#182;","")
+							lines_arr[i] = line
+						if "<h1 id=" in line:
+							# remove h1 - leave the main title as h1
+							line = line.replace("<h1","<h2")
+							line = line.replace("</h1>","</h2>")
+							lines_arr[i] = line
+
 					
+					nb_data = "".join(lines_arr)
+
+
+
 					# ==== for plotly: handle `iframe_figures` dir
 					iframe_figures_path = os.path.join(class_dir,'iframe_figures')
 					if os.path.exists(iframe_figures_path):

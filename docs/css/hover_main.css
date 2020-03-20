@@ -44,9 +44,9 @@ img.hoverImages {
 	transition: margin 0.2s ease-out;
 	font-family: Arial, Helvetica, sans-serif;
 	text-shadow: 2px 2px 5px black;
-	font-size: 12px; /* never get smaller then this */
+	font-size: calc(0.6em + 0.85vw);/*12px;  never get smaller then this */
 }
-
+/* 
 @media only screen and (min-width:600px) {
 	.mycont .yoni-bottom-left {
 		font-size: 16px;
@@ -61,8 +61,8 @@ img.hoverImages {
 
 @media  only screen and (min-width:1000px) {
 	.mycont .yoni-bottom-left {
-		/* Never get larger than this */
+		 Never get larger than this 
 		font-size: 24px;
 	}
 }
-
+ */

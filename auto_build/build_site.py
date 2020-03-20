@@ -152,7 +152,7 @@ def html_float_bar(url_content,url_image,title):
 	html_str = ("\n"
 				"<div class=\"mycont\">\n"
 				"   <a href=\"{0}\" aria-label=\"{2}\" ><img class=\"hoverImages\" src=\"{1}\" alt=\"{2}\">\n"
-				"	<div class=\"bottom-left\"> \n"
+				"	<div class=\"yoni-bottom-left\"> \n"
 				"		<h2>{2}</h2>\n"
 				"	</div>\n"
 				"</div>\n").format(url_content, url_image,title)
@@ -168,20 +168,21 @@ def main_toc_header():
 	return main_toc
 
 def main_index_header():
-	# === build start of main index
-	with open("hover_main.css") as f:
-		lines_arr = f.readlines()
-	hover_main_css = "".join(lines_arr)
+	# # === build start of main index
+	# with open("hover_main.css") as f:
+	# 	lines_arr = f.readlines()
+	# hover_main_css = "".join(lines_arr)
 
 	main_index = ("---\n"
 			"title: AI is Math\n"
 			"subtitle: AI is Math is my computer vision course site, and yes- we also have neural networks\n"
 			"bigimg: /img/FedTech-ComputerVision.jpg\n"
 			"share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/img/FedTech-ComputerVision.jpg\n"
-			"---\n"
-			"<style>\n"
-			"{}\n"
-			"</style>\n\n").format(hover_main_css)
+			"css: /css/hover_main.css/\n"
+			"---\n")
+			# "<style>\n"
+			# "{}\n"
+			# "</style>\n\n").format(hover_main_css)
 	return main_index
 
 # def support_md_math(text_with_math):

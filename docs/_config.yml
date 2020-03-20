@@ -20,13 +20,12 @@ description: AI is Math is my (Yoni Chechik) computer vision course site- includ
 
 # List of links in the navigation bar
 navbar-links:
-  How to start?: "/pages/how2start/how2start/"
-  Table of contents: "/pages/toc/"
-  Course meetup: "/pages/meetup/"
-  # Resources:
-  #   - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-  #   - Learn markdown: "http://www.markdowntutorial.com/"
-
+  About the course:
+    - How to start?: "/pages/how2start/how2start/"
+    - Table of contents: "/pages/toc/"
+    - Python installation: "/pages/python_pycharm_installation/python_pycharm_installation/"
+  About me: "/pages/about_me/"
+  
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
 avatar: "/img/yoni_logo.png"

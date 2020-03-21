@@ -57,13 +57,13 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 - Least squares
 - Total least squares
 - RANSAC [(LS, TLS & RANSAC notebook)](https://www.aiismath.com/pages/c_04a_curve_fitting/least_squares_nb/)
-
+- [Ex4a: vignetting](https://www.aiismath.com/pages/c_04a_curve_fitting/ex4a/)
 
 ### **Hough transform** [(slides)](https://www.aiismath.com/pages/c_04b_hough_transform/Hough_transform.pdf)
 - Hough transform [(Hough transform notebook)](https://www.aiismath.com/pages/c_04b_hough_transform/hough_transform_nb/)
   - $(m,b)$ parameter space
   - $(\rho,\theta)$ parameter space
-- [Ex4: Hough circles](https://www.aiismath.com/pages/c_04b_hough_transform/ex4/)
+- [Ex4b: Hough circles](https://www.aiismath.com/pages/c_04b_hough_transform/ex4b/)
 
 
 
@@ -73,7 +73,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 - Pinhole camera
 - Digital camera
 - The human eye
-- [Ex5: vignetting](https://www.aiismath.com/pages/c_05_image_formation/ex5/)
+
 
 ### **Geometric transformation** [(slides)](https://www.aiismath.com/pages/c_06_geometric_transformation/geometric_transformation.pdf)
 

@@ -57,13 +57,13 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 - Least squares
 - Total least squares
 - RANSAC [(LS, TLS & RANSAC notebook)](/pages/c_04a_curve_fitting/least_squares_nb/)
-
+- [Ex4a: vignetting](/pages/c_04a_curve_fitting/ex4a/)
 
 ## **Hough transform** [(slides)](/pages/c_04b_hough_transform/Hough_transform.pdf)
 - Hough transform [(Hough transform notebook)](/pages/c_04b_hough_transform/hough_transform_nb/)
   - $(m,b)$ parameter space
   - $(\rho,\theta)$ parameter space
-- [Ex4: Hough circles](/pages/c_04b_hough_transform/ex4/)
+- [Ex4b: Hough circles](/pages/c_04b_hough_transform/ex4b/)
 
 
 
@@ -73,7 +73,7 @@ share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/
 - Pinhole camera
 - Digital camera
 - The human eye
-- [Ex5: vignetting](/pages/c_05_image_formation/ex5/)
+
 
 ## **Geometric transformation** [(slides)](/pages/c_06_geometric_transformation/geometric_transformation.pdf)
 

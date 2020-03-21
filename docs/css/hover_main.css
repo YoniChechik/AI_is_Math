@@ -44,25 +44,6 @@ img.hoverImages {
 	transition: margin 0.2s ease-out;
 	font-family: Arial, Helvetica, sans-serif;
 	text-shadow: 2px 2px 5px black;
-	font-size: calc(0.6em + 0.85vw);/*12px;  never get smaller then this */
+	font-size: calc(0.6em + 0.85vw);/* responsive font size https://css-tricks.com/fun-viewport-units/ */
+	word-break: break-word; /* break long words */
 }
-/* 
-@media only screen and (min-width:600px) {
-	.mycont .yoni-bottom-left {
-		font-size: 16px;
-	}
-  }
-
-@media  only screen and (min-width:800px) {
-	.mycont .yoni-bottom-left {
-		font-size: 20px;
-	}
-}
-
-@media  only screen and (min-width:1000px) {
-	.mycont .yoni-bottom-left {
-		 Never get larger than this 
-		font-size: 24px;
-	}
-}
- */

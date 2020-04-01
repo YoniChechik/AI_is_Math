@@ -77,7 +77,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 ### **Geometric transformation** [(slides)](https://www.aiismath.com/pages/c_06_geometric_transformation/geometric_transformation.pdf)
 
-- 2D->2D transformations [(notebook)](https://www.aiismath.com/pages/c_06_geometric_transformation/image_transformation_2d_nb/)
+- 2D->2D transformations [(notebook)](https://www.aiismath.com/pages/c_06_geometric_transformation/image_transformation_nb/)
 - 3D->3D transformations
 - 3D->2D transformations (3D projections)
   - Perspective projection

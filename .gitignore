@@ -2,3 +2,5 @@
 tests/
 .vscode/
 .idea/
+.venv/
+.jekyll-cache/

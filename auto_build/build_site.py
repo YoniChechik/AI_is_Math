@@ -1,5 +1,6 @@
 import os
 import shutil
+import subprocess
 
 
 def build_site(dirs):
@@ -135,15 +136,12 @@ def build_site(dirs):
                         f.write(nb_data)
 
     # ========= end build with deployment to docs
-    import subprocess
-    # subprocess.call("pwd")
-    subprocess.call("cd ../raw_docs; bundler exec jekyll build -d ../../docs".split(" "), shell=True)
-    # import shutil
+    subprocess.call("bash ../raw_docs/build_site.sh".split(" "))
     source_dir = os.path.abspath(os.path.join(cwd, "../raw_docs"))
     target_dir = os.path.abspath(os.path.join(cwd, "../docs"))
 
     shutil.copyfile(os.path.join(source_dir, "CNAME"), os.path.join(target_dir, "CNAME"))
-    shutil.copyfile(os.path.join(source_dir, ".nojekyll"), os.path.join(target_dir, ".nojekyll"))
+    # shutil.copyfile(os.path.join(source_dir, ".nojekyll"), os.path.join(target_dir, ".nojekyll"))
 
 
 def header_builder(title, subtitle, bigimg_path, layout="page"):
@@ -215,13 +213,7 @@ def main_index_header():
                   "AI_is_Math/master/docs/img/FedTech-ComputerVision.jpg\n"
                   "css: \"/css/hover_main.css\"\n"
                   "---\n")
-    # "<style>\n"
-    # "{}\n"
-    # "</style>\n\n").format(hover_main_css)
     return main_index
-
-# def support_md_math(text_with_math):
-    # <img src="https://latex.codecogs.com/gif.latex?\alpha+\frac{1}{33}" />
 
 
 if __name__ == "__main__":

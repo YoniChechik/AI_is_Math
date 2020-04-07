@@ -4,3 +4,5 @@ tests/
 .idea/
 .venv/
 .jekyll-cache/
+_site/
+**/_site/

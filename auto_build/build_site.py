@@ -3,15 +3,14 @@ import shutil
 
 
 def build_site(dirs):
-
     # === get all git class dirs - starting with "c_"
-    cwd = os.getcwd()
+    cwd = os.path.dirname(os.path.abspath(__file__))
     git_main_dirs_cwd = os.path.abspath(os.path.join(cwd, ".."))
     git_class_subdirs = [x for x in os.listdir(
         git_main_dirs_cwd) if x.startswith("c_")]
     git_class_subdirs.sort()
 
-    pages_path = os.path.join(git_main_dirs_cwd, "docs", "pages")
+    pages_path = os.path.join(git_main_dirs_cwd, "raw_docs", "pages")
 
     # === build index.html + toc headers + README
     main_toc_fp = os.path.join(pages_path, "toc.md")
@@ -134,6 +133,17 @@ def build_site(dirs):
                     with open(notebook_html_path, "w+") as f:
                         f.write(header_builder(title, subtitle, bigimg_path_pages, layout="notebook"))
                         f.write(nb_data)
+
+    # ========= end build with deployment to docs
+    import subprocess
+    # subprocess.call("pwd")
+    subprocess.call("cd ../raw_docs; bundler exec jekyll build -d ../../docs".split(" "), shell=True)
+    # import shutil
+    source_dir = os.path.abspath(os.path.join(cwd, "../raw_docs"))
+    target_dir = os.path.abspath(os.path.join(cwd, "../docs"))
+
+    shutil.copyfile(os.path.join(source_dir, "CNAME"), os.path.join(target_dir, "CNAME"))
+    shutil.copyfile(os.path.join(source_dir, ".nojekyll"), os.path.join(target_dir, ".nojekyll"))
 
 
 def header_builder(title, subtitle, bigimg_path, layout="page"):

@@ -1,0 +1,72 @@
+---
+title: Features
+subtitle: Blob detection notebook
+bigimg: /pages/c_08_features/bigimg.png
+share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/pages/c_08_features/bigimg.png
+layout: notebook
+---
+
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="c1"># def log(s):</span>
+<span class="c1">#     half_ker_sz = 3*s # should be bigger than sqrt(2)*s</span>
+<span class="c1">#     X,Y = np.meshgrid(np.arange(-half_ker_sz,half_ker_sz),np.arange(-half_ker_sz,half_ker_sz))</span>
+    
+<span class="c1">#     coeff = 1/(np.pi*s**4)</span>
+<span class="c1">#     alpha =(X**2+Y**2)/(2*s**2)</span>
+<span class="c1">#     brackets = alpha -1</span>
+<span class="c1">#     exp = np.exp(-alpha)</span>
+
+<span class="c1">#     log = coeff*brackets*exp</span>
+
+<span class="c1">#     return log</span>
+
+<span class="c1"># def step(r):</span>
+<span class="c1">#     # step = np.concatenate((np.zeros((2*sz,)),np.ones((sz,)),np.zeros((2*sz,))))</span>
+<span class="c1">#     im_sz = 200</span>
+<span class="c1">#     im = np.zeros((im_sz+1,im_sz+1,3))</span>
+<span class="c1">#     im = cv2.circle(im, (int(im_sz/2), int(im_sz/2)), r, (255, 255, 255), -1)</span>
+<span class="c1">#     return im</span>
+
+<span class="c1"># plt.imshow(step(30))</span>
+<span class="c1"># plt.show()</span>
+    
+<span class="c1"># plt.imshow(log(30))</span>
+<span class="c1"># plt.show()</span>
+
+<span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># half_ker_sz = 3*s # should be bigger than sqrt(2)*s</span>
+    
+    <span class="n">coeff</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">s</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">alpha</span> <span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">brackets</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">exp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">alpha</span><span class="p">)</span>
+
+    <span class="n">log</span> <span class="o">=</span> <span class="n">coeff</span><span class="o">*</span><span class="n">brackets</span><span class="o">*</span><span class="n">exp</span>
+
+    <span class="k">return</span> <span class="n">log</span>
+
+<span class="n">sz</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">step</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">sz</span><span class="p">,)),</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">sz</span><span class="p">,)),</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">sz</span><span class="p">,))))</span>
+
+<span class="c1"># dx = 0.1</span>
+<span class="c1"># x = np.arange(-half_ker_sz,half_ker_sz)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,)</span>
+<span class="c1">#http://www.cim.mcgill.ca/~langer/558/2009/lecture11.pdf</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+

@@ -6,5 +6,4 @@ group :jekyll_plugins do
     gem 'jekyll-relative-links'
     # gem 'jekyll-sitemap'
     gem 'jekyll-paginate'
-    gem 'jekyll_picture_tag'
 end

@@ -1,3 +1,8 @@
 markup_presets:
   default:
-    formats: [webp] #, original]
+    formats: [webp, original]
+    # link_source: false
+    sizes:
+      mobile: 80vw
+      tablet: 60vw
+      desktop: 100px

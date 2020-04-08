@@ -180,7 +180,7 @@ def html_float_bar(url_content, url_image, title):
                 "<div class=\"mycont\">\n"
                 # "   <a href=\"{0}\" aria-label=\"{2}\" ><img class=\"hoverImages\" src=\"{1}\" alt=\"{2}\">\n"
                 "   <a href=\"{0}\" aria-label=\"{2}\" >"
-                "{{% picture \"{1}\" --parent class=\"hoverImages\" --alt {2}%}}\n"
+                "{{% picture \"{1}\" --img class=\"hoverImages\" --alt {2}%}}\n"
                 "	<div class=\"yoni-bottom-left\"> \n"
                 "		<h2>{2}</h2>\n"
                 "	</div>\n"

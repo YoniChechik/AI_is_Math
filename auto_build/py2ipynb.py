@@ -1,5 +1,4 @@
 import json
-import sys
 import os
 
 header_comment1 = '#%%'
@@ -56,10 +55,10 @@ def _py2nb(py_str):
 
 
 def _convert(in_file, out_file):
-    with open(in_file, 'r',encoding='utf-8') as f:
+    with open(in_file, 'r', encoding='utf-8') as f:
         py_str = f.read()
     notebook = _py2nb(py_str)
-    with open(out_file, 'w',encoding='utf-8') as f:
+    with open(out_file, 'w', encoding='utf-8') as f:
         json.dump(notebook, f, indent=2)
 
 
@@ -71,5 +70,5 @@ if __name__ == '__main__':
     out_file = "test2.ipynb"
     # py2ipynb(
     #     r"C:\Users\jonathanch\Google Drive\cv course\code\edges\edge_detection.py", out_file)
-    py2ipynb( r"C:\Users\chech\Google Drive\cv_course\git\basic_CV_and_python\raw\1_basic_python_tutorial.py",out_file)
+    py2ipynb(r"C:\Users\chech\Google Drive\cv_course\git\basic_CV_and_python\raw\1_basic_python_tutorial.py", out_file)
     # os.system("jupyter nbconvert --to notebook --execute "+out_file)

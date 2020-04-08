@@ -1,3 +1,7 @@
+---
+layout: null
+---
+
 (function ($) {
   var $comments = $('.js-comments');
 
@@ -6,9 +10,10 @@
 
     $(form).addClass('disabled');
 
-    var endpoint = 'https://staticman3.herokuapp.com/v3/entry/github/';
-    var repository = '';
-    var branch = 'master';
+    {% assign sm = site.staticman -%}
+    var endpoint = '{{ sm.endpoint | default: "https://staticman3.herokuapp.com/v3/entry/github/" }}';
+    var repository = '{{ sm.repository }}';
+    var branch = '{{ sm.branch }}';
 
     $.ajax({
       type: $(this).attr('method'),

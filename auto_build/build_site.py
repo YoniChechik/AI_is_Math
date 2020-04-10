@@ -193,7 +193,7 @@ def main_index_header():
     # === build start of main index
     main_index = ("---\n"
                   "title: AI is Math\n"
-                  "subtitle: AI is Math is my computer vision course site, and yes- we also have neural networks\n"
+                  # "subtitle: AI is Math is my computer vision course site, and yes- we also have neural networks\n"
                   "bigimg: /img/FedTech-ComputerVision.jpg\n"
                   "share-img: https://raw.githubusercontent.com/YoniChechik/"
                   "AI_is_Math/master/docs/img/FedTech-ComputerVision.jpg\n"

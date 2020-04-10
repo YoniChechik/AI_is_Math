@@ -9,6 +9,8 @@
 
   {% if page.subtitle %}
   <meta name="description" content="{{ page.subtitle }}">
+  {% else %}
+  <meta name="description" content="{{ site.full-description }}">
   {% endif %}
 
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }} {{ site.title-separator }} {{ site.description }}" href="{{ '/feed.xml' | absolute_url }}" />

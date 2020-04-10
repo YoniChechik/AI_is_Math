@@ -7,6 +7,8 @@ title: AI is Math
 # Short description of your site - only for after "-" in google site title
 description: The math behind computer vision and deep learning
 
+full-description: AI is Math is the place to learn the best computer vision and deep learning algorithms + the math behind them- including class notes and interactive notebooks.
+
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
 # *** If you're not sure what this mean, then leave this section as it is. Only modify the url and baseurl if you know what you're doing!***

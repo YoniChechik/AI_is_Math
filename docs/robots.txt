@@ -1,2 +1,3 @@
+Sitemap: https://www.aiismath.com/sitemap.xml
 User-agent: *
 Disallow:

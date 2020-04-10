@@ -1,10 +1,11 @@
 # --- General options --- #
 
 # Name of website
-title: AI is Math - Computer vision and deep learning from a mathematical perspective
 
-# Short description of your site
-description: AI is Math is my (Yoni Chechik) computer vision course site in which we learn the most common state-of-the-art computer vision and deep learning algorithms- including class notes and interactive ipython notebooks.
+title: AI is Math
+
+# Short description of your site - only for after "-" in google site title
+description: Computer vision and deep learning from a mathematical perspective
 
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl

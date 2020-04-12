@@ -36,10 +36,9 @@ sitemap:
   {% endfor %}
   <!-- include .pdf -->
   {% for page in site.static_files %}
-    {% if page.url contains ".pdf" %}
-      {% unless page.sitemap.exclude %}
+    {% if page.path contains ".pdf" %}
       <url>
-        <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+        <loc>{{ site.url }}{{ page.path }}</loc>
         {% if page.sitemap.lastmod %}
           <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
         {% elsif page.date %}
@@ -58,7 +57,6 @@ sitemap:
           <priority>0.9</priority>
         {% endif %}
       </url>
-      {% endunless %}
     {% endif %}
   {% endfor %}
 </urlset>

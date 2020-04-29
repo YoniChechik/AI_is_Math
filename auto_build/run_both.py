@@ -3,10 +3,10 @@ import file_converter
 import os
 
 
-do_py2ipynb = 0
-do_ppt = 0
+do_py2ipynb = 1
+do_ppt = 1
 
-main_path = ".."
+main_path = os.path.abspath("..")
 dir_list = [
     # 'c_01_intro_to_CV_and_Python',
     # 'c_02a_basic_image_processing',

@@ -126,7 +126,7 @@ var main = {
   },
 
   setImg : function(src, desc) {
-	$(".intro-header.big-img").css("background-image", 'url(' + src + ')');
+	$(".intro-header.big-img").css("background-image", 'url(' + src + ') test');
 	if (typeof desc !== typeof undefined && desc !== false) {
 	  $(".img-desc").text(desc).show();
 	} else {

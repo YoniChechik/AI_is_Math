@@ -9,7 +9,7 @@ sitemap:
   {% for page in site.pages %}
     {% unless page.sitemap.exclude %}
     <url>
-      <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+      <loc>{{ site.url | replace: "http://", "https://" }}{{ page.url | remove: "index.html" }}</loc>
       {% if page.sitemap.lastmod %}
         <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
       {% elsif page.date %}
@@ -38,7 +38,7 @@ sitemap:
   {% for file in site.static_files %}
     {% if file.path contains ".pdf" %}
       <url>
-        <loc>{{ site.url }}{{ file.path }}</loc>
+        <loc>{{ site.url | replace: "http://", "https://" }}{{ file.path }}</loc>
         <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>

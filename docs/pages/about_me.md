@@ -1,6 +1,6 @@
 ---
 title: About me - Yoni Chechik
-bigimg: /assets/img/FedTech-ComputerVision.jpg
+cover-img: /assets/img/FedTech-ComputerVision.jpg
 share-img: /assets/img/FedTech-ComputerVision.jpg
 ---
 

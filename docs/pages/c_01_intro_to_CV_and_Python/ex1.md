@@ -1,7 +1,7 @@
 ---
 title: Intro to CV and Python
 subtitle: Ex1
-bigimg: /pages/c_01_intro_to_CV_and_Python/c_01_bigimg.jpg
+cover-img: /pages/c_01_intro_to_CV_and_Python/c_01_bigimg.jpg
 share-img: /assets/pages/c_01_intro_to_CV_and_Python/c_01_bigimg.jpg
 layout: page
 ---

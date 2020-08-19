@@ -1,7 +1,7 @@
 ---
 title: Edge detection
 subtitle: Table of contents
-bigimg: /pages/c_03_edge_detection/c_03_bigimg.jpg
+cover-img: /pages/c_03_edge_detection/c_03_bigimg.jpg
 share-img: /assets/pages/c_03_edge_detection/c_03_bigimg.jpg
 layout: page
 ---

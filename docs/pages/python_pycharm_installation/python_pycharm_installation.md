@@ -1,7 +1,7 @@
 ---
 title: Installation guide
 subtitle: Learn how to install the essentials for working with Python from your own computer
-cover-img: /assets/img/FedTech-ComputerVision.jpg
+cover-img: /aux_assets/FedTech-ComputerVision.jpg
 ---
  
 - [Install Python interpreter](#install-python-interpreter)

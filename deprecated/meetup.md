@@ -1,7 +1,7 @@
 ---
 title: Course meetup
-cover-img: /assets/img/FedTech-ComputerVision.jpg
-share-img: /img/FedTech-ComputerVision.jpg
+cover-img: /aux_assets/FedTech-ComputerVision.jpg
+share-img: /aux_assets/FedTech-ComputerVision.jpg
 ---
 
 # Computer vision course meetup 

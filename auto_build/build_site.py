@@ -182,8 +182,8 @@ def main_toc_header():
     # ==== start of main toc
     main_toc = ("---\n"
                 "title: Course syllabus\n"
-                "cover-img: /assets/img/FedTech-ComputerVision.jpg\n"
-                "share-img: /img/FedTech-ComputerVision.jpg\n"
+                "cover-img: /aux_assets/FedTech-ComputerVision.jpg\n"
+                "share-img: /aux_assets/FedTech-ComputerVision.jpg\n"
                 "---\n\n")
     return main_toc
 
@@ -193,9 +193,9 @@ def main_index_header():
     main_index = ("---\n"
                   "title: AI is Math\n"
                   "subtitle: The math behind computer vision and deep learning\n"
-                  "cover-img: /assets/img/FedTech-ComputerVision.jpg\n"
-                  "share-img: /img/FedTech-ComputerVision.jpg\n"
-                  "css: \"/assets/css/hover_main.css\"\n"
+                  "cover-img: /aux_assets/FedTech-ComputerVision.jpg\n"
+                  "share-img: /aux_assets/FedTech-ComputerVision.jpg\n"
+                  "css: \"/aux_assets/hover_main.css\"\n"
                   "use-site-title: true\n"
                   "---\n"
                   "<div><strong>AI is Math is the place to learn the best computer vision and deep learning algorithms + the math behind them- including class notes and interactive notebooks.</div></strong>")

@@ -21,7 +21,7 @@ navbar-links:
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/assets/img/yoni_logo.png"
+avatar: "/aux_assets/yoni_logo.png"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
@@ -42,7 +42,7 @@ social-network-links:
   github: YoniChechik/AI_is_Math #https://github.com/YoniChechik
 #  twitter: daattali
   linkedin: yoni-chechik-9b3173123 #https://www.linkedin.com/in/yoni-chechik-9b3173123/
-  rss: true
+  rss: false
 #  reddit: yourname
 #  linkedin: daattali
 #  xing: yourname

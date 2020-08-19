@@ -2,7 +2,7 @@
 title: Basic image processing
 subtitle: Ex2
 cover-img: /pages/c_02a_basic_image_processing/c_02a_bigimg.jpg
-share-img: /assets/pages/c_02a_basic_image_processing/c_02a_bigimg.jpg
+share-img: /pages/c_02a_basic_image_processing/c_02a_bigimg.jpg
 layout: page
 ---
 

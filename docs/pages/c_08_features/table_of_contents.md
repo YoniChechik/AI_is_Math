@@ -2,7 +2,7 @@
 title: Features
 subtitle: Table of contents
 cover-img: /pages/c_08_features/bigimg.png
-share-img: /assets/pages/c_08_features/bigimg.png
+share-img: /pages/c_08_features/bigimg.png
 layout: page
 ---
 

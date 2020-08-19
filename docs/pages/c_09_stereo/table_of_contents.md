@@ -2,7 +2,7 @@
 title: Stereo
 subtitle: Table of contents
 cover-img: /pages/c_09_stereo/bigimg.jpg
-share-img: /assets/pages/c_09_stereo/bigimg.jpg
+share-img: /pages/c_09_stereo/bigimg.jpg
 layout: page
 ---
 

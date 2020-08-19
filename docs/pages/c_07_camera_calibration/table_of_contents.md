@@ -2,7 +2,7 @@
 title: Camera calibration
 subtitle: Table of contents
 cover-img: /pages/c_07_camera_calibration/bigimg.jpg
-share-img: /assets/pages/c_07_camera_calibration/bigimg.jpg
+share-img: /pages/c_07_camera_calibration/bigimg.jpg
 layout: page
 ---
 

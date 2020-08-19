@@ -2,7 +2,6 @@
 title: Hough transform
 subtitle: Table of contents
 cover-img: /pages/c_04b_hough_transform/c_04b_bigimg.jpg
-share-img: /pages/c_04b_hough_transform/c_04b_bigimg.jpg
 layout: page
 ---
 

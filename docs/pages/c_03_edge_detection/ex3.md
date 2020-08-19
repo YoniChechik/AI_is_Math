@@ -2,7 +2,6 @@
 title: Edge detection
 subtitle: Ex3
 cover-img: /pages/c_03_edge_detection/c_03_bigimg.jpg
-share-img: /pages/c_03_edge_detection/c_03_bigimg.jpg
 layout: page
 ---
 

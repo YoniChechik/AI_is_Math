@@ -2,7 +2,6 @@
 title: Basic image processing
 subtitle: Table of contents
 cover-img: /pages/c_02a_basic_image_processing/c_02a_bigimg.jpg
-share-img: /pages/c_02a_basic_image_processing/c_02a_bigimg.jpg
 layout: page
 ---
 

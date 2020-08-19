@@ -150,9 +150,8 @@ def header_builder(title, subtitle, bigimg_path, layout="page"):
               "title: {}\n"
               "subtitle: {}\n"
               "cover-img: {}\n"
-              "share-img: {}\n"
               "layout: {}\n"
-              "---\n\n").format(title, subtitle, bigimg_path, bigimg_path, layout)
+              "---\n\n").format(title, subtitle, bigimg_path, layout)
     return header
 
 
@@ -183,7 +182,6 @@ def main_toc_header():
     main_toc = ("---\n"
                 "title: Course syllabus\n"
                 "cover-img: /aux_assets/FedTech-ComputerVision.jpg\n"
-                "share-img: /aux_assets/FedTech-ComputerVision.jpg\n"
                 "---\n\n")
     return main_toc
 
@@ -194,7 +192,6 @@ def main_index_header():
                   "title: AI is Math\n"
                   "subtitle: The math behind computer vision and deep learning\n"
                   "cover-img: /aux_assets/FedTech-ComputerVision.jpg\n"
-                  "share-img: /aux_assets/FedTech-ComputerVision.jpg\n"
                   "css: \"/aux_assets/hover_main.css\"\n"
                   "use-site-title: true\n"
                   "---\n"

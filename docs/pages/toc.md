@@ -1,7 +1,6 @@
 ---
 title: Course syllabus
 cover-img: /aux_assets/FedTech-ComputerVision.jpg
-share-img: /aux_assets/FedTech-ComputerVision.jpg
 ---
 
 ## **Intro to CV and Python** [(slides)](/pages/c_01_intro_to_CV_and_Python/intro_to_Computer_Vision.pdf)

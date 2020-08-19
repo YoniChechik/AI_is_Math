@@ -2,7 +2,6 @@
 title: Neural networks 2
 subtitle: Table of contents
 cover-img: /pages/c_11_neural_networks_2/bigimg.png
-share-img: /pages/c_11_neural_networks_2/bigimg.png
 layout: page
 ---
 

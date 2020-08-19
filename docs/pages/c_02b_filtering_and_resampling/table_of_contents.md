@@ -2,7 +2,6 @@
 title: Filtering and resampling
 subtitle: Table of contents
 cover-img: /pages/c_02b_filtering_and_resampling/c_02b_bigimg.jpg
-share-img: /pages/c_02b_filtering_and_resampling/c_02b_bigimg.jpg
 layout: page
 ---
 

@@ -2,7 +2,6 @@
 title: Neural networks basics
 subtitle: Table of contents
 cover-img: /pages/c_10_neural_networks_basics/bigimg.png
-share-img: /pages/c_10_neural_networks_basics/bigimg.png
 layout: page
 ---
 

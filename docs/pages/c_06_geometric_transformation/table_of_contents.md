@@ -2,7 +2,6 @@
 title: Geometric transformation
 subtitle: Table of contents
 cover-img: /pages/c_06_geometric_transformation/bigimg.jpg
-share-img: /pages/c_06_geometric_transformation/bigimg.jpg
 layout: page
 ---
 

@@ -2,7 +2,6 @@
 title: Curve fitting
 subtitle: Ex4a
 cover-img: /pages/c_04a_curve_fitting/c_04a_bigimg.jpg
-share-img: /pages/c_04a_curve_fitting/c_04a_bigimg.jpg
 layout: page
 ---
 

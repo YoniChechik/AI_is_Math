@@ -8,7 +8,7 @@ do_ppt = 1
 
 main_path = os.path.abspath("..")
 dir_list = [
-    # 'c_01_intro_to_CV_and_Python',
+    'c_01_intro_to_CV_and_Python',
     # 'c_02a_basic_image_processing',
     # 'c_02b_filtering_and_resampling',
     # 'c_03_edge_detection',

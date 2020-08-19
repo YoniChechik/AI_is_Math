@@ -2,7 +2,7 @@
 title: Geometric transformation
 subtitle: Table of contents
 bigimg: /pages/c_06_geometric_transformation/bigimg.jpg
-share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/pages/c_06_geometric_transformation/bigimg.jpg
+share-img: /assets/pages/c_06_geometric_transformation/bigimg.jpg
 layout: page
 ---
 

@@ -2,7 +2,7 @@
 title: Curve fitting
 subtitle: Ex4a
 bigimg: /pages/c_04a_curve_fitting/c_04a_bigimg.jpg
-share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/pages/c_04a_curve_fitting/c_04a_bigimg.jpg
+share-img: /assets/pages/c_04a_curve_fitting/c_04a_bigimg.jpg
 layout: page
 ---
 

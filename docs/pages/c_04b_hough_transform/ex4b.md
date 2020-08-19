@@ -2,7 +2,7 @@
 title: Hough transform
 subtitle: Ex4b
 bigimg: /pages/c_04b_hough_transform/c_04b_bigimg.jpg
-share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/pages/c_04b_hough_transform/c_04b_bigimg.jpg
+share-img: /assets/pages/c_04b_hough_transform/c_04b_bigimg.jpg
 layout: page
 ---
 

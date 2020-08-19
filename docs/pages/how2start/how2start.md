@@ -1,7 +1,7 @@
 ---
 title: How to start?
 subtitle: What this site is about, and how do you start learning?
-bigimg: /img/FedTech-ComputerVision.jpg
+bigimg: /assets/img/FedTech-ComputerVision.jpg
 ---
 
 # How to start?

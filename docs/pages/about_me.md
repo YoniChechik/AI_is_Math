@@ -1,7 +1,7 @@
 ---
 title: About me - Yoni Chechik
-bigimg: /img/FedTech-ComputerVision.jpg
-share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/img/FedTech-ComputerVision.jpg
+bigimg: /assets/img/FedTech-ComputerVision.jpg
+share-img: /assets/img/FedTech-ComputerVision.jpg
 ---
 
 # About me - Yoni Chechik

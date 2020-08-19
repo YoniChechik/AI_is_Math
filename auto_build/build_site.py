@@ -150,7 +150,7 @@ def header_builder(title, subtitle, bigimg_path, layout="page"):
               "title: {}\n"
               "subtitle: {}\n"
               "bigimg: {}\n"
-              "share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs{}\n"
+              "share-img: /assets{}\n"
               "layout: {}\n"
               "---\n\n").format(title, subtitle, bigimg_path, bigimg_path, layout)
     return header
@@ -182,9 +182,8 @@ def main_toc_header():
     # ==== start of main toc
     main_toc = ("---\n"
                 "title: Course syllabus\n"
-                "bigimg: /img/FedTech-ComputerVision.jpg\n"
-                "share-img: https://raw.githubusercontent.com/YoniChechik/"
-                "AI_is_Math/master/docs/img/FedTech-ComputerVision.jpg\n"
+                "bigimg: /assets/img/FedTech-ComputerVision.jpg\n"
+                "share-img: /assets/img/FedTech-ComputerVision.jpg\n"
                 "---\n\n")
     return main_toc
 
@@ -194,13 +193,12 @@ def main_index_header():
     main_index = ("---\n"
                   "title: AI is Math\n"
                   "subtitle: The math behind computer vision and deep learning\n"
-                  "bigimg: /img/FedTech-ComputerVision.jpg\n"
-                  "share-img: https://raw.githubusercontent.com/YoniChechik/"
-                  "AI_is_Math/master/docs/img/FedTech-ComputerVision.jpg\n"
-                  "css: \"/css/hover_main.css\"\n"
+                  "bigimg: /assets/img/FedTech-ComputerVision.jpg\n"
+                  "share-img: /assets/img/FedTech-ComputerVision.jpg\n"
+                  "css: \"/assets/css/hover_main.css\"\n"
                   "use-site-title: true\n"
                   "---\n"
-                  "<div><strong> {{site.full-description}} </div></strong>")
+                  "<div><strong>AI is Math is the place to learn the best computer vision and deep learning algorithms + the math behind them- including class notes and interactive notebooks.</div></strong>")
     return main_index
 
 

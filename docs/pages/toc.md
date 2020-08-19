@@ -1,7 +1,7 @@
 ---
 title: Course syllabus
-bigimg: /img/FedTech-ComputerVision.jpg
-share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/img/FedTech-ComputerVision.jpg
+bigimg: /assets/img/FedTech-ComputerVision.jpg
+share-img: /assets/img/FedTech-ComputerVision.jpg
 ---
 
 ## **Intro to CV and Python** [(slides)](/pages/c_01_intro_to_CV_and_Python/intro_to_Computer_Vision.pdf)

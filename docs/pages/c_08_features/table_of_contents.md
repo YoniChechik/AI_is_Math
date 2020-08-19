@@ -2,7 +2,7 @@
 title: Features
 subtitle: Table of contents
 bigimg: /pages/c_08_features/bigimg.png
-share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/pages/c_08_features/bigimg.png
+share-img: /assets/pages/c_08_features/bigimg.png
 layout: page
 ---
 

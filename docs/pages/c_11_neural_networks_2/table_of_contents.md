@@ -2,7 +2,7 @@
 title: Neural networks 2
 subtitle: Table of contents
 bigimg: /pages/c_11_neural_networks_2/bigimg.png
-share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/pages/c_11_neural_networks_2/bigimg.png
+share-img: /assets/pages/c_11_neural_networks_2/bigimg.png
 layout: page
 ---
 

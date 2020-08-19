@@ -2,7 +2,7 @@
 title: Edge detection
 subtitle: Ex3
 bigimg: /pages/c_03_edge_detection/c_03_bigimg.jpg
-share-img: https://raw.githubusercontent.com/YoniChechik/AI_is_Math/master/docs/pages/c_03_edge_detection/c_03_bigimg.jpg
+share-img: /assets/pages/c_03_edge_detection/c_03_bigimg.jpg
 layout: page
 ---
 

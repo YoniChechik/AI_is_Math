@@ -22,6 +22,7 @@ Python interpreter is the program that will run our actual Python code. The defa
     (It is preferable to download the python base interpreter to the installer’s suggested place if you don’t have default admin privileges on the computer [i.e.: C:\Users\chech\AppData\Local\Programs\Python])
 
     ![](images/2020-08-20-17-19-17.png)
+    
     [This image is of an older version of PyCharm... Yours will prompt **your** chosen downloaded Python version]
 
 ## Install PyCharm community IDE

@@ -193,7 +193,6 @@ def main_index_header():
                   "subtitle: The math behind computer vision and deep learning\n"
                   "cover-img: /aux_assets/FedTech-ComputerVision.jpg\n"
                   "css: \"/aux_assets/hover_main.css\"\n"
-                  "use-site-title: true\n"
                   "---\n"
                   "<div><strong>AI is Math is the place to learn the best computer vision and deep learning algorithms + the math behind them- including class notes and interactive notebooks.</div></strong>")
     return main_index

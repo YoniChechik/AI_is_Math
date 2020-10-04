@@ -1,8 +1,9 @@
 import os
 import shutil
+import textwrap
 
 
-def build_site(dirs,is_convert_ipynb_to_html):
+def build_site(dirs, is_convert_ipynb_to_html):
 
     # === get all git class dirs - starting with "c_"
     cwd = os.getcwd()
@@ -97,20 +98,20 @@ def build_site(dirs,is_convert_ipynb_to_html):
             if not fn.endswith(".pdf"):
                 continue
             pdf_path_online = os.path.join("https://www.aiismath.com/pages",
-                                            pages_dir_path.split("\\pages\\")[1], fn).replace("\\", "/")
+                                           pages_dir_path.split("\\pages\\")[1], fn).replace("\\", "/")
 
             with open(os.path.join(pages_dir_path, "class_slides.html"), "w") as f:
-                f.write(f"""
-                ---
-                title: {title}
-                subtitle: slides
-                cover-img: {bigimg_path_pages}
-                full-width: true
-                ---
+                f.write(textwrap.dedent(f"""\
+                    ---
+                    title: {title}
+                    subtitle: slides
+                    cover-img: {bigimg_path_pages}
+                    full-width: true
+                    ---
 
-                <embed src="{pdf_path_online}" width="100%" height="700px"
-                type="application/pdf">
-                """)
+                    <embed src="{pdf_path_online}" width="100%" height="700px"
+                    type="application/pdf">
+                    """))
 
         # ==== build notebooks html
         if is_convert_ipynb_to_html:
@@ -124,7 +125,7 @@ def build_site(dirs,is_convert_ipynb_to_html):
 
                         # ==== convert ipynb to html
                         os.system("jupyter nbconvert --ExecutePreprocessor.timeout=60 --template basic --to html  " +
-                                ipynb_fp+" --output "+notebook_html_path)
+                                  ipynb_fp+" --output "+notebook_html_path)
                         with open(notebook_html_path, "r+") as f:
                             lines_arr = f.readlines()
                         # ===== deal with html

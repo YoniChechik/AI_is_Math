@@ -28,6 +28,8 @@ sitemap:
         <priority>1.0</priority>
       {% elsif page.url contains  "_nb" %}
         <priority>0.9</priority>
+      {% elsif page.url contains  "class_slides" %}
+        <priority>0.9</priority>
       {% else %}
         <priority>0.5</priority>
       {% endif %}

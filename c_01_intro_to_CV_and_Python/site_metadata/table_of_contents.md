@@ -1,4 +1,4 @@
-## **Intro to CV and Python** [(slides)](/pages/c_01_intro_to_CV_and_Python/class_slides/
+## **Intro to CV and Python** [(slides)](/pages/c_01_intro_to_CV_and_Python/class_slides/)
 
 - [Python, Pycharm & packages installation guide](/pages/python_pycharm_installation/python_pycharm_installation/)
 - Course details

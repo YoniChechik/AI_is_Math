@@ -1,4 +1,4 @@
-## **Curve fitting** [(slides)](/pages/c_04a_curve_fitting/class_slides/
+## **Curve fitting** [(slides)](/pages/c_04a_curve_fitting/class_slides/)
 - Least squares
 - Total least squares
 - RANSAC [(LS, TLS & RANSAC notebook)](/pages/c_04a_curve_fitting/least_squares_nb/)

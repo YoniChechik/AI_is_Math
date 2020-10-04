@@ -3,7 +3,7 @@ title: Course syllabus
 cover-img: /aux_assets/FedTech-ComputerVision.jpg
 ---
 
-## **Intro to CV and Python** [(slides)](/pages/c_01_intro_to_CV_and_Python/class_slides/
+## **Intro to CV and Python** [(slides)](/pages/c_01_intro_to_CV_and_Python/class_slides/)
 
 - [Python, Pycharm & packages installation guide](/pages/python_pycharm_installation/python_pycharm_installation/)
 - Course details
@@ -18,7 +18,7 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
 - [Ex1: basic python, numpy & matplotlib, opencv](/pages/c_01_intro_to_CV_and_Python/ex1/)
 
 
-## **Basic image processing** [(slides)](/pages/c_02a_basic_image_processing/class_slides/
+## **Basic image processing** [(slides)](/pages/c_02a_basic_image_processing/class_slides/)
 
 - Image representation
 - Pixel-wise operations
@@ -30,7 +30,7 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
 - [Ex2: morphological operators and friends](/pages/c_02a_basic_image_processing/ex2/)
 
 
-## **Filtering and resampling** [(slides)](/pages/c_02b_filtering_and_resampling/class_slides/
+## **Filtering and resampling** [(slides)](/pages/c_02b_filtering_and_resampling/class_slides/)
 
 - Noise and filtering [(notebook)](/pages/c_02b_filtering_and_resampling/noise_and_filtering_nb/)
 - Frequency representation
@@ -39,7 +39,7 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
 
 
 
-## **Edge Detection** [(slides)](/pages/c_03_edge_detection/class_slides/
+## **Edge Detection** [(slides)](/pages/c_03_edge_detection/class_slides/)
 - Intro to edges
 - Basic edge image [(gradient filters notebook)](/pages/c_03_edge_detection/gradient_filters_nb/)
 - Edge thinning
@@ -52,13 +52,13 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
   - Unsharp filter
 - [Ex3: Bilateral filter](/pages/c_03_edge_detection/ex3/)
 
-## **Curve fitting** [(slides)](/pages/c_04a_curve_fitting/class_slides/
+## **Curve fitting** [(slides)](/pages/c_04a_curve_fitting/class_slides/)
 - Least squares
 - Total least squares
 - RANSAC [(LS, TLS & RANSAC notebook)](/pages/c_04a_curve_fitting/least_squares_nb/)
 - [Ex4a: vignetting](/pages/c_04a_curve_fitting/ex4a/)
 
-## **Hough transform** [(slides)](/pages/c_04b_hough_transform/class_slides/
+## **Hough transform** [(slides)](/pages/c_04b_hough_transform/class_slides/)
 - Hough transform [(Hough transform notebook)](/pages/c_04b_hough_transform/hough_transform_nb/)
   - $(m,b)$ parameter space
   - $(\rho,\theta)$ parameter space
@@ -66,7 +66,7 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
 
 
 
-## **Image formation** [(slides)](/pages/c_05_image_formation/class_slides/
+## **Image formation** [(slides)](/pages/c_05_image_formation/class_slides/)
 
 - BRDF
 - Pinhole camera
@@ -74,7 +74,7 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
 - The human eye
 
 
-## **Geometric transformation** [(slides)](/pages/c_06_geometric_transformation/class_slides/
+## **Geometric transformation** [(slides)](/pages/c_06_geometric_transformation/class_slides/)
 
 - 2D->2D transformations [(notebook)](/pages/c_06_geometric_transformation/image_transformation_nb/)
 - 3D->3D transformations
@@ -83,7 +83,7 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
   - Orthographic projection
 
 
-## **Camera calibration** [(slides)](/pages/c_07_camera_calibration/class_slides/
+## **Camera calibration** [(slides)](/pages/c_07_camera_calibration/class_slides/)
 
 - What is camera calibration?
 - Camera extrinsics
@@ -93,7 +93,7 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
 
 
 
-## **Features** [(slides)](/pages/c_08_features/class_slides/
+## **Features** [(slides)](/pages/c_08_features/class_slides/)
 
 - What and why we need features detection?
 - Feature detection
@@ -109,7 +109,7 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
 
 
 
-## **Stereo** [(slides)](/pages/c_09_stereo/class_slides/
+## **Stereo** [(slides)](/pages/c_09_stereo/class_slides/)
 
 - Structure from motion
 - Epipolar geometry
@@ -125,14 +125,14 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
 
 
 
-## **Neural networks basics** [(slides)](/pages/c_10_neural_networks_basics/class_slides/
+## **Neural networks basics** [(slides)](/pages/c_10_neural_networks_basics/class_slides/)
 
 - Perceptrons
 - Dense NN
 
 
 
-## **Neural networks 2** [(slides)](/pages/c_11_neural_networks_2/class_slides/
+## **Neural networks 2** [(slides)](/pages/c_11_neural_networks_2/class_slides/)
 
 - [Fully connected net](/pages/c_11_neural_networks_2/fully_connected_nb/)
 - [Conv net](/pages/c_11_neural_networks_2/conv_nn_nb/)

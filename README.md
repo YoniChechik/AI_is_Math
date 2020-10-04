@@ -4,7 +4,7 @@
 This is my CV course raw data git repo - you can see the raw .py/ .ppt files here.
 
 ## Course TOC
-### **Intro to CV and Python** [(slides)](https://www.aiismath.com/pages/c_01_intro_to_CV_and_Python/intro_to_Computer_Vision.pdf)
+### **Intro to CV and Python** [(slides)](https://www.aiismath.com/pages/c_01_intro_to_CV_and_Python/class_slides.html)
 
 - [Python, Pycharm & packages installation guide](https://www.aiismath.com/pages/python_pycharm_installation/python_pycharm_installation/)
 - Course details
@@ -19,7 +19,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 - [Ex1: basic python, numpy & matplotlib, opencv](https://www.aiismath.com/pages/c_01_intro_to_CV_and_Python/ex1/)
 
 
-### **Basic image processing** [(slides)](https://www.aiismath.com/pages/c_02a_basic_image_processing/Basic_image_processing.pdf)
+### **Basic image processing** [(slides)](https://www.aiismath.com/pages/c_02a_basic_image_processing/class_slides.html)
 
 - Image representation
 - Pixel-wise operations
@@ -31,7 +31,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 - [Ex2: morphological operators and friends](https://www.aiismath.com/pages/c_02a_basic_image_processing/ex2/)
 
 
-### **Filtering and resampling** [(slides)](https://www.aiismath.com/pages/c_02b_filtering_and_resampling/Filtering_and_resampling.pdf)
+### **Filtering and resampling** [(slides)](https://www.aiismath.com/pages/c_02b_filtering_and_resampling/class_slides.html)
 
 - Noise and filtering [(notebook)](https://www.aiismath.com/pages/c_02b_filtering_and_resampling/noise_and_filtering_nb/)
 - Frequency representation
@@ -40,7 +40,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 
 
-### **Edge Detection** [(slides)](https://www.aiismath.com/pages/c_03_edge_detection/edge_detection.pdf)
+### **Edge Detection** [(slides)](https://www.aiismath.com/pages/c_03_edge_detection/class_slides.html)
 - Intro to edges
 - Basic edge image [(gradient filters notebook)](https://www.aiismath.com/pages/c_03_edge_detection/gradient_filters_nb/)
 - Edge thinning
@@ -53,13 +53,13 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
   - Unsharp filter
 - [Ex3: Bilateral filter](https://www.aiismath.com/pages/c_03_edge_detection/ex3/)
 
-### **Curve fitting** [(slides)](https://www.aiismath.com/pages/c_04a_curve_fitting/Curve_fitting.pdf)
+### **Curve fitting** [(slides)](https://www.aiismath.com/pages/c_04a_curve_fitting/class_slides.html)
 - Least squares
 - Total least squares
 - RANSAC [(LS, TLS & RANSAC notebook)](https://www.aiismath.com/pages/c_04a_curve_fitting/least_squares_nb/)
 - [Ex4a: vignetting](https://www.aiismath.com/pages/c_04a_curve_fitting/ex4a/)
 
-### **Hough transform** [(slides)](https://www.aiismath.com/pages/c_04b_hough_transform/Hough_transform.pdf)
+### **Hough transform** [(slides)](https://www.aiismath.com/pages/c_04b_hough_transform/class_slides.html)
 - Hough transform [(Hough transform notebook)](https://www.aiismath.com/pages/c_04b_hough_transform/hough_transform_nb/)
   - $(m,b)$ parameter space
   - $(\rho,\theta)$ parameter space
@@ -67,7 +67,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 
 
-### **Image formation** [(slides)](https://www.aiismath.com/pages/c_05_image_formation/Image_formation.pdf)
+### **Image formation** [(slides)](https://www.aiismath.com/pages/c_05_image_formation/class_slides.html)
 
 - BRDF
 - Pinhole camera
@@ -75,7 +75,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 - The human eye
 
 
-### **Geometric transformation** [(slides)](https://www.aiismath.com/pages/c_06_geometric_transformation/geometric_transformation.pdf)
+### **Geometric transformation** [(slides)](https://www.aiismath.com/pages/c_06_geometric_transformation/class_slides.html)
 
 - 2D->2D transformations [(notebook)](https://www.aiismath.com/pages/c_06_geometric_transformation/image_transformation_nb/)
 - 3D->3D transformations
@@ -84,7 +84,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
   - Orthographic projection
 
 
-### **Camera calibration** [(slides)](https://www.aiismath.com/pages/c_07_camera_calibration/camera_calibration.pdf)
+### **Camera calibration** [(slides)](https://www.aiismath.com/pages/c_07_camera_calibration/class_slides.html)
 
 - What is camera calibration?
 - Camera extrinsics
@@ -94,7 +94,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 
 
-### **Features** [(slides)](https://www.aiismath.com/pages/c_08_features/features.pdf)
+### **Features** [(slides)](https://www.aiismath.com/pages/c_08_features/class_slides.html)
 
 - What and why we need features detection?
 - Feature detection
@@ -110,7 +110,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 
 
-### **Stereo** [(slides)](https://www.aiismath.com/pages/c_09_stereo/stereo.pdf)
+### **Stereo** [(slides)](https://www.aiismath.com/pages/c_09_stereo/class_slides.html)
 
 - Structure from motion
 - Epipolar geometry
@@ -126,14 +126,14 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 
 
-### **Neural networks basics** [(slides)](https://www.aiismath.com/pages/c_10_neural_networks_basics/neural_networks_basics.pdf)
+### **Neural networks basics** [(slides)](https://www.aiismath.com/pages/c_10_neural_networks_basics/class_slides.html)
 
 - Perceptrons
 - Dense NN
 
 
 
-### **Neural networks 2** [(slides)](https://www.aiismath.com/pages/c_11_neural_networks_2/neural_networks_2.pdf)
+### **Neural networks 2** [(slides)](https://www.aiismath.com/pages/c_11_neural_networks_2/class_slides.html)
 
 - [Fully connected net](https://www.aiismath.com/pages/c_11_neural_networks_2/fully_connected_nb/)
 - [Conv net](https://www.aiismath.com/pages/c_11_neural_networks_2/conv_nn_nb/)

@@ -2,7 +2,7 @@ import os
 import shutil
 
 
-def build_site(dirs):
+def build_site(dirs,is_convert_ipynb_to_html):
 
     # === get all git class dirs - starting with "c_"
     cwd = os.getcwd()
@@ -88,52 +88,77 @@ def build_site(dirs):
         with open(main_index_fp, "a+") as f:
             f.write(html_float_bar(url_toc, bigimg_path_pages, title))
 
+        # ==== build class_slides.html
+        # for dir_name in os.listdir(pages_path):
+        pages_dir_path = os.path.join(pages_path, dir_name)
+        # if not os.path.isdir(dir_path):
+        #     continue
+        for fn in os.listdir(pages_dir_path):
+            if not fn.endswith(".pdf"):
+                continue
+            pdf_path_online = os.path.join("https://www.aiismath.com/pages",
+                                            pages_dir_path.split("\\pages\\")[1], fn).replace("\\", "/")
+
+            with open(os.path.join(pages_dir_path, "class_slides.html"), "w") as f:
+                f.write(f"""
+                ---
+                title: {title}
+                subtitle: slides
+                cover-img: {bigimg_path_pages}
+                full-width: true
+                ---
+
+                <embed src="{pdf_path_online}" width="100%" height="700px"
+                type="application/pdf">
+                """)
+
         # ==== build notebooks html
-        class_dir = os.path.join(git_main_dirs_cwd, dir_name)
-        if class_dir in dirs:
-            for ipynb_file in os.listdir(class_dir):
-                if ipynb_file.endswith(".ipynb"):
-                    ipynb_file_no_ext = ipynb_file.split(".")[0]
-                    ipynb_fp = os.path.join(class_dir, ipynb_file)
-                    notebook_html_path = os.path.join(pages_class_dir_path, ipynb_file_no_ext+"_nb.html")
+        if is_convert_ipynb_to_html:
+            class_dir = os.path.join(git_main_dirs_cwd, dir_name)
+            if class_dir in dirs:
+                for ipynb_file in os.listdir(class_dir):
+                    if ipynb_file.endswith(".ipynb"):
+                        ipynb_file_no_ext = ipynb_file.split(".")[0]
+                        ipynb_fp = os.path.join(class_dir, ipynb_file)
+                        notebook_html_path = os.path.join(pages_class_dir_path, ipynb_file_no_ext+"_nb.html")
 
-                    # ==== convert ipynb to html
-                    os.system("jupyter nbconvert --ExecutePreprocessor.timeout=60 --template basic --to html  " +
-                              ipynb_fp+" --output "+notebook_html_path)
-                    with open(notebook_html_path, "r+") as f:
-                        lines_arr = f.readlines()
-                    # ===== deal with html
-                    for i, line in enumerate(lines_arr):
-                        if "class=\"anchor-link\"" in line:
-                            # remove anchor symbol
-                            line = line.replace("&#182;", "")
-                            lines_arr[i] = line
-                        if "<h1 id=" in line:
-                            # remove h1 - leave the main title as h1
-                            line = line.replace("<h1", "<h2")
-                            line = line.replace("</h1>", "</h2>")
-                            lines_arr[i] = line
+                        # ==== convert ipynb to html
+                        os.system("jupyter nbconvert --ExecutePreprocessor.timeout=60 --template basic --to html  " +
+                                ipynb_fp+" --output "+notebook_html_path)
+                        with open(notebook_html_path, "r+") as f:
+                            lines_arr = f.readlines()
+                        # ===== deal with html
+                        for i, line in enumerate(lines_arr):
+                            if "class=\"anchor-link\"" in line:
+                                # remove anchor symbol
+                                line = line.replace("&#182;", "")
+                                lines_arr[i] = line
+                            if "<h1 id=" in line:
+                                # remove h1 - leave the main title as h1
+                                line = line.replace("<h1", "<h2")
+                                line = line.replace("</h1>", "</h2>")
+                                lines_arr[i] = line
 
-                    nb_data = "".join(lines_arr)
+                        nb_data = "".join(lines_arr)
 
-                    # ==== for plotly: handle `iframe_figures` dir
-                    iframe_figures_path = os.path.join(class_dir, 'iframe_figures')
-                    if os.path.exists(iframe_figures_path):
-                        # delete old dir
-                        old_iframe_dir_path = os.path.join(pages_class_dir_path, 'iframe_figures')
-                        if os.path.exists(old_iframe_dir_path):
-                            shutil.rmtree(os.path.join(pages_class_dir_path, 'iframe_figures'))
-                        # change path in nb_data
-                        nb_data = nb_data.replace('iframe_figures', '/pages/'+dir_name+'/iframe_figures')
-                        # move new dir to place
-                        shutil.move(iframe_figures_path, pages_class_dir_path)
+                        # ==== for plotly: handle `iframe_figures` dir
+                        iframe_figures_path = os.path.join(class_dir, 'iframe_figures')
+                        if os.path.exists(iframe_figures_path):
+                            # delete old dir
+                            old_iframe_dir_path = os.path.join(pages_class_dir_path, 'iframe_figures')
+                            if os.path.exists(old_iframe_dir_path):
+                                shutil.rmtree(os.path.join(pages_class_dir_path, 'iframe_figures'))
+                            # change path in nb_data
+                            nb_data = nb_data.replace('iframe_figures', '/pages/'+dir_name+'/iframe_figures')
+                            # move new dir to place
+                            shutil.move(iframe_figures_path, pages_class_dir_path)
 
-                    # ==== write header + data
-                    subtitle = " ".join(ipynb_file_no_ext.split("_"))
-                    subtitle = subtitle[0].upper() + subtitle[1:] + " notebook"
-                    with open(notebook_html_path, "w+") as f:
-                        f.write(header_builder(title, subtitle, bigimg_path_pages, layout="notebook"))
-                        f.write(nb_data)
+                        # ==== write header + data
+                        subtitle = " ".join(ipynb_file_no_ext.split("_"))
+                        subtitle = subtitle[0].upper() + subtitle[1:] + " notebook"
+                        with open(notebook_html_path, "w+") as f:
+                            f.write(header_builder(title, subtitle, bigimg_path_pages, layout="notebook"))
+                            f.write(nb_data)
 
 
 def header_builder(title, subtitle, bigimg_path, layout="page"):

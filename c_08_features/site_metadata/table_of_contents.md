@@ -1,4 +1,4 @@
-## **Features** [(slides)](/pages/c_08_features/features.pdf)
+## **Features** [(slides)](/pages/c_08_features/class_slides.html)
 
 - What and why we need features detection?
 - Feature detection

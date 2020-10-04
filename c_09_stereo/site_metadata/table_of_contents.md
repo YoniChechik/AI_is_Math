@@ -1,4 +1,4 @@
-## **Stereo** [(slides)](/pages/c_09_stereo/stereo.pdf)
+## **Stereo** [(slides)](/pages/c_09_stereo/class_slides.html)
 
 - Structure from motion
 - Epipolar geometry

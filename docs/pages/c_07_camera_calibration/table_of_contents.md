@@ -5,7 +5,7 @@ cover-img: /pages/c_07_camera_calibration/bigimg.jpg
 layout: page
 ---
 
-## **Camera calibration** [(slides)](/pages/c_07_camera_calibration/camera_calibration.pdf)
+## **Camera calibration** [(slides)](/pages/c_07_camera_calibration/class_slides.html)
 
 - What is camera calibration?
 - Camera extrinsics

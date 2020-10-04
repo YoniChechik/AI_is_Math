@@ -1,4 +1,4 @@
-## **Image formation** [(slides)](/pages/c_05_image_formation/Image_formation.pdf)
+## **Image formation** [(slides)](/pages/c_05_image_formation/class_slides.html)
 
 - BRDF
 - Pinhole camera

@@ -1,4 +1,4 @@
-## **Edge Detection** [(slides)](/pages/c_03_edge_detection/class_slides.html)
+## **Edge Detection** [(slides)](/pages/c_03_edge_detection/class_slides/
 - Intro to edges
 - Basic edge image [(gradient filters notebook)](/pages/c_03_edge_detection/gradient_filters_nb/)
 - Edge thinning

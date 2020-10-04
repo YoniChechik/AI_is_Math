@@ -1,4 +1,4 @@
-## **Basic image processing** [(slides)](/pages/c_02a_basic_image_processing/class_slides.html)
+## **Basic image processing** [(slides)](/pages/c_02a_basic_image_processing/class_slides/
 
 - Image representation
 - Pixel-wise operations

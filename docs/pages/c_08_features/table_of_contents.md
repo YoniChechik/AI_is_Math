@@ -5,7 +5,7 @@ cover-img: /pages/c_08_features/bigimg.png
 layout: page
 ---
 
-## **Features** [(slides)](/pages/c_08_features/class_slides.html)
+## **Features** [(slides)](/pages/c_08_features/class_slides/
 
 - What and why we need features detection?
 - Feature detection

@@ -5,7 +5,7 @@ cover-img: /pages/c_02a_basic_image_processing/c_02a_bigimg.jpg
 layout: page
 ---
 
-## **Basic image processing** [(slides)](/pages/c_02a_basic_image_processing/class_slides.html)
+## **Basic image processing** [(slides)](/pages/c_02a_basic_image_processing/class_slides/
 
 - Image representation
 - Pixel-wise operations

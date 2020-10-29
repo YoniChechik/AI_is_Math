@@ -101,12 +101,13 @@ def build_site(dirs, is_convert_ipynb_to_html):
                                            pages_dir_path.split("\\pages\\")[1], fn).replace("\\", "/")
 
             with open(os.path.join(pages_dir_path, "class_slides.html"), "w") as f:
+                bigimg_path_pages_fixed = bigimg_path_pages.replace("\\", "/")
                 f.write(textwrap.dedent(f"""\
                     ---
                     title: {title}
                     subtitle: slides
-                    cover-img: {bigimg_path_pages}
-                    layout: notebook
+                    cover-img: {bigimg_path_pages_fixed}
+                    full-width: true
                     ---
 
                     <embed src="{pdf_path_online}" width="100%" height="700px"

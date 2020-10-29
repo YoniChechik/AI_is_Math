@@ -106,7 +106,7 @@ def build_site(dirs, is_convert_ipynb_to_html):
                     title: {title}
                     subtitle: slides
                     cover-img: {bigimg_path_pages}
-                    full-width: true
+                    layout: notebook
                     ---
 
                     <embed src="{pdf_path_online}" width="100%" height="700px"

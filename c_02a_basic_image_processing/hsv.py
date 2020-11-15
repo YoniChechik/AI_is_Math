@@ -12,6 +12,7 @@ if 'google.colab' in sys.modules:
     import subprocess
     subprocess.call('apt-get install subversion'.split())
     subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_02a_basic_image_processing/grass.jpg'.split())
+    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_02a_basic_image_processing/hsv_th.png'.split())
 
 # %%
 # Adopted from: https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_colorspaces/py_colorspaces.html

@@ -2,7 +2,7 @@
 # # Camera calibration
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_07_camera_calibration/multi_plane_calib.ipynb)
 
-#%% [markdown]
+# %% [markdown]
 # camera calibration for distorted images with chess board samples
 # reads distorted images, calculates the calibration and write undistorted images
 #
@@ -29,18 +29,18 @@ if 'google.colab' in sys.modules:
     subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_07_camera_calibration/images'.split())
 
 
-#%%
+# %%
 import numpy as np
 import cv2
 from glob import glob
 import matplotlib.pyplot as plt
-#%%
+# %%
 square_size=2.88
 img_mask='./images/*.jpeg'
 pattern_size = (9, 6)
 
 figsize = (20,20)
-#%%
+# %%
 
 img_names = glob(img_mask)
 num_images = len(img_names)
@@ -53,9 +53,9 @@ obj_points = []
 img_points = []
 h, w = cv2.imread(img_names[0]).shape[:2]
 
-#%% [markdown]
+# %% [markdown]
 # ## Step 1: find all corners in calibration plane
-#%% 
+# %% 
 plt.figure(figsize=figsize)
 
 for i,fn in enumerate(img_names):
@@ -94,11 +94,11 @@ for i,fn in enumerate(img_names):
 
 plt.show()
 
-#%% [markdown]
+# %% [markdown]
 # ## Step 2: get camera intrinsics + distortion coeffs 
 # also get extrinsic rotation and translation vectors per image. Rotation vector is another representation for a full R matrix 
 # more on it here: https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula 
-#%%
+# %%
 # calculate camera distortion
 rms, camera_matrix, dist_coefs, _rvecs, _tvecs = cv2.calibrateCamera(obj_points, img_points, (w, h), None, None)
 
@@ -106,9 +106,9 @@ print("\nRMS:", rms)
 print("camera matrix:\n", camera_matrix)
 print("distortion coefficients: ", dist_coefs.ravel())
 
-#%% [markdown]
+# %% [markdown]
 # ## Build undistorted images
-#%%
+# %%
 # undistort the image with the calibration
 plt.figure(figsize=figsize)
 for i,fn in enumerate(img_names):
@@ -125,9 +125,9 @@ for i,fn in enumerate(img_names):
 plt.show()
 print('Done')
 
-#%% [markdown]
+# %% [markdown]
 # ## Example for full projection from 3D to 2D of a cube
-#%%
+# %%
 objectPoints = 3*square_size*np.array([[0,0,0], [0,1,0], [1,1,0], [1,0,0],[0,0,-1],[0,1,-1],[1,1,-1],[1,0,-1]])
 
 def draw(img, imgpts):

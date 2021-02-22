@@ -70,7 +70,7 @@ for t_ind, t0 in enumerate(t_vec):
 
         acc_mat[r_ind, t_ind] += 1
 
-#%%
+# %%
 plt.figure(figsize=figsize)
 plt.imshow(acc_mat, extent=[0, 180, rmax, -rmax],aspect='auto')
 plt.xlabel('theta')

@@ -1,4 +1,4 @@
-#%% [markdown]
+# %% [markdown]
 # # EX4a: Vignetting 
 # In photography and optics, vignetting is a reduction of an 
 # image's brightness or saturation toward the periphery compared 
@@ -47,7 +47,7 @@ import cv2
 
 figsize = (10, 10)
 
-#%%
+# %%
 def build_A(im_shape):
     # building A from the indices of the image shape.
     # This is hard-coded block of code in the camera
@@ -70,7 +70,7 @@ def build_A(im_shape):
     A = None
     return A
 
-#%%
+# %%
 def get_calib_coeffs(calib_map):
     # This is the calibration function when he user switches lenses.
     # Since it's memory consuming to save the intire calib map,
@@ -89,7 +89,7 @@ def get_calib_coeffs(calib_map):
 
     return b
 
-#%%
+# %%
 
 def fix_raw_im(b,vig_im):
     # Each image taken is passed through this block to correct for vignetting
@@ -114,7 +114,7 @@ def fix_raw_im(b,vig_im):
     return res, rec_calib_map
 
 
-#%% 
+# %% 
 def calib_testing(calib_map,rec_calib_map):
     # test your calib map reconstruction relative to the original 
     # calib map
@@ -135,7 +135,7 @@ def calib_testing(calib_map,rec_calib_map):
     plt.show()
 
 
-#%%
+# %%
 if __name__ is "__main__":
     for i in range(3):
         calib_im = cv2.imread("calib_im"+str(i+1)+".jpg")
@@ -160,4 +160,4 @@ if __name__ is "__main__":
 
         calib_testing(calib_map,rec_calib_map)
 
-#%%
+# %%

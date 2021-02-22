@@ -11,17 +11,17 @@ main_path = os.path.abspath("..")
 dir_list = [
     'c_01_intro_to_CV_and_Python',
     'c_02a_basic_image_processing',
-    # 'c_02b_filtering_and_resampling',
-    # 'c_03_edge_detection',
-    # 'c_04a_curve_fitting',
-    # 'c_04b_hough_transform',
-    # 'c_05_image_formation',
-    # 'c_06_geometric_transformation',
-    # 'c_07_camera_calibration',
-    # 'c_08_features',
-    # 'c_09_stereo',
-    # 'c_10_neural_networks_basics',
-    # 'c_11_neural_networks_2'
+    'c_02b_filtering_and_resampling',
+    'c_03_edge_detection',
+    'c_04a_curve_fitting',
+    'c_04b_hough_transform',
+    'c_05_image_formation',
+    'c_06_geometric_transformation',
+    'c_07_camera_calibration',
+    'c_08_features',
+    'c_09_stereo',
+    'c_10_neural_networks_basics',
+    'c_11_neural_networks_2'
 ]
 
 

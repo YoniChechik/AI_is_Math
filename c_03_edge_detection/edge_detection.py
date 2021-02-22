@@ -2,7 +2,7 @@
 # # Edge detection
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_03_edge_detection/edge_detection.ipynb)
 
-#%%
+# %%
 # to run in google colab
 import sys
 if 'google.colab' in sys.modules:
@@ -58,7 +58,7 @@ phase_img_masked = phase_img_masked*(mag_img <= th) + phase_img*(mag_img > th)
 
 
 px.imshow(mag_img,title='Gradient magnitude')
-#%%
+# %%
 px.imshow(phase_img_masked,title='Gradient phase thresholeded')
 
 # %% [markdown]
@@ -75,7 +75,7 @@ dst_LoG = cv2.filter2D(img, -1, kernel)
 
 px.imshow(np.abs(dst_LoG),title='abs LoG')
 
-#%% [markdown]
+# %% [markdown]
 # ## NMS
 # Non maximum suppression (NMS) is another way for edge thinning.
 # ### NMS preliminary step: Quantizing the phase image
@@ -134,7 +134,7 @@ px.imshow(nms_th, title='double TH')
 # 2. For each such CC group- test if there is intersection with ONLY strong edges mask.
 # 3. If intersection exist, then weak edges in CC group is actually strong edges, so unite the masks.
 
-#%%
+# %%
 
 nms_weak_and_strong = np.zeros(nms_th.shape,dtype=np.bool)
 nms_strong = np.zeros(nms_th.shape,dtype=np.bool)

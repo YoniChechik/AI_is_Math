@@ -27,7 +27,7 @@ plt.title("noisy data")
 # %% [markdown]
 # ### calc LS matrices and result:
 # $$ Xb = y $$
-#%% 
+# %% 
 x_vec = x.reshape(-1, 1)
 X = np.concatenate((x_vec, np.ones(x_vec.shape)), axis=1)
 print(X.shape)
@@ -44,7 +44,7 @@ plt.plot(x, b[0]*x+b[1], 'r')
 plt.title("noisy data + best LS fit. $b^T$="+str(b.T))
 # %% [markdown]
 # ## Comparison to np.linalg.lstsq
-#%%
+# %%
 b_np = np.linalg.lstsq(X, y_vec, rcond=None)[0]
 mse = np.mean((b-b_np)**2)
 print(mse)
@@ -52,7 +52,7 @@ print(mse)
 # ## vertical dataset
 # As mentioned in the lecture, LS is not goog at fitting vertical dataset.
 # Let's generate data:
-#%%
+# %%
 data_sz = 100
 x = np.ones(data_sz)
 y = np.arange(data_sz)
@@ -69,7 +69,7 @@ plt.title("noisy vertical data")
 
 # %% [markdown]
 # Calc LS matrices and result
-#%%
+# %%
 x_vec = x.reshape(-1, 1)
 X = np.concatenate((x_vec, np.ones(x_vec.shape)), axis=1)
 y_vec = y.reshape(-1, 1)
@@ -89,7 +89,7 @@ plt.title("vertical data + best LS fit. $b^T$="+str(b.T))
 # %% [markdown]
 # ## TLS
 # Same vertical data, now with total least squares
-#%%
+# %%
 X = np.concatenate((x.reshape(-1, 1)-np.mean(x),
                     y.reshape(-1, 1)-np.mean(y)), axis=1)
 
@@ -118,7 +118,7 @@ plt.title("noisy vertical data + linear TLS fit")
 
 # %% [markdown]
 # ## Example for non linear LS
-#%%
+# %%
 x_step = 0.01
 x = np.arange(-10, 10+x_step, x_step)
 
@@ -148,7 +148,7 @@ plt.title("data + best LS fit. $b^T$="+str(b.T))
 # %% [markdown]
 # ## Outliers
 # As mentioned, LS has a problem with outliers:
-#%%
+# %%
 x_max = 10
 
 x = np.arange(10)
@@ -179,7 +179,7 @@ x_axis = np.arange(x_max)
 plt.plot(x_axis, b[0]*x_axis+b[1], 'r')
 plt.title("data with outlier + best LS fit. $b^T$="+str(b.T))
 
-#%% [markdown]
+# %% [markdown]
 # ## RANSAC
 # ### arrange data
 # %% 
@@ -200,13 +200,13 @@ plt.figure(figsize=figsize)
 plt.plot(x, y, '*')
 plt.plot(x_noise, y_noise, '*')
 
-#%%
+# %%
 x = np.concatenate((x, x_noise))
 y = np.concatenate((y, y_noise))
 
-#%% [markdown]
+# %% [markdown]
 # ### Run RANSAC
-#%%
+# %%
 
 def basic_ransac(x,TH):
     #====== choose 2 random inds
@@ -237,7 +237,7 @@ def basic_ransac(x,TH):
     inliers_ind = np.array(inliers_ind)
     return b, inliers_ind
 
-#%%
+# %%
 TH = 1
 num_cycles = 10
 
@@ -255,7 +255,7 @@ for i in range(num_cycles):
     if num_best_inliers < inliers_ind.shape[0]:
         num_best_inliers = inliers_ind.shape[0]
         best_cycle_ind = i
-#%%
+# %%
 # plot best fit
 plt.rcParams['figure.figsize'] = [20, 20]
 
@@ -273,10 +273,10 @@ for i in range(num_cycles):
     else:
         plt.title("num inliers: "+ str(inliers_ind_list[i].shape[0]))
 
-#%% [markdown]
+# %% [markdown]
 # ### Test RANSAC with sklearn package (a known machine learning package in python)
 # Code taken from: https://scikit-learn.org/stable/auto_examples/linear_model/plot_ransac.html
-#%%
+# %%
 from sklearn import linear_model
 
 X = x.reshape(-1, 1)

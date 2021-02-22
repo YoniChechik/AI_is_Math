@@ -1,4 +1,4 @@
-#%% [markdown]
+# %% [markdown]
 # Let's identify coins!
 # in the image given below we want to detect each coin currency,
 # and we'll do it with cv2.HoughCircles!
@@ -11,7 +11,7 @@ if 'google.colab' in sys.modules:
     subprocess.call('apt-get install subversion'.split())
     subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_04b_hough_transform/ex4b/coins.png'.split())
 
-#%%
+# %%
 from matplotlib import pyplot as plt
 import cv2
 
@@ -58,4 +58,4 @@ plt.imshow(res)
 plt.title("final result- coins detection")
 plt.show()
 
-#%%
+# %%

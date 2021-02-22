@@ -39,7 +39,7 @@ def fftPlot(sig, dt=None, block=False, plot=True):
     return sigFFTPos, freqAxisPos
 
 
-#%%
+# %%
 dt = 1 / 1000
 f0 = 10 # 1 / dt / 4
 
@@ -49,7 +49,7 @@ sig = np.sin(2 * np.pi * f0 * t) #+ 10 * np.sin(2 * np.pi * f0 / 2 * t)
 
 plt.figure()
 plt.plot(t,sig)
-#%%
+# %%
 fftPlot(sig, dt=dt, block=True)
 
 

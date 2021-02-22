@@ -1,4 +1,4 @@
-#%% [markdown]
+# %% [markdown]
 # # EX2_2
 # Find different words in newspaper article
 # We'll do this using morphology operators and connected components.
@@ -17,7 +17,7 @@ import cv2
 
 figsize = (10, 10)
 
-#%%
+# %%
 im = cv2.imread("news.jpg")
 im_gray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
 
@@ -25,21 +25,21 @@ plt.figure(figsize=figsize)
 plt.imshow(im_gray,cmap="gray",vmin=0,vmax=255)
 plt.show()
 
-#%%
+# %%
 # TODO: let's start with turning the image to a binary one
 
 plt.figure(figsize=(20,20))
 plt.imshow(im_th)
 plt.show()
 
-#%%
+# %%
 # TODO: next, merge all pixels of the same word together to make one connected component using a morphologic operator
 
 plt.figure(figsize=(20,20))
 plt.imshow(dilated_im)
 plt.show()
 
-#%%
+# %%
 
 def find_words(dilated_im,im):
     res = im.copy()
@@ -62,13 +62,13 @@ def plot_rec(mask,res_im):
 
     res_im = cv2.rectangle(res_im, (left, up), (right, down), (0, 20, 200), 2)
     return res_im
-#%%
+# %%
 plt.figure(figsize=(20,20))
 plt.imshow(find_words(dilated_im,im))
 plt.show()
 
 
-#%%
+# %%
 # TODO: now we want to mark only the big title words, and do this ONLY using morphological operators
 
 

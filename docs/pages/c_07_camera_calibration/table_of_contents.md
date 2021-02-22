@@ -9,6 +9,7 @@ layout: page
 
 - What is camera calibration?
 - Camera extrinsics
+- Perspective projection
 - Camera intrinsics
 - Full camera matrix
 - Calibration methods and distortions [(notebook)](/pages/c_07_camera_calibration/multi_plane_calib_nb/)

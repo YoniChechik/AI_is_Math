@@ -147,7 +147,7 @@ plt.title("Translated and then scaled points")
 # %% [markdown]
 # ## Projective transformation
 
-#%%
+# %%
 
 M_p = np.array([[1, 0, 0],
                 [0, 20, 0],
@@ -166,4 +166,4 @@ plt.scatter(xy1_p[0, :]/xy1_p[2, :],
 plt.title("Projected points")
 
 
-#%%
+# %%

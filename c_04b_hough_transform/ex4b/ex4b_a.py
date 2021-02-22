@@ -1,4 +1,4 @@
-#%% [markdown]
+# %% [markdown]
 # # EX4b: Circle Hough transform
 # In the ex. we will implement step by step circle hough transform.
 # Follow the code and fill in the missing parts
@@ -89,7 +89,7 @@ for yx in edge_inds:
 
             # TODO: update accumulation matrix (1 line)
 
-#%%
+# %%
 plt.figure(figsize=figsize)
 plt.imshow(np.max(acc_mat, axis=2), extent=[b.min(), b.max(), a.max(), a.min()],aspect='auto')
 plt.xlabel('a')
@@ -116,7 +116,7 @@ plt.show()
 # This is a new feature that deals with noise in the accumulation matrix.
 # 1. Search in the neighborhood of each above TH bin for other above TH bins
 # 2. compare the two and delete the less important one
-#%%
+# %%
 edge_inds = np.argwhere(acc_mat_th > 0)
 
 min_dist = 15
@@ -138,7 +138,7 @@ for i in range(edge_inds.shape[0]):
             else:
                 #TODO: one line fill here
                 pass
-#%%
+# %%
 plt.figure(figsize=figsize)
 plt.imshow(np.sum(acc_mat_th_dist, axis=2), extent=[b.min(), b.max(), a.max(), a.min()],aspect='auto')
 plt.xlabel('a')
@@ -166,7 +166,7 @@ plt.figure(figsize=figsize)
 plt.imshow(res)
 plt.title("final result")
 plt.show()
-#%% [markdown]
+# %% [markdown]
 # ## Comparison to cv2.HoughCircles
 # %%
 res = im3.copy()

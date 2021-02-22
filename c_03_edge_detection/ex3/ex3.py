@@ -13,7 +13,7 @@ import cv2
 
 figsize = (10, 10)
 
-#%%
+# %%
 def gaussian(x, sigma,mu=0):
     # TODO: get gaussin results (one line)
     return None
@@ -22,7 +22,7 @@ def distance(x, y, i, j):
     # TODO: get L2 distance function between two points (one line)
     return None
 
-#%%
+# %%
 def bilateral_one_pixel(source, x, y, d, sigma_r, sigma_s):
     # === init vars
     filtered_pix = 0
@@ -38,7 +38,7 @@ def bilateral_one_pixel(source, x, y, d, sigma_r, sigma_s):
     filtered_pix = np.clip(filtered_pix,0,255).astype(np.uint8)
     return filtered_pix
 
-#%%
+# %%
 def bilateral_filter(source, d, sigma_r, sigma_s):
     # build empty filtered_image
     filtered_image = np.zeros(source.shape,np.uint8)  
@@ -51,7 +51,7 @@ def bilateral_filter(source, d, sigma_r, sigma_s):
 
     return filtered_image
 
-#%%
+# %%
 #upload noisy image
 src = cv2.imread("butterfly_noisy.jpg")
 src = cv2.cvtColor(src,cv2.COLOR_BGR2GRAY)
@@ -61,7 +61,7 @@ plt.imshow(src,cmap=gray,vmin=0,vmax=255)
 plt.colorbar()
 plt.show()
 
-#%%
+# %%
 # run bilateral_filter(...)
 d = 5 #edge size of neighborhood perimeter 
 sigma_r = 12 # sigma range
@@ -74,7 +74,7 @@ plt.imshow(filtered_image)
 plt.colorbar()
 plt.show()
 
-#%%
+# %%
 # compare to opencv
 filtered_image_OpenCV = cv2.bilateralFilter(src, d, sigma_r, sigma_s)
 
@@ -83,7 +83,7 @@ plt.imshow(filtered_image_OpenCV)
 plt.colorbar()
 plt.show()
 
-#%%
+# %%
 # compare to regular gaussian blur
 blur = cv2.GaussianBlur(gauss_noise_im,(d,d),sigma_s)
 plt.figure(figsize=(10,10))
@@ -91,7 +91,7 @@ plt.imshow(blur)
 plt.colorbar()
 plt.show()
 
-#%%
+# %%
 # copare canny results between the two images
 th_low = 100
 th_high = 200

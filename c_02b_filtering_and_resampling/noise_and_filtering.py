@@ -2,7 +2,7 @@
 # # Noise and filtering
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_02b_filtering_and_resampling/noise_and_filtering.ipynb)
 
-#%%
+# %%
 # to run in google colab
 import sys
 if 'google.colab' in sys.modules:

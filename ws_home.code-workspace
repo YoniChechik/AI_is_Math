@@ -9,19 +9,17 @@
 	],
 	"settings": 
 	{
-		"python.pythonPath": "C:\\Users\\chech\\AppData\\Local\\Programs\\Python\\cv_course_venv\\Scripts\\python.exe",
-		"python.dataScience.stopOnFirstLineWhileDebugging": false,
-		"python.dataScience.notebookFileRoot": "${fileDirname}", 
+		"python.pythonPath": "C:\\Users\\chech\\AppData\\Local\\Programs\\Python\\venv_cv_course_38\\Scripts\\python.exe",
 		"python.autoComplete.addBrackets": true,
-		"python.venvFolders": [
-			"/home/yoni/miniconda3/envs/aiismath"
-		],
-		// "python.envFile": "${workspaceFolder}/ws.env",
+		"python.analysis.completeFunctionParens": true,
+		// "python.venvFolders": [
+		// 	"/home/yoni/miniconda3/envs/aiismath"
+		// ],
 		"python.terminal.activateEnvironment": true, //turn to false if ssh- because of shh bug
+		"python.languageServer": "Pylance",
+
 		// ====== linter
-		"python.linting.enabled": true,
 		"python.linting.pylintEnabled": false,
-		//"python.linting.pylintArgs": ["--generate-members"],  //for recognizing cv imports
 		"python.linting.flake8Enabled": true,
 		"python.linting.flake8Args": [
 			"--max-line-length=120" // default is 80
@@ -29,12 +27,11 @@
 		"python.linting.flake8CategorySeverity.E": "Information",
 		"python.linting.flake8CategorySeverity.F": "Information",
 		"python.linting.flake8CategorySeverity.W": "Information",
-		// ====== formatter 
-		"python.formatting.autopep8Args": [
-			"--max-line-length=120"
-		],
-		"python.analysis.disabled": [
-			"unresolved-import" // error appears when importing after sys.path.append
+		
+		// ====== formatter 	
+		"python.formatting.provider": "black",
+		"python.formatting.blackArgs": [
+			"--line-length=120" // default is 88
 		],
 
 		"files.watcherExclude": {
@@ -68,10 +65,11 @@
 		"gitlens.menus": {
 			"editorGroup": false
 		},
+		
 		"markdown.extension.toc.levels": "2..6",
-		"markdown.extension.toc.githubCompatibility": true,
 
-		"pasteImage.path": "${currentFileDir}/images",				
+		"pasteImage.path": "${currentFileDir}/images",
+		
 	},
 	"launch": {
 		"configurations": [

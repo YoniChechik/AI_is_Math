@@ -88,6 +88,7 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 - What is camera calibration?
 - Camera extrinsics
+- Perspective projection
 - Camera intrinsics
 - Full camera matrix
 - Calibration methods and distortions [(notebook)](https://www.aiismath.com/pages/c_07_camera_calibration/multi_plane_calib_nb/)

@@ -14,7 +14,7 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
 
 Python interpreter is the program that will run our actual Python code. The default downloaded interpreter is also called “base interpreter”, and for each project it’s recommended to open a new virtual environment (“venv”) with its own “project interpreter”.
 
-1. Download **Python3.8.5 64bit** (currently latest) installer .exe from: <https://www.python.org/downloads/release/python-385/> (bottom of page)
+1. Download **Python3.8.5 64bit** installer .exe from: <https://www.python.org/downloads/release/python-385/> (bottom of page)
     ![](images/2020-08-20-17-13-02.png)
     
 2. Open installer -> **check the “add Python 3.X to Path”** -> click “Install Now” -> press “next” if needed until finish.
@@ -26,7 +26,7 @@ Python interpreter is the program that will run our actual Python code. The defa
     [This image is of an older version of PyCharm... Yours will prompt **your** chosen downloaded Python version]
 
 ## Install PyCharm community IDE
-
+(or VSCode- whatever you prefer)
 1. Download **PyCharm community** from: <https://www.jetbrains.com/pycharm/download/#section=windows.>
 2. Press “next” until finished.
 3. Open PyCharm -> “create a new project” 
@@ -66,7 +66,7 @@ Packages are the main way to get nontrivial functions that we are going to use, 
 - Numpy: for matrix and vector operations
 - Matplotlib: for graph visualization
 - Cv2: for image processing tasks
-- Tensorflow: for neural networks
+- pytorch: for neural networks
 
 We can download all this with the “pip” program (which came with the python interpreter)- the python package manager.
 
@@ -76,7 +76,7 @@ We can download all this with the “pip” program (which came with the python 
 
 2. Check that you are indeed in the right “venv” (will appear in brackets in the cmd), and install all packages with `pip install <package_name>`:
    - `pip install matplotlib` (will also install numpy…)
-   - `pip install tensorflow` (a GPU enabled package also exists, try installing it yourself if you wish- it’s not for beginners)
+   - `pip install torch` (a GPU enabled package also exists, try installing it yourself if you wish- it’s not for beginners)
    - `pip install opencv-python`
 
 ### Test package installation
@@ -84,7 +84,7 @@ We can download all this with the “pip” program (which came with the python 
 Change test.py to this code:
 
 ```python
-import tensorflow as tf
+import torch
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2

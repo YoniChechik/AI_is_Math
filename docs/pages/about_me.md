@@ -7,9 +7,9 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
 
 Hi!
 
-My name is Yoni Chechik and I'm an Algorithm engineer specializing in all stuff **computer vision** related, currently living in Tel Aviv, Israel and working as a lecturer, consultant and as an algorithm researcher at [Trigo](https://www.trigo.tech/).
+My name is Yoni Chechik and I'm an Algorithm engineer specializing in all stuff **computer vision** related, currently living in Tel Aviv, Israel and working as a lecturer, consultant and freelance- helping companies push algo, AI and computer vision pipelines to production.
 
-At the past I've completed a **B.Sc.** (94 - summa cum laude) & a **M.Sc.** (95) at the **Technion - electrical engineering faculty**, and worked as an algo engineer/researcher at places like [Intel](https://www.intel.com/content/www/us/en/homepage.html), [Microsoft R&D](https://www.microsoftrnd.co.il/) and [VisionMap](http://www.visionmap.com/).
+At the past I've completed a **B.Sc.** (94 - summa cum laude) & **M.Sc.** (95) at the **Technion - electrical engineering faculty**, and worked as an algo engineer/researcher at places like [Intel](https://www.intel.com/content/www/us/en/homepage.html), [Microsoft R&D](https://www.microsoftrnd.co.il/), [VisionMap](http://www.visionmap.com/), and [Trigo](https://www.trigo.tech/).
 
 ## Contact me
 

@@ -129,15 +129,30 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 
 ### **Neural networks basics** [(slides)](https://www.aiismath.com/pages/c_10_neural_networks_basics/class_slides/)
 
-- Perceptrons
-- Dense NN
-
+- The classification problem- again
+- NN history
+- Perceptron
+  - Hyperplanes 
+  - Activation
+- Dense layer
+- Multi-layer perceptron (MLP)
+- Optimization
+  - Softmax + cross entropy + loss
+  - Gradient descent
+- Basic data preprocessing
+  - Data normalization
+  - Train, validation and test splits
+- [Fully connected net](https://www.aiismath.com/pages/c_10_neural_networks_basics/fully_connected_nb/)
 
 
 ### **Neural networks 2** [(slides)](https://www.aiismath.com/pages/c_11_neural_networks_2/class_slides/)
 
-- [Fully connected net](https://www.aiismath.com/pages/c_11_neural_networks_2/fully_connected_nb/)
-- [Conv net](https://www.aiismath.com/pages/c_11_neural_networks_2/conv_nn_nb/)
-
-
+- [ConvNets](https://www.aiismath.com/pages/c_11_neural_networks_2/conv_nn_nb/)
+  - Convolution layer
+  - Pooling layer
+- Overfitting
+- Architectures
+  - Alexnet (dropout)
+  - VGG
+  - ResNet (batch norm)
 

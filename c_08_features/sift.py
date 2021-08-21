@@ -50,15 +50,15 @@ bf = cv2.BFMatcher()
 matches = bf.knnMatch(desc_l, desc_r, k=2)
 
 # Apply ratio test
-good_match = []
+good_and_second_good_match_list = []
 for m in matches:
     if m[0].distance/m[1].distance < 0.5:
-        good_match.append(m)
-good_match_arr = np.asarray(good_match)
+        good_and_second_good_match_list.append(m)
+good_match_arr = np.asarray(good_and_second_good_match_list)[:,0]
 
 # show only 30 matches
 im_matches = cv2.drawMatchesKnn(rgb_l, kp_l, rgb_r, kp_r,
-                                good_match[0:30], None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
+                                good_and_second_good_match_list[0:30], None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
 
 plt.figure(figsize=(20, 20))
 plt.imshow(im_matches)
@@ -68,8 +68,8 @@ plt.show()
 # %% [markdown]
 # ## find homography between images
 # %%
-good_kp_l = np.array([kp_l[m.queryIdx].pt for m in good_match_arr[:, 0]]).reshape(-1, 1, 2)
-good_kp_r = np.array([kp_r[m.trainIdx].pt for m in good_match_arr[:, 0]]).reshape(-1, 1, 2)
+good_kp_l = np.array([kp_l[m.queryIdx].pt for m in good_match_arr])
+good_kp_r = np.array([kp_r[m.trainIdx].pt for m in good_match_arr])
 H, masked = cv2.findHomography(good_kp_r, good_kp_l, cv2.RANSAC, 5.0)
 
 print(H)

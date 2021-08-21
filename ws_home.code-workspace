@@ -9,25 +9,17 @@
 	],
 	"settings": 
 	{
-		"python.pythonPath": "C:\\Users\\chech\\AppData\\Local\\Programs\\Python\\venv_cv_course_38\\Scripts\\python.exe",
+		// "python.defaultInterpreterPath": "C:\\Users\\chech\\miniconda3\\envs\\cv_course\\python.exe",
 		"python.autoComplete.addBrackets": true,
 		"python.analysis.completeFunctionParens": true,
-		// "python.venvFolders": [
-		// 	"/home/yoni/miniconda3/envs/aiismath"
-		// ],
 		"python.terminal.activateEnvironment": true, //turn to false if ssh- because of shh bug
+		
+		// ====== language Server
 		"python.languageServer": "Pylance",
 
 		// ====== linter
-		"python.linting.pylintEnabled": false,
-		"python.linting.flake8Enabled": true,
-		"python.linting.flake8Args": [
-			"--max-line-length=120" // default is 80
-		],
-		"python.linting.flake8CategorySeverity.E": "Information",
-		"python.linting.flake8CategorySeverity.F": "Information",
-		"python.linting.flake8CategorySeverity.W": "Information",
-		
+		"python.linting.enabled": false,
+
 		// ====== formatter 	
 		"python.formatting.provider": "black",
 		"python.formatting.blackArgs": [
@@ -69,6 +61,7 @@
 		"markdown.extension.toc.levels": "2..6",
 
 		"pasteImage.path": "${currentFileDir}/images",
+		"python.pythonPath": "C:\\Users\\chech\\miniconda3\\envs\\cv_course\\python.exe",
 		
 	},
 	"launch": {

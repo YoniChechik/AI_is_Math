@@ -9,15 +9,13 @@
 	],
 	"settings": 
 	{
-		// "python.defaultInterpreterPath": "C:\\Users\\chech\\miniconda3\\envs\\cv_course\\python.exe",
+		"python.pythonPath": "C:\\Users\\chech\\miniconda3\\envs\\cv_course\\python.exe",
 		"python.autoComplete.addBrackets": true,
 		"python.analysis.completeFunctionParens": true,
 		"python.terminal.activateEnvironment": true, //turn to false if ssh- because of shh bug
 		
 		// ====== language Server
 		"python.languageServer": "Pylance",
-
-		// ====== linter
 		"python.linting.enabled": false,
 
 		// ====== formatter 	
@@ -44,7 +42,6 @@
 	
 		"cSpell.allowCompoundWords": true,
 		"cSpell.diagnosticLevel": "Hint",
-		"cSpell.showStatus": false,
 		
 		"gitlens.currentLine.enabled": false,
 		"gitlens.codeLens.enabled": false,
@@ -61,7 +58,6 @@
 		"markdown.extension.toc.levels": "2..6",
 
 		"pasteImage.path": "${currentFileDir}/images",
-		"python.pythonPath": "C:\\Users\\chech\\miniconda3\\envs\\cv_course\\python.exe",
 		
 	},
 	"launch": {

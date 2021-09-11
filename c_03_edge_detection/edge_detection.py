@@ -35,6 +35,7 @@ img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 plt.figure(figsize=figsize)
 plt.imshow(img, cmap="gray", vmin=0, vmax=255)
 plt.title("Original image")
+plt.show()
 
 
 # %% [markdown]

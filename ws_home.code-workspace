@@ -3,46 +3,43 @@
 		{
 			"path": "."
 		},
-		{
-			"path": "C:\\Users\\chech\\Google Drive\\cv_course\\ex_res"
-		}
 	],
-	"settings": 
-	{
-		"python.pythonPath": "C:\\Users\\chech\\miniconda3\\envs\\cv_course\\python.exe",
+	"settings": {
+		// "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+		// "terminal.integrated.automationShell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+		"terminal.integrated.defaultProfile.windows": "Command Prompt",
+		"python.condaPath": "C:\\Users\\chech\\miniconda3\\Scripts\\conda.exe",
+		"python.defaultInterpreterPath": "C:\\Users\\chech\\miniconda3\\envs\\cv_course\\python.exe",
 		"python.autoComplete.addBrackets": true,
 		"python.analysis.completeFunctionParens": true,
-		"python.terminal.activateEnvironment": true, //turn to false if ssh- because of shh bug
-		
+		"python.terminal.activateEnvironment": true,
 		// ====== language Server
 		"python.languageServer": "Pylance",
 		"python.linting.enabled": false,
-
+		"python.analysis.extraPaths": [
+			"${workspaceFolder}",
+		],
 		// ====== formatter 	
 		"python.formatting.provider": "black",
 		"python.formatting.blackArgs": [
 			"--line-length=120" // default is 88
 		],
-
-		"files.watcherExclude": {
-			"*/.venv/*": true,
-			"*/.git/*": true,
-		},
-
-		"editor.autoClosingBrackets": "never",
-		"editor.autoClosingQuotes": "never",
+		// "files.watcherExclude": {
+		// 	"*/.venv/*": true,
+		// 	"*/.git/*": true,
+		// },
+		"editor.autoClosingBrackets": "always",
+		"editor.autoClosingQuotes": "always",
 		"editor.mouseWheelZoom": true,
 		"editor.acceptSuggestionOnEnter": "smart",
-
+		"editor.bracketPairColorization.enabled": true,
 		"workbench.tree.indent": 30,
 		"workbench.tree.renderIndentGuides": "always",
 		"workbench.list.openMode": "doubleClick",
-
 		"explorer.confirmDelete": false,
-	
+		// ====== extensions 	
 		"cSpell.allowCompoundWords": true,
 		"cSpell.diagnosticLevel": "Hint",
-		
 		"gitlens.currentLine.enabled": false,
 		"gitlens.codeLens.enabled": false,
 		"gitlens.statusBar.enabled": false,
@@ -54,11 +51,8 @@
 		"gitlens.menus": {
 			"editorGroup": false
 		},
-		
 		"markdown.extension.toc.levels": "2..6",
-
 		"pasteImage.path": "${currentFileDir}/images",
-		
 	},
 	"launch": {
 		"configurations": [
@@ -68,7 +62,10 @@
 				"request": "launch",
 				"program": "${file}",
 				"cwd": "${fileDirname}",
-				"console": "integratedTerminal"
+				"console": "integratedTerminal",
+				"env": {
+					"PYTHONPATH": "${workspaceFolder};${env:PYTHONPATH}" //seperator should be ";" in windows and ":" in linux
+				}
 			}
 		]
 	}

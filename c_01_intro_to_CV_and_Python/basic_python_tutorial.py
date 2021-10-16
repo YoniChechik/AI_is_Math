@@ -346,7 +346,7 @@ for key in d:
 # Why it's interesting? because when you reference a new variable, it's always soft link (like a shortcut in windows), and if you change a mutable object, it reference changes too! Something that can cause big bugs!
 
 # %%
-# mutable object: no problem
+# immutable object: no problem
 a = 'Hello'
 b = a
 b = b + ' World!'
@@ -355,7 +355,7 @@ print(b)
 
 
 # %%
-# immutable object: big problem
+# mutable object: big problem
 a = ['Hello']
 b = a
 b[0] = 'World!'

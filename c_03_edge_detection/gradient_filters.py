@@ -26,6 +26,7 @@ img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 plt.figure(figsize=figsize)
 plt.imshow(img, cmap='gray', vmin=0, vmax=255)
 plt.title('Original image')
+plt.show()
 
 # %% [markdown]
 # ## X absolute grad filter
@@ -42,6 +43,7 @@ plt.figure(figsize=figsize)
 plt.imshow(np.abs(dst), cmap='gray')
 plt.colorbar()
 plt.title('$f\'_x$: image filtered with '+str(kernel))
+plt.show()
 
 print("kernel shape is "+str(kernel.shape))
 
@@ -55,6 +57,7 @@ plt.figure(figsize=figsize)
 plt.imshow(dst, cmap='gray')
 plt.colorbar()
 plt.title('$f\'_y$: image filtered with\n '+str(kernel))
+plt.show()
 
 
 # %% [markdown]
@@ -122,6 +125,9 @@ plt.subplot(4, 2, 8)
 plt.imshow(np.abs(dst_sym-dst_prewitt)) 
 plt.colorbar()
 plt.title('|symmetric-prewitt|')
+
+plt.show()
+
 # %% [markdown]
 # ## Filtering common errors
 # ### kernel dimension error
@@ -135,6 +141,7 @@ plt.figure(figsize=figsize)
 plt.imshow(np.abs(dst), cmap='gray')
 plt.colorbar()
 plt.title('wrong kernel dim: '+str(kernel))
+plt.show()
 
 print("kernel shape is "+str(kernel.shape))
 
@@ -154,3 +161,4 @@ axs[0].title.set_text('original image')
 axs[1].imshow(dst, cmap='gray')
 axs[1].title.set_text('uint8 WRONG filtering')
 
+plt.show()

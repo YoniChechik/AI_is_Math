@@ -77,6 +77,7 @@ ax_arr[0].set_title("Auto-adjusted pixel\n scale intensity")
 
 ax_arr[1].imshow(img[:, :, 0], cmap="gray", vmin=0, vmax=255)  # 255 is the max of uint8 type number (== 2**8 -1)
 ax_arr[1].set_title("Absolute pixel\n scale intensity")
+plt.show()
 
 # %% [markdown]
 # ## More advanced functions

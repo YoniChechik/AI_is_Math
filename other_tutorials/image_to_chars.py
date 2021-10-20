@@ -1,13 +1,40 @@
 #%% [markdown]
 # # Image to chars
+# We want to represent images with chars to get a cool matrix effect
+#
+# All data that we are working on can be found here: https://github.com/YoniChechik/AI_is_Math/tree/master/other_tutorials
+
+#%%
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+
+#%%
+im_bgr = cv2.imread("matrix.jpg")
+im_rgb = cv2.cvtColor(im_bgr, cv2.COLOR_BGR2RGB)
+
+plt.imshow(im_rgb)
+plt.title("Wanted result style")
+plt.show()
+
+
+#%% [markdown]
+# Let's read an image to start and experiment on
+im_bgr = cv2.imread("person.jpg")
+im_rgb = cv2.cvtColor(im_bgr, cv2.COLOR_BGR2RGB)
+
+plt.imshow(im_rgb)
+plt.title("original image")
+plt.show()
+
 
 #%% [markdown]
 # Start with 2 functions to convert chars to pixel array representation
+# You don't really need to understand it, we simply copy it from the web...
 #%%
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
-import numpy as np
 import string
 
 
@@ -38,23 +65,9 @@ def max_char_window_size(font_path, fontsize):
 
 
 #%% [markdown]
-# Let's read an image to start and experiment on
-#%%
-import numpy as np
-import cv2
-import matplotlib.pyplot as plt
-
-im_bgr = cv2.imread("person.jpg")
-im_rgb = cv2.cvtColor(im_bgr, cv2.COLOR_BGR2RGB)
-
-plt.imshow(im_rgb)
-plt.title("original image")
-plt.show()
-
-#%% [markdown]
 # Next we will build the chars we want to use for the image representation.
 #%%
-# download the font from here: https://dl.dafont.com/dl/?f=white_rabbit
+# download the font from here: https://github.com/YoniChechik/AI_is_Math/tree/master/other_tutorials
 FONT_PATH = "whitrabt.ttf"
 FONT_SIZE = 14
 REPRESENTATION_CHARS = [" ", ".", ":", "!", "+", "*", "e", "$", "@"]
@@ -176,4 +189,5 @@ cap.release()
 cv2.destroyAllWindows()
 
 #%% [markdown]
-# BONUS: Try at home to add color from the original image to the char representation
+# ## BONUS
+# Try at home to add color from the original image to the char representation

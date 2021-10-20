@@ -49,7 +49,7 @@
 # <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" alt="jupyter logo" width="200"/>
 #
 # ### Naming convention
-# 
+#
 # There are two commonly used style in programming:
 #
 # 1. __camelCase__
@@ -60,14 +60,14 @@
 # All variable (function and class) names must start with a letter or underscore (_). You can include numbers, but it can't be the first char.
 
 # %%
-myStringHere = 'my string'  # valid
+myStringHere = "my string"  # valid
 x = 3  # valid
 x_3 = "xyz"  # valid
 # 3_x = "456" # invalid. Numbers cannot be in the first position.
 
 # %% [markdown]
 # ### Lines and indentation
-# Python doesn't need braces to indicate blocks of code for class and function definitions or flow control. 
+# Python doesn't need braces to indicate blocks of code for class and function definitions or flow control.
 # Blocks of code are denoted by line indentation (Tabs), which is rigidly enforced.
 
 # %%
@@ -85,13 +85,13 @@ else:
 # %%
 x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-y = x[0] #get element 0 
+y = x[0]  # get element 0
 print("y = " + str(y))
 
-y = x[2] #get element 2 
+y = x[2]  # get element 2
 print("y = " + str(y))
 
-y = x[0:2] #get elements 0,1
+y = x[0:2]  # get elements 0,1
 print("y = " + str(y))
 
 y = x[:2]  # same as [0:2]
@@ -201,7 +201,7 @@ my_str1 = "see you"
 print(my_str1)
 print(type(my_str1))
 
-my_str2 = 'see you later'
+my_str2 = "see you later"
 print(my_str2)
 print(type(my_str2))
 
@@ -209,13 +209,13 @@ print(type(my_str2))
 # We can also use `+` to _concatenate_ different strings
 
 # %%
-my_str1 + ' tomorrow'
+my_str1 + " tomorrow"
 
 # %% [markdown]
 # One way of formatting strings is equivalent to c language:
 
 # %%
-print("1/3 is approximately %.2f" % (1/3))  # %f for floating point number
+print("1/3 is approximately %.2f" % (1 / 3))  # %f for floating point number
 print(" '%s' != '%s'" % (my_str1, my_str2))  # %s for string
 
 # %% [markdown]
@@ -241,8 +241,7 @@ print(my_str1[2:6])
 # %%
 a_list = [1, 2, 3]  # commas to separate elements
 print("Length of a_list is: %i" % (len(a_list)))
-print("The 3rd element of a_list is: %s" %
-      (a_list[2]))  # Remember Python starts with 0
+print("The 3rd element of a_list is: %s" % (a_list[2]))  # Remember Python starts with 0
 print("The last element of a_list is: %s" % (a_list[-1]))  # -1 means the end
 print("The sum of a_list is %.2f" % (sum(a_list)))
 
@@ -306,7 +305,7 @@ print("First element of a_tuple: %i" % a_tuple[0])
 # In order to create a single value tuple, you need to add a ','
 
 # %%
-a_tuple = (1)  # this would create a int type
+a_tuple = 1  # this would create a int type
 print(type(a_tuple))
 b_tuple = (1,)  # this would create a tuple type, take note of the comma.
 print(type(b_tuple))
@@ -347,18 +346,18 @@ for key in d:
 
 # %%
 # immutable object: no problem
-a = 'Hello'
+a = "Hello"
 b = a
-b = b + ' World!'
+b = b + " World!"
 print(a)
 print(b)
 
 
 # %%
 # mutable object: big problem
-a = ['Hello']
+a = ["Hello"]
 b = a
-b[0] = 'World!'
+b[0] = "World!"
 print(a)
 print(b)
 

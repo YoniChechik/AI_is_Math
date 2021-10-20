@@ -46,7 +46,7 @@ x.shape  # can be compared to 'len()' function that is used with list size
 # Unlike `list`, we have to use one single data type for all elements in an array
 
 # %%
-y = np.array([1, 'yes'])  # automatic type conversion from int to str
+y = np.array([1, "yes"])  # automatic type conversion from int to str
 y
 
 # %% [markdown]

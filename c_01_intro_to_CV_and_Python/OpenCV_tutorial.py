@@ -16,12 +16,16 @@ import cv2  # opencv for python package
 figsize = (10, 10)
 # %%
 # to run in google colab
-if 'google.colab' in sys.modules:
+if "google.colab" in sys.modules:
     import subprocess
-    subprocess.call('apt-get install subversion'.split())
-    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_intro_to_CV_and_Python/Lenna.png'.split())
+
+    subprocess.call("apt-get install subversion".split())
     subprocess.call(
-        'svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_intro_to_CV_and_Python/opencv_logo.png'.split())
+        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_intro_to_CV_and_Python/Lenna.png".split()
+    )
+    subprocess.call(
+        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_intro_to_CV_and_Python/opencv_logo.png".split()
+    )
 
 # %% [markdown]
 # This is how to read and plot an image with opencv
@@ -33,6 +37,8 @@ img = cv2.imread("Lenna.png")
 plt.figure(figsize=figsize)
 plt.imshow(img)
 plt.title("Lenna orig")
+plt.show()
+
 # %% [markdown]
 # We got a weird image colors... This is because OpenCV uses image reading convention of BGR and matplotlib uses RGB.
 #
@@ -44,6 +50,7 @@ img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 plt.figure(figsize=figsize)
 plt.imshow(img)
 plt.title("Lenna RGB")
+plt.show()
 
 
 # %%
@@ -58,17 +65,18 @@ img
 plt.figure(figsize=figsize)
 plt.imshow(img[:, :, 0])
 plt.title("Lenna red channel")
+plt.show()
 
 
 # %%
 # gray color-mapping
 fig, ax_arr = plt.subplots(1, 2, figsize=figsize)
 
-ax_arr[0].imshow(img[:, :, 0], cmap='gray')
-ax_arr[0].set_title('Auto-adjusted pixel\n scale intensity')
+ax_arr[0].imshow(img[:, :, 0], cmap="gray")
+ax_arr[0].set_title("Auto-adjusted pixel\n scale intensity")
 
-ax_arr[1].imshow(img[:, :, 0], cmap='gray', vmin=0, vmax=255)  # 255 is the max of uint8 type number (== 2**8 -1)
-ax_arr[1].set_title('Absolute pixel\n scale intensity')
+ax_arr[1].imshow(img[:, :, 0], cmap="gray", vmin=0, vmax=255)  # 255 is the max of uint8 type number (== 2**8 -1)
+ax_arr[1].set_title("Absolute pixel\n scale intensity")
 
 # %% [markdown]
 # ## More advanced functions
@@ -79,15 +87,15 @@ img_blurred = cv2.GaussianBlur(img, (15, 15), 7)  # use a 15x15 Gaussian kernel 
 plt.figure(figsize=figsize)
 plt.imshow(img_blurred)
 plt.title("Lenna blurred")
-
+plt.show()
 
 # %%
 # edge detection
 img_canny = cv2.Canny(img, 180, 200)  # end args are the lower & upper TH of hysteresis
 plt.figure(figsize=figsize)
-plt.imshow(img_canny, cmap='gray')
+plt.imshow(img_canny, cmap="gray")
 plt.title("Lenna edges")
-
+plt.show()
 
 # %%
 # detect circles
@@ -98,8 +106,7 @@ img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 img_gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
-circles = cv2.HoughCircles(img_gray, cv2.HOUGH_GRADIENT, 0.1, 50,
-                           param1=50, param2=38)
+circles = cv2.HoughCircles(img_gray, cv2.HOUGH_GRADIENT, 0.1, 50, param1=50, param2=38)
 
 for x, y, r in circles[0, :]:
     # draw the outer circle
@@ -110,4 +117,6 @@ for x, y, r in circles[0, :]:
 plt.figure(figsize=figsize)
 plt.imshow(img)
 plt.title("finding circles")
+plt.show()
+
 # %%

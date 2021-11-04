@@ -44,7 +44,7 @@ $$I^{filtered}(x, y) = \frac{\sum_{i, j} I(i, j) w_p(x, y, i, j)}{\sum_{i, j} w_
 
 where: 
 
-$$w_p(x, y, i, j) = \exp\left(-\frac{(x-i)^2 + (y-j)^2}{2 \sigma_d^2}\right)\cdot  \exp\left(- \frac{(I(x, y) - I(i, j))^2}{2 \sigma_r^2}\right)$$
+$$w_p(x, y, i, j) = \exp\left(-\frac{(x-i)^2 + (y-j)^2}{2 \sigma_s^2}\right)\cdot  \exp\left(- \frac{(I(x, y) - I(i, j))^2}{2 \sigma_r^2}\right)$$
 
 
 This is an Image showing the full filter on one pixel input.

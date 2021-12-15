@@ -5,12 +5,8 @@
 		},
 	],
 	"settings": {
-		// "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
-		// "terminal.integrated.automationShell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
 		"terminal.integrated.defaultProfile.windows": "Command Prompt",
-		"python.condaPath": "C:\\Users\\chech\\miniconda3\\Scripts\\conda.exe",
 		"python.defaultInterpreterPath": "C:\\Users\\chech\\miniconda3\\envs\\cv_course\\python.exe",
-		"python.autoComplete.addBrackets": true,
 		"python.analysis.completeFunctionParens": true,
 		"python.terminal.activateEnvironment": true,
 		// ====== language Server
@@ -24,15 +20,13 @@
 		"python.formatting.blackArgs": [
 			"--line-length=120" // default is 88
 		],
-		// "files.watcherExclude": {
-		// 	"*/.venv/*": true,
-		// 	"*/.git/*": true,
-		// },
 		"editor.autoClosingBrackets": "always",
 		"editor.autoClosingQuotes": "always",
 		"editor.mouseWheelZoom": true,
 		"editor.acceptSuggestionOnEnter": "smart",
 		"editor.bracketPairColorization.enabled": true,
+		"editor.formatOnSave": true,
+
 		"workbench.tree.indent": 30,
 		"workbench.tree.renderIndentGuides": "always",
 		"workbench.list.openMode": "doubleClick",

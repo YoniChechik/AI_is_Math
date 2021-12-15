@@ -114,13 +114,13 @@ This is my CV course raw data git repo - you can see the raw .py/ .ppt files her
 ### **Stereo** [(slides)](https://www.aiismath.com/pages/c_09_stereo/class_slides/)
 
 - Structure from motion
+- Triangulation
+- Stereo matching
+- Camera rectification
 - Epipolar geometry
      - Essential matrix
      - Fundamental matrix
      - Estimating the fundamental matrix
-- Camera rectification
-- Triangulation
-- Stereo matching
 - Other 3D sensors
 
 

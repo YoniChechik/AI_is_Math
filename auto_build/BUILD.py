@@ -4,8 +4,8 @@ import os
 
 
 do_py2ipynb = 0
-do_ppt = 1
-is_convert_ipynb_to_html = 0
+do_ppt = 0
+is_convert_ipynb_to_html = 1
 
 main_path = os.path.abspath("..")
 dir_list = [
@@ -19,9 +19,9 @@ dir_list = [
     # 'c_06_geometric_transformation',
     # 'c_07_camera_calibration',
     # 'c_08_features',
-    'c_09_stereo',
-    # 'c_10_neural_networks_basics',
-    # 'c_11_neural_networks_2'
+    # 'c_09_stereo',
+    "c_10_neural_networks_basics",
+    "c_11_neural_networks_2",
 ]
 
 

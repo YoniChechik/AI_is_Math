@@ -1,66 +1,7 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-	],
-	"settings": {
-		"terminal.integrated.defaultProfile.windows": "Command Prompt",
-		"python.defaultInterpreterPath": "C:\\Users\\chech\\miniconda3\\envs\\cv_course\\python.exe",
-		"python.analysis.completeFunctionParens": true,
-		"python.terminal.activateEnvironment": true,
-		// ====== language Server
-		"python.languageServer": "Pylance",
-		"python.linting.enabled": false,
-		"python.analysis.extraPaths": [
-			"${workspaceFolder}",
-		],
-		// ====== formatter 	
-		"python.formatting.provider": "black",
-		"python.formatting.blackArgs": [
-			"--line-length=120" // default is 88
-		],
-		"editor.autoClosingBrackets": "always",
-		"editor.autoClosingQuotes": "always",
-		"editor.mouseWheelZoom": true,
-		"editor.acceptSuggestionOnEnter": "smart",
-		"editor.bracketPairColorization.enabled": true,
-		"editor.formatOnSave": true,
-
-		"workbench.tree.indent": 30,
-		"workbench.tree.renderIndentGuides": "always",
-		"workbench.list.openMode": "doubleClick",
-		"explorer.confirmDelete": false,
-		// ====== extensions 	
-		"cSpell.allowCompoundWords": true,
-		"cSpell.diagnosticLevel": "Hint",
-		"gitlens.currentLine.enabled": false,
-		"gitlens.codeLens.enabled": false,
-		"gitlens.statusBar.enabled": false,
-		"gitlens.codeLens.recentChange.enabled": false,
-		"gitlens.codeLens.scopes": [
-			"containers"
-		],
-		"gitlens.hovers.enabled": false,
-		"gitlens.menus": {
-			"editorGroup": false
-		},
-		"markdown.extension.toc.levels": "2..6",
-		"pasteImage.path": "${currentFileDir}/images",
-	},
-	"launch": {
-		"configurations": [
-			{
-				"name": "Python Integrated Terminal",
-				"type": "python",
-				"request": "launch",
-				"program": "${file}",
-				"cwd": "${fileDirname}",
-				"console": "integratedTerminal",
-				"env": {
-					"PYTHONPATH": "${workspaceFolder};${env:PYTHONPATH}" //seperator should be ";" in windows and ":" in linux
-				}
-			}
-		]
-	}
+    "folders": [
+        {
+            "path": "."
+        }
+    ]
 }

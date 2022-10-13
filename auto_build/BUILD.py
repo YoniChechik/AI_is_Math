@@ -1,15 +1,15 @@
-from build_site import build_site
-import file_converter
 import os
 
+from auto_build import file_converter
+from auto_build.build_site import build_site
 
-do_py2ipynb = 0
+do_py2ipynb = 1
 do_ppt = 0
 is_convert_ipynb_to_html = 1
 
-main_path = os.path.abspath("..")
+main_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 dir_list = [
-    # 'c_01_intro_to_CV_and_Python',
+    "c_01_intro_to_CV_and_Python",
     # 'c_02a_basic_image_processing',
     # 'c_02b_filtering_and_resampling',
     # 'c_03_edge_detection',
@@ -20,8 +20,8 @@ dir_list = [
     # 'c_07_camera_calibration',
     # 'c_08_features',
     # 'c_09_stereo',
-    "c_10_neural_networks_basics",
-    "c_11_neural_networks_2",
+    # "c_10_neural_networks_basics",
+    # "c_11_neural_networks_2",
 ]
 
 

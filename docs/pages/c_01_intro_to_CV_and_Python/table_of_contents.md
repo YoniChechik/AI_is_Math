@@ -7,7 +7,7 @@ layout: page
 
 ## **Intro to CV and Python** [(slides)](/pages/c_01_intro_to_CV_and_Python/class_slides/)
 
-- [Python, Pycharm & packages installation guide](/pages/python_pycharm_installation/python_pycharm_installation/)
+- [Python, VSCode & packages installation guide](/pages/python_vscode_installation/python_vscode_installation/)
 - Course details
 - What is computer vision (CV)?
 - Course outline

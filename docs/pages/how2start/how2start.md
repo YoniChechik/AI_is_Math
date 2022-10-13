@@ -6,7 +6,7 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
 
 # How to start?
 
-[If you are looking for the **Python, Pycharm & packages installation guide**, [it's here.](/pages/python_pycharm_installation/python_pycharm_installation/)]
+[If you are looking for the **Python, VSCode & packages installation guide**, [it's here.](/pages/python_vscode_installation/python_vscode_installation/)]
 
 **Hi!** 
 
@@ -29,7 +29,7 @@ Jupyter notebook is an open-source web application that allows you to view and r
 If you also want to run the selected notebook- simply search for this botton (![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)) at the top of every notebook.
 
 ### Download Python
-If you want to investigate further or debug your code, here is how to install [Python, Pycharm & packages.](/pages/python_pycharm_installation/python_pycharm_installation/)
+If you want to investigate further or debug your code, here is how to install [Python, VSCode & packages.](/pages/python_vscode_installation/python_vscode_installation/)
 This is especially recommended if you want to try the exercises, since you'll probably want to debug them without heavy use of print statements.  
 
 ## FAQs

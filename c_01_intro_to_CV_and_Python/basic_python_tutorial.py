@@ -1,7 +1,7 @@
 # %% [markdown]
 # # Python Workshop: Basics I
 #
-# [If you are looking for the **Python, Pycharm & packages installation guide**, [it's here.](https://www.aiismath.com/pages/python_pycharm_installation/python_pycharm_installation/)]
+# [If you are looking for the **Python, VSCode & packages installation guide**, [it's here.](https://www.aiismath.com/pages/python_vscode_installation/python_vscode_installation/)]
 #
 # [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YoniChechik/AI_is_Math/blob/master/c_01_intro_to_CV_and_Python/basic_python_tutorial.ipynb)
 #  <hr>
@@ -30,13 +30,13 @@
 #
 #  ![Python Packages](http://i.imgur.com/Q8trGd1.png)
 #
-# ### PyCharm
+# ### VSCode
 #
-# Pycharm is currently (2019) the most commonly used IDE (Integrated development environment) for programing in python.
+# VSCode is currently (2019) the most commonly used IDE (Integrated development environment) for programing in python.
 #
-# for complete tutorial on **installation** of Python + Pycharm + additional packages please refer to [this page](https://www.aiismath.com/pages/python_pycharm_installation/python_pycharm_installation/).
+# for complete tutorial on **installation** of Python + VSCode + additional packages please refer to [this page](https://www.aiismath.com/pages/python_vscode_installation/python_vscode_installation/).
 #
-# <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/PyCharm_Logo.svg" alt="pycharm logo" width="200"/>
+# <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/VSCode_Logo.svg" alt="vscode logo" width="200"/>
 #
 # ### Jupyter notebook
 #
@@ -159,7 +159,7 @@ type(z)
 
 
 # %%
-z = y ** x  # int to the power float
+z = y**x  # int to the power float
 print(z)
 type(z)
 

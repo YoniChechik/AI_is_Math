@@ -6,10 +6,9 @@ import textwrap
 def build_site(dirs, is_convert_ipynb_to_html):
 
     # === get all git class dirs - starting with "c_"
-    cwd = os.getcwd()
+    cwd = os.path.dirname(os.path.realpath(__file__))
     git_main_dirs_cwd = os.path.abspath(os.path.join(cwd, ".."))
-    git_class_subdirs = [x for x in os.listdir(
-        git_main_dirs_cwd) if x.startswith("c_")]
+    git_class_subdirs = [x for x in os.listdir(git_main_dirs_cwd) if x.startswith("c_")]
     git_class_subdirs.sort()
 
     pages_path = os.path.join(git_main_dirs_cwd, "docs", "pages")
@@ -46,7 +45,7 @@ def build_site(dirs, is_convert_ipynb_to_html):
         # === add bigimg to pages
         bigimg_path_pages = ""
         for fn in os.listdir(fp):
-            if 'bigimg' in fn:
+            if "bigimg" in fn:
                 # === copy img
                 bigimg_path = os.path.join(fp, fn)
                 bigimg_path_pages = os.path.join(pages_path, dir_name, fn)
@@ -65,25 +64,26 @@ def build_site(dirs, is_convert_ipynb_to_html):
 
                 # === copy orig file to pages and add header
                 meta_file_path = os.path.join(fp, meta_file)
-                with open(meta_file_path, 'r') as original:
+                with open(meta_file_path, "r") as original:
                     meta_file_data = original.read()
                 header_and_data = header_builder(title, subtitle, bigimg_path_pages) + meta_file_data
                 meta_file_pages_path = os.path.join(pages_class_dir_path, meta_file)
-                with open(meta_file_pages_path, 'w+') as modified:
+                with open(meta_file_pages_path, "w+") as modified:
                     modified.write(header_and_data)
 
                 # ==== update main toc
                 if meta_file == "table_of_contents.md":
                     with open(main_toc_fp, "a+") as f:
-                        f.write(meta_file_data+"\n\n")
+                        f.write(meta_file_data + "\n\n")
                     url_toc = os.sep + "pages" + meta_file_pages_path.split("pages")[1][:-3] + os.sep
 
                     # ==== update readme
                     readme_class_text = meta_file_data.replace("##", "###").replace(
-                        "/pages/", "https://www.aiismath.com/pages/")
+                        "/pages/", "https://www.aiismath.com/pages/"
+                    )
 
                     with open(readme_fp, "a+") as f:
-                        f.write(readme_class_text+"\n\n")
+                        f.write(readme_class_text + "\n\n")
 
         # ==== build hover of index.html
         with open(main_index_fp, "a+") as f:
@@ -97,12 +97,15 @@ def build_site(dirs, is_convert_ipynb_to_html):
         for fn in os.listdir(pages_dir_path):
             if not fn.endswith(".pdf"):
                 continue
-            pdf_path_online = os.path.join("https://www.aiismath.com/pages",
-                                           pages_dir_path.split("\\pages\\")[1], fn).replace("\\", "/")
+            pdf_path_online = os.path.join(
+                "https://www.aiismath.com/pages", pages_dir_path.split("\\pages\\")[1], fn
+            ).replace("\\", "/")
 
             with open(os.path.join(pages_dir_path, "class_slides.html"), "w") as f:
                 bigimg_path_pages_fixed = bigimg_path_pages.replace("\\", "/")
-                f.write(textwrap.dedent(f"""\
+                f.write(
+                    textwrap.dedent(
+                        f"""\
                     ---
                     title: {title}
                     subtitle: slides
@@ -112,7 +115,9 @@ def build_site(dirs, is_convert_ipynb_to_html):
 
                     <embed src="{pdf_path_online}" width="100%" height="700px"
                     type="application/pdf">
-                    """))
+                    """
+                    )
+                )
 
         # ==== build notebooks html
         if is_convert_ipynb_to_html:
@@ -122,16 +127,20 @@ def build_site(dirs, is_convert_ipynb_to_html):
                     if ipynb_file.endswith(".ipynb"):
                         ipynb_file_no_ext = ipynb_file.split(".")[0]
                         ipynb_fp = os.path.join(class_dir, ipynb_file)
-                        notebook_html_path = os.path.join(pages_class_dir_path, ipynb_file_no_ext+"_nb.html")
+                        notebook_html_path = os.path.join(pages_class_dir_path, ipynb_file_no_ext + "_nb.html")
 
                         # ==== convert ipynb to html
-                        os.system("jupyter nbconvert --ExecutePreprocessor.timeout=60 --template basic --to html  " +
-                                  ipynb_fp+" --output "+notebook_html_path)
+                        os.system(
+                            "jupyter nbconvert --ExecutePreprocessor.timeout=60 --template basic --to html  "
+                            + ipynb_fp
+                            + " --output "
+                            + notebook_html_path
+                        )
                         with open(notebook_html_path, "r+") as f:
                             lines_arr = f.readlines()
                         # ===== deal with html
                         for i, line in enumerate(lines_arr):
-                            if "class=\"anchor-link\"" in line:
+                            if 'class="anchor-link"' in line:
                                 # remove anchor symbol
                                 line = line.replace("&#182;", "")
                                 lines_arr[i] = line
@@ -144,14 +153,14 @@ def build_site(dirs, is_convert_ipynb_to_html):
                         nb_data = "".join(lines_arr)
 
                         # ==== for plotly: handle `iframe_figures` dir
-                        iframe_figures_path = os.path.join(class_dir, 'iframe_figures')
+                        iframe_figures_path = os.path.join(class_dir, "iframe_figures")
                         if os.path.exists(iframe_figures_path):
                             # delete old dir
-                            old_iframe_dir_path = os.path.join(pages_class_dir_path, 'iframe_figures')
+                            old_iframe_dir_path = os.path.join(pages_class_dir_path, "iframe_figures")
                             if os.path.exists(old_iframe_dir_path):
-                                shutil.rmtree(os.path.join(pages_class_dir_path, 'iframe_figures'))
+                                shutil.rmtree(os.path.join(pages_class_dir_path, "iframe_figures"))
                             # change path in nb_data
-                            nb_data = nb_data.replace('iframe_figures', '/pages/'+dir_name+'/iframe_figures')
+                            nb_data = nb_data.replace("iframe_figures", "/pages/" + dir_name + "/iframe_figures")
                             # move new dir to place
                             shutil.move(iframe_figures_path, pages_class_dir_path)
 
@@ -173,12 +182,9 @@ def header_builder(title, subtitle, bigimg_path, layout="page"):
 
     bigimg_path = bigimg_path.replace("\\", "/")  # some kind of weird bug...
 
-    header = ("---\n"
-              "title: {}\n"
-              "subtitle: {}\n"
-              "cover-img: {}\n"
-              "layout: {}\n"
-              "---\n\n").format(title, subtitle, bigimg_path, layout)
+    header = ("---\n" "title: {}\n" "subtitle: {}\n" "cover-img: {}\n" "layout: {}\n" "---\n\n").format(
+        title, subtitle, bigimg_path, layout
+    )
     return header
 
 
@@ -189,39 +195,41 @@ def build_readme():
         "\n"
         "This is my CV course raw data git repo - you can see the raw .py/ .ppt files here.\n"
         "\n"
-        "## Course TOC\n")
+        "## Course TOC\n"
+    )
     return readme_text_start
 
 
 def html_float_bar(url_content, url_image, title):
-    html_str = ("\n"
-                "<div class=\"mycont\">\n"
-                "   <a href=\"{0}\" aria-label=\"{2}\" ><img class=\"hoverImages\" src=\"{1}\" alt=\"{2}\">\n"
-                "	<div class=\"yoni-bottom-left\"> \n"
-                "		<h2>{2}</h2>\n"
-                "	</div>\n"
-                "</div>\n").format(url_content, url_image, title)
+    html_str = (
+        "\n"
+        '<div class="mycont">\n'
+        '   <a href="{0}" aria-label="{2}" ><img class="hoverImages" src="{1}" alt="{2}">\n'
+        '	<div class="yoni-bottom-left"> \n'
+        "		<h2>{2}</h2>\n"
+        "	</div>\n"
+        "</div>\n"
+    ).format(url_content, url_image, title)
     return html_str
 
 
 def main_toc_header():
     # ==== start of main toc
-    main_toc = ("---\n"
-                "title: Course syllabus\n"
-                "cover-img: /aux_assets/FedTech-ComputerVision.jpg\n"
-                "---\n\n")
+    main_toc = "---\n" "title: Course syllabus\n" "cover-img: /aux_assets/FedTech-ComputerVision.jpg\n" "---\n\n"
     return main_toc
 
 
 def main_index_header():
     # === build start of main index
-    main_index = ("---\n"
-                  "title: AI is Math\n"
-                  "subtitle: The math behind computer vision and deep learning\n"
-                  "cover-img: /aux_assets/FedTech-ComputerVision.jpg\n"
-                  "css: \"/aux_assets/hover_main.css\"\n"
-                  "---\n"
-                  "<div><strong>AI is Math is the place to learn the best computer vision and deep learning algorithms + the math behind them- including class notes and interactive notebooks.</div></strong>")
+    main_index = (
+        "---\n"
+        "title: AI is Math\n"
+        "subtitle: The math behind computer vision and deep learning\n"
+        "cover-img: /aux_assets/FedTech-ComputerVision.jpg\n"
+        'css: "/aux_assets/hover_main.css"\n'
+        "---\n"
+        "<div><strong>AI is Math is the place to learn the best computer vision and deep learning algorithms + the math behind them- including class notes and interactive notebooks.</div></strong>"
+    )
     return main_index
 
 

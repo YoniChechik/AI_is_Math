@@ -17,7 +17,7 @@ navbar-links:
   About the course:
     - How to start?: "/pages/how2start/how2start/"
     - Table of contents: "/pages/toc/"
-    - Python installation: "/pages/python_pycharm_installation/python_pycharm_installation/"
+    - Python installation: "/pages/python_vscode_installation/python_vscode_installation/"
   About me: "/pages/about_me/"
 
 # --- Logo --- #
@@ -33,16 +33,15 @@ round-avatar: true
 # then specify the following parameter
 #title-img: /path/to/image
 
-
 # --- Footer social media links --- #
 
 # Select the social network links that you want to show in the footer.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
   email: "chechik.yoni@gmail.com"
-# facebook: deanattali
+  # facebook: deanattali
   github: YoniChechik/AI_is_Math #https://github.com/YoniChechik
-#  twitter: daattali
+  #  twitter: daattali
   linkedin: yoni-chechik-9b3173123 #https://www.linkedin.com/in/yoni-chechik-9b3173123/
 #  reddit: yourname
 #  linkedin: daattali
@@ -197,16 +196,14 @@ kramdown:
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-      comments: true  # add comments to all blog posts
+      comments: true # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
-  -
-    scope:
+  - scope:
       path: "" # any file that's not a post will be a "page" layout by default
     values:
       layout: "page"
@@ -224,8 +221,7 @@ exclude:
 
 plugins:
   - jekyll-paginate
- # - jekyll-sitemap
-
+  # - jekyll-sitemap
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
 

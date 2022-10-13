@@ -70,13 +70,13 @@ If all installation went well, you should see  “hello world" in the cmd.
 Working only on the CMD is hard... We will use VSCode which is our Integrated development environment (IDE) of choice. This will give us syntax highlighting, debugging and much more.
 
 1. Install VSCode https://code.visualstudio.com/
-   ![](images/2022-10-13-21-32-17.png)
+![](images/2022-10-13-21-32-17.png)
 2. Install the python extansion inside VSCode:
-   ![](images/2022-10-13-21-33-42.png)
+![](images/2022-10-13-21-33-42.png)
 3. Open our project directory in VSCode and create a new `hello.py` file:
 ![](images/2022-10-13-21-36-45.png)
 4. Select our Python interpreter by opening the Command Palette (Ctrl+Shift+P) and type `Python: Select Interpreter`, and select our venv.
 ![](images/2022-10-13-21-51-23.png)
 5. Test: 
 ![](images/2022-10-13-21-37-49.png)
-6. You can run the code in debug mode using `F5`. More about it here (https://code.visualstudio.com/docs/python/python-tutorial#_configure-and-run-the-debugger)
+6. You can run the code in debug mode using `F5`. [More about it here](https://code.visualstudio.com/docs/python/python-tutorial#_configure-and-run-the-debugger).

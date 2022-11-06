@@ -3,14 +3,14 @@ import os
 from auto_build import file_converter
 from auto_build.build_site import build_site
 
-do_py2ipynb = 0
-do_ppt = 0
+do_py2ipynb = 1
+do_ppt = 1
 is_convert_ipynb_to_html = 1
 
 main_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 dir_list = [
-    # "c_01_intro_to_CV_and_Python",
-    # 'c_02a_basic_image_processing',
+    "c_01_intro_to_CV_and_Python",
+    "c_02a_basic_image_processing",
     # 'c_02b_filtering_and_resampling',
     # 'c_03_edge_detection',
     # 'c_04a_curve_fitting',

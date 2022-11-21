@@ -23,7 +23,7 @@ With this filter, we can smooth the image butkeep the edges intact! this is also
 
 Let's look at the math (modified from Wikipedia):
 
-$$I^\text{filtered}(x) = \frac{\sum_{x_i \in \Omega_x} I(x)w_p(x,x_i)}{\sum_{x_i \in \Omega_x} w_p(x,x_i)}$$
+$$I^\text{filtered}(x) = \frac{\sum_{x_i \in \Omega_x} I(x_i)w_p(x,x_i)}{\sum_{x_i \in \Omega_x} w_p(x,x_i)}$$
 
 and:
 

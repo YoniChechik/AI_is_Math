@@ -10,22 +10,13 @@ if "google.colab" in sys.modules:
         "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_03_edge_detection/ex3/butterfly_noisy.jpg".split()
     )
 
+
 # %%
-import numpy as np
-import matplotlib.pyplot as plt
 import cv2
+import matplotlib.pyplot as plt
+import numpy as np
 
 figsize = (10, 10)
-
-# %%
-def unnormalized_gaussian(x, sigma):
-    # TODO: helper function for calculating exponent of (-x) divided by two sigma (one line)
-    return None
-
-
-def distance(x, y, i, j):
-    # TODO: get L2 distance function between two points - helper function for calculating "g_s" (one line)
-    return None
 
 
 # %%
@@ -70,46 +61,46 @@ plt.colorbar()
 plt.show()
 
 # %%
-# run bilateral_filter(...)
+# ======== run
 d = 5  # edge size of neighborhood perimeter
 sigma_r = 12  # sigma range
 sigma_s = 16  # sigma spatial
 
-filtered_image = bilateral_filter(src, d, sigma_r, sigma_s)
+my_bilateral_filtered_image = bilateral_filter(src, d, sigma_r, sigma_s)
 
 plt.figure(figsize=(10, 10))
-plt.imshow(filtered_image)
+plt.imshow(my_bilateral_filtered_image)
 plt.colorbar()
 plt.show()
 
 # %%
 # compare to opencv
-filtered_image_OpenCV = cv2.bilateralFilter(src, d, sigma_r, sigma_s)
+cv2_bilateral_filtered_image = cv2.bilateralFilter(src, d, sigma_r, sigma_s)
 
 plt.figure(figsize=(10, 10))
-plt.imshow(filtered_image_OpenCV)
+plt.imshow(cv2_bilateral_filtered_image)
 plt.colorbar()
 plt.show()
 
 # %%
 # compare to regular gaussian blur
-blur = cv2.GaussianBlur(src, (d, d), sigma_s)
+gaussian_filtered_image = cv2.GaussianBlur(src, (d, d), sigma_s)
 plt.figure(figsize=(10, 10))
-plt.imshow(blur)
+plt.imshow(gaussian_filtered_image)
 plt.colorbar()
 plt.show()
 
 # %%
-# copare canny results between the two images
+# copare canny results between regular  two images
 th_low = 100
 th_high = 200
-res = cv2.Canny(filtered_image, th_low, th_high)
+res = cv2.Canny(my_bilateral_filtered_image, th_low, th_high)
 plt.figure(figsize=(10, 10))
 plt.imshow(res)
 plt.colorbar()
 plt.show()
 
-res = cv2.Canny(src, th_low, th_high)
+res = cv2.Canny(gaussian_filtered_image, th_low, th_high)
 plt.figure(figsize=(10, 10))
 plt.imshow(res)
 plt.colorbar()

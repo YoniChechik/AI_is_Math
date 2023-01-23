@@ -3,7 +3,7 @@ import os
 from auto_build import file_converter
 from auto_build.build_site import build_site
 
-do_py2ipynb = 1
+do_py2ipynb = 0
 do_ppt = 1
 is_convert_ipynb_to_html = 0
 
@@ -13,14 +13,14 @@ dir_list = [
     # "c_02a_basic_image_processing",
     # 'c_02b_filtering_and_resampling',
     # "c_03_edge_detection",
-    "c_04a_curve_fitting",
+    # "c_04a_curve_fitting",
     # "c_04b_hough_transform",
     # 'c_05_image_formation',
     # 'c_06_geometric_transformation',
     # 'c_07_camera_calibration',
-    # 'c_08_features',
-    # 'c_09_stereo',
-    "c_10_neural_networks_basics",
+    "c_08_features",
+    "c_09_stereo",
+    # "c_10_neural_networks_basics",
     # "c_11_neural_networks_2",
 ]
 

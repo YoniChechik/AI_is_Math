@@ -126,10 +126,7 @@ footer-link-col: "#404040"
 # --- Web Analytics Section --- #
 
 # Fill in your Google Analytics gtag.js ID to track your website using gtag
-#gtag: ""
-
-# Fill in your Google Analytics ID to track your website using Google Analytics
-google_analytics: "UA-146360757-1"
+gtag: "G-0DWCGY1T1P"
 
 # Google Tag Manager ID
 #gtm: ""

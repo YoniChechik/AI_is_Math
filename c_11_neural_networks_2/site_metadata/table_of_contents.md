@@ -4,7 +4,3 @@
   - Convolution layer
   - Pooling layer
 - Overfitting
-- Architectures
-  - Alexnet (dropout)
-  - VGG
-  - ResNet (batch norm)

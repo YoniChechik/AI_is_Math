@@ -150,8 +150,5 @@ cover-img: /aux_assets/FedTech-ComputerVision.jpg
   - Convolution layer
   - Pooling layer
 - Overfitting
-- Architectures
-  - Alexnet (dropout)
-  - VGG
-  - ResNet (batch norm)
+
 

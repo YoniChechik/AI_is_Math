@@ -19,7 +19,7 @@ The bilateral filter is a filter that is considered "edge-aware":
 If regular smoothing is done by taking all neighbooring pixels and suming them with weights only dependent by the distance from the chosen pixel (spatial kernel), in the bilateral filter the weight is also determined by the **distance of the intensities** of each neighbooring pixel (range kernel).
 
 With the range dependance, nighbooring pixels that are far in the intensity values(different sides of same edge), will be less important in the weighting.
-With this filter, we can smooth the image butkeep the edges intact! this is also a good enhancement for te Canny edge detector - we'll use the bilateral filter instead of ordinary gaussian blur.
+With this filter, we can smooth the image butkeep the edges intact! this is also a good enhancement for the Canny edge detector - we'll use the bilateral filter instead of ordinary gaussian blur.
 
 Let's look at the math (modified from Wikipedia):
 

@@ -25,17 +25,28 @@
 import sys
 
 if "google.colab" in sys.modules:
-    import subprocess
+    import os
 
-    subprocess.call("apt-get install subversion".split())
-    subprocess.call("svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_07_camera_calibration/images".split())
+    import requests
 
+    os.makedirs("images", exist_ok=True)
+    for i in range(1, 18):
+        im_url = f"https://github.com/YoniChechik/AI_is_Math/raw/master/c_07_camera_calibration/images/{i}.jpeg"
 
+        response = requests.get(im_url)
+        if response.status_code == 200:
+            with open(f"images/{i}.jpeg", "wb") as file:
+                file.write(response.content)
+        else:
+            raise Exception(
+                f"Failed to download the image. Status code: {response.status_code}"
+            )
 # %%
-import numpy as np
-import cv2
 from glob import glob
+
+import cv2
 import matplotlib.pyplot as plt
+import numpy as np
 
 # %%
 square_size = 2.88
@@ -72,7 +83,9 @@ for i, fn in enumerate(img_names):
     imgRGB = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2RGB)
     img = cv2.cvtColor(imgRGB, cv2.COLOR_RGB2GRAY)
 
-    assert w == img.shape[1] and h == img.shape[0], f"size: {img.shape[1]} x {img.shape[0]}"
+    assert (
+        w == img.shape[1] and h == img.shape[0]
+    ), f"size: {img.shape[1]} x {img.shape[0]}"
     found, corners = cv2.findChessboardCorners(img, pattern_size)
     # # if you want to better improve the accuracy... cv2.findChessboardCorners already uses cv2.cornerSubPix
     # if found:
@@ -101,7 +114,9 @@ plt.show()
 # more on it here: https://en.wikipedia.org/wiki/Rodrigues%27_rotation_formula
 # %%
 # calculate camera distortion
-rms, camera_matrix, dist_coefs, _rvecs, _tvecs = cv2.calibrateCamera(obj_points, img_points, (w, h), None, None)
+rms, camera_matrix, dist_coefs, _rvecs, _tvecs = cv2.calibrateCamera(
+    obj_points, img_points, (w, h), None, None
+)
 
 print("\nRMS:", rms)
 print("camera matrix:\n", camera_matrix)
@@ -113,7 +128,6 @@ print("distortion coefficients: ", dist_coefs.ravel())
 # undistort the image with the calibration
 plt.figure(figsize=figsize)
 for i, fn in enumerate(img_names):
-
     imgBGR = cv2.imread(fn)
     imgRGB = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2RGB)
 
@@ -132,7 +146,18 @@ print("Done")
 objectPoints = (
     3
     * square_size
-    * np.array([[0, 0, 0], [0, 1, 0], [1, 1, 0], [1, 0, 0], [0, 0, -1], [0, 1, -1], [1, 1, -1], [1, 0, -1]])
+    * np.array(
+        [
+            [0, 0, 0],
+            [0, 1, 0],
+            [1, 1, 0],
+            [1, 0, 0],
+            [0, 0, -1],
+            [0, 1, -1],
+            [1, 1, -1],
+            [1, 0, -1],
+        ]
+    )
 )
 
 
@@ -154,13 +179,14 @@ def draw(img, imgpts):
 
 plt.figure(figsize=figsize)
 for i, fn in enumerate(img_names):
-
     imgBGR = cv2.imread(fn)
     imgRGB = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2RGB)
 
     dst = cv2.undistort(imgRGB, camera_matrix, dist_coefs)
 
-    imgpts = cv2.projectPoints(objectPoints, _rvecs[i], _tvecs[i], camera_matrix, dist_coefs)[0]
+    imgpts = cv2.projectPoints(
+        objectPoints, _rvecs[i], _tvecs[i], camera_matrix, dist_coefs
+    )[0]
     drawn_image = draw(dst, imgpts)
 
     if i < 12:

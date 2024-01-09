@@ -7,17 +7,27 @@
 import sys
 
 if "google.colab" in sys.modules:
-    import subprocess
 
-    subprocess.call("apt-get install subversion".split())
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_02a_basic_image_processing/Unequalized_Hawkes_Bay_NZ.jpg".split()
+    def download_from_web(url):
+        import requests
+
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(url.split("/")[-1], "wb") as file:
+                file.write(response.content)
+        else:
+            raise Exception(
+                f"Failed to download the image. Status code: {response.status_code}"
+            )
+
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_02a_basic_image_processing/Unequalized_Hawkes_Bay_NZ.jpg"
     )
 
 # %%
-import numpy as np
-import matplotlib.pyplot as plt
 import cv2
+import matplotlib.pyplot as plt
+import numpy as np
 
 figsize = (10, 10)
 # %% [markdown]
@@ -38,6 +48,8 @@ bins_edges_min_max = [0, 256]
 num_bins = 256
 bin_count, bins_edges = np.histogram(I, num_bins, bins_edges_min_max)
 bins_start = bins_edges[:-1]
+
+
 # %%
 def draw_hist(x_axis, input):
     fig, ax = plt.subplots(figsize=figsize)

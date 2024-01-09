@@ -3,13 +3,22 @@
 import sys
 
 if "google.colab" in sys.modules:
-    import subprocess
 
-    subprocess.call("apt-get install subversion".split())
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_03_edge_detection/ex3/butterfly_noisy.jpg".split()
+    def download_from_web(url):
+        import requests
+
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(url.split("/")[-1], "wb") as file:
+                file.write(response.content)
+        else:
+            raise Exception(
+                f"Failed to download the image. Status code: {response.status_code}"
+            )
+
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_03_edge_detection/ex3/butterfly_noisy.jpg"
     )
-
 
 # %%
 import cv2
@@ -37,7 +46,6 @@ def bilateral_one_pixel(source, x, y, d, sigma_r, sigma_s):
 
 # %%
 def bilateral_filter(source, d, sigma_r, sigma_s):
-
     # build empty filtered_image
     filtered_image = np.zeros(source.shape, np.uint8)
     # make input float

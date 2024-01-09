@@ -5,18 +5,32 @@
 # %%
 # to run in google colab
 import sys
-if 'google.colab' in sys.modules:
-    import subprocess
-    subprocess.call('apt-get install subversion'.split())
-    subprocess.call('svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_03_edge_detection/Bikesgray.jpg'.split())
+
+if "google.colab" in sys.modules:
+
+    def download_from_web(url):
+        import requests
+
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(url.split("/")[-1], "wb") as file:
+                file.write(response.content)
+        else:
+            raise Exception(
+                f"Failed to download the image. Status code: {response.status_code}"
+            )
+
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_03_edge_detection/Bikesgray.jpg"
+    )
 
 
-# %% 
-import numpy as np
+# %%
 import cv2
+import numpy as np
 from matplotlib import pyplot as plt
 
-figsize = (10,10)
+figsize = (10, 10)
 
 # %% [markdown]
 # ## Original image
@@ -24,8 +38,8 @@ figsize = (10,10)
 img = cv2.imread("Bikesgray.jpg")
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 plt.figure(figsize=figsize)
-plt.imshow(img, cmap='gray', vmin=0, vmax=255)
-plt.title('Original image')
+plt.imshow(img, cmap="gray", vmin=0, vmax=255)
+plt.title("Original image")
 plt.show()
 
 # %% [markdown]
@@ -40,12 +54,12 @@ kernel = np.array([[-1, 0, +1]])
 dst = cv2.filter2D(img, -1, kernel)
 
 plt.figure(figsize=figsize)
-plt.imshow(np.abs(dst), cmap='gray')
+plt.imshow(np.abs(dst), cmap="gray")
 plt.colorbar()
-plt.title('$f\'_x$: image filtered with '+str(kernel))
+plt.title("$f'_x$: image filtered with " + str(kernel))
 plt.show()
 
-print("kernel shape is "+str(kernel.shape))
+print("kernel shape is " + str(kernel.shape))
 
 # %% [markdown]
 # ## Y grad filter (no abs)
@@ -54,77 +68,71 @@ kernel = np.array([[-1, 0, +1]]).T
 dst = cv2.filter2D(img, -1, kernel)
 
 plt.figure(figsize=figsize)
-plt.imshow(dst, cmap='gray')
+plt.imshow(dst, cmap="gray")
 plt.colorbar()
-plt.title('$f\'_y$: image filtered with\n '+str(kernel))
+plt.title("$f'_y$: image filtered with\n " + str(kernel))
 plt.show()
 
 
 # %% [markdown]
 # ## Comparison of x gradient filters
 # %%
-plt.rcParams['figure.figsize'] = [20, 20]
+plt.rcParams["figure.figsize"] = [20, 20]
 
 plt.subplot(4, 2, 1)
-plt.imshow(img, cmap='gray', vmin=0, vmax=255)
-plt.title('original image')
+plt.imshow(img, cmap="gray", vmin=0, vmax=255)
+plt.title("original image")
 
 #######################################
-kernel = 1/2*np.array([[-1, 0, +1]])
+kernel = 1 / 2 * np.array([[-1, 0, +1]])
 dst_sym = cv2.filter2D(img, -1, kernel)
 
 plt.subplot(4, 2, 2)
-plt.imshow(dst_sym, cmap='gray')
-plt.title('$f\'_x$: image filtered with symmetric derivative')
+plt.imshow(dst_sym, cmap="gray")
+plt.title("$f'_x$: image filtered with symmetric derivative")
 
 #######################################
-kernel = 1/6*np.array([
-    [-1, 0, +1],
-    [-1, 0, +1],
-    [-1, 0, +1]])
+kernel = 1 / 6 * np.array([[-1, 0, +1], [-1, 0, +1], [-1, 0, +1]])
 dst_prewitt = cv2.filter2D(img, -1, kernel)
 
 plt.subplot(4, 2, 3)
-plt.imshow(dst_prewitt, cmap='gray')
-plt.title('$f\'_x$: image filtered with Prewitt')
+plt.imshow(dst_prewitt, cmap="gray")
+plt.title("$f'_x$: image filtered with Prewitt")
 
 #######################################
 # cv2.Sobel() also exist
-kernel = 1/8*np.array([
-    [-1, 0, +1],
-    [-2, 0, +2],
-    [-1, 0, +1]])
+kernel = 1 / 8 * np.array([[-1, 0, +1], [-2, 0, +2], [-1, 0, +1]])
 dst_sobel = cv2.filter2D(img, -1, kernel)
 
 plt.subplot(4, 2, 4)
-plt.imshow(dst_sobel, cmap='gray')
-plt.title('$f\'_x$: image filtered with Sobel')
+plt.imshow(dst_sobel, cmap="gray")
+plt.title("$f'_x$: image filtered with Sobel")
 
 #######################################
-dst_cv2_sobel = cv2.Sobel(img, -1, 1, 0)  #cv2.Sobel(img,ddepth,x_size,y_size)
+dst_cv2_sobel = cv2.Sobel(img, -1, 1, 0)  # cv2.Sobel(img,ddepth,x_size,y_size)
 
 plt.subplot(4, 2, 5)
-plt.imshow(dst_cv2_sobel, cmap='gray')
+plt.imshow(dst_cv2_sobel, cmap="gray")
 plt.colorbar()
-plt.title('cv2.Sobel X')
+plt.title("cv2.Sobel X")
 
 #######################################
 plt.subplot(4, 2, 6)
-plt.imshow(np.abs(dst_sobel-dst_sym))
+plt.imshow(np.abs(dst_sobel - dst_sym))
 plt.colorbar()
-plt.title('|sobel-symmetric|')
+plt.title("|sobel-symmetric|")
 
 #######################################
 plt.subplot(4, 2, 7)
-plt.imshow(np.abs(dst_sobel-dst_prewitt))
+plt.imshow(np.abs(dst_sobel - dst_prewitt))
 plt.colorbar()
-plt.title('|sobel-prewitt|')
+plt.title("|sobel-prewitt|")
 
 #######################################
 plt.subplot(4, 2, 8)
-plt.imshow(np.abs(dst_sym-dst_prewitt)) 
+plt.imshow(np.abs(dst_sym - dst_prewitt))
 plt.colorbar()
-plt.title('|symmetric-prewitt|')
+plt.title("|symmetric-prewitt|")
 
 plt.show()
 
@@ -138,12 +146,12 @@ kernel = np.array([-1, 0, +1])
 dst = cv2.filter2D(img, -1, kernel)
 
 plt.figure(figsize=figsize)
-plt.imshow(np.abs(dst), cmap='gray')
+plt.imshow(np.abs(dst), cmap="gray")
 plt.colorbar()
-plt.title('wrong kernel dim: '+str(kernel))
+plt.title("wrong kernel dim: " + str(kernel))
 plt.show()
 
-print("kernel shape is "+str(kernel.shape))
+print("kernel shape is " + str(kernel.shape))
 
 # %% [markdown]
 # ### uint8 errors
@@ -155,10 +163,10 @@ uint8_img[200:300, 200:300] = 1
 kernel = np.array([[-1, 0, +1]])
 dst = cv2.filter2D(uint8_img, -1, kernel)
 
-fig, axs = plt.subplots(1, 2, figsize=(20,20))
-axs[0].imshow(uint8_img, cmap='gray')
-axs[0].title.set_text('original image')
-axs[1].imshow(dst, cmap='gray')
-axs[1].title.set_text('uint8 WRONG filtering')
+fig, axs = plt.subplots(1, 2, figsize=(20, 20))
+axs[0].imshow(uint8_img, cmap="gray")
+axs[0].title.set_text("original image")
+axs[1].imshow(dst, cmap="gray")
+axs[1].title.set_text("uint8 WRONG filtering")
 
 plt.show()

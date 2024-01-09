@@ -9,23 +9,35 @@
 #
 # ## Basic usage
 # %%
-import sys
-import matplotlib.pyplot as plt
 import cv2  # opencv for python package
+import matplotlib.pyplot as plt
 
 figsize = (10, 10)
 # %%
 # to run in google colab
-if "google.colab" in sys.modules:
-    import subprocess
+import sys
 
-    subprocess.call("apt-get install subversion".split())
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_intro_to_CV_and_Python/Lenna.png".split()
+if "google.colab" in sys.modules:
+
+    def download_from_web(url):
+        import requests
+
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(url.split("/")[-1], "wb") as file:
+                file.write(response.content)
+        else:
+            raise Exception(
+                f"Failed to download the image. Status code: {response.status_code}"
+            )
+
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_01_intro_to_CV_and_Python/Lenna.png"
     )
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_01_intro_to_CV_and_Python/opencv_logo.png".split()
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_01_intro_to_CV_and_Python/opencv_logo.png"
     )
+
 
 # %% [markdown]
 # This is how to read and plot an image with opencv
@@ -75,7 +87,9 @@ fig, ax_arr = plt.subplots(1, 2, figsize=figsize)
 ax_arr[0].imshow(img[:, :, 0], cmap="gray")
 ax_arr[0].set_title("Auto-adjusted pixel\n scale intensity")
 
-ax_arr[1].imshow(img[:, :, 0], cmap="gray", vmin=0, vmax=255)  # 255 is the max of uint8 type number (== 2**8 -1)
+ax_arr[1].imshow(
+    img[:, :, 0], cmap="gray", vmin=0, vmax=255
+)  # 255 is the max of uint8 type number (== 2**8 -1)
 ax_arr[1].set_title("Absolute pixel\n scale intensity")
 plt.show()
 
@@ -84,7 +98,9 @@ plt.show()
 
 # %%
 # image blurring
-img_blurred = cv2.GaussianBlur(img, (15, 15), 7)  # use a 15x15 Gaussian kernel with standard deviation 7
+img_blurred = cv2.GaussianBlur(
+    img, (15, 15), 7
+)  # use a 15x15 Gaussian kernel with standard deviation 7
 plt.figure(figsize=figsize)
 plt.imshow(img_blurred)
 plt.title("Lenna blurred")

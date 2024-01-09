@@ -4,20 +4,33 @@
 
 # %%
 # to run in google colab
-import numpy as np
-import cv2
-import matplotlib.pyplot as plt
+# %%
+# to run in google colab
 import sys
 
-if "google.colab" in sys.modules:
-    import subprocess
+import cv2
+import matplotlib.pyplot as plt
+import numpy as np
 
-    subprocess.call("apt-get install subversion".split())
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_02a_basic_image_processing/grass.jpg".split()
+if "google.colab" in sys.modules:
+
+    def download_from_web(url):
+        import requests
+
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(url.split("/")[-1], "wb") as file:
+                file.write(response.content)
+        else:
+            raise Exception(
+                f"Failed to download the image. Status code: {response.status_code}"
+            )
+
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_02a_basic_image_processing/grass.jpg"
     )
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_02a_basic_image_processing/hsv_th.png".split()
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_02a_basic_image_processing/hsv_th.png"
     )
 
 # %%
@@ -41,7 +54,9 @@ plt.show()
 # First, find HSV green
 
 # %%
-rgb_green = np.uint8([[[0, 255, 0]]])  # 3d array just because this is what cvtColor expects...
+rgb_green = np.uint8(
+    [[[0, 255, 0]]]
+)  # 3d array just because this is what cvtColor expects...
 hsv_green = cv2.cvtColor(rgb_green, cv2.COLOR_RGB2HSV)[0, 0, :]
 print(hsv_green)
 

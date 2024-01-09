@@ -39,39 +39,47 @@
 import sys
 
 if "google.colab" in sys.modules:
-    import subprocess
 
-    subprocess.call("apt-get install subversion".split())
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_04a_curve_fitting/ex4a/calib_im1.jpg".split()
+    def download_from_web(url):
+        import requests
+
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(url.split("/")[-1], "wb") as file:
+                file.write(response.content)
+        else:
+            raise Exception(
+                f"Failed to download the image. Status code: {response.status_code}"
+            )
+
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_04a_curve_fitting/ex4a/calib_im1.jpg"
     )
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_04a_curve_fitting/ex4a/calib_im2.jpg".split()
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_04a_curve_fitting/ex4a/calib_im2.jpg"
     )
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_04a_curve_fitting/ex4a/calib_im3.jpg".split()
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_04a_curve_fitting/ex4a/calib_im3.jpg"
     )
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_04a_curve_fitting/ex4a/vignette_im1.jpg".split()
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_04a_curve_fitting/ex4a/vignette_im1.jpg"
     )
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_04a_curve_fitting/ex4a/vignette_im2.jpg".split()
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_04a_curve_fitting/ex4a/vignette_im2.jpg"
     )
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_04a_curve_fitting/ex4a/vignette_im3.jpg".split()
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_04a_curve_fitting/ex4a/vignette_im3.jpg"
     )
 
 # %%
 import cv2
 import matplotlib.pyplot as plt
-import numpy as np
 
 IMAGE_SHAPE = [768, 1366]
 
 
 # %%
 def get_index_matrix():
-
     # TODO: get x,y index for each pixel as column vectors
     # HINT: use np.meshgrid() + reshape
     pass
@@ -155,7 +163,7 @@ def calib_testing(calib_map, rec_calib_map):
 
 
 # %%
-if __name__ is "__main__":
+if __name__ == "__main__":
     for i in range(3):
         calib_im = cv2.imread("calib_im" + str(i + 1) + ".jpg")
         calib_im = cv2.cvtColor(calib_im, cv2.COLOR_BGR2GRAY)

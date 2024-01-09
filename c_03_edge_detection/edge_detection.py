@@ -7,12 +7,23 @@
 import sys
 
 if "google.colab" in sys.modules:
-    import subprocess
 
-    subprocess.call("apt-get install subversion".split())
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_03_edge_detection/Bikesgray.jpg".split()
+    def download_from_web(url):
+        import requests
+
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(url.split("/")[-1], "wb") as file:
+                file.write(response.content)
+        else:
+            raise Exception(
+                f"Failed to download the image. Status code: {response.status_code}"
+            )
+
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_03_edge_detection/Bikesgray.jpg"
     )
+
 
 # save plotly as html frames
 import plotly.io as pio
@@ -20,10 +31,10 @@ import plotly.io as pio
 if (pio.renderers.default != "vscode") & (pio.renderers.default != "colab"):
     pio.renderers.default = "iframe_connected"
 # %%
-import numpy as np
 import cv2
-from matplotlib import pyplot as plt
+import numpy as np
 import plotly.express as px
+from matplotlib import pyplot as plt
 
 figsize = (10, 10)
 
@@ -50,7 +61,7 @@ sobel_x = cv2.filter2D(img, -1, kernel)
 kernel = kernel.T
 sobel_y = cv2.filter2D(img, -1, kernel)
 
-mag_img = np.sqrt(sobel_x ** 2 + sobel_y ** 2)
+mag_img = np.sqrt(sobel_x**2 + sobel_y**2)
 
 phase_img = cv2.phase(sobel_x, -sobel_y, angleInDegrees=True)
 
@@ -103,13 +114,23 @@ nms = mag_img.copy()
 
 for i in range(1, mag_img.shape[0] - 1):
     for j in range(1, mag_img.shape[1] - 1):
-        if phase_img_q[i, j] == 0 and (mag_img[i, j + 1] > mag_img[i, j] or mag_img[i, j - 1] > mag_img[i, j]):
+        if phase_img_q[i, j] == 0 and (
+            mag_img[i, j + 1] > mag_img[i, j] or mag_img[i, j - 1] > mag_img[i, j]
+        ):
             nms[i, j] = -50
-        if phase_img_q[i, j] == 1 and (mag_img[i + 1, j - 1] > mag_img[i, j] or mag_img[i - 1, j + 1] > mag_img[i, j]):
+        if phase_img_q[i, j] == 1 and (
+            mag_img[i + 1, j - 1] > mag_img[i, j]
+            or mag_img[i - 1, j + 1] > mag_img[i, j]
+        ):
             nms[i, j] = -50
-        if phase_img_q[i, j] == 2 and (mag_img[i - 1, j] > mag_img[i, j] or mag_img[i + 1, j] > mag_img[i, j]):
+        if phase_img_q[i, j] == 2 and (
+            mag_img[i - 1, j] > mag_img[i, j] or mag_img[i + 1, j] > mag_img[i, j]
+        ):
             nms[i, j] = -50
-        if phase_img_q[i, j] == 3 and (mag_img[i - 1, j - 1] > mag_img[i, j] or mag_img[i + 1, j + 1] > mag_img[i, j]):
+        if phase_img_q[i, j] == 3 and (
+            mag_img[i - 1, j - 1] > mag_img[i, j]
+            or mag_img[i + 1, j + 1] > mag_img[i, j]
+        ):
             nms[i, j] = -50
 
 px.imshow(nms, title="NMS")
@@ -145,7 +166,6 @@ num_w_s_CCs, w_s_CC_mask = cv2.connectedComponents(nms_weak_and_strong.astype(np
 
 # for each CC group of weak and strong edge mask
 for w_s_CC_i in range(1, num_w_s_CCs):
-
     # get MASK of weak_and_strong edge from index w_s_CC_i
     w_s_CC_mask_i = np.zeros(nms_th.shape, dtype=bool)
     w_s_CC_mask_i[w_s_CC_mask == w_s_CC_i] = 1

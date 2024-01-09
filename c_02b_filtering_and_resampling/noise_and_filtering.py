@@ -7,16 +7,27 @@
 import sys
 
 if "google.colab" in sys.modules:
-    import subprocess
 
-    subprocess.call("apt-get install subversion".split())
-    subprocess.call(
-        "svn export https://github.com/YoniChechik/AI_is_Math/trunk/c_02b_filtering_and_resampling/Tour_Eiffel.jpg".split()
+    def download_from_web(url):
+        import requests
+
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(url.split("/")[-1], "wb") as file:
+                file.write(response.content)
+        else:
+            raise Exception(
+                f"Failed to download the image. Status code: {response.status_code}"
+            )
+
+    download_from_web(
+        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_02b_filtering_and_resampling/Tour_Eiffel.jpg"
     )
 
+
 # %%
-import numpy as np
 import cv2
+import numpy as np
 from matplotlib import pyplot as plt
 
 figsize = (10, 10)
@@ -42,9 +53,10 @@ plot_im(img, "original image")
 # %% [markdown]
 # ## Mean filter
 
+
 # %%
 def mean_kernel_smoothing(img, sz):
-    kernel = np.ones((sz, sz)) / (sz ** 2)
+    kernel = np.ones((sz, sz)) / (sz**2)
     dst = cv2.filter2D(img, -1, kernel)
 
     plot_im(dst, str(sz) + "X" + str(sz) + " mean kernel")
@@ -57,10 +69,14 @@ mean_kernel_smoothing(img, 20)
 # %% [markdown]
 # ## Gaussian filter
 
+
 # %%
 def gauss_blur(img, k_sz, sigma=-1, is_plot_kernel=False):
     blur = cv2.GaussianBlur(img, (k_sz, k_sz), sigma)
-    plot_im(blur, "gaussian kernel with kernel_size=" + str(k_sz) + r", $\sigma$=" + str(sigma))
+    plot_im(
+        blur,
+        "gaussian kernel with kernel_size=" + str(k_sz) + r", $\sigma$=" + str(sigma),
+    )
     if is_plot_kernel:
         # sigma=-1 will set the sigma size automatically
         gauss_ker = cv2.getGaussianKernel(k_sz, sigma)
@@ -95,7 +111,7 @@ median_filter(img, 5)
 
 def gauss_noise(image, gauss_var=1000):
     mean = 0
-    sigma = gauss_var ** 0.5
+    sigma = gauss_var**0.5
     gauss = np.random.normal(mean, sigma, image.shape)
 
     res = image + gauss

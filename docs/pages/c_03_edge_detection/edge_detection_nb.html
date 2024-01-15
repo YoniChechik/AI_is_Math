@@ -140,52 +140,26 @@ layout: notebook
 <span class="n">mag_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sobel_x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">sobel_y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="n">phase_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">phase</span><span class="p">(</span><span class="n">sobel_x</span><span class="p">,</span> <span class="o">-</span><span class="n">sobel_y</span><span class="p">,</span> <span class="n">angleInDegrees</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">phase_img_masked</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">phase_img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="n">TH_PRC</span> <span class="o">=</span> <span class="mf">0.15</span>
-<span class="n">th</span> <span class="o">=</span> <span class="n">mag_img</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="n">TH_PRC</span>
-<span class="n">phase_img_masked</span> <span class="o">=</span> <span class="n">phase_img_masked</span> <span class="o">*</span> <span class="p">(</span><span class="n">mag_img</span> <span class="o">&lt;=</span> <span class="n">th</span><span class="p">)</span> <span class="o">+</span> <span class="n">phase_img</span> <span class="o">*</span> <span class="p">(</span><span class="n">mag_img</span> <span class="o">&gt;</span> <span class="n">th</span><span class="p">)</span>
-
-
-<span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mag_img</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Gradient magnitude&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea "><iframe
-    scrolling="no"
-    width="100%"
-    height="545px"
-    src="/pages/c_03_edge_detection/iframe_figures/figure_4.html"
-    frameborder="0"
-    allowfullscreen
-></iframe>
 </div>
-
-</div>
-
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Debug-results">Debug results<a class="anchor-link" href="#Debug-results"></a></h3>
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phase_img_masked</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Gradient phase thresholeded&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mag_img</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Gradient magnitude&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -218,24 +192,17 @@ layout: notebook
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Edge-thinning">Edge thinning<a class="anchor-link" href="#Edge-thinning"></a></h2><h3 id="LoG-filter">LoG filter<a class="anchor-link" href="#LoG-filter"></a></h3><p>One way to implement edge thinning is to use LoG and then zero crossing finder.
-Below is an example of abs LoG. Look at the handlebar to see the zero crossings.</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
-<span class="n">dst_LoG</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">phase_img_masked</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">phase_img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">TH_PRC</span> <span class="o">=</span> <span class="mf">0.15</span>
+<span class="n">th</span> <span class="o">=</span> <span class="n">mag_img</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="n">TH_PRC</span>
+<span class="n">phase_img_masked</span> <span class="o">=</span> <span class="n">phase_img_masked</span> <span class="o">*</span> <span class="p">(</span><span class="n">mag_img</span> <span class="o">&lt;=</span> <span class="n">th</span><span class="p">)</span> <span class="o">+</span> <span class="n">phase_img</span> <span class="o">*</span> <span class="p">(</span><span class="n">mag_img</span> <span class="o">&gt;</span> <span class="n">th</span><span class="p">)</span>
 
-<span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dst_LoG</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;abs LoG&quot;</span><span class="p">)</span>
+<span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phase_img_masked</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Gradient phase thresholeded&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -271,8 +238,9 @@ Below is an example of abs LoG. Look at the handlebar to see the zero crossings.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="NMS">NMS<a class="anchor-link" href="#NMS"></a></h2><p>Non maximum suppression (NMS) is another way for edge thinning.</p>
-<h3 id="NMS-preliminary-step:-Quantizing-the-phase-image">NMS preliminary step: Quantizing the phase image<a class="anchor-link" href="#NMS-preliminary-step:-Quantizing-the-phase-image"></a></h3>
+<h2 id="Edge-thinning">Edge thinning<a class="anchor-link" href="#Edge-thinning"></a></h2><h3 id="LoG-filter">LoG filter<a class="anchor-link" href="#LoG-filter"></a></h3><p>One way to implement edge thinning is to use LoG and then zero crossing finder.
+Below is an example of abs LoG. Look at the handlebar to see the zero crossings.</p>
+
 </div>
 </div>
 </div>
@@ -281,18 +249,10 @@ Below is an example of abs LoG. Look at the handlebar to see the zero crossings.
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">phase_img_q</span> <span class="o">=</span> <span class="n">phase_img</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mag_img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mag_img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-        <span class="n">phase_img_q</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">phase_img_q</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mf">22.5</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
-        <span class="n">phase_img_q</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">phase_img_q</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span> <span class="o">//</span> <span class="mi">45</span>  <span class="c1"># integer devider</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">dst_LoG</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span>
 
-<span class="n">phase_img_q_masked</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">phase_img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="n">TH_PRC</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">th</span> <span class="o">=</span> <span class="n">mag_img</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="n">TH_PRC</span>
-<span class="n">phase_img_q_masked</span> <span class="o">=</span> <span class="n">phase_img_q_masked</span> <span class="o">*</span> <span class="p">(</span><span class="n">mag_img</span> <span class="o">&lt;=</span> <span class="n">th</span><span class="p">)</span> <span class="o">+</span> <span class="n">phase_img_q</span> <span class="o">*</span> <span class="p">(</span><span class="n">mag_img</span> <span class="o">&gt;</span> <span class="n">th</span><span class="p">)</span>
-
-<span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phase_img_q_masked</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Gradient phase- quantized and thresholded&quot;</span><span class="p">)</span>
+<span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dst_LoG</span><span class="p">)</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;abs LoG&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -328,13 +288,88 @@ Below is an example of abs LoG. Look at the handlebar to see the zero crossings.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="NMS-main-step">NMS main step<a class="anchor-link" href="#NMS-main-step"></a></h3>
+<h2 id="NMS">NMS<a class="anchor-link" href="#NMS"></a></h2><p>Non maximum suppression (NMS) is another way for edge thinning.</p>
+<h3 id="NMS-preliminary-step:-Quantizing-the-phase-image">NMS preliminary step: Quantizing the phase image<a class="anchor-link" href="#NMS-preliminary-step:-Quantizing-the-phase-image"></a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">phase_img_q</span> <span class="o">=</span> <span class="n">phase_img</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mag_img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mag_img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">phase_img_q</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">phase_img_q</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="mf">22.5</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+        <span class="n">phase_img_q</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">phase_img_q</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span> <span class="o">//</span> <span class="mi">45</span>  <span class="c1"># integer devider</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Debug-results">Debug results<a class="anchor-link" href="#Debug-results"></a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">phase_img_q_masked</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">phase_img</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">TH_PRC</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">th</span> <span class="o">=</span> <span class="n">mag_img</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="n">TH_PRC</span>
+<span class="n">phase_img_q_masked</span> <span class="o">=</span> <span class="n">phase_img_q_masked</span> <span class="o">*</span> <span class="p">(</span><span class="n">mag_img</span> <span class="o">&lt;=</span> <span class="n">th</span><span class="p">)</span> <span class="o">+</span> <span class="n">phase_img_q</span> <span class="o">*</span> <span class="p">(</span><span class="n">mag_img</span> <span class="o">&gt;</span> <span class="n">th</span><span class="p">)</span>
+
+<span class="n">px</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">phase_img_q_masked</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Gradient phase- quantized and thresholded&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea "><iframe
+    scrolling="no"
+    width="100%"
+    height="545px"
+    src="/pages/c_03_edge_detection/iframe_figures/figure_9.html"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="NMS-main-step">NMS main step<a class="anchor-link" href="#NMS-main-step"></a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nms</span> <span class="o">=</span> <span class="n">mag_img</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -381,7 +416,7 @@ Below is an example of abs LoG. Look at the handlebar to see the zero crossings.
     scrolling="no"
     width="100%"
     height="545px"
-    src="/pages/c_03_edge_detection/iframe_figures/figure_8.html"
+    src="/pages/c_03_edge_detection/iframe_figures/figure_10.html"
     frameborder="0"
     allowfullscreen
 ></iframe>
@@ -402,7 +437,7 @@ Below is an example of abs LoG. Look at the handlebar to see the zero crossings.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nms_th</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nms</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -432,7 +467,7 @@ Below is an example of abs LoG. Look at the handlebar to see the zero crossings.
     scrolling="no"
     width="100%"
     height="545px"
-    src="/pages/c_03_edge_detection/iframe_figures/figure_9.html"
+    src="/pages/c_03_edge_detection/iframe_figures/figure_11.html"
     frameborder="0"
     allowfullscreen
 ></iframe>
@@ -459,7 +494,7 @@ Below is an example of abs LoG. Look at the handlebar to see the zero crossings.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nms_weak_and_strong</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nms_th</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
@@ -501,7 +536,7 @@ Below is an example of abs LoG. Look at the handlebar to see the zero crossings.
     scrolling="no"
     width="100%"
     height="545px"
-    src="/pages/c_03_edge_detection/iframe_figures/figure_10.html"
+    src="/pages/c_03_edge_detection/iframe_figures/figure_12.html"
     frameborder="0"
     allowfullscreen
 ></iframe>
@@ -523,7 +558,7 @@ Below is an example of abs LoG. Look at the handlebar to see the zero crossings.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">Canny</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">),</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">120</span><span class="p">)</span>
@@ -548,7 +583,7 @@ Below is an example of abs LoG. Look at the handlebar to see the zero crossings.
     scrolling="no"
     width="100%"
     height="545px"
-    src="/pages/c_03_edge_detection/iframe_figures/figure_11.html"
+    src="/pages/c_03_edge_detection/iframe_figures/figure_13.html"
     frameborder="0"
     allowfullscreen
 ></iframe>

@@ -4,8 +4,8 @@
 # ## Linear LS
 # Let's generate some noisy data
 # %%
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 figsize = (10, 10)
 
@@ -28,7 +28,6 @@ plt.show()
 
 # %% [markdown]
 # ### calc LS matrices and result:
-# $$ Xb = y $$
 # %%
 x_vec = x.reshape(-1, 1)
 X = np.concatenate((x_vec, np.ones(x_vec.shape)), axis=1)
@@ -52,6 +51,39 @@ plt.show()
 b_np = np.linalg.lstsq(X, y_vec, rcond=None)[0]
 mse = np.mean((b - b_np) ** 2)
 print(mse)
+
+# %% [markdown]
+# ## Example of non linear dataset for LS
+# %%
+x_step = 0.01
+x = np.arange(-10, 10 + x_step, x_step)
+
+y = 0.5 * x**2 + 2 * x + 5
+
+# add noise to data
+std = 5
+y = y + np.random.normal(scale=std, size=y.shape)
+
+plt.figure(figsize=figsize)
+plt.plot(x, y, "*")
+plt.title("noisy parabola data")
+plt.show()
+
+# %%
+# calc LS matrices
+x_vec = x.reshape(-1, 1)
+X = np.concatenate((x_vec**2, x_vec, np.ones(x_vec.shape)), axis=1)
+y_vec = y.reshape(-1, 1)
+
+b = np.linalg.lstsq(X, y_vec, rcond=None)[0]
+print(b)
+# %%
+plt.figure(figsize=figsize)
+plt.plot(x, y, "*")
+plt.plot(x, b[0] * x**2 + b[1] * x + b[2], "r")
+plt.title("data + best LS fit. $b^T$=" + str(b.T))
+plt.show()
+
 # %% [markdown]
 # ## vertical dataset
 # As mentioned in the lecture, LS is not goog at fitting vertical dataset.
@@ -73,7 +105,7 @@ plt.title("noisy vertical data")
 plt.show()
 
 # %% [markdown]
-# Calc LS matrices and result
+# ### WRONG WAY - Calc LS matrices and plot result
 # %%
 x_vec = x.reshape(-1, 1)
 X = np.concatenate((x_vec, np.ones(x_vec.shape)), axis=1)
@@ -96,7 +128,9 @@ plt.show()
 # ## TLS
 # Same vertical data, now with total least squares
 # %%
-X = np.concatenate((x.reshape(-1, 1) - np.mean(x), y.reshape(-1, 1) - np.mean(y)), axis=1)
+X = np.concatenate(
+    (x.reshape(-1, 1) - np.mean(x), y.reshape(-1, 1) - np.mean(y)), axis=1
+)
 
 
 def linear_tls(X):
@@ -123,38 +157,6 @@ plt.title("noisy vertical data + linear TLS fit")
 plt.show()
 
 # %% [markdown]
-# ## Example for non linear LS
-# %%
-x_step = 0.01
-x = np.arange(-10, 10 + x_step, x_step)
-
-y = 0.5 * x ** 2 + 2 * x + 5
-
-# add noise to data
-std = 5
-y = y + np.random.normal(scale=std, size=y.shape)
-
-plt.figure(figsize=figsize)
-plt.plot(x, y, "*")
-plt.title("noisy parabola data")
-plt.show()
-
-# %%
-# calc LS matrices
-x_vec = x.reshape(-1, 1)
-X = np.concatenate((x_vec ** 2, x_vec, np.ones(x_vec.shape)), axis=1)
-y_vec = y.reshape(-1, 1)
-
-b = np.linalg.lstsq(X, y_vec, rcond=None)[0]
-print(b)
-# %%
-plt.figure(figsize=figsize)
-plt.plot(x, y, "*")
-plt.plot(x, b[0] * x ** 2 + b[1] * x + b[2], "r")
-plt.title("data + best LS fit. $b^T$=" + str(b.T))
-plt.show()
-
-# %% [markdown]
 # ## Outliers
 # As mentioned, LS has a problem with outliers:
 # %%
@@ -172,7 +174,7 @@ plt.title("data with outlier")
 plt.show()
 
 # %%
-# calc LS matrices
+# WRONG WAY - calc LS matrices
 x_vec = x.reshape(-1, 1)
 X = np.concatenate((x_vec, np.ones(x_vec.shape)), axis=1)
 y_vec = y.reshape(-1, 1)
@@ -242,7 +244,9 @@ def basic_ransac(x, TH):
 
         # https://en.wikipedia.org/wiki/Cross_product#Geometric_meaning
         # |a X b| = |a||b|sin(t) -> |a X b|/|b| = |a|sin(t)
-        d_j = np.linalg.norm(np.cross(line_p1 - p_j, line_p2 - line_p1)) / np.linalg.norm(line_p2 - line_p1)
+        d_j = np.linalg.norm(
+            np.cross(line_p1 - p_j, line_p2 - line_p1)
+        ) / np.linalg.norm(line_p2 - line_p1)
         if d_j <= TH:
             inliers_ind.append(j)
 
@@ -286,36 +290,3 @@ for i in range(num_cycles):
     else:
         plt.title("num inliers: " + str(inliers_ind_list[i].shape[0]))
 plt.show()
-
-# %% [markdown]
-# ### Test RANSAC with sklearn package (a known machine learning package in python)
-# Code taken from: https://scikit-learn.org/stable/auto_examples/linear_model/plot_ransac.html
-# %%
-from sklearn import linear_model
-
-X = x.reshape(-1, 1)
-
-
-lr = linear_model.LinearRegression()
-lr.fit(X, y)
-
-# Robustly fit linear model with RANSAC algorithm
-ransac = linear_model.RANSACRegressor()
-ransac.fit(X, y)
-inlier_mask = ransac.inlier_mask_
-outlier_mask = np.logical_not(inlier_mask)
-
-# Predict data of estimated models
-line_X = np.arange(X.min(), X.max())[:, np.newaxis]
-line_y = lr.predict(line_X)
-line_y_ransac = ransac.predict(line_X)
-
-plt.figure()
-plt.scatter(X[inlier_mask], y[inlier_mask], color="yellowgreen", marker=".", label="Inliers")
-plt.scatter(X[outlier_mask], y[outlier_mask], color="red", marker=".", label="Outliers")
-plt.plot(line_X, line_y, color="navy", linewidth=2, label="Linear regressor")
-plt.plot(line_X, line_y_ransac, color="cornflowerblue", linewidth=2, label="RANSAC regressor")
-plt.legend(loc="lower right")
-plt.title("RANSAC using sklearn package")
-plt.show()
-# %%

@@ -64,15 +64,17 @@ sobel_y = cv2.filter2D(img, -1, kernel)
 mag_img = np.sqrt(sobel_x**2 + sobel_y**2)
 
 phase_img = cv2.phase(sobel_x, -sobel_y, angleInDegrees=True)
+# %% [markdown]
+# ### Debug results
+# %%
+px.imshow(mag_img, title="Gradient magnitude")
 
+# %%
 phase_img_masked = -100 * np.ones(phase_img.shape)
 TH_PRC = 0.15
 th = mag_img.max() * TH_PRC
 phase_img_masked = phase_img_masked * (mag_img <= th) + phase_img * (mag_img > th)
 
-
-px.imshow(mag_img, title="Gradient magnitude")
-# %%
 px.imshow(phase_img_masked, title="Gradient phase thresholeded")
 
 # %% [markdown]
@@ -84,7 +86,7 @@ px.imshow(phase_img_masked, title="Gradient phase thresholeded")
 kernel = np.array([[-1, -1, -1], [-1, 8, -1], [-1, -1, -1]])
 dst_LoG = cv2.filter2D(img, -1, kernel)
 
-px.imshow(np.abs(dst_LoG), title="abs LoG")
+px.imshow(np.abs(dst_LoG).clip(0, 300), title="abs LoG")
 
 # %% [markdown]
 # ## NMS
@@ -98,6 +100,9 @@ for i in range(mag_img.shape[0]):
         phase_img_q[i, j] = np.mod(phase_img_q[i, j] + 22.5, 180)
         phase_img_q[i, j] = (phase_img_q[i, j]) // 45  # integer devider
 
+# %% [markdown]
+# ### Debug results
+# %%
 phase_img_q_masked = -1 * np.ones(phase_img.shape)
 TH_PRC = 0.1
 th = mag_img.max() * TH_PRC

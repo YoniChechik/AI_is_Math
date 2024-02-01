@@ -1,0 +1,6 @@
+torch #through conda
+opencv-python
+matplotlib #includes numpy
+plotly
+pandas # for plotly express
+nbconvert

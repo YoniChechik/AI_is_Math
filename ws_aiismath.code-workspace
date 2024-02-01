@@ -3,5 +3,20 @@
         {
             "path": "."
         }
-    ]
+    ],
+    "launch": {
+        "configurations": [
+            {
+                "name": "Python",
+                "type": "python",
+                "request": "launch",
+                "program": "${file}",
+                "console": "integratedTerminal",
+                "justMyCode": true, // false, //if false: debug pip installed code as well
+                "env": {
+                    "PYTHONPATH": "${fileWorkspaceFolder}" // add project dir to pythonpath
+                }
+            }
+        ]
+    },
 }

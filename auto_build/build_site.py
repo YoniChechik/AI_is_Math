@@ -4,7 +4,6 @@ import textwrap
 
 
 def build_site(dirs, is_convert_ipynb_to_html):
-
     # === get all git class dirs - starting with "c_"
     cwd = os.path.dirname(os.path.realpath(__file__))
     git_main_dirs_cwd = os.path.abspath(os.path.join(cwd, ".."))
@@ -52,12 +51,13 @@ def build_site(dirs, is_convert_ipynb_to_html):
                 shutil.copyfile(bigimg_path, bigimg_path_pages)
 
                 # === get shorten path
-                bigimg_path_pages = os.sep + "pages" + bigimg_path_pages.split("pages")[1]
+                bigimg_path_pages = (
+                    os.sep + "pages" + bigimg_path_pages.split("pages")[1]
+                )
 
         # === run on all metadata files
         for meta_file in os.listdir(fp):
             if meta_file.endswith(".md"):
-
                 # === build subtitle
                 subtitle = " ".join(meta_file.split("_"))[:-3]  # also remove ".md"
                 subtitle = subtitle[0].upper() + subtitle[1:]
@@ -66,7 +66,9 @@ def build_site(dirs, is_convert_ipynb_to_html):
                 meta_file_path = os.path.join(fp, meta_file)
                 with open(meta_file_path, "r") as original:
                     meta_file_data = original.read()
-                header_and_data = header_builder(title, subtitle, bigimg_path_pages) + meta_file_data
+                header_and_data = (
+                    header_builder(title, subtitle, bigimg_path_pages) + meta_file_data
+                )
                 meta_file_pages_path = os.path.join(pages_class_dir_path, meta_file)
                 with open(meta_file_pages_path, "w+") as modified:
                     modified.write(header_and_data)
@@ -75,7 +77,12 @@ def build_site(dirs, is_convert_ipynb_to_html):
                 if meta_file == "table_of_contents.md":
                     with open(main_toc_fp, "a+") as f:
                         f.write(meta_file_data + "\n\n")
-                    url_toc = os.sep + "pages" + meta_file_pages_path.split("pages")[1][:-3] + os.sep
+                    url_toc = (
+                        os.sep
+                        + "pages"
+                        + meta_file_pages_path.split("pages")[1][:-3]
+                        + os.sep
+                    )
 
                     # ==== update readme
                     readme_class_text = meta_file_data.replace("##", "###").replace(
@@ -90,19 +97,16 @@ def build_site(dirs, is_convert_ipynb_to_html):
             f.write(html_float_bar(url_toc, bigimg_path_pages, title))
 
         # ==== build class_slides.html
-        # for dir_name in os.listdir(pages_path):
         pages_dir_path = os.path.join(pages_path, dir_name)
-        # if not os.path.isdir(dir_path):
-        #     continue
         for fn in os.listdir(pages_dir_path):
             if not fn.endswith(".pdf"):
                 continue
             pdf_path_online = os.path.join(
-                "https://www.aiismath.com/pages", pages_dir_path.split("\\pages\\")[1], fn
-            ).replace("\\", "/")
+                "https://www.aiismath.com/pages", pages_dir_path.split("/pages/")[1], fn
+            )
 
             with open(os.path.join(pages_dir_path, "class_slides.html"), "w") as f:
-                bigimg_path_pages_fixed = bigimg_path_pages.replace("\\", "/")
+                bigimg_path_pages_fixed = bigimg_path_pages
                 f.write(
                     textwrap.dedent(
                         f"""\
@@ -127,7 +131,9 @@ def build_site(dirs, is_convert_ipynb_to_html):
                     if ipynb_file.endswith(".ipynb"):
                         ipynb_file_no_ext = ipynb_file.split(".")[0]
                         ipynb_fp = os.path.join(class_dir, ipynb_file)
-                        notebook_html_path = os.path.join(pages_class_dir_path, ipynb_file_no_ext + "_nb.html")
+                        notebook_html_path = os.path.join(
+                            pages_class_dir_path, ipynb_file_no_ext + "_nb.html"
+                        )
 
                         # ==== convert ipynb to html
                         os.system(
@@ -156,11 +162,18 @@ def build_site(dirs, is_convert_ipynb_to_html):
                         iframe_figures_path = os.path.join(class_dir, "iframe_figures")
                         if os.path.exists(iframe_figures_path):
                             # delete old dir
-                            old_iframe_dir_path = os.path.join(pages_class_dir_path, "iframe_figures")
+                            old_iframe_dir_path = os.path.join(
+                                pages_class_dir_path, "iframe_figures"
+                            )
                             if os.path.exists(old_iframe_dir_path):
-                                shutil.rmtree(os.path.join(pages_class_dir_path, "iframe_figures"))
+                                shutil.rmtree(
+                                    os.path.join(pages_class_dir_path, "iframe_figures")
+                                )
                             # change path in nb_data
-                            nb_data = nb_data.replace("iframe_figures", "/pages/" + dir_name + "/iframe_figures")
+                            nb_data = nb_data.replace(
+                                "iframe_figures",
+                                "/pages/" + dir_name + "/iframe_figures",
+                            )
                             # move new dir to place
                             shutil.move(iframe_figures_path, pages_class_dir_path)
 
@@ -168,7 +181,14 @@ def build_site(dirs, is_convert_ipynb_to_html):
                         subtitle = " ".join(ipynb_file_no_ext.split("_"))
                         subtitle = subtitle[0].upper() + subtitle[1:] + " notebook"
                         with open(notebook_html_path, "w+") as f:
-                            f.write(header_builder(title, subtitle, bigimg_path_pages, layout="notebook"))
+                            f.write(
+                                header_builder(
+                                    title,
+                                    subtitle,
+                                    bigimg_path_pages,
+                                    layout="notebook",
+                                )
+                            )
                             f.write(nb_data)
 
 
@@ -180,11 +200,14 @@ def header_builder(title, subtitle, bigimg_path, layout="page"):
     # cover-img: /pages/c_01_intro_to_CV_and_Python/intro.jpg
     # ---
 
-    bigimg_path = bigimg_path.replace("\\", "/")  # some kind of weird bug...
-
-    header = ("---\n" "title: {}\n" "subtitle: {}\n" "cover-img: {}\n" "layout: {}\n" "---\n\n").format(
-        title, subtitle, bigimg_path, layout
-    )
+    header = (
+        "---\n"
+        "title: {}\n"
+        "subtitle: {}\n"
+        "cover-img: {}\n"
+        "layout: {}\n"
+        "---\n\n"
+    ).format(title, subtitle, bigimg_path, layout)
     return header
 
 
@@ -215,7 +238,12 @@ def html_float_bar(url_content, url_image, title):
 
 def main_toc_header():
     # ==== start of main toc
-    main_toc = "---\n" "title: Course syllabus\n" "cover-img: /aux_assets/FedTech-ComputerVision.jpg\n" "---\n\n"
+    main_toc = (
+        "---\n"
+        "title: Course syllabus\n"
+        "cover-img: /aux_assets/FedTech-ComputerVision.jpg\n"
+        "---\n\n"
+    )
     return main_toc
 
 

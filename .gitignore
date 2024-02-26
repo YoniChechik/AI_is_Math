@@ -4,3 +4,6 @@ tests/
 .idea/
 
 secrets/
+
+c_11_neural_networks_2/data
+c_11_neural_networks_2/logs

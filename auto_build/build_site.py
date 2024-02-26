@@ -53,7 +53,7 @@ def build_site(dirs, is_convert_ipynb_to_html):
                 # === get shorten path
                 bigimg_path_pages = (
                     os.sep + "pages" + bigimg_path_pages.split("pages")[1]
-                )
+                ).replace("\\", "/")
 
         # === run on all metadata files
         for meta_file in os.listdir(fp):
@@ -78,10 +78,10 @@ def build_site(dirs, is_convert_ipynb_to_html):
                     with open(main_toc_fp, "a+") as f:
                         f.write(meta_file_data + "\n\n")
                     url_toc = (
-                        os.sep
+                        "/"
                         + "pages"
-                        + meta_file_pages_path.split("pages")[1][:-3]
-                        + os.sep
+                        + meta_file_pages_path.replace("\\", "/").split("pages")[1][:-3]
+                        + "/"
                     )
 
                     # ==== update readme
@@ -102,8 +102,10 @@ def build_site(dirs, is_convert_ipynb_to_html):
             if not fn.endswith(".pdf"):
                 continue
             pdf_path_online = os.path.join(
-                "https://www.aiismath.com/pages", pages_dir_path.split("/pages/")[1], fn
-            )
+                "https://www.aiismath.com/pages",
+                pages_dir_path.split("\\pages\\")[1],
+                fn,
+            ).replace("\\", "/")
 
             with open(os.path.join(pages_dir_path, "class_slides.html"), "w") as f:
                 bigimg_path_pages_fixed = bigimg_path_pages
@@ -136,6 +138,22 @@ def build_site(dirs, is_convert_ipynb_to_html):
                         )
 
                         # ==== convert ipynb to html
+                        import nbformat
+
+                        # Read the original notebook
+                        with open(ipynb_fp, "r", encoding="utf-8") as f:
+                            nb = nbformat.read(f, as_version=4)
+
+                        # Remove the widgets metadata if it exists
+                        if "widgets" in nb["metadata"]:
+                            del nb["metadata"]["widgets"]
+
+                            # Write the modified notebook
+                            with open(ipynb_fp, "w", encoding="utf-8") as f:
+                                nbformat.write(nb, f)
+
+                            print(f"Fixed notebook saved to {ipynb_fp}")
+
                         os.system(
                             "jupyter nbconvert --ExecutePreprocessor.timeout=60 --template basic --to html  "
                             + ipynb_fp
@@ -185,7 +203,7 @@ def build_site(dirs, is_convert_ipynb_to_html):
                                 header_builder(
                                     title,
                                     subtitle,
-                                    bigimg_path_pages,
+                                    bigimg_path_pages_fixed,
                                     layout="notebook",
                                 )
                             )

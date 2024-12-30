@@ -105,9 +105,7 @@ res = np.zeros((im_lut.shape[0] * h, im_lut.shape[1] * w))
 
 for col in range(im_lut.shape[0]):
     for row in range(im_lut.shape[1]):
-        res[col * h : col * h + h, row * w : row * w + w] = char_pix_list[
-            im_lut[col, row]
-        ]
+        res[col * h : col * h + h, row * w : row * w + w] = char_pix_list[im_lut[col, row]]
 
 plt.imshow(res)
 plt.title("Final result")
@@ -130,9 +128,7 @@ def im_to_chars(im_bgr, char_pix_list, window_size_wh):
 
     for col in range(im_lut.shape[0]):
         for row in range(im_lut.shape[1]):
-            res[col * h : col * h + h, row * w : row * w + w] = char_pix_list[
-                im_lut[col, row]
-            ]
+            res[col * h : col * h + h, row * w : row * w + w] = char_pix_list[im_lut[col, row]]
 
     return res
 

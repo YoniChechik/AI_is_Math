@@ -2,14 +2,15 @@
 # # EX 1.2- Numpy & Matplotlib: Build pyramid
 # Correct the mistakes below to reveal the pyramid drawing
 # This ex. is meant to enhance your debugging skills.
+# HOW THE FINALE PYRAMID SHOULD LOOK LIKE:
+# _/\_
 # %%
 
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 # %%
-
-
 def half_pyramid(pyramid_size):
     # building one half of the pyramid
     # THIS FUNCTION IS CORRECT! DO NOT TOUCH

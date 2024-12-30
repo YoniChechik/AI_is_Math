@@ -16,13 +16,9 @@ if "google.colab" in sys.modules:
             with open(url.split("/")[-1], "wb") as file:
                 file.write(response.content)
         else:
-            raise Exception(
-                f"Failed to download the image. Status code: {response.status_code}"
-            )
+            raise Exception(f"Failed to download the image. Status code: {response.status_code}")
 
-    download_from_web(
-        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_02a_basic_image_processing/ex2/news.jpg"
-    )
+    download_from_web("https://github.com/YoniChechik/AI_is_Math/raw/master/c_02a_basic_image_processing/ex2/news.jpg")
 # %%
 import cv2
 import matplotlib.pyplot as plt
@@ -66,7 +62,7 @@ def find_words(dilated_im, im):
 
 
 def plot_rec(mask, res_im):
-    # plot a rectengle around each word in res image using mask image of the word
+    # plot a rectangle around each word in res image using mask image of the word
     xy = np.nonzero(mask)
     y = xy[0]
     x = xy[1]
@@ -86,7 +82,7 @@ plt.show()
 
 
 # %%
-# TODO: now we want to mark only the big title words, and do this ONLY using morphological operators
+# TODO: now we want to mark only the big title (ONLY FIRST LINE) words, and do this ONLY using morphological operators
 
 
 plt.figure(figsize=(20, 20))

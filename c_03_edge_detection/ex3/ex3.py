@@ -1,26 +1,3 @@
-# %%
-# to run in google colab
-import sys
-
-if "google.colab" in sys.modules:
-
-    def download_from_web(url):
-        import requests
-
-        response = requests.get(url)
-        if response.status_code == 200:
-            with open(url.split("/")[-1], "wb") as file:
-                file.write(response.content)
-        else:
-            raise Exception(
-                f"Failed to download the image. Status code: {response.status_code}"
-            )
-
-    download_from_web(
-        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_03_edge_detection/ex3/butterfly_noisy.jpg"
-    )
-
-# %%
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
@@ -28,7 +5,6 @@ import numpy as np
 figsize = (10, 10)
 
 
-# %%
 def bilateral_one_pixel(source, x, y, d, sigma_r, sigma_s):
     # === init vars
     filtered_pix = 0
@@ -44,7 +20,6 @@ def bilateral_one_pixel(source, x, y, d, sigma_r, sigma_s):
     return filtered_pix
 
 
-# %%
 def bilateral_filter(source, d, sigma_r, sigma_s):
     # build empty filtered_image
     filtered_image = np.zeros(source.shape, np.uint8)
@@ -58,7 +33,6 @@ def bilateral_filter(source, d, sigma_r, sigma_s):
     return filtered_image
 
 
-# %%
 # upload noisy image
 src = cv2.imread("butterfly_noisy.jpg")
 src = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
@@ -68,7 +42,6 @@ plt.imshow(src, cmap="gray", vmin=0, vmax=255)
 plt.colorbar()
 plt.show()
 
-# %%
 # ======== run
 d = 5  # edge size of neighborhood perimeter
 sigma_r = 12  # sigma range
@@ -81,7 +54,6 @@ plt.imshow(my_bilateral_filtered_image)
 plt.colorbar()
 plt.show()
 
-# %%
 # compare to opencv
 cv2_bilateral_filtered_image = cv2.bilateralFilter(src, d, sigma_r, sigma_s)
 
@@ -90,7 +62,6 @@ plt.imshow(cv2_bilateral_filtered_image)
 plt.colorbar()
 plt.show()
 
-# %%
 # compare to regular gaussian blur
 gaussian_filtered_image = cv2.GaussianBlur(src, (d, d), sigma_s)
 plt.figure(figsize=(10, 10))
@@ -98,7 +69,6 @@ plt.imshow(gaussian_filtered_image)
 plt.colorbar()
 plt.show()
 
-# %%
 # copare canny results between regular  two images
 th_low = 100
 th_high = 200

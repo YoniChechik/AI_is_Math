@@ -1,38 +1,13 @@
-# %% [markdown]
 # Let's identify coins!
 # in the image given below we want to detect each coin currency,
 # and we'll do it with cv2.HoughCircles!
 
-# %%
-# to run in google colab
-import sys
 
-if "google.colab" in sys.modules:
-
-    def download_from_web(url):
-        import requests
-
-        response = requests.get(url)
-        if response.status_code == 200:
-            with open(url.split("/")[-1], "wb") as file:
-                file.write(response.content)
-        else:
-            raise Exception(
-                f"Failed to download the image. Status code: {response.status_code}"
-            )
-
-    download_from_web(
-        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_04b_hough_transform/ex4b/coins.png"
-    )
-
-
-# %%
 import cv2
 from matplotlib import pyplot as plt
 
 figsize = (10, 10)
 
-# %%
 im3 = cv2.imread("coins.png")
 im3 = cv2.cvtColor(im3, cv2.COLOR_BGR2RGB)
 im = cv2.cvtColor(im3, cv2.COLOR_RGB2GRAY)
@@ -78,5 +53,3 @@ plt.figure(figsize=figsize)
 plt.imshow(res)
 plt.title("final result- coins detection")
 plt.show()
-
-# %%

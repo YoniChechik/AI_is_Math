@@ -1,4 +1,4 @@
-# # Image to chars
+# Image to chars
 # We want to represent images with chars to get a cool matrix effect
 #
 # All data that we are working on can be found here: https://github.com/YoniChechik/AI_is_Math

@@ -1,5 +1,4 @@
-# %% [markdown]
-# # EX4a: Vignetting
+# EX4a: Vignetting
 # In photography and optics, vignetting is a reduction of an
 # image's brightness or saturation toward the periphery compared
 # to the image center.
@@ -34,51 +33,12 @@
 # 3. `fix_raw_im(b, vig_im)` that gets the user image and the betta vector and fixes the image vignetting.
 # It reconstruct the calib image input from (2) using (1) + betta vector and then divide the input image with this reconstructed calib_map to get a fixed image.
 
-# %%
-# to run in google colab
-import sys
-
-if "google.colab" in sys.modules:
-
-    def download_from_web(url):
-        import requests
-
-        response = requests.get(url)
-        if response.status_code == 200:
-            with open(url.split("/")[-1], "wb") as file:
-                file.write(response.content)
-        else:
-            raise Exception(
-                f"Failed to download the image. Status code: {response.status_code}"
-            )
-
-    download_from_web(
-        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_04a_curve_fitting/ex4a/calib_im1.jpg"
-    )
-    download_from_web(
-        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_04a_curve_fitting/ex4a/calib_im2.jpg"
-    )
-    download_from_web(
-        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_04a_curve_fitting/ex4a/calib_im3.jpg"
-    )
-    download_from_web(
-        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_04a_curve_fitting/ex4a/vignette_im1.jpg"
-    )
-    download_from_web(
-        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_04a_curve_fitting/ex4a/vignette_im2.jpg"
-    )
-    download_from_web(
-        "https://github.com/YoniChechik/AI_is_Math/raw/master/c_04a_curve_fitting/ex4a/vignette_im3.jpg"
-    )
-
-# %%
 import cv2
 import matplotlib.pyplot as plt
 
 IMAGE_SHAPE = [768, 1366]
 
 
-# %%
 def get_index_matrix():
     # TODO: get x,y index for each pixel as column vectors
     # HINT: use np.meshgrid() + reshape
@@ -96,7 +56,6 @@ def get_index_matrix():
     return X
 
 
-# %%
 def get_calib_coeffs(calib_map):
     # This is the calibration function when he user switches lenses.
     # Since it's memory consuming to save the intire calib map,
@@ -114,9 +73,6 @@ def get_calib_coeffs(calib_map):
     b = None
 
     return b
-
-
-# %%
 
 
 def fix_raw_im(b, vig_im):
@@ -141,7 +97,6 @@ def fix_raw_im(b, vig_im):
     return res, rec_calib_map
 
 
-# %%
 def calib_testing(calib_map, rec_calib_map):
     # test your calib map reconstruction relative to the original
     # calib map
@@ -162,7 +117,6 @@ def calib_testing(calib_map, rec_calib_map):
     plt.show()
 
 
-# %%
 if __name__ == "__main__":
     for i in range(3):
         calib_im = cv2.imread("calib_im" + str(i + 1) + ".jpg")
@@ -191,5 +145,3 @@ if __name__ == "__main__":
         plt.show()
 
         calib_testing(calib_map, rec_calib_map)
-
-# %%

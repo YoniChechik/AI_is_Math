@@ -11,8 +11,7 @@ def pyramid_case(in_word):
 
 
 def pyramid_case_one_liner(in_word):
-    # TODO: ~~~BONUS~~~
-    # return the pyramid case word in one line of code inside the function.
+    # TODO: return the pyramid case word in one line of code inside the function.
     # DO NOT USE ";" IN YOUR CODE.
     pass
 
